@@ -1,0 +1,2651 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://tab5.lav.dk/guide/audio/">
+      
+      
+        <link rel="prev" href="../panadapter/">
+      
+      
+        <link rel="next" href="../spots/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Audio - QMX Panadapter</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="light" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#audio-features-tab5-real-time-decoding" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="QMX Panadapter" class="md-header__button md-logo" aria-label="QMX Panadapter" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            QMX Panadapter
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Audio
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="light" data-md-color-primary="blue" data-md-color-accent="orange"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    <!-- Buy me a coffee (OZ1LAV) — just left of the search field -->
+    <style>
+      /* The official BMC widget renders ~51px tall (nearly the whole top bar).
+         zoom scales it (and its layout box, so no leftover gap) down to about
+         the search-field height. Tweak the factor to taste. */
+      .bmc-header-btn { display:flex; align-items:center; margin:0 .2rem; zoom:0.72; }
+    </style>
+    <div class="bmc-header-btn">
+      <script type="text/javascript"
+              src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js"
+              data-name="bmc-button"
+              data-slug="OZ1LAV"
+              data-color="#FFDD00"
+              data-emoji="☕"
+              data-font="Lato"
+              data-text="Buy me a coffee"
+              data-outline-color="#000000"
+              data-font-color="#000000"
+              data-coffee-color="#ffffff"></script>
+    </div>
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/SteffenLav/qmx-panadapter" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    qmx-panadapter
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../quick-start/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Quick Start
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../getting-help/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Getting Help
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../panadapter/" class="md-tabs__link">
+          
+  
+  
+  User Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../reference/gestures/" class="md-tabs__link">
+          
+  
+  
+  Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../build/build/" class="md-tabs__link">
+          
+  
+  
+  For Builders
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../releases/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Releases
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="QMX Panadapter" class="md-nav__button md-logo" aria-label="QMX Panadapter" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    QMX Panadapter
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/SteffenLav/qmx-panadapter" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    qmx-panadapter
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quick-start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-help/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Help
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Guide
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    User Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../panadapter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Panadapter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audio
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#getting-audio-start-here-if-you-hear-nothing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting audio — start here if you hear nothing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Getting audio — start here if you hear nothing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-check-the-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Check the mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-rx-audio-is-off-by-default-and-enabling-it-needs-a-restart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. RX audio is off by default, and enabling it needs a restart
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-in-the-browser-press-the-play-button" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. In the browser, press the play button
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-audio-panel-one-tap-on-the-s-meter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The audio panel - one tap on the S-meter
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-know-which-volume-control-does-what" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Know which volume control does what
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-the-speaker-and-the-browser-are-exclusive" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. The speaker and the browser are exclusive
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#panoramic-cw-split" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Panoramic CW Split
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Panoramic CW Split">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Works
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enabling-panoramic-cw" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enabling Panoramic CW
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#on-the-air" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        On the Air
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#binaural-cw-first-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Binaural CW — First Implementation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Binaural CW — First Implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bandwidth-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bandwidth Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-bandwidth-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended Bandwidth Settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#audio-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Audio Settings
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Audio Settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#opening-audio-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Opening Audio Settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#typical-constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Typical Constraints
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#headphones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Headphones
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#which-modes-produce-audio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Which modes produce audio
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#known-limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Known Limitations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-agc-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The AGC controls
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The AGC controls">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-changed-in-v1163" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What changed in v1.16.3
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-changed-in-v1164" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What changed in v1.16.4
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#strong-signals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Strong signals
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-the-receive-signal-comes-from" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where the receive signal comes from
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#listen-in-the-browser" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Listen in the browser
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feedback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Feedback
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spots/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Live Spots
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spot-map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spot Map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../web-ui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web UI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ft8-rx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FT8 RX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ft8-tx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FT8 TX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cw/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CW (beta)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../webradio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web Radio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../js8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JS8 (beta)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../time-sync/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Time Sync
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wspr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WSPR
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../radio-menus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Radio Menus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/gestures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gestures & Controls
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/hardware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hardware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/web-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/rigctld/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hamlib rigctld
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    For Builders
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    For Builders
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build/build/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Build from Source
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build/architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build/contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing & Feedback
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Releases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#getting-audio-start-here-if-you-hear-nothing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting audio — start here if you hear nothing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Getting audio — start here if you hear nothing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-check-the-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Check the mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-rx-audio-is-off-by-default-and-enabling-it-needs-a-restart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. RX audio is off by default, and enabling it needs a restart
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-in-the-browser-press-the-play-button" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. In the browser, press the play button
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-audio-panel-one-tap-on-the-s-meter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The audio panel - one tap on the S-meter
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-know-which-volume-control-does-what" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Know which volume control does what
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-the-speaker-and-the-browser-are-exclusive" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. The speaker and the browser are exclusive
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#panoramic-cw-split" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Panoramic CW Split
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Panoramic CW Split">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Works
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enabling-panoramic-cw" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enabling Panoramic CW
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#on-the-air" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        On the Air
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#binaural-cw-first-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Binaural CW — First Implementation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Binaural CW — First Implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bandwidth-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bandwidth Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-bandwidth-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended Bandwidth Settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#audio-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Audio Settings
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Audio Settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#opening-audio-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Opening Audio Settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#typical-constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Typical Constraints
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#headphones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Headphones
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#which-modes-produce-audio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Which modes produce audio
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#known-limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Known Limitations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-agc-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The AGC controls
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The AGC controls">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-changed-in-v1163" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What changed in v1.16.3
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-changed-in-v1164" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What changed in v1.16.4
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#strong-signals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Strong signals
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-the-receive-signal-comes-from" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where the receive signal comes from
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#listen-in-the-browser" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Listen in the browser
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feedback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Feedback
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="audio-features-tab5-real-time-decoding">Audio Features — Tab5 Real-Time Decoding<a class="headerlink" href="#audio-features-tab5-real-time-decoding" title="Permanent link">&para;</a></h1>
+<p>Turns the radio's own I/Q into sound on the Tab5 itself, with no extra hardware: binaural CW, panoramic CW split, and AM demodulation. The line-in (3.5 mm jack) path is still beta - see the warning below.</p>
+<h2 id="getting-audio-start-here-if-you-hear-nothing">Getting audio — start here if you hear nothing<a class="headerlink" href="#getting-audio-start-here-if-you-hear-nothing" title="Permanent link">&para;</a></h2>
+<p>Silence is usually one of five things, and they are listed here in the order they
+actually catch people out. Work down the list; each step says where the control is.</p>
+<div class="qmx-diagram" style="overflow-x:auto"><svg viewBox="0 0 900 605" width="100%" role="img" xmlns="http://www.w3.org/2000/svg" style="max-width:900px"><rect x="0" y="0" width="900" height="605" rx="10" fill="#151B23" stroke="#2A3440"/><text x="18" y="32" font-size="17" fill="#E9C46A" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="600">From the radio to your ears, and where each control acts</text><rect x="18" y="56" width="864" height="35" rx="6" fill="#1B232D" stroke="#2A3440"/><text x="30" y="78" font-size="16" fill="#E6EDF3" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">QMX / QMX+ - receiving, set to DiGi / IQ mode</text><rect x="58" y="97" width="824" height="48" rx="5" fill="#151B23" stroke="#2A3440"/><rect x="58" y="97" width="3" height="48" fill="#8AB4F8"/><text x="72" y="116" font-size="14" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">QMX RF gain - per band, 0-99 dB. Measured: does NOT reach the I/Q, so it moves neither the spectrum</text><text x="72" y="135" font-size="14" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">nor the audio</text><rect x="58" y="153" width="824" height="48" rx="5" fill="#151B23" stroke="#2A3440"/><rect x="58" y="153" width="3" height="48" fill="#8AB4F8"/><text x="72" y="172" font-size="14" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">QMX volume - the radio's own AF gain. Measured: does NOT reach the I/Q either, so it moves neither</text><text x="72" y="191" font-size="14" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">the Tab5's audio nor the browser stream</text><path d="M44 209 l0 14" stroke="#93A4B1" stroke-width="1.5"/><path d="M44 227 l-4 -5 l8 0 z" fill="#93A4B1"/><rect x="18" y="231" width="864" height="35" rx="6" fill="#1B232D" stroke="#2A3440"/><text x="30" y="253" font-size="16" fill="#E6EDF3" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">USB - 48 000 I/Q pairs per second, one cable</text><path d="M44 272 l0 14" stroke="#93A4B1" stroke-width="1.5"/><path d="M44 290 l-4 -5 l8 0 z" fill="#93A4B1"/><rect x="18" y="294" width="864" height="35" rx="6" fill="#1B232D" stroke="#2A3440"/><text x="30" y="316" font-size="16" fill="#E6EDF3" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">Tab5 DSP - 48 kHz. The same I/Q feeds the spectrum and the demodulator</text><path d="M44 335 l0 14" stroke="#93A4B1" stroke-width="1.5"/><path d="M44 353 l-4 -5 l8 0 z" fill="#93A4B1"/><rect x="18" y="357" width="864" height="35" rx="6" fill="#1B232D" stroke="#2A3440"/><text x="30" y="379" font-size="16" fill="#E6EDF3" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">AGC - ceiling, attack and release, or a fixed gain</text><path d="M44 398 l0 14" stroke="#93A4B1" stroke-width="1.5"/><path d="M44 416 l-4 -5 l8 0 z" fill="#93A4B1"/><rect x="18" y="420" width="864" height="35" rx="6" fill="#1B232D" stroke="#2A3440"/><text x="30" y="442" font-size="16" fill="#E6EDF3" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">the demodulated audio goes to ONE of these at a time</text><rect x="58" y="461" width="824" height="29" rx="5" fill="#151B23" stroke="#2A3440"/><rect x="58" y="461" width="3" height="29" fill="#8AB4F8"/><text x="72" y="480" font-size="14" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">Tab5 speaker and headphones - I2S codec, 48 kHz stereo. RX Volume acts here, and nowhere else</text><rect x="58" y="498" width="824" height="29" rx="5" fill="#151B23" stroke="#2A3440"/><rect x="58" y="498" width="3" height="29" fill="#8AB4F8"/><text x="72" y="517" font-size="14" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">a browser - 12 kHz mono mu-law over the WebSocket, 3 s buffer. Your computer's own volume acts here</text><rect x="18" y="534" width="14" height="14" rx="3" fill="#93A4B1" fill-opacity="0.50" stroke="#93A4B1"/><text x="42" y="545" font-size="15" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">one listener at a time, deliberately: while a browser holds the stream the Tab5 mutes its own</text><text x="42" y="564" font-size="15" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">speaker, and hands it back when you stop</text></svg></div>
+
+<p><strong>Three controls act at three different places</strong>, which is why "turn it up" is not one
+question. The RF gain is a fourth, and the measurement below is why it is not in that
+list.</p>
+<h3 id="1-check-the-mode">1. Check the mode<a class="headerlink" href="#1-check-the-mode" title="Permanent link">&para;</a></h3>
+<p>Only <strong>CW, CW-R, USB, LSB and AM</strong> produce audio. <strong>DiGi and FM produce none, by
+design</strong> — see <a href="#which-modes-produce-audio">Which modes produce audio</a>.</p>
+<p>This catches more people than anything else, because <strong>FT8, FT4, JS8 and WSPR all run
+in DiGi</strong>. If you are on a digital mode and expecting to hear the band, you will not.
+Switch to USB to listen.</p>
+<h3 id="2-rx-audio-is-off-by-default-and-enabling-it-needs-a-restart">2. RX audio is off by default, and enabling it needs a restart<a class="headerlink" href="#2-rx-audio-is-off-by-default-and-enabling-it-needs-a-restart" title="Permanent link">&para;</a></h3>
+<p>Open the <strong>settings drawer</strong> → <strong>Audio Settings</strong> and tick <strong>RX Audio
+(speaker/headphone)</strong>. Then <strong>restart the Tab5</strong>.</p>
+<p>The restart is not optional and it is not a bug: the audio codec is opened at boot,
+before the USB host claims the DMA memory, so it cannot be opened safely part-way
+through a session. From <strong>v1.20.1</strong> the Tab5 tells you this with a toast when you tick
+the box. Before that it said so only in the serial log, which is how three operators
+arrived at silent audio in one week.</p>
+<p>The same switch and volume are on the web API from v1.20.1, in the <code>rxaudio</code> group of
+<code>/api/settings</code>.</p>
+<h3 id="3-in-the-browser-press-the-play-button">3. In the browser, press the play button<a class="headerlink" href="#3-in-the-browser-press-the-play-button" title="Permanent link">&para;</a></h3>
+<p>The browser does <strong>not</strong> start playing on its own. Click the <strong>▶</strong> button at the top
+right of the page, just to the right of <strong>F</strong>. It turns into <strong>■</strong> while it plays.</p>
+<p>This is the single most-missed step — two users reported "no web audio" in one week
+and in both cases the stream was working and the button had never been pressed. See
+<a href="#listen-in-the-browser">Listen in the browser</a>.</p>
+<h3 id="the-audio-panel-one-tap-on-the-s-meter">The audio panel - one tap on the S-meter<a class="headerlink" href="#the-audio-panel-one-tap-on-the-s-meter" title="Permanent link">&para;</a></h3>
+<p>New in v1.20.5, after Samuel W7STF counted four gestures to change the volume.
+<strong>Tap the S-meter in the top bar.</strong> The panel holds:</p>
+<ul>
+<li><strong>Mute</strong> - instant, both ways. Not remembered across a reboot, deliberately:
+  a mute that survived one would be indistinguishable from a dead speaker.</li>
+<li><strong>Tab5 speaker</strong> - the same volume the drawer's RX Volume sets.</li>
+<li><strong>Radio AF gain</strong> - the QMX's own, in the decibels its LCD shows. It is read
+  back from the radio when the panel opens, so it shows what the radio is
+  actually set to, including a change you made on its own knob. A <code>--</code> means
+  the radio has not answered yet.</li>
+<li><strong>Radio RF gain</strong> - 0-99 dB, the same control as
+  Drawer -&gt; Radio. The QMX stores it <strong>per band</strong>, so it is written when you
+  let go of the slider rather than on every tick of a drag. ⚠ It has <strong>no
+  effect on the spectrum or on the audio</strong> - see the warning below.</li>
+<li><strong>AGC Fast / Slow / Off</strong> - the three settings worth
+  having in one tap. <strong>Fast</strong> is a 1 ms attack and a 30 ms release, for CW;
+  <strong>Slow</strong> is 5 ms and 400 ms; <strong>Off</strong> pins the gain at the
+  <a href="#the-agc-controls">AGC Ceiling</a> rather than running a very slow AGC. The
+  row shows which one is in force, and the drawer's own sliders still hold
+  anything in between.</li>
+</ul>
+<p>Both gain figures used to sit at <code>--</code>. They were never lost: the panel asked
+the radio and painted once, while the answer arrives on the CAT poll a moment
+later with nothing left running to draw it. It now keeps looking for about ten
+seconds and re-asks if the first query was lost to a busy CAT link.</p>
+<p>A tap anywhere outside closes it.</p>
+<p>!!! warning "Mute is not the RX audio switch"
+    <strong>Mute</strong> silences the speaker at once and brings it back at once. The
+    drawer's <strong>RX audio</strong> switch is different: the audio hardware is opened
+    when the Tab5 boots, or not at all, so turning that switch on part-way
+    through a session does nothing until you restart. The panel says so when
+    that is the case, rather than letting you move sliders against silence.</p>
+<h3 id="4-know-which-volume-control-does-what">4. Know which volume control does what<a class="headerlink" href="#4-know-which-volume-control-does-what" title="Permanent link">&para;</a></h3>
+<p>There are three, and they act in different places — see
+<a href="#getting-audio-start-here-if-you-hear-nothing">the chain above</a> for where:</p>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>Where</th>
+<th>What it changes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>QMX volume</strong></td>
+<td>Drawer → Radio</td>
+<td>The <strong>radio's own AF gain</strong>, over CAT — the same number the QMX shows when you click its volume knob. It sets the level in the <strong>radio's own headphones</strong> and nothing else. ⚠ <strong>Corrected 2026-11-02:</strong> this row used to say it affected everything downstream including the browser stream, and that was wrong. Measured on the bench — 0 dB then 40 dB, a factor of 100 in amplitude, each confirmed by the radio's own read-back — the level arriving over USB did not move at all. I/Q mode carries the samples from <em>before</em> the QMX's audio chain, which is the same reason RF gain does not reach it. (If you feed the radio's headphone output into the Tab5's 3.5 mm jack and select <strong>Line in</strong> as the source, then of course it does — that path <em>is</em> the radio's own audio.)</td>
+</tr>
+<tr>
+<td><strong>RX Volume</strong></td>
+<td>Drawer → Audio Settings</td>
+<td>The <strong>Tab5's</strong> speaker and headphone level only. Does not affect the browser stream</td>
+</tr>
+<tr>
+<td>Your browser's own volume</td>
+<td>The browser or the operating system</td>
+<td>The browser stream only</td>
+</tr>
+</tbody>
+</table>
+<p><strong>QMX RF gain</strong> (Drawer → Radio, or the audio panel) is per band, 0–99 dB, QMX
+default 54. It looks like a fourth control in this chain. It is not:</p>
+<p>!!! warning "RF gain does not change what the Tab5 shows or plays"
+    Measured 2026-10-27: taking the RF gain from 54 to 0 moved the spectrum
+    noise floor by <strong>0.06 dB</strong> over 81 frames. The radio accepts the command
+    and reads the new value back, so it is a real setting in the QMX - it just
+    does not reach the I/Q the Tab5 receives. The spectrum, the waterfall, the
+    decoders and the Tab5's own audio are all derived from that one stream, so
+    none of them can respond to it. If signals sound weak, the control that
+    acts is the <a href="#the-agc-controls">AGC ceiling</a>. Reported by Samuel W7STF,
+    who was right; announced in v1.21.0 as a way to change what reaches your
+    ears, which was wrong.</p>
+<div class="highlight"><pre><span></span><code>**Why, from QRP Labs.** Stan KC7XE, 2026-10-28: I/Q mode delivers the raw
+48 kHz sampled stream from the PCM1804 converter, and every adjustment
+and all the DSP happen further down the radio's own processing chain. So
+the control is real and it works - on the QMX's own headphone and speaker
+output. It is kept for that reason rather than removed.
+
+It is deliberately **not** faked by scaling the samples on the Tab5.
+Multiplying every sample by the same number scales the signal and the
+noise together, so the signal-to-noise ratio does not change and nothing
+becomes audible that was not already there - it would only move the trace
+up and down the dB scale, which the floor and ceiling controls already do.
+</code></pre></div>
+<p>!!! note "Full volume and still quiet?"</p>
+<div class="highlight"><pre><span></span><code>The level is governed by an **automatic gain control**, not by the volume slider.
+If a signal is quieter than you expect at full volume, the AGC ceiling is holding
+it back — see [The AGC controls](#the-agc-controls).
+</code></pre></div>
+<h3 id="5-the-speaker-and-the-browser-are-exclusive">5. The speaker and the browser are exclusive<a class="headerlink" href="#5-the-speaker-and-the-browser-are-exclusive" title="Permanent link">&para;</a></h3>
+<p>While a browser is listening, the Tab5 <strong>mutes its own speaker</strong>, and hands the audio
+back when you stop listening or close the page. One listener at a time is deliberate.
+So if the Tab5 went quiet, check whether a browser somewhere on your network is holding
+the stream.</p>
+<h2 id="panoramic-cw-split">Panoramic CW Split<a class="headerlink" href="#panoramic-cw-split" title="Permanent link">&para;</a></h2>
+<p>Listen to two CW stations on different frequencies, panned left and right across the stereo stage. The CW receiver demodulates each sideband independently, allowing separation by frequency.</p>
+<h3 id="how-it-works">How It Works<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h3>
+<p>The RF passband is split into two channels:
+- <strong>Left</strong>: Lower-frequency station (panned fully left)
+- <strong>Right</strong>: Upper-frequency station (panned fully right)
+- <strong>Center blend</strong>: Dry/wet mix between the two</p>
+<p>Three live controls tune the effect mid-QSO without leaving the exchange, grouped under <strong>Panoramic split — adjust while listening</strong>:</p>
+<ul>
+<li><strong>Width</strong> — Frequency spread between the two stations. Wider = greater separation.</li>
+<li><strong>Blend</strong> — Dry/wet audio mix. Left is pure lower channel; right is pure upper channel.</li>
+<li><strong>Overlap</strong> — Frequency range for each station. Wider ranges allow more signal capture.</li>
+</ul>
+<h3 id="enabling-panoramic-cw">Enabling Panoramic CW<a class="headerlink" href="#enabling-panoramic-cw" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Open the settings drawer and tap <strong>Audio Settings</strong> (just below SelfSpotter)</li>
+<li>Tick <strong>RX Audio (speaker/headphone)</strong>, then <strong>Binaural CW (stereo separation)</strong></li>
+</ol>
+<p>!!! warning "Switching RX audio on needs a restart of the Tab5"</p>
+<div class="highlight"><pre><span></span><code>The audio hardware claims its memory during start-up, before the USB host
+takes that pool, so it is started at boot or not at all. If you boot with
+**RX Audio** off and tick it later, the setting is saved but you will hear
+nothing until the Tab5 is restarted — it tells you so on screen when you
+tick it. Your QMX will need a power cycle after that restart, as it does
+after any Tab5 restart.
+</code></pre></div>
+<p>!!! note "Which modes produce audio"</p>
+<div class="highlight"><pre><span></span><code>**CW, CW-R, USB, LSB and AM.** **FM is still silent** — there is no FM
+demodulator, so an FM signal has to be listened to in USB or not at all.
+
+AM is demodulated on the Tab5 itself, from the I/Q the radio sends, so the
+bandwidth is set by the Tab5 and not by the filter in the radio. Tap **BW**
+in the top bar to choose it: **2.0, 3.0, 4.0, 6.0, 8.0 or 9.6 kHz**,
+quoted as the width of the whole signal, the way amateur AM
+figures always are. 6.0 kHz is the default and the standard — 3 kHz per
+sideband, what most commercial rigs hard-code. The same list is on the
+web page's **BW** button.
+
+Go **narrower** when someone is sitting on top of you: 2.0 and 3.0 kHz
+sound like a telephone line and that is the point, they keep a signal
+copyable in heavy QRM. 6.0 kHz is the widest on offer and the one to use
+on a clear channel. Broadcast channels are spaced 5 kHz, so 6.0 already
+reaches into the neighbour's carrier on a crowded shortwave evening.
+
+**9.6 kHz is the widest the Tab5 offers, from v1.20.2.** Two wider
+settings were available earlier and have been withdrawn: **10.0 and
+20.0 kHz** ran the receive chain at half the decimation the others use,
+and measured on the bench that leaves the second CPU core with no idle
+time at all and the audio stutters.
+
+**8.0 and 9.6 kHz cost nothing extra** - matched 60-second windows
+measured AM at 4.0 and at 6.0 kHz at the same processor load, so width is
+free up to that point. They were briefly withdrawn in v1.20.1 as
+unproven and are back in v1.20.2: one operator runs 9.6 kHz daily and
+another asked for 8.0 kHz, which settles whether they work.
+
+CW and SSB are untouched at any setting.
+</code></pre></div>
+<p>The three pan controls sit directly under the Binaural CW row in the same window. They stay greyed out until both boxes above are ticked, because they shape a split that is not being produced otherwise.</p>
+<h3 id="on-the-air">On the Air<a class="headerlink" href="#on-the-air" title="Permanent link">&para;</a></h3>
+<p>All three controls are <strong>live-tunable</strong> during an exchange:
+- Slide them while the QSO is running
+- No reboot, no mode change required
+- Changes take effect immediately</p>
+<h2 id="binaural-cw-first-implementation">Binaural CW — First Implementation<a class="headerlink" href="#binaural-cw-first-implementation" title="Permanent link">&para;</a></h2>
+<p><strong>Frequency-based station separation in CW.</strong> Each station gets a distinct audio tone, allowing the ear to distinguish them without losing either signal.</p>
+<h3 id="bandwidth-requirements">Bandwidth Requirements<a class="headerlink" href="#bandwidth-requirements" title="Permanent link">&para;</a></h3>
+<p>Binaural separation works best with <strong>bandwidths of 300 Hz and above</strong>.</p>
+<p><strong>Do not expect good separation below 200 Hz</strong> — the audio bandwidth is the limiting factor. At 200 Hz or narrower, the two stations' spectra start to overlap, and separation breaks down. This is a fundamental constraint of the audio bandwidth, not the algorithm.</p>
+<h3 id="recommended-bandwidth-settings">Recommended Bandwidth Settings<a class="headerlink" href="#recommended-bandwidth-settings" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Bandwidth</th>
+<th>Clarity</th>
+<th>Use Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>300 Hz+</td>
+<td>Excellent</td>
+<td>General CW operation; two stations easily distinguished</td>
+</tr>
+<tr>
+<td>200–300 Hz</td>
+<td>Fair</td>
+<td>Tight pileup; separation possible but marginal</td>
+</tr>
+<tr>
+<td>&lt;200 Hz</td>
+<td>Poor</td>
+<td>Not recommended; too much spectral overlap</td>
+</tr>
+</tbody>
+</table>
+<h2 id="audio-settings">Audio Settings<a class="headerlink" href="#audio-settings" title="Permanent link">&para;</a></h2>
+<p>Audio decoding shares the Tab5's compute and memory budget with the spectrum, waterfall, and FT8/FT4 decode paths. Not all features can run simultaneously.</p>
+<p>!!! note "Renamed in v1.16.4"</p>
+<div class="highlight"><pre><span></span><code>This window used to be called **Resource Management**. It is **Audio
+Settings** now, because that is what it is — volume, AGC, binaural and the
+panoramic split. The old name described how it works rather than what it does.
+</code></pre></div>
+<h3 id="opening-audio-settings">Opening Audio Settings<a class="headerlink" href="#opening-audio-settings" title="Permanent link">&para;</a></h3>
+<p>Open the <strong>settings drawer</strong> and tap <strong>Audio Settings</strong>, directly below SelfSpotter.</p>
+<p>!!! note "Top-bar shortcut removed in v1.16.8"</p>
+<div class="highlight"><pre><span></span><code>A long-press on the top bar used to open Audio Settings too. It shared its
+area with the Band, Mode, BW and Frequency pickers, so it was easy to open
+the wrong thing by accident. The drawer button is now the only way in.
+</code></pre></div>
+<p>The window lists RX audio and the background network feeds that compete with it for the same scarce memory, each with a tick box:</p>
+<ul>
+<li><strong>RX Audio (speaker/headphone)</strong> — with RX Volume and the three AGC controls described below</li>
+<li><strong>Binaural CW (stereo separation)</strong> — with the three panoramic-split controls</li>
+<li><strong>SelfSpotter</strong>, <strong>RBN</strong>, <strong>DX cluster</strong>, <strong>PSK Reporter — who's hearing me</strong> — these grey out and are held off while RX audio is on</li>
+<li><strong>POTA / SOTA spots</strong>, <strong>PSK Reporter — report my decodes</strong> — these keep running</li>
+</ul>
+<p>The list scrolls; the <strong>Close</strong> button stays put at the bottom.</p>
+<p><strong>Toggle audio on and off as needed</strong> — the resource footprint is immediate, and disabling a feature instantly frees that headroom.</p>
+<h3 id="typical-constraints">Typical Constraints<a class="headerlink" href="#typical-constraints" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Audio ON, Waterfall ON, Decode ON</strong> → Some margin left; FT8/FT4 decode still runs steadily</li>
+<li><strong>Audio ON, Waterfall ON, Decode ON, Web streaming ON</strong> → Tight; any spike can cause temporary frame drops</li>
+<li><strong>Audio ON, full WiFi + web load</strong> → Audio is the first to suffer if the load spikes; consider disabling audio or the waterfall if you need reliable web streaming</li>
+</ul>
+<h2 id="headphones">Headphones<a class="headerlink" href="#headphones" title="Permanent link">&para;</a></h2>
+<p>Plug headphones into the Tab5's 3.5 mm jack and the <strong>internal speaker goes
+quiet on its own</strong>. Unplug them and it comes back. Nothing to switch.</p>
+<p>Before v1.16.4 you heard both at once, which made headphones close to useless in
+a quiet shack <em>(Roy KI0ER)</em>.</p>
+<p>!!! tip "The internal speaker is small and trebly"</p>
+<div class="highlight"><pre><span></span><code>Several operators have said so, and they are right — it is a tablet
+speaker. Headphones or a powered external speaker on the jack are a large
+improvement, and now that the internal one mutes itself either is
+practical.
+</code></pre></div>
+<h2 id="which-modes-produce-audio">Which modes produce audio<a class="headerlink" href="#which-modes-produce-audio" title="Permanent link">&para;</a></h2>
+<p>Audio and the panoramic split are not the same thing, and it is worth being clear about which you get where.</p>
+<table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>Audio</th>
+<th>Panoramic / binaural split</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CW, CW-R</td>
+<td>Yes</td>
+<td><strong>Yes</strong></td>
+</tr>
+<tr>
+<td>USB, LSB</td>
+<td><strong>Yes</strong></td>
+<td>No — single channel, both ears the same</td>
+</tr>
+<tr>
+<td>AM</td>
+<td><strong>Yes</strong>, to about 3 kHz</td>
+<td>No — AM has no stereo content to split</td>
+</tr>
+<tr>
+<td>DiGi</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>FM</td>
+<td>No</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p>So you <strong>do</strong> get audio on SSB and AM; what you do not get there is the left/right split, because that is a CW feature. In DiGi and FM there is no audio at all — nothing is broken if you hear silence in those.</p>
+<h2 id="known-limitations">Known Limitations<a class="headerlink" href="#known-limitations" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Audio breaks up while a web page is open.</strong> Known and unfixed as of v1.16.3. With a browser connected to the panadapter page the audio task misses some of its deadlines and you hear a regular crackle; closing the page clears it. Measured, but the cause is not yet found — if you need clean audio, close the web page.</li>
+<li><strong>Stereo rendering requires a headset or speaker with stereo output.</strong> Mono output collapses both channels; panning does not work.</li>
+<li><strong>The split is CW-only</strong> (see the table above). On SSB you hear the signal, but it is not placed left or right.</li>
+<li><strong>Limited to the audio passband.</strong> If the audio filter is 300 Hz wide, the maximum usable separation is about 300 Hz. A wider filter in the radio settings increases the available range.</li>
+<li><strong>Level is set by an automatic gain control, not by the volume slider.</strong> If a signal is quieter than you expect even at full volume, the AGC's ceiling is what is holding it back. All three AGC controls are adjustable live — see below.</li>
+</ul>
+<h2 id="the-agc-controls">The AGC controls<a class="headerlink" href="#the-agc-controls" title="Permanent link">&para;</a></h2>
+<p>All four audio level controls live in <strong>Audio Settings</strong> (settings drawer → Audio Settings), on their own rows under <strong>RX Audio</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>Range</th>
+<th>Default</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>RX Volume</strong></td>
+<td>0 – 100</td>
+<td>60</td>
+<td>Output level to the speaker or headphones.</td>
+</tr>
+<tr>
+<td><strong>AGC Ceiling</strong></td>
+<td>50 – 1500</td>
+<td>200</td>
+<td>How far the AGC may lift a <em>weak</em> signal. Raise it if quiet stations stay quiet.</td>
+</tr>
+<tr>
+<td><strong>AGC Attack</strong></td>
+<td>1 – 50 ms</td>
+<td>3 ms</td>
+<td>How fast the gain comes <em>down</em> when a signal arrives. Shorter catches sharp CW edges; too short can sound clipped.</td>
+</tr>
+<tr>
+<td><strong>AGC Release</strong></td>
+<td>10 – 500 ms</td>
+<td>150 ms</td>
+<td>How fast the gain comes back <em>up</em> afterwards. Longer is steadier on CW; shorter follows speech better.</td>
+</tr>
+</tbody>
+</table>
+<p>All four are remembered across restarts and travel in a config backup.</p>
+<p><strong>AGC presets.</strong> Four buttons under the sliders set the timing in one tap:</p>
+<table>
+<thead>
+<tr>
+<th>Preset</th>
+<th>Attack</th>
+<th>Release</th>
+<th>For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Fast</strong></td>
+<td>1 ms</td>
+<td>30 ms</td>
+<td>CW</td>
+</tr>
+<tr>
+<td><strong>Med</strong></td>
+<td>3 ms</td>
+<td>150 ms</td>
+<td>general, and the shipped default</td>
+</tr>
+<tr>
+<td><strong>Slow</strong></td>
+<td>5 ms</td>
+<td>400 ms</td>
+<td>SSB, where a fast release pumps on speech pauses</td>
+</tr>
+<tr>
+<td><strong>Off</strong></td>
+<td>—</td>
+<td>—</td>
+<td>no automatic gain at all</td>
+</tr>
+</tbody>
+</table>
+<p>Move either slider and the caption reads <strong>Custom</strong> — the sliders <em>are</em> the
+custom setting, so there is no fifth button.</p>
+<p><strong>Off is a real bypass, not a very slow AGC.</strong> The gain follows the signal at
+every attack and release value, so no combination of the sliders switches it
+off. With <strong>Off</strong> selected the gain is pinned at <strong>AGC Ceiling</strong>, and that
+slider becomes a plain manual gain control.</p>
+<p>⚠ <strong>What to expect when you try them.</strong> The AGC only starts regulating once a
+signal is strong enough; below that it already sits at the ceiling, so the gain
+is the same number whether the AGC is on or off. On a quiet band <strong>every preset
+correctly sounds identical</strong> — the difference is heard in how fast the noise
+returns between signals when the band is busy. The attack values (1–5 ms) are
+all far quicker than the ear resolves; <strong>Release</strong> is the audible one.</p>
+<p><strong>Volume and Ceiling are not the same thing.</strong> Volume sets how loud the output is; Ceiling decides how hard a weak signal is lifted before it gets there. Running Volume to 100 does not mean you have run out of level — if it is still too quiet, raise <strong>AGC Ceiling</strong>.</p>
+<h3 id="what-changed-in-v1163">What changed in v1.16.3<a class="headerlink" href="#what-changed-in-v1163" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>AGC Ceiling was called "Gain".</strong> The name was wrong: it never was a plain gain, it is the ceiling on the AGC's own weak-signal boost, and calling it Gain led people to look for an AGC that was already there. Its range also went up from 800 to 1500, because the Tab5's internal speaker wants more headroom than the old ceiling allowed.</li>
+<li><strong>Attack and Release are new</strong> — the AGC's timing was fixed before, and is now yours to set.</li>
+<li><strong>Presets arrived in v1.16.5</strong> <em>(Samuel W7STF)</em>, along with a genuine <strong>Off</strong>.</li>
+<li><strong>RX Volume moved here from the settings drawer</strong>, and the drawer's RX Audio section is gone entirely. That includes its on/off box: <strong>Audio Settings is now the only place to switch RX audio on or off.</strong></li>
+</ul>
+<h3 id="what-changed-in-v1164">What changed in v1.16.4<a class="headerlink" href="#what-changed-in-v1164" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>The window is called Audio Settings</strong>, and it has a door of its own in the
+  settings drawer. The top-bar long-press still works.</li>
+<li><strong>Headphones mute the internal speaker</strong> automatically.</li>
+</ul>
+<h2 id="strong-signals">Strong signals<a class="headerlink" href="#strong-signals" title="Permanent link">&para;</a></h2>
+<p>A peak limiter sits after the automatic gain, so a loud station cannot arrive at full scale and startle you in headphones. It holds the peaks down and leaves the average level alone, which means raising <strong>AGC Ceiling</strong> to hear weak stations does not make the strong ones painful.</p>
+<p>This is the part I most want reports on: which mode, roughly how strong the signal was, and whether more ceiling fixed it.</p>
+<h2 id="where-the-receive-signal-comes-from">Where the receive signal comes from<a class="headerlink" href="#where-the-receive-signal-comes-from" title="Permanent link">&para;</a></h2>
+<p>Until now the panadapter always listened to the <strong>radio's USB audio</strong>. There is now a
+<strong>receive source</strong> selector, on the Tab5 and in the browser, with a level meter and a
+clip indicator beside it.</p>
+<table>
+<thead>
+<tr>
+<th>Source</th>
+<th>State</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>QMX USB</strong></td>
+<td>The default, and what every earlier release did.</td>
+</tr>
+<tr>
+<td><strong>Line in (3.5 mm jack)</strong></td>
+<td><strong>Declared beta</strong> - see the warning below.</td>
+</tr>
+<tr>
+<td>Generic I/Q</td>
+<td>Declared, not implemented. Selecting it is refused.</td>
+</tr>
+<tr>
+<td>Internal mics</td>
+<td>Declared, not implemented. Selecting it is refused.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Line in</strong> <em>(asked for by Tony, @tony1tf, in issue #17)</em> feeds the panadapter from the
+Tab5's own 3.5 mm headphone jack instead of the radio's USB. Tony ran a test build on his
+own Tab5 to find where the jack lands — the mic ring arrives on the audio chip's third
+channel — which is the measurement the whole feature rests on. The jack is a single real audio channel, not I/Q, so the second
+channel is synthesised: a 255-tap filter builds the quadrature pair the decoders need.
+The jack wiring is drawn on screen so you can see which contact carries what.</p>
+<p>⚠ <strong>No signal has been decoded through line in yet.</strong> The path runs, samples flow and
+the levels read correctly with nothing plugged in - that is the whole of what has been
+verified. Treat it as unfinished. Changing the source needs a restart, and the Tab5
+does the restart itself when you press <strong>Save</strong>.</p>
+<p>⛔ <strong>In line-in mode the USB radio connection is off by design.</strong> One or the other, not
+both - so CAT and the S-meter go quiet while line in is selected. The Tab5 stops
+pretending to have a dial with it: the frequency readout reads <strong>Line-in mode</strong>, the
+band shows <code>---</code> and the band-plan strip is hidden, because an audio spectrum has no
+band plan and no RF frequency. The frequency axis under the display reads audio Hz.</p>
+<p>The left half of the spectrum is empty and there is a step in the middle. That is
+correct and it is the honest picture: the jack carries one real channel, the second is
+synthesised, and a synthesised channel cannot recover what the missing one would have
+told you. The step sits at audio 0 Hz, which is the centre of the span.</p>
+<p>!!! info "New in v1.20.3 — the source and its gain are in the browser too"</p>
+<div class="highlight"><pre><span></span><code>**Audio source** and **Line-in gain** are on the web Settings page, under
+*Radio &amp; display*. Gain moves in the 3 dB steps the codec actually has, and
+takes effect immediately while line-in is running.
+
+⚠ Changing the **source** from the browser only **stores** the choice — it
+takes effect at the next restart. The Tab5's own *Audio Settings* window
+restarts for you; the browser deliberately does not reboot your radio's
+host from across the house.
+</code></pre></div>
+<h2 id="listen-in-the-browser">Listen in the browser<a class="headerlink" href="#listen-in-the-browser" title="Permanent link">&para;</a></h2>
+<p>From <strong>v1.20.0</strong> the panadapter streams its own demodulated audio to any browser on
+your network. Open the web page and click the <strong>▶</strong> button at the top right, just to
+the right of <strong>F</strong>. It becomes a <strong>■</strong> while it is playing; click it again to stop.</p>
+<p>What you hear is exactly what the Tab5's own speaker gets — the same demodulated
+audio, tapped after the filter and the AGC — so the two can never disagree about what
+the radio is doing. It works even if the Tab5 booted with its speaker turned off.</p>
+<p><strong>The speaker and the browser are exclusive.</strong> While a browser is listening the Tab5
+mutes its own speaker, and it hands the audio back when you stop listening or close the
+page. There is no setting for this: one listener at a time was the point.</p>
+<p>Only the modes the Tab5 demodulates produce audio: <strong>CW, CW-R, USB, LSB and AM</strong>. In any
+other mode the button lights up but nothing arrives, and hovering it says so.</p>
+<p><strong>Hover the ■ button for the health of the stream</strong> — it reports frame gaps, re-primes
+and chunks dropped to clock drift. On a quiet network all three stay at zero.</p>
+<p>Notes on what this costs and what it does not:</p>
+<ul>
+<li>It runs over the web page's existing connection, so it needs no extra port and no
+  extra setup.</li>
+<li>It costs about <strong>9 percentage points of one CPU core</strong> — measured — and nothing
+  measurable on the core that serves the web page.</li>
+<li>Audio is 12 kHz µ-law, which is a telephone-grade codec chosen because it survives a
+  lossy Wi-Fi link without a jitter buffer deep enough to be annoying.</li>
+<li><strong>Only one browser gets the page at a time.</strong> Opening the panadapter page in a second
+  browser takes the connection from the first, which takes the audio with it.</li>
+</ul>
+<h2 id="feedback">Feedback<a class="headerlink" href="#feedback" title="Permanent link">&para;</a></h2>
+<p>This feature is still under active development. Your feedback shapes the next iteration:
+- Does panoramic CW work in the field?
+- What bandwidth do you typically use?
+- What other audio features would you like to see?
+- Did you hit the resource limits?</p>
+<p>Send feedback to the <a href="https://github.com/SteffenLav/qmx-panadapter/discussions">discussions page</a> or <a href="https://github.com/SteffenLav/qmx-panadapter/issues">open an issue</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.sections", "toc.follow", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

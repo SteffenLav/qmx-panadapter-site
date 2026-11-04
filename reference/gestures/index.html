@@ -1,0 +1,2422 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://tab5.lav.dk/reference/gestures/">
+      
+      
+        <link rel="prev" href="../../guide/settings/">
+      
+      
+        <link rel="next" href="../hardware/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Gestures & Controls - QMX Panadapter</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="light" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#gestures-controls" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="QMX Panadapter" class="md-header__button md-logo" aria-label="QMX Panadapter" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            QMX Panadapter
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Gestures & Controls
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="light" data-md-color-primary="blue" data-md-color-accent="orange"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    <!-- Buy me a coffee (OZ1LAV) — just left of the search field -->
+    <style>
+      /* The official BMC widget renders ~51px tall (nearly the whole top bar).
+         zoom scales it (and its layout box, so no leftover gap) down to about
+         the search-field height. Tweak the factor to taste. */
+      .bmc-header-btn { display:flex; align-items:center; margin:0 .2rem; zoom:0.72; }
+    </style>
+    <div class="bmc-header-btn">
+      <script type="text/javascript"
+              src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js"
+              data-name="bmc-button"
+              data-slug="OZ1LAV"
+              data-color="#FFDD00"
+              data-emoji="☕"
+              data-font="Lato"
+              data-text="Buy me a coffee"
+              data-outline-color="#000000"
+              data-font-color="#000000"
+              data-coffee-color="#ffffff"></script>
+    </div>
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/SteffenLav/qmx-panadapter" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    qmx-panadapter
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../quick-start/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Quick Start
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../getting-help/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Getting Help
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../guide/panadapter/" class="md-tabs__link">
+          
+  
+  
+  User Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../build/build/" class="md-tabs__link">
+          
+  
+  
+  For Builders
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../releases/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Releases
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="QMX Panadapter" class="md-nav__button md-logo" aria-label="QMX Panadapter" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    QMX Panadapter
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/SteffenLav/qmx-panadapter" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    qmx-panadapter
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quick-start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-help/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Help
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Guide
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    User Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/panadapter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Panadapter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/audio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/spots/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Live Spots
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/spot-map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spot Map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/web-ui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web UI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/ft8-rx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FT8 RX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/ft8-tx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FT8 TX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/cw/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CW (beta)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/webradio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web Radio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/js8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JS8 (beta)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/time-sync/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Time Sync
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/wspr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WSPR
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/radio-menus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Radio Menus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gestures & Controls
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gestures & Controls
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#edge-swipes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Edge Swipes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#top-bar-taps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Top Bar Taps
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#audio-panel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Audio panel
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spectrum-waterfall" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Spectrum / Waterfall
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#band-plan-strip-panadapter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Band-Plan Strip (Panadapter)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cw-memory-buttons-cw-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CW Memory Buttons (CW page)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#web-radio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Web Radio
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#display-sleep" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Display Sleep
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory-channels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Memory Channels
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frequency-keypad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frequency Keypad
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ft8-decode-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FT8 Decode List
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adif-log-viewer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ADIF Log Viewer
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#filter-modal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Filter Modal
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#settings-drawer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Settings Drawer
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-manual-on-device-docs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Manual (on-device docs)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modals-pop-up-dialogs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modals (Pop-up Dialogs)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-screen-keyboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        On-Screen Keyboard
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#web-ui-browser" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Web UI (Browser)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hardware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hardware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../web-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rigctld/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hamlib rigctld
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    For Builders
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    For Builders
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build/build/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Build from Source
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build/architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build/contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing & Feedback
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Releases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#edge-swipes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Edge Swipes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#top-bar-taps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Top Bar Taps
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#audio-panel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Audio panel
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spectrum-waterfall" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Spectrum / Waterfall
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#band-plan-strip-panadapter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Band-Plan Strip (Panadapter)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cw-memory-buttons-cw-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CW Memory Buttons (CW page)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#web-radio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Web Radio
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#display-sleep" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Display Sleep
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory-channels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Memory Channels
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frequency-keypad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frequency Keypad
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ft8-decode-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FT8 Decode List
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adif-log-viewer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ADIF Log Viewer
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#filter-modal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Filter Modal
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#settings-drawer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Settings Drawer
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-manual-on-device-docs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Manual (on-device docs)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modals-pop-up-dialogs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modals (Pop-up Dialogs)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-screen-keyboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        On-Screen Keyboard
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#web-ui-browser" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Web UI (Browser)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="gestures-controls">Gestures &amp; Controls<a class="headerlink" href="#gestures-controls" title="Permanent link">&para;</a></h1>
+<p>The entire app is controlled via <strong>one-finger swipes from screen edges</strong> and <strong>taps on the top bar</strong>.</p>
+<p>!!! info "This page is the authoritative list"
+    <a href="../../quick-start/">Step 6 of the Quick Start</a> repeats the three edge
+    swipes as a summary, deliberately — a reader setting the device up should
+    not have to leave that page. Change the gestures <strong>here</strong> first, and check
+    that summary afterwards. The duplication is allowed; the two disagreeing
+    is not.</p>
+<h2 id="edge-swipes">Edge Swipes<a class="headerlink" href="#edge-swipes" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Gesture</th>
+<th>From</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Swipe →</td>
+<td><strong>Left edge</strong></td>
+<td>Open the <strong>page picker</strong> - tap Panadapter, FT8, FT4, JS8, WSPR or CW (CW only when enabled - see <a href="../../guide/cw/">CW</a>)</td>
+</tr>
+<tr>
+<td>Swipe ←</td>
+<td><strong>Right edge</strong></td>
+<td>Open settings drawer</td>
+</tr>
+<tr>
+<td>Swipe ↑</td>
+<td><strong>Bottom edge</strong></td>
+<td>Open memory channel picker</td>
+</tr>
+</tbody>
+</table>
+<p>Slim <strong>breathing grip handles</strong> on these three edges show where to swipe.</p>
+<p>!!! note "There is no top-edge swipe any more"
+    Earlier versions opened the <a href="../../guide/spot-map/">spot map</a> with a swipe
+    down from the top edge. Removed — it collided with the top bar's own
+    Band/Mode/BW/Zoom taps and was easy to trigger by accident. The spot map
+    now opens from a <strong>SelfSpotter</strong> button in the settings drawer, right
+    below <strong>Need guidance?</strong> — see the Settings Drawer section below.</p>
+<h2 id="top-bar-taps">Top Bar Taps<a class="headerlink" href="#top-bar-taps" title="Permanent link">&para;</a></h2>
+<p>Tap any item on the top bar to open its selector:</p>
+<h2 id="audio-panel">Audio panel<a class="headerlink" href="#audio-panel" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Gesture</th>
+<th>From</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tap</td>
+<td><strong>S-meter</strong>, top bar</td>
+<td>Open the audio panel</td>
+</tr>
+</tbody>
+</table>
+<p>New in v1.20.5, and extended in v1.21.0. The panel holds <strong>Mute</strong>, the <strong>Tab5
+speaker</strong> volume, the <strong>radio's AF gain</strong>, the <strong>radio's RF gain</strong> and an <strong>AGC
+Fast / Slow / Off</strong> row, and closes on a tap anywhere outside it. It is on the
+S-meter because that is the one thing in the top bar already about what you are
+hearing. Mute is instant and is not remembered across a reboot.</p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Selector</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Frequency</strong></td>
+<td>Numeric keypad (MHz format)</td>
+</tr>
+<tr>
+<td><strong>Mode</strong></td>
+<td>USB / LSB / CW / DiGi buttons</td>
+</tr>
+<tr>
+<td><strong>Bandwidth</strong></td>
+<td>Filter width (SSB) or CW passband</td>
+</tr>
+<tr>
+<td><strong>Bandwidth</strong>, long press</td>
+<td><strong>CW-Tune</strong> — put the dial on the nearest CW signal within ±400 Hz (see <a href="../../guide/settings/">Settings</a>)</td>
+</tr>
+<tr>
+<td><strong>Band</strong></td>
+<td>Band list (160 m – 10 m + custom)</td>
+</tr>
+<tr>
+<td><strong>S-meter</strong></td>
+<td><a href="../../guide/audio/#the-audio-panel-one-tap-on-the-s-meter">Audio panel</a></td>
+</tr>
+<tr>
+<td><strong>Zoom</strong></td>
+<td>x1 / x2 / x4 / x8 / x16 / x24 presets; pinch for anything between</td>
+</tr>
+</tbody>
+</table>
+<h2 id="spectrum-waterfall">Spectrum / Waterfall<a class="headerlink" href="#spectrum-waterfall" title="Permanent link">&para;</a></h2>
+<p>Works the same way on the <strong>Panadapter</strong> page and on the <strong>CW</strong> page (2026-11-03) -
+both show the live spectrum/waterfall, and these gestures were extended to CW
+to match. On the CW page, the left pane (macro buttons, WPM/Park/NEXT, the
+set toggle) is excluded: a touch that starts there is never read as a
+spectrum gesture.</p>
+<table>
+<thead>
+<tr>
+<th>Gesture</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Tap</strong></td>
+<td>Tune to that frequency</td>
+</tr>
+<tr>
+<td><strong>Drag (1 finger)</strong></td>
+<td>Pan left/right. The passband marker <strong>dims to about a third while you drag</strong> rather than disappearing, so you keep something to aim at, and returns to full when you let go. It does this in every mode</td>
+</tr>
+<tr>
+<td><strong>Hold ~250 ms, then drag</strong></td>
+<td>Precise tune: a cyan cursor appears and snaps grid-to-grid as you move, and the radio follows when you lift. The hold is what separates it from a pan - a quick drag pans, a held drag tunes</td>
+</tr>
+<tr>
+<td><strong>Pinch (2 fingers)</strong></td>
+<td>Zoom in/out <strong>and pan</strong>, together - the midpoint between your two fingers drives the pan while the spread between them drives the zoom. Move both fingers with roughly steady spacing for a near-pure pan; let the spacing change and it zooms too</td>
+</tr>
+<tr>
+<td><strong>Three-finger hold</strong></td>
+<td>Toggle <strong>Simulation Mode</strong> on/off - FT8's own simulator on the Panadapter page, CW's on the CW page</td>
+</tr>
+<tr>
+<td><strong>Right-drag</strong> (BLE mouse)</td>
+<td><strong>Pan the window</strong> without moving the dial — the same gesture as the browser, and the same direction: drag right to bring lower frequencies into view. The picture slides under the pointer while the button is down and the pan is applied when you let go. Left-drag is unchanged. Works on the CW page too</td>
+</tr>
+<tr>
+<td><strong>Wheel</strong> (BLE mouse)</td>
+<td>Tune in steps, using your <strong>Tune snap</strong> setting — as in the browser</td>
+</tr>
+<tr>
+<td><strong>Tap a spot callsign</strong></td>
+<td>Tune to that station <strong>and</strong> set the mode — see <a href="../../guide/spots/">Live Spots</a></td>
+</tr>
+<tr>
+<td><strong>Tap an off-screen count</strong> (<code>&lt;3</code> / <code>5&gt;</code>)</td>
+<td>Jump to the nearest spot outside the window, on this band</td>
+</tr>
+</tbody>
+</table>
+<p>Taps snap to a grid set by the <strong>mode</strong>, not the zoom level: 10 Hz in CW, 250 Hz in USB/LSB, 500 Hz in the digital modes, 1 kHz in AM.</p>
+<p>!!! note "Two-finger pan is live, not buttery"
+    Unlike the one-finger drag (a local preview, settled on release), the
+    pinch gesture recomputes the real spectrum on every tick because zoom
+    cannot be faked locally. On this hardware a new frame can take
+    200-800 ms to render, so a fast two-finger drag can look like it jumps
+    rather than slides. It is correct, just not smooth yet.</p>
+<h2 id="band-plan-strip-panadapter">Band-Plan Strip (Panadapter)<a class="headerlink" href="#band-plan-strip-panadapter" title="Permanent link">&para;</a></h2>
+<p>The thin coloured strip just above the bottom status bar shows where you are within the band. The framed <strong>visible-span block</strong> on it is a slider handle you can drag to retune.</p>
+<table>
+<thead>
+<tr>
+<th>Gesture</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Tap</strong> the strip</td>
+<td>Jump to that frequency in the band</td>
+</tr>
+<tr>
+<td><strong>Drag</strong> the visible-span block sideways</td>
+<td>Move the window along the band. Block, VFO marker and passband travel together and stay where you let go; the radio follows. The passband block <strong>dims while you drag</strong> instead of vanishing</td>
+</tr>
+<tr>
+<td><strong>Touch just above the strip</strong></td>
+<td>Counts as the strip — about 8 mm of the waterfall above it is a grab area, so the handle is catchable first time</td>
+</tr>
+<tr>
+<td><strong>Drag from the bottom bar</strong> (sideways)</td>
+<td>Same band scrub, grabbed on/under the slider handle <em>anywhere along the bottom status bar</em> — a taller, easier target</td>
+</tr>
+<tr>
+<td><strong>Swipe ↑</strong> from the bottom bar</td>
+<td>Still opens the memory picker (vertical = memory, sideways = band-plan — the two share the row)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="cw-memory-buttons-cw-page">CW Memory Buttons (CW page)<a class="headerlink" href="#cw-memory-buttons-cw-page" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Gesture</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Tap</strong></td>
+<td>Send that macro</td>
+</tr>
+<tr>
+<td><strong>Press and drag up/down</strong></td>
+<td>Re-pick which button will fire, without lifting - the highlighted one is a preview, not a commitment</td>
+</tr>
+<tr>
+<td><strong>Hold 800 ms</strong></td>
+<td>Open the editor for all six macros in the current set</td>
+</tr>
+<tr>
+<td><strong>Tap the General/Contest toggle</strong></td>
+<td>Switch macro sets (bottom of the panel)</td>
+</tr>
+</tbody>
+</table>
+<p>See <a href="../../guide/cw/#memory-messages">CW</a> for the macro-set editor and what each set is for.</p>
+<h2 id="web-radio">Web Radio<a class="headerlink" href="#web-radio" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Gesture</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Tap</strong> a station in the list</td>
+<td>Play it</td>
+</tr>
+<tr>
+<td><strong>Long-press</strong> a memory slot</td>
+<td>Store whatever is currently playing</td>
+</tr>
+<tr>
+<td><strong>Tap</strong> a memory slot</td>
+<td>Play the saved station</td>
+</tr>
+<tr>
+<td><strong>Tap outside</strong> the modal</td>
+<td>Close it - playback keeps running in the background</td>
+</tr>
+</tbody>
+</table>
+<p>See <a href="../../guide/webradio/">Web Radio</a> for the directory search and genre filter.</p>
+<h2 id="display-sleep">Display Sleep<a class="headerlink" href="#display-sleep" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Gesture</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Tap</strong> (screen asleep)</td>
+<td>Wake the display — the wake tap is swallowed, so it can't tune or press anything</td>
+</tr>
+<tr>
+<td><strong>Two-finger double-tap</strong></td>
+<td>Blank the display immediately</td>
+</tr>
+</tbody>
+</table>
+<p>The idle timeout is set via the <strong>Display sleep</strong> dropdown in the settings drawer (see <a href="../../guide/settings/">Settings</a>).</p>
+<h2 id="memory-channels">Memory Channels<a class="headerlink" href="#memory-channels" title="Permanent link">&para;</a></h2>
+<p><strong>Swipe ↑</strong> from bottom edge -&gt; open memory picker.</p>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Tap channel</strong></td>
+<td>Recall frequency, mode, and name</td>
+</tr>
+<tr>
+<td><strong>Long-press channel</strong></td>
+<td>Edit name/frequency/mode</td>
+</tr>
+<tr>
+<td><strong>Long-press + drag</strong></td>
+<td>Move the channel to a different empty slot (data follows your finger)</td>
+</tr>
+<tr>
+<td><strong>Drag onto the wastebin</strong></td>
+<td>Delete the channel — the bottom-right cell (channel 32) is a wastebin; drop a channel on it to remove it</td>
+</tr>
+<tr>
+<td><strong>Tap empty slot + Save</strong></td>
+<td>Store current frequency to that slot</td>
+</tr>
+<tr>
+<td><strong>Tap occupied slot + Save</strong></td>
+<td>Overwrite that channel</td>
+</tr>
+</tbody>
+</table>
+<p>A new device ships with a few example channels, and the first time you open the picker a one-time (~10 s) tour demonstrates the drag-to-move and drag-to-delete gestures.</p>
+<h2 id="frequency-keypad">Frequency Keypad<a class="headerlink" href="#frequency-keypad" title="Permanent link">&para;</a></h2>
+<p>Tap the <strong>frequency label</strong> to open the keypad:</p>
+<ul>
+<li><strong>Digits</strong>: <code>0–9</code>, <code>.</code> (decimal point)</li>
+<li><strong>Delete</strong>: Remove last character</li>
+<li><strong>Clear</strong>: Clear the entire entry</li>
+<li><strong>Layout toggle</strong>: Switch between <strong>10-Key</strong> (phone dial) and <strong>Phone</strong> (QWERTY)</li>
+</ul>
+<p>Enter frequency as <code>MHz.kHz.Hz</code> (e.g., <code>14.074</code> for 14.074 MHz).</p>
+<h2 id="ft8-decode-list">FT8 Decode List<a class="headerlink" href="#ft8-decode-list" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Gesture</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Tap row</strong></td>
+<td>Reply to that CQ</td>
+</tr>
+<tr>
+<td><strong>Long-press row</strong></td>
+<td>(reserved for future use)</td>
+</tr>
+<tr>
+<td><strong>Scroll</strong></td>
+<td>List is scrollable; swipe up/down</td>
+</tr>
+</tbody>
+</table>
+<h2 id="adif-log-viewer">ADIF Log Viewer<a class="headerlink" href="#adif-log-viewer" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Gesture</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Long-press row</strong></td>
+<td>Highlight the QSO red and lock list scrolling</td>
+</tr>
+<tr>
+<td><strong>Drag up/down</strong> (while highlighted)</td>
+<td>Move the highlight to another row</td>
+</tr>
+<tr>
+<td><strong>Release</strong></td>
+<td>A Delete/Cancel bar appears — <strong>Delete</strong> removes that one record</td>
+</tr>
+<tr>
+<td><strong>Delete all</strong> (tap twice)</td>
+<td>First tap arms it ("ALL <em>N</em>?"), second tap within 5 s erases the whole log — no undo</td>
+</tr>
+</tbody>
+</table>
+<h2 id="filter-modal">Filter Modal<a class="headerlink" href="#filter-modal" title="Permanent link">&para;</a></h2>
+<p>In FT8 view, tap <strong>Filter</strong> to open:</p>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Include/Exclude checkboxes</strong></td>
+<td>Toggle filters on/off</td>
+</tr>
+<tr>
+<td><strong>Text fields</strong></td>
+<td>Edit filter criteria</td>
+</tr>
+<tr>
+<td><strong>Dropdown</strong></td>
+<td>Change auto-reply priority</td>
+</tr>
+<tr>
+<td><strong>Save</strong></td>
+<td>Apply changes</td>
+</tr>
+<tr>
+<td><strong>Cancel</strong></td>
+<td>Discard changes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="settings-drawer">Settings Drawer<a class="headerlink" href="#settings-drawer" title="Permanent link">&para;</a></h2>
+<p>Swipe ← from right edge. The drawer is a single scrolling list of sections (they don't collapse — just scroll). It contains:</p>
+<ul>
+<li><strong>User Manual</strong> (top button) — opens this documentation on the Tab5 itself, at the chapter covering the screen you were on (see below)</li>
+<li><strong>Need guidance?</strong> (directly below it) — a list of symptoms and questions in plain words; picking one opens the manual at the answer. See <a href="../../getting-help/">Getting Help</a></li>
+<li><strong>SelfSpotter</strong> (directly below that) — opens the <a href="../../guide/spot-map/">spot map</a>, who is hearing your signal. All three of these top buttons go somewhere else in the app rather than tuning a setting, which is why they sit together above everything else.</li>
+<li><strong>Text fields</strong> — tap to edit (opens keyboard if needed)</li>
+<li><strong>Toggles</strong> — tap to on/off</li>
+<li><strong>Buttons</strong> — tap to open modals (Config, Time, etc.)</li>
+<li><strong>Close</strong> — swipe ← again or tap outside</li>
+</ul>
+<p>All changes are saved automatically.</p>
+<h2 id="user-manual-on-device-docs">User Manual (on-device docs)<a class="headerlink" href="#user-manual-on-device-docs" title="Permanent link">&para;</a></h2>
+<p>The <strong>User Manual</strong> button at the top of the settings drawer opens this whole guide right on the Tab5 — no phone or laptop needed.</p>
+<p><strong>It is built into the firmware</strong> (since v1.3.2), so it works immediately and always: no WiFi, no microSD card, no download, no waiting, on the very first boot. It also can never describe a different version than the one you are running, because it ships inside it.</p>
+<ul>
+<li><strong>It opens in context</strong> — the panadapter chapter, the FT8 <em>receive</em> chapter, or the FT8 <em>transmit</em> chapter when a transmission is armed or running. Not a contents page you have to search.</li>
+<li><strong>Contents</strong> — a two-column list of every page. Press and slide your finger down it: a highlight bar tracks your finger, and lifting opens the highlighted page.</li>
+<li><strong>Back</strong> — returns to the previous page you viewed (shown only when there is somewhere to go back to). <strong>Exit</strong> — leaves the manual (back to the panadapter/FT8 screen).</li>
+<li><strong>Edge swipes and top-bar taps are stood down</strong> while the manual is open, so a stray touch cannot retune or switch view behind it.</li>
+<li><strong>Hold the drawer's User Manual button for 3 s</strong> to reset the reader. The manual itself is untouched — it is part of the firmware and cannot be lost or go stale.</li>
+<li>If a newer firmware version is available, a banner appears at the top — informational only; flashing is always your choice.</li>
+</ul>
+<p>The other two ways into the same manual — the <strong>Need guidance?</strong> panel and the tappable warning banners — are covered in <a href="../../getting-help/">Getting Help</a>.</p>
+<blockquote>
+<p>Earlier firmware downloaded the manual over WiFi and could copy it to a microSD card with a green <strong>"Save offline"</strong> button. That button is gone in v1.3.2 and none of it is needed any more. An old copy left on a card is simply ignored — delete <code>/qmx-panadapter/manual/</code> if you want the space back.</p>
+</blockquote>
+<h2 id="modals-pop-up-dialogs">Modals (Pop-up Dialogs)<a class="headerlink" href="#modals-pop-up-dialogs" title="Permanent link">&para;</a></h2>
+<p>Standard modal controls:</p>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Save / Apply</strong></td>
+<td>Confirm and close</td>
+</tr>
+<tr>
+<td><strong>Cancel</strong></td>
+<td>Discard and close</td>
+</tr>
+<tr>
+<td><strong>Tap outside</strong></td>
+<td>(varies — some close, some don't)</td>
+</tr>
+</tbody>
+</table>
+<p>Each modal is self-contained — no stacking (you can't open two modals at once).</p>
+<h2 id="on-screen-keyboard">On-Screen Keyboard<a class="headerlink" href="#on-screen-keyboard" title="Permanent link">&para;</a></h2>
+<p>Appears when you tap a text field:</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Shift</strong></td>
+<td>Three states, shown on the key itself: <code>abc</code> → <code>Abc</code> → <code>ABC</code> → <code>abc</code>. <strong><code>Abc</code></strong> capitalises the NEXT letter only and then returns to <code>abc</code>; <strong><code>ABC</code></strong> is a caps lock that stays until you tap it again</td>
+</tr>
+<tr>
+<td><strong>Backspace</strong></td>
+<td>Delete last character</td>
+</tr>
+<tr>
+<td><strong>Space</strong></td>
+<td>Insert space</td>
+</tr>
+<tr>
+<td><strong>Numbers</strong></td>
+<td>Tap to switch to number row</td>
+</tr>
+<tr>
+<td><strong>Done</strong> / <strong>OK</strong></td>
+<td>Close keyboard and apply</td>
+</tr>
+</tbody>
+</table>
+<h2 id="web-ui-browser">Web UI (Browser)<a class="headerlink" href="#web-ui-browser" title="Permanent link">&para;</a></h2>
+<p><strong>Left moves the radio, right moves the view.</strong> That is the whole rule for the
+spectrum and waterfall.</p>
+<table>
+<thead>
+<tr>
+<th>Gesture</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Left-click</strong>, or press-drag-release</td>
+<td>Tune to where you release. A cursor line follows the pointer while the button is down</td>
+</tr>
+<tr>
+<td><strong>Right-drag</strong></td>
+<td><strong>Pan the window</strong> along the band. The dial does <strong>not</strong> move</td>
+</tr>
+<tr>
+<td><strong>Scroll wheel</strong></td>
+<td>Tune in steps, using your <strong>Tune snap</strong> setting</td>
+</tr>
+<tr>
+<td><strong>Click a spot callsign</strong></td>
+<td>Tune to that station, frequency <strong>and</strong> mode</td>
+</tr>
+<tr>
+<td><strong>Drag the band-plan strip</strong></td>
+<td>Move the window across the whole band. This one <em>does</em> retune</td>
+</tr>
+<tr>
+<td><strong>Number fields</strong></td>
+<td>Click to edit, press Enter</td>
+</tr>
+</tbody>
+</table>
+<p><strong>About the right-drag.</strong> It moves the window inside what the radio is already
+receiving, so the frequency stays exactly where it was and the passband marker
+slides across the screen instead of sitting still. Drag right and you pull the
+spectrum right with you, bringing lower frequencies into view - the way a map
+drags. The passband stays visible throughout, in every mode.</p>
+<p>The browser's own context menu is suppressed over the spectrum and waterfall so
+the drag can happen; it still works everywhere else on the page.</p>
+<p>It needs the <strong>still display</strong> to be on, which is the default. With it off the
+spectrum follows the dial, so there is no separate window to move and the
+gesture is declined with that reason.</p>
+<p>The band-plan strip drags the opposite way on purpose: there your hand is on the
+window <strong>marker</strong> rather than on the picture, so the marker travels with your
+hand and the frequency rises as you drag right.</p>
+<p>All other web controls mirror the Tab5 display.</p>
+<hr />
+<p><strong>Next:</strong> See <a href="../troubleshooting/">Troubleshooting</a> for common issues.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.sections", "toc.follow", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

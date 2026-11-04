@@ -1,0 +1,1939 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://tab5.lav.dk/guide/ft8-rx/">
+      
+      
+        <link rel="prev" href="../web-ui/">
+      
+      
+        <link rel="next" href="../ft8-tx/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>FT8 RX - QMX Panadapter</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="light" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ft8ft4-receive-decode-list" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="QMX Panadapter" class="md-header__button md-logo" aria-label="QMX Panadapter" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            QMX Panadapter
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              FT8 RX
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="light" data-md-color-primary="blue" data-md-color-accent="orange"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    <!-- Buy me a coffee (OZ1LAV) — just left of the search field -->
+    <style>
+      /* The official BMC widget renders ~51px tall (nearly the whole top bar).
+         zoom scales it (and its layout box, so no leftover gap) down to about
+         the search-field height. Tweak the factor to taste. */
+      .bmc-header-btn { display:flex; align-items:center; margin:0 .2rem; zoom:0.72; }
+    </style>
+    <div class="bmc-header-btn">
+      <script type="text/javascript"
+              src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js"
+              data-name="bmc-button"
+              data-slug="OZ1LAV"
+              data-color="#FFDD00"
+              data-emoji="☕"
+              data-font="Lato"
+              data-text="Buy me a coffee"
+              data-outline-color="#000000"
+              data-font-color="#000000"
+              data-coffee-color="#ffffff"></script>
+    </div>
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/SteffenLav/qmx-panadapter" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    qmx-panadapter
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../quick-start/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Quick Start
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../getting-help/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Getting Help
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../panadapter/" class="md-tabs__link">
+          
+  
+  
+  User Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../reference/gestures/" class="md-tabs__link">
+          
+  
+  
+  Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../build/build/" class="md-tabs__link">
+          
+  
+  
+  For Builders
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../releases/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Releases
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="QMX Panadapter" class="md-nav__button md-logo" aria-label="QMX Panadapter" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    QMX Panadapter
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/SteffenLav/qmx-panadapter" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    qmx-panadapter
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quick-start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-help/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Help
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Guide
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    User Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../panadapter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Panadapter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../audio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spots/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Live Spots
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spot-map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spot Map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../web-ui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web UI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FT8 RX
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FT8 RX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-ft8-ft4-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. FT8 &amp; FT4 View
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-decode-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Decode List
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-ft8-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. FT8 Options
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. FT8 Options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stations-you-skipped-v1205" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stations you skipped (v1.20.5)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#your-state-v1205" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Your state (v1.20.5)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-decoding-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Decoding Performance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-real-time-waterfall" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Real-Time Waterfall
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-tap-to-reply" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Tap to Reply
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-auto-reply-robot-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Auto-Reply (Robot Mode)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-search-window" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Search &amp; Window
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-time-sync-for-ft8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Time Sync for FT8
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ft8-tx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FT8 TX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cw/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CW (beta)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../webradio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web Radio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../js8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JS8 (beta)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../time-sync/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Time Sync
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wspr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WSPR
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../radio-menus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Radio Menus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/gestures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gestures & Controls
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/hardware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hardware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/web-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/rigctld/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hamlib rigctld
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    For Builders
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    For Builders
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build/build/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Build from Source
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build/architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build/contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing & Feedback
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Releases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-ft8-ft4-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. FT8 &amp; FT4 View
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-decode-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Decode List
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-ft8-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. FT8 Options
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. FT8 Options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stations-you-skipped-v1205" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stations you skipped (v1.20.5)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#your-state-v1205" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Your state (v1.20.5)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-decoding-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Decoding Performance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-real-time-waterfall" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Real-Time Waterfall
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-tap-to-reply" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Tap to Reply
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-auto-reply-robot-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Auto-Reply (Robot Mode)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-search-window" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Search &amp; Window
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-time-sync-for-ft8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Time Sync for FT8
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="ft8ft4-receive-decode-list">FT8/FT4 Receive &amp; Decode List<a class="headerlink" href="#ft8ft4-receive-decode-list" title="Permanent link">&para;</a></h1>
+<p>The panadapter includes <strong>on-device FT8 and FT4 decoders</strong> with real-time spectrum waterfall and a live list of heard stations.</p>
+<h3 id="1-ft8-ft4-view">1. FT8 &amp; FT4 View<a class="headerlink" href="#1-ft8-ft4-view" title="Permanent link">&para;</a></h3>
+<p>Swipe → from the left edge to open the <strong>page picker</strong>, then tap <strong>MODE: FT8</strong> or <strong>MODE: FT4</strong>. The picker lists all five pages - Panadapter, FT8, FT4, JS8 and WSPR - so each one is a single tap rather than a sequence of swipes. The same decode list and waterfall serve all three modes — FT8, FT4 and <strong>JS8</strong> — switched with the <strong>Preset</strong> dropdown in the left pane (top). JS8 adds a Conversation tab and free-text sending; see <a href="../js8/">JS8</a>.</p>
+<p><strong>FT4 notes:</strong>
+- Decodes refresh roughly twice as fast as FT8 because slots are 7.5 seconds
+- Slot countdown shows 7.5 s instead of 15 s
+- All filtering, priority, and auto-reply features work identically in FT4
+- Time-sync from decoded signal timing works in both FT4 and FT8 (the bottom-bar clock shows <code>UTC(FT4)</code> when synced from an FT4 decode)
+- <strong>v0.19.4 made FT4 reliable</strong>: a memory-placement fault previously killed decoding on every other slot (FT8's longer slots mostly hid it), the EVEN/ODD slot markers were on the wrong 15-second grid, and the slot clock could visibly jump between slots — all fixed; if FT4 seemed deaf or erratic on an earlier version, update the firmware</p>
+<p>You'll see:</p>
+<ul>
+<li><strong>Decode list</strong> (left pane) — every station heard, ordered so the ones that matter to you are at the top (see <a href="#2-decode-list">Decode List</a> below)</li>
+<li><strong>Waterfall</strong> (right pane) — same real-time spectrum as panadapter mode</li>
+<li><strong>Call CQ button</strong> — start a CQ (requires QMX on the air)</li>
+<li><strong>Options button</strong> — include/exclude stations, prioritise by SNR/distance, show only CQ callers</li>
+</ul>
+<h3 id="2-decode-list">2. Decode List<a class="headerlink" href="#2-decode-list" title="Permanent link">&para;</a></h3>
+<p>The list shows every decoded FT8 message:</p>
+<div class="qmx-diagram" style="overflow-x:auto"><svg viewBox="0 0 900 311" width="100%" role="img" xmlns="http://www.w3.org/2000/svg" style="max-width:900px"><rect x="0" y="0" width="900" height="311" rx="10" fill="#151B23" stroke="#2A3440"/><text x="18" y="32" font-size="17" fill="#E9C46A" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="600">One FT8 slot - 15 s, and what DT and DTR measure</text><rect x="18.0" y="56" width="728.1" height="44" rx="5" fill="#8AB4F8" fill-opacity="0.50" stroke="#8AB4F8"/><text x="382" y="84" font-size="16" fill="#E6EDF3" text-anchor="middle" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">a transmission - 12.64 s, 79 symbols</text><rect x="746.1" y="56" width="135.9" height="44" rx="5" fill="#93A4B1" fill-opacity="0.50" stroke="#93A4B1"/><rect x="18.0" y="86" width="2.0" height="14" rx="5" fill="#E06A5A" fill-opacity="0.50" stroke="#E06A5A"/><line x1="18.0" y1="104" x2="18.0" y2="110" stroke="#2A3440"/><text x="18" y="126" font-size="14" fill="#93A4B1" text-anchor="start" font-family="ui-monospace,'Cascadia Mono',Consolas,monospace" font-weight="normal">0</text><line x1="306.0" y1="104" x2="306.0" y2="110" stroke="#2A3440"/><text x="306" y="126" font-size="14" fill="#93A4B1" text-anchor="middle" font-family="ui-monospace,'Cascadia Mono',Consolas,monospace" font-weight="normal">5</text><line x1="594.0" y1="104" x2="594.0" y2="110" stroke="#2A3440"/><text x="594" y="126" font-size="14" fill="#93A4B1" text-anchor="middle" font-family="ui-monospace,'Cascadia Mono',Consolas,monospace" font-weight="normal">10</text><line x1="882.0" y1="104" x2="882.0" y2="110" stroke="#2A3440"/><text x="882" y="126" font-size="14" fill="#93A4B1" text-anchor="end" font-family="ui-monospace,'Cascadia Mono',Consolas,monospace" font-weight="normal">15</text><rect x="18" y="137" width="14" height="14" rx="3" fill="#8AB4F8" fill-opacity="0.50" stroke="#8AB4F8"/><text x="42" y="148" font-size="15" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">DTR is the RAW offset of a received signal from the slot boundary. It carries about 0.5 s of receive</text><text x="42" y="167" font-size="15" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">latency - the QMX SDR plus USB buffering - so it is not comparable with WSJT-X</text><rect x="18" y="179" width="14" height="14" rx="3" fill="#4CAF6A" fill-opacity="0.50" stroke="#4CAF6A"/><text x="42" y="190" font-size="15" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">DT is that same offset corrected against the band consensus, so the shared latency cancels and an</text><text x="42" y="209" font-size="15" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">on-time station reads about 0.0. This is the WSJT-X-style number</text><rect x="18" y="221" width="14" height="14" rx="3" fill="#93A4B1" fill-opacity="0.50" stroke="#93A4B1"/><text x="42" y="232" font-size="15" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">the decode runs after the capture, in the dead air and into the next slot. That is why a reply must</text><text x="42" y="251" font-size="15" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">be decided before the next boundary, not after it. FT4 is the same shape at 7.5 s - a 5.04 s burst</text><text x="42" y="270" font-size="15" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">and 2.46 s of dead air</text></svg></div>
+
+<p><strong>DT and DTR are two different quantities</strong>, which the table below spells out and the
+picture above shows: DTR is the raw offset from the slot boundary and carries about
+half a second of receive latency, while DT is that offset corrected against the band
+consensus, so the shared latency cancels and an on-time station reads about zero.</p>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>SL</strong></td>
+<td>Slot parity: <strong>E</strong> (blue) or <strong>O</strong> (amber)</td>
+</tr>
+<tr>
+<td><strong>CALL</strong></td>
+<td>Their callsign</td>
+</tr>
+<tr>
+<td><strong>MESSAGE</strong></td>
+<td>The full decoded message text</td>
+</tr>
+<tr>
+<td><strong>COUNTRY</strong></td>
+<td>Country, spelled out where it fits and shortened where it does not - never a 3-letter code (v1.15.0)</td>
+</tr>
+<tr>
+<td><strong>SNR</strong></td>
+<td>Signal-to-noise estimate, colour-banded by strength</td>
+</tr>
+<tr>
+<td><strong>TONE</strong></td>
+<td>The station's audio tone within the FT8 passband (v1.3.1)</td>
+</tr>
+<tr>
+<td><strong>DT</strong></td>
+<td>Slot-timing offset in seconds, corrected against the band consensus — an on-time station reads ~0.0. This is the WSJT-X-style number. It reads <code>--</code> until at least <strong>two separate stations</strong> have been heard, because with one station the correction is that station's own offset minus itself, which is zero by construction and not a measurement (v1.3.1, corrected in v1.17.0)</td>
+</tr>
+<tr>
+<td><strong>DTR</strong></td>
+<td><em>Browser only.</em> The <strong>raw</strong> slot-boundary-relative offset, uncorrected. It includes about 0.5 s of one-way receive audio latency (the QMX SDR plus USB buffering), so it is <strong>not</strong> comparable with WSJT-X's DT — but it is the number that moves when a transmitter's timing moves, which is what you want when you are checking your own TX. Both columns sort on the raw value (v1.17.0)</td>
+</tr>
+<tr>
+<td><strong>KM / MI</strong></td>
+<td>Great-circle distance from your grid. A <code>~</code> means the station never sent a grid, so the distance is worked out from its country and is approximate (v1.14.4)</td>
+</tr>
+<tr>
+<td><strong>HRD</strong></td>
+<td>Times decoded since last appearance</td>
+</tr>
+</tbody>
+</table>
+<p>The <strong>BRG</strong> column was removed in v1.14.4 to make room for spelled-out country
+names; a bearing is derivable from the distance and the map.</p>
+<p>All three lists — this one, the SelfSpotter LIST tab and WSPR — use the same
+column order and capitalised headings since v1.15.1, so the same kind of
+information sits in the same place whichever screen you are on.</p>
+<p><strong>Own call highlight</strong> — your callsign is shown in <strong>inverted colours</strong> (red fill, white text) so you spot replies to you instantly.</p>
+<p><strong>How the list is ordered.</strong> Top to bottom:</p>
+<ol>
+<li><strong>The station you are working</strong> (asked for by Don WB0LQW) — during an exchange there are several transmissions each way, and the partner's messages used to sort down-screen where you had to hunt for them. Now <em>everything</em> from them stays at the top: their reply to you, their CQ while you are mid-exchange, and a message they send to a third station — which is exactly when you most want to see it. It covers a hand-typed reply as well as an automatic exchange, and matches on their <strong>callsign</strong>, so a third station merely mentioning them is not promoted. It releases the moment the QSO completes (their closing <code>73</code> contains your callsign, so rule 2 keeps it up there anyway).</li>
+<li><strong>Messages addressed to you</strong> — anything containing your callsign.</li>
+<li><strong>CQ calls.</strong></li>
+<li><strong>Everything else, strongest signal first.</strong></li>
+</ol>
+<p><strong>Stale entries</strong> — the list is a live picture of who's on frequency now; stations not heard again within <strong>2 minutes</strong> drop off automatically.</p>
+<p><strong>During your own CQ run</strong> — stations transmitting on <em>your</em> transmit slot (which you can't hear while transmitting) are hidden from the list and return when the run ends; other stations' CQ rows are hidden during a run as before.</p>
+<p><strong>Nonstandard callsigns</strong> — special-event and compound calls now resolve to the full callsign instead of showing <code>&lt;...&gt;</code>, once the station has been heard in full.</p>
+<h3 id="3-ft8-options">3. FT8 Options<a class="headerlink" href="#3-ft8-options" title="Permanent link">&para;</a></h3>
+<p>Tap the <strong>Options</strong> button to open the Options modal:</p>
+<ul>
+<li><strong>Include callsigns</strong> — only show these calls (space or comma-separated)</li>
+<li><strong>Include callsigns containing</strong> — show any call with these substrings (e.g., <code>/P</code> for portable)</li>
+<li><strong>Exclude callsigns</strong> — hide these calls</li>
+<li><strong>Exclude if contains</strong> — hide any call matching these substrings</li>
+<li><strong>Never auto-call worked-before</strong> — the one entry in this list that does <em>not</em>
+  change the list. Every other filter here hides rows; this one only stops the
+  <strong>machine</strong> calling a station already in your log on this band — CQ answers,
+  the pile-up, Auto-work and the robot all pass over them. Worked stations stay
+  in the decode list either way, greyed, and you can still tap one to work it.
+  Per band: the same call on another band counts as new. (It was called
+  "Exclude stations worked before", which read as a promise about the list.)</li>
+<li><strong>Hide worked-before</strong> — the companion to the entry
+  above rather than part of it. This one <em>does</em> change the list: tick it and a
+  station already in your log on this band disappears from the decode list
+  altogether, on the Tab5 and in the browser. Off by default, so the grey
+  behaviour above is what you keep unless you ask for this. The two are
+  separate on purpose - working duplicates by hand while the machine leaves
+  them alone is a perfectly normal way to operate. The station you are
+  mid-exchange with is never hidden.</li>
+<li><strong>Show only CQ callers</strong> — hide replies, show only CQ messages</li>
+<li><strong>Show CQs in my run</strong> — off by default. While you are running your own CQ, other
+  stations' plain CQ calls are hidden so that replies addressed to you are not buried
+  under unrelated traffic. Turn this on to keep seeing them, so you can spot a station
+  worth breaking off for during your listening slot. It changes the list only; it does
+  not change who the robot or Auto-work-pileup will answer</li>
+<li><strong>Skip TX1</strong> — when you pounce a station, open with your signal report straight away instead of the grid exchange, for a quicker QSO (falls back to the normal grid exchange if the station has dropped out of the decode list)</li>
+<li><strong>Allow grey-listing</strong> — off by default. A station that times out two of your pounces in a row is set aside: the robot and Auto-work-pileup skip it, its decode row turns <strong>violet</strong>, and tapping it offers to clear it from the grey-list instead of opening the TX dialog. Handy on a busy band where one station simply never comes back. The list is held in memory only and forgotten at power-off</li>
+<li><strong>Auto-reply priority</strong> — Strongest SNR, Weakest SNR, Most distant grid</li>
+<li><strong>Robot mode</strong> — auto-answer CQ (disabled by default; see <a href="../ft8-tx/">FT8 Transmit</a>)</li>
+</ul>
+<p>All filters persist across sessions. Toggle any filter on/off to enable or disable it without erasing the criteria.</p>
+<h4 id="stations-you-skipped-v1205">Stations you skipped (v1.20.5)<a class="headerlink" href="#stations-you-skipped-v1205" title="Permanent link">&para;</a></h4>
+<p>The <strong>Skip</strong> button ends the exchange in progress and leaves the robot running;
+the station is not called again this session. From v1.20.5 the web FT8 page
+lists those stations under the grey-list line, and each one can be cleared on
+its own or all at once <em>(Randy N4OPI)</em>.</p>
+<p>It is a <strong>separate list</strong> from the grey-list above: that one is the software
+setting aside a station that never answers, this one is your own decision, and
+one button should not quietly undo both.</p>
+<h4 id="your-state-v1205">Your state (v1.20.5)<a class="headerlink" href="#your-state-v1205" title="Permanent link">&para;</a></h4>
+<p><strong>Settings → Station → Your state</strong>, beside Your grid. Two letters. With it set,
+the robot passes over a CQ aimed at a different US state. Leave it empty — as
+everyone outside the USA should — and every state call is answered as before,
+because the radio knows which country you are in but not which state.</p>
+<p>!!! warning "<code>CQ DE</code> is never read as Delaware"
+    On the air <code>DE</code> almost always means <em>from</em>, not the state. In one operator's
+    log there were fifty-one <code>CQ DE</code> decodes, from Florida, New York and
+    California, and none from Delaware — so treating it as a state call would
+    have cost every one of those contacts.</p>
+<h3 id="4-decoding-performance">4. Decoding Performance<a class="headerlink" href="#4-decoding-performance" title="Permanent link">&para;</a></h3>
+<p>On a reasonably busy band, expect roughly <strong>15–20 distinct messages per slot</strong> in
+either mode. That is messages, not contacts — one QSO produces several.</p>
+<p>Decoding uses <strong>both processor cores</strong>: the decode task works one half of the
+candidate list on core 1 while a helper takes the other half on core 0, and both
+run against a waterfall that was built during the capture rather than after it.
+That is what makes the results appear a second or two into the following slot
+instead of most of the way through it.</p>
+<p><strong>What limits it:</strong></p>
+<ul>
+<li><strong>LDPC error correction is heavy</strong>, and most candidates the search finds are
+  false alarms that use the full iteration budget before being discarded</li>
+<li><strong>The spectrum and waterfall</strong> are being drawn from the same audio at the same time</li>
+<li><strong>USB audio must be serviced continuously</strong> — a gap there costs decodes far more
+  than a slow decoder does</li>
+</ul>
+<p><strong>FT4 advantage:</strong> because FT4 slots are half as long (7.5 s vs 15 s), you get refresh feedback roughly twice as fast, which feels snappier on a crowded band even though the per-slot decode count is the same.</p>
+<p>The panadapter prioritises <strong>receive latency</strong> (decode every 15 s, not accumulate) over volume.</p>
+<h3 id="5-real-time-waterfall">5. Real-Time Waterfall<a class="headerlink" href="#5-real-time-waterfall" title="Permanent link">&para;</a></h3>
+<p>Unlike WSJT-X (which buffers a whole 15-second capture), the Tab5 <strong>builds the waterfall on-the-fly</strong> as audio arrives. You see CW and other traffic in real time, and FT8 stations appear instantly as their symbol blocks are decoded.</p>
+<p>The waterfall also shows <strong>non-FT8 activity</strong>:
+- CW (carrier lines)
+- SSB (broader vertical smears)
+- RTTY (FSK sidebands)
+- Interference (wideband noise)</p>
+<h3 id="6-tap-to-reply">6. Tap to Reply<a class="headerlink" href="#6-tap-to-reply" title="Permanent link">&para;</a></h3>
+<p>Tap any FT8 row in the decode list to <strong>prepare a reply</strong>:</p>
+<ol>
+<li>A confirmation modal pops up showing your message</li>
+<li>You can review the target callsign, grid, and SNR</li>
+<li>Tap <strong>Transmit</strong> to send, or <strong>Cancel</strong> to abort</li>
+</ol>
+<p>The reply always follows FT8 protocol (correct parity, proper message sequence) — you can't accidentally send a garbled or out-of-order message.</p>
+<p><strong>Pile-up list.</strong> If a station answers you while you're busy with another contact, they used to disappear from the list once they stopped transmitting. They're now remembered in a <strong>Pileup</strong> list — the <strong>ADIF-log</strong> button on the FT8 screen turns into a <strong>Pileup</strong> button (a different colour) whenever callers are waiting. Tap it to see who's called you, tap a station to work them, or tap the ✕ to dismiss one. See <a href="../ft8-tx/">FT8 Transmit</a> for the full workflow.</p>
+<h3 id="7-auto-reply-robot-mode">7. Auto-Reply (Robot Mode)<a class="headerlink" href="#7-auto-reply-robot-mode" title="Permanent link">&para;</a></h3>
+<p>⚠️ <strong>Experimental</strong> — enabled via a checkbox in the Options modal.</p>
+<p>When robot mode is on, the Tab5 <strong>automatically replies to CQ</strong> without waiting for you to tap. It scans each FT8 slot for CQ callers matching your filters, picks the highest-priority station, and sends a full QSO exchange (TX1 -&gt; wait for report -&gt; TX2 -&gt; wait for RR73 -&gt; TX3). Everything is logged to ADIF.</p>
+<p><strong>Important:</strong> Robot mode <strong>keys the QMX for real</strong> — your signal goes on the air. Never leave it unattended unless you're confident in your filters and your station is in a safe state.</p>
+<h3 id="8-search-window">8. Search &amp; Window<a class="headerlink" href="#8-search-window" title="Permanent link">&para;</a></h3>
+<p>The decoder uses an <strong>FFT-based search window</strong> to find candidate tone blocks, at whichever tone spacing the active mode uses — <strong>6.25 Hz</strong> for FT8's 8 tones, <strong>20.83 Hz</strong> for FT4's 4.</p>
+<p><strong>Frequency stability:</strong> The QMX's USB audio clock isn't bit-exact 48 kHz, so decodes slide slowly over time. The panadapter <strong>re-locks to UTC boundaries every 15 seconds</strong> (the slot boundary), preventing long-term drift.</p>
+<h3 id="9-time-sync-for-ft8">9. Time Sync for FT8<a class="headerlink" href="#9-time-sync-for-ft8" title="Permanent link">&para;</a></h3>
+<p>FT8 requires <strong>UTC time accurate to ±1 second</strong> for slot synchronisation. The panadapter gets time from:</p>
+<ol>
+<li><strong>WiFi + SNTP</strong> (if available) — most accurate, syncs every ~hour</li>
+<li><strong>Tab5 RTC</strong> (if set) — accurate to ±1 min, no internet needed (POTA)</li>
+<li><strong>QMX GPS</strong> (if QMX has GPS) — re-syncs the RTC every 5 minutes</li>
+<li><strong>Manual</strong> — you can set time via the settings drawer</li>
+</ol>
+<p>See <a href="../time-sync/">Time Sync</a> for details.</p>
+<hr />
+<p><strong>Next:</strong> Learn about <a href="../ft8-tx/">FT8 Transmit</a> or go back to <a href="../panadapter/">Panadapter</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.sections", "toc.follow", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1928 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://tab5.lav.dk/">
+      
+      
+      
+        <link rel="next" href="quick-start/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>QMX Panadapter</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="light" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#qmx-panadapter" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="QMX Panadapter" class="md-header__button md-logo" aria-label="QMX Panadapter" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            QMX Panadapter
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Home
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="light" data-md-color-primary="blue" data-md-color-accent="orange"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    <!-- Buy me a coffee (OZ1LAV) — just left of the search field -->
+    <style>
+      /* The official BMC widget renders ~51px tall (nearly the whole top bar).
+         zoom scales it (and its layout box, so no leftover gap) down to about
+         the search-field height. Tweak the factor to taste. */
+      .bmc-header-btn { display:flex; align-items:center; margin:0 .2rem; zoom:0.72; }
+    </style>
+    <div class="bmc-header-btn">
+      <script type="text/javascript"
+              src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js"
+              data-name="bmc-button"
+              data-slug="OZ1LAV"
+              data-color="#FFDD00"
+              data-emoji="☕"
+              data-font="Lato"
+              data-text="Buy me a coffee"
+              data-outline-color="#000000"
+              data-font-color="#000000"
+              data-coffee-color="#ffffff"></script>
+    </div>
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/SteffenLav/qmx-panadapter" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    qmx-panadapter
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="quick-start/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Quick Start
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="getting-help/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Getting Help
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="guide/panadapter/" class="md-tabs__link">
+          
+  
+  
+  User Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="reference/gestures/" class="md-tabs__link">
+          
+  
+  
+  Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="build/build/" class="md-tabs__link">
+          
+  
+  
+  For Builders
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="releases/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Releases
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="QMX Panadapter" class="md-nav__button md-logo" aria-label="QMX Panadapter" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    QMX Panadapter
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/SteffenLav/qmx-panadapter" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    qmx-panadapter
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-it-does" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What it does
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Status
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-started" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Get Started
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-qmx-connection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The QMX Connection
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-links" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Links
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="quick-start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="getting-help/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Help
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Guide
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    User Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="guide/panadapter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Panadapter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="guide/audio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="guide/spots/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Live Spots
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="guide/spot-map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spot Map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="guide/web-ui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web UI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="guide/ft8-rx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FT8 RX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="guide/ft8-tx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FT8 TX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="guide/cw/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CW (beta)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="guide/webradio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web Radio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="guide/js8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JS8 (beta)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="guide/time-sync/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Time Sync
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="guide/wspr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WSPR
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="guide/radio-menus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Radio Menus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="guide/settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="reference/gestures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gestures & Controls
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="reference/hardware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hardware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="reference/web-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="reference/rigctld/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hamlib rigctld
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="reference/troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="reference/glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    For Builders
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    For Builders
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="build/build/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Build from Source
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="build/architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="build/contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing & Feedback
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="releases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Releases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-it-does" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What it does
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Status
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-started" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Get Started
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-qmx-connection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The QMX Connection
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-links" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Links
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="qmx-panadapter">QMX Panadapter<a class="headerlink" href="#qmx-panadapter" title="Permanent link">&para;</a></h1>
+<p>A standalone real-time panadapter — spectrum analyser and waterfall — for the <a href="https://www.qrp-labs.com/qmxp.html">QRP Labs QMX/QMX+</a> HF transceiver.</p>
+<p>Running on the <a href="https://docs.m5stack.com/en/core/tab5">M5Stack Tab5</a> (ESP32-P4 with a 5" 720×1280 touch display), the panadapter connects to the QMX as a USB host, decodes the I/Q in real time, and renders a touch-driven interface with tap-to-tune, pinch-zoom, onboard FT8/FT4/JS8 decoding and transmit, ADIF logging, and a matching browser web UI.</p>
+<p><strong>By Steffen Lav (OZ1LAV)</strong></p>
+<h2 id="what-it-does">What it does<a class="headerlink" href="#what-it-does" title="Permanent link">&para;</a></h2>
+<p>Everything below is in the firmware <strong>today</strong>. Nothing needs a PC; only the items marked
+<em>(needs WiFi)</em> need a network.</p>
+<ul>
+<li><strong>Spectrum &amp; waterfall</strong> — a 48 kHz window at 30 Hz, adaptive per-bin noise floor,
+  flat-spectrum mode, adjustable waterfall black level and contrast, selectable FFT
+  window, a dBm-calibrated S-meter, and a colour band-plan strip that follows the VFO.</li>
+<li><strong>A spectrum that holds still</strong> — from ×2 up, the spectrum and waterfall stay put and
+  the VFO marker moves across them, so a signal stays where you last saw it and the
+  waterfall's history lines up under the frequency it belongs to. The view re-frames only
+  when your filter passband reaches the edge. The band above dial+12 kHz is hatched, because
+  the radio genuinely cannot hear it. See <a href="guide/panadapter/">Panadapter</a>.</li>
+<li><strong>Touch tuning</strong> — tap or drag to tune with mode-aware snapping, pinch-zoom (a real
+  zoom-FFT, not a stretch), one-finger pan-and-retune, edge-swipe navigation between
+  screens, and a frequency keypad.</li>
+<li><strong>Audio, and binaural CW</strong> — the I/Q the radio already sends becomes sound on
+  the device. The <strong>panoramic CW split</strong> places two stations on different frequencies to
+  the left and right of the stereo image rather than on top of each other, with <strong>pan
+  width</strong>, <strong>pan blend</strong> and <strong>overlap</strong> adjustable live while you listen. It plays to
+  something your ears do far better than any decoder — separating two sources by where
+  they come from. A single-channel reader must pull both signals out of one waveform;
+  binaural CW gives the job to the part of your hearing built for it, and two stations
+  calling together stop being a jumble. Best at <strong>300 Hz bandwidth and up</strong>; <strong>below
+  200 Hz there is little separation</strong>, because the signals then share too much of the
+  audio passband. Long-press the top bar on the Panadapter page for <strong>Resource
+  Management</strong>, where audio is switched on and off. See <a href="guide/audio/">Audio</a>.</li>
+<li><strong>Receive from the 3.5 mm jack</strong> <em>(beta — Tony, @tony1tf, #17)</em> — the panadapter can take
+  its signal from the Tab5's own headphone jack instead of the radio's USB audio. The jack
+  is one real audio channel, not I/Q, so the second is synthesised by a 255-tap filter.
+  Level meter, clip indicator, and the jack wiring drawn on screen.
+  ⚠ <strong>Nothing has been decoded through it yet</strong> — the path runs and the levels read
+  correctly, and that is all that is proven. ⛔ The USB radio connection is off in this
+  mode by design. See <a href="guide/audio/">Audio</a>.</li>
+<li><strong>MODE: CW page</strong> <em>(beta)</em> — the radio's own decode ticker with noise squelch, a
+  copilot hint line, a station card, and two named macro sets (<strong>General</strong>/<strong>Contest</strong>)
+  switched by a toggle at the bottom of the panel. See <a href="guide/cw/">CW</a>.</li>
+<li><strong>Web Radio</strong> — an internet radio player on the Tab5: search and genre filter over the
+  radio-browser.info directory, six memory slots, playback that keeps running after you
+  close the player. See <a href="guide/webradio/">Web Radio</a>.</li>
+<li><strong>QMX control</strong> — frequency, mode (USB/LSB/CW/DiGi, plus AM on QMX firmware 1.04+),
+  SSB filter width, CW passband, TX power and SWR, and QMX volume in decibels matching
+  the radio's own display. Band presets with per-band frequency recall, 32 memory
+  channels, and <strong>RIT</strong> you set by tapping the caller you want to hear.</li>
+<li><strong>Radio menus</strong> — the QMX's own 80×24 menu system on the Tab5 and in the browser, over
+  the radio's <em>second</em> USB serial port, so the panadapter keeps decoding while you are in
+  there. For a QMX+ with no control panel it is the only way in.
+  See <a href="guide/radio-menus/">Radio Menus</a>.</li>
+<li><strong>FT8 &amp; FT4 receive</strong> — continuous on-device decoding of both modes, in the same view
+  as the panadapter (<strong>JS8</strong> is a third sub-mode of this page; see below). Callsign, country, signal report, slot-timing offset, audio tone,
+  distance and bearing; include/exclude filters; band-aware worked-before exclusion; a
+  pileup tracker; and the station you are working held at the top of the list.</li>
+<li><strong>FT8 &amp; FT4 transmit</strong> — tap a station to send the correct <em>next</em> message; call CQ from
+  editable presets with an optional stop-after-N-calls limit; the full automatic exchange
+  through to <code>73</code> and a log entry; a resend if your partner never heard your final; a
+  polite hold for a station already working someone else; grey-listing; an optional
+  unattended auto-answer robot; a drag-to-pick TX tone with a live occupancy strip, TX
+  Hold and an ANY/EVEN/ODD time-window choice; and ARRL Field Day mode.</li>
+<li><strong>JS8 — a keyboard mode, on the device</strong> <em>(beta)</em>. JS8 carries <strong>free text</strong> on FT8's
+  modulation, so stations hold short conversations instead of trading a fixed exchange.
+  The whole of it runs on the Tab5: sync, LDPC error correction and the CRC check on the
+  way in, and the encoder and transmitter on the way out. It is a sub-mode of the same
+  page as FT8 and FT4 — pick <strong>JS8</strong> in the preset picker — and it adds a <strong>Conversation</strong>
+  tab beside <strong>Stations</strong>, so you can read what has been said as well as who is on the
+  band. To send, tap <strong>Free text</strong> under Call CQ, or use the composer on the web page;
+  both tell you how many frames the message takes and how many seconds it holds the
+  frequency <em>before</em> the radio is keyed. Directed messages and heartbeats are read and
+  shown with the sender's callsign and grid. See <a href="guide/js8/">JS8</a>.</li>
+<li><strong>WSPR</strong> — a third page, reached by the same swipe. A propagation beacon rather than a
+  contact mode: a very slow, very weak signal carrying your callsign, grid and power,
+  which stations worldwide report hearing. What was heard each two-minute cycle with band,
+  distance and bearing, and the furthest of the session. Receiving is
+  the default; transmitting is opt-in, with a transmit schedule and optional band hopping.
+  <strong>Calibrate Power</strong> measures real RF output per band on a dummy load, so <strong>Declared
+  power</strong> only offers standard dBm steps the radio actually reaches — labelled with the
+  real wattage, not a textbook figure — which is also how you protect the finals for a
+  long beacon run. A separate <strong>Output power</strong> slider covers every other mode. See
+  <a href="guide/wspr/">WSPR</a>.</li>
+<li><strong>Logging &amp; upload</strong> — every QSO written to an ADIF log on the device, readable and
+  editable on the Tab5 or in the browser, and uploaded <em>(needs WiFi)</em> to <strong>QRZ Logbook</strong>,
+  <strong>eQSL</strong>, <strong>ARRL LoTW</strong> and <strong>your own Cloudlog or Wavelog</strong> — LoTW QSOs signed on the
+  device with your own certificate.</li>
+<li><strong>Activation logging</strong> — start a <strong>POTA</strong> or <strong>SOTA</strong> activation and every contact is
+  stamped with the reference as it is logged and counted against the threshold, with a
+  single-reference ADIF export for uploading.</li>
+<li><strong>Live spots</strong> <em>(needs WiFi)</em> — <strong>POTA</strong> activations, and optionally <strong>RBN</strong> CW skimmer
+  spots and <strong>DX cluster</strong> spots, which are where phone activity comes from. Drawn on the
+  trace where the station actually is, grey once you have worked them on that band, and one
+  entry per station however many sources report it. Press and drag to pick one and lift to
+  tune it <em>with the right mode</em>. See <a href="guide/spots/">Live Spots</a>.</li>
+<li><strong>Knowing you are getting out</strong> <em>(needs WiFi)</em> — <strong>Who is hearing me</strong> asks PSK Reporter
+  which receivers copied <em>your</em> call, with distance, bearing and the report they gave you.
+  <strong>SWR protection</strong> cuts a transmission short and latches the transmitter off above your
+  chosen limit.</li>
+<li><strong>PSK Reporter</strong> <em>(needs WiFi)</em> — the stations you decode are reported to the PSK
+  Reporter map the way WSJT-X does. On by default, one checkbox to turn off, and never
+  anything on the air.</li>
+<li><strong>Web UI</strong> <em>(needs WiFi)</em> — the whole panadapter in a browser on the LAN: live spectrum
+  and waterfall, click/drag/wheel tuning, band-mode-bandwidth-zoom control, the FT8/FT4
+  band presets, live TX status with a <strong>Call CQ</strong> button, a sortable QSO log you can
+  correct entries in, config download and upload, a microSD file browser, screenshots,
+  and the diagnostic log.</li>
+<li><strong>Updating from the device</strong> <em>(needs WiFi)</em> — tap the version line, press <strong>Download
+  now</strong>, then <strong>Restart now</strong>. Nothing is fetched or installed until you ask.
+  ⚠ <strong>Coming from v1.14.x or earlier? v1.15.0 needed a one-time USB-C cable
+  update</strong> — do that first and everything after it is over the air. See
+  <a href="guide/settings/#firmware-updates">Settings</a>.</li>
+<li><strong>Built-in manual</strong> — this whole guide is compiled into the firmware, so it is instant
+  and needs no WiFi and no card. It opens at the chapter for the screen you are on,
+  warning banners are tappable, and a <strong>Need guidance?</strong> panel takes your symptom in plain
+  words. See <a href="getting-help/">Getting Help</a>.</li>
+<li><strong>Time, on or offline</strong> — SNTP <em>(needs WiFi)</em>, the Tab5's own supercap-backed RTC across
+  power-off, the QMX's clock as an offline fallback, automatic GPS phase-lock if your QMX
+  has one, a manual set-and-sync panel, and FT8 timing that self-corrects from the decoded
+  band consensus.</li>
+<li><strong>A GPS of your own, and a sky view</strong> — two receivers work and both are confirmed on
+  hardware: an <strong>M5Stack Unit GPS v1.1</strong> on PORT.A,
+  and a <strong>Module GPS v2.1</strong> on the 30-pin bus. Either gives you UTC <strong>and the full date</strong>
+  offline, which no other offline source on this device does, and fills your grid from the
+  fix without ever overwriting one you typed. <strong>GPS Stats</strong> — its own page under Radio in
+  the drawer, and on the web — draws the satellites in use on an elevation-ring sky view
+  beside the fix, the satellite count and which receiver is answering.
+  See <a href="guide/time-sync/">Time sync</a>.</li>
+<li><strong>CW keyer speed</strong> <em>(Ralph Hellmig)</em> — a slider in the drawer above IF calibration, and
+  the same control in the browser. It sets the speed over CAT and shows what the radio
+  actually took, because the radio is the authority and does not store it. <strong>0 means a
+  straight key</strong>, not "unset". See <a href="guide/radio-menus/">Radio menus</a>.</li>
+<li><strong>microSD backup</strong> — insert a card (restart afterwards) and your ADIF log, full config,
+  LoTW certificate and key, and diagnostic log are mirrored automatically. Continuous with
+  WiFi off; one complete backup per start-up with WiFi on. The SD dot is green while writes
+  are reaching the card and yellow when nothing has landed lately.</li>
+<li><strong>Diagnostics</strong> — an always-on log with nothing to enable: 5 MB in RAM, a rolling copy
+  in flash that survives a power cut, and a full mirror to microSD. A crash survives the
+  reboot and is reported on the next boot, so a diagnostic download is enough to answer
+  an unexpected restart. Downloadable from the browser or over USB serial.</li>
+<li><strong>Practice mode</strong> — phantom stations that call and reply through the real decode
+  pipeline, so you can rehearse a whole QSO with <strong>no radio connected</strong> — with a hard
+  interlock that never keys an attached QMX.</li>
+<li><strong>Keyboard &amp; mouse</strong> — the M5Stack Tab5 snap-on keyboard, attachable at any time, which
+  drives the radio's menus and carries Ctrl shortcuts you can reassign. A <strong>Bluetooth
+  keyboard</strong> types into every field (US layout only). A <strong>Bluetooth mouse</strong> works <em>while
+  the QMX stays plugged in</em>, and its wheel tunes over the spectrum. USB mouse supported
+  with the radio unplugged.</li>
+<li><strong>Settings you decide the shape of</strong> — every setting on the Tab5 and in the browser,
+  with a <strong>Basic</strong> and an <strong>Advanced</strong> view whose contents you choose from the web UI.</li>
+<li><strong>Field-ready</strong> — WiFi entirely optional, and a static address if you want a browser
+  bookmark to keep working. Battery percentage with a charge limit, display sleep, a
+  180-degree flip for awkward mounting, config backup and restore as a text file, and a
+  settings reset that needs no reflash.</li>
+</ul>
+<h2 id="status">Status<a class="headerlink" href="#status" title="Permanent link">&para;</a></h2>
+<p><strong>v1.24.2 — a complete, self-contained FT8/FT4/JS8 station with no PC in the loop, a second
+operating position in any browser, a WSPR propagation beacon, a MODE: CW page, an internet
+radio player, and the radio's own menus on the screen.</strong> The panadapter, FT8/FT4 receive and
+transmit, WSPR, ADIF logging and all four logbook uploads — QRZ, eQSL, ARRL LoTW and your own
+Cloudlog or Wavelog — are stable and in daily use. <strong>Audio and binaural CW are no longer a
+beta.</strong> <strong>JS8 Normal</strong> and the new <strong>CW page</strong> are — see below. <strong>v1.24.2 fixes WSPR decoding
+dying after a visit to the FT8 page</strong>, adds a <strong>CW TX offset shortcut</strong> and <strong>Semi QSK
+break-in delay</strong> to the CW page, and fixes an FT8 pileup crash, an RRR handling bug, and a
+one-frame screen flash — see the <a href="releases/">release notes</a> for the full list. In v1.24.0:
+the CW page (decode ticker, copilot hints, General/Contest macro sets), Web Radio, and
+two-finger pinch now pans while it zooms, on the Panadapter and the CW page alike.</p>
+<p>!!! warning "Coming from v1.14.x or earlier? One USB-C cable update first"</p>
+<div class="highlight"><pre><span></span><code>**v1.15.0** reclaimed 2.81 MB of unused flash, which meant rewriting the
+partition table — something an over-the-air update cannot do. If you are
+still on v1.14.x or earlier you need that one **flasher download**, over
+the same USB-C cable you used the first time. **Everything from v1.15.0
+onwards, including this release, is over the air again** with more than
+twice the room. **Your settings, QSO log and LoTW certificate are kept** —
+press **Enter** at the flash-type prompt, never **E**. New users are
+unaffected, and anyone already on v1.15.0 simply updates from the device.
+</code></pre></div>
+<p><strong>With WiFi on, SD card writes no longer stop about 30 seconds after boot.</strong> ⭐ The SD symbol ended up crossed out - a known fault under ⚠ for five releases <em>(Gyula HA3HZ, Randy N4OPI)</em>. The card driver needs a small block of memory the hardware can transfer directly to and from, for every 512-byte block it moves, and it asks part of the way <em>through</em> the transfer. A failed request drops the chip-select with the card mid-block; from there the two are out of step and the Tab5 unmounts the card after five failures. What was consuming that memory is <strong>RX audio</strong> - about 29 KB, of which 24 KB was a buffer sitting in exactly the memory the card driver competes for. Moved to external memory. With the old buffer in place the card failed in 40 seconds with 87 bytes left; it now keeps writing. <strong>Turning RX audio off is no longer the price of a working card.</strong> ⭐ Confirmed in the field on three units <em>(Randy N4OPI)</em>.</p>
+<p><strong>v1.16.8 makes static IP and preferred network genuinely reliable.</strong> ⭐ Randy N4OPI spent several days field-testing one build after another - each round found a real bug hiding under the last one: reset buttons erasing the wrong settings partition, a config import leaving the static address bound to nothing, a settings save re-triggering static-IP logic that hadn't changed, and switching networks from the web UI killing the very HTTP connection that asked for the switch. Confirmed on his bench: switching or setting a static address no longer needs a reboot. Also: <strong>screenshots download as PNG and no longer tear</strong>, <strong>WSPR no longer reports "transmitted" on a burst where the radio was never keyed</strong>, and <strong>FT8's re-send-to-a-partner tracks up to four at once</strong> instead of one. ⚠ The WSPR waterfall still shows nothing during the wait between cycles, unlike WSJT-X <em>(Samuel W7STF)</em> - a real request, not attempted this cycle.</p>
+<p><strong>v1.16.7 solves the idle abort.</strong> v1.16.6 reduced the exposure and said the shortage was unchanged; it was, and the unit aborted twice more. Measured properly: <strong>no leak</strong> (20.5 h trends upward), but the internal pool was emptied <strong>24 times a minute</strong> for 60-360 ms, down to 143 bytes. ⭐ The cause was the web interface building its JSON replies in that pool - 495 pieces of one reply, 8.7 KB across 311 allocations - while 14 MB of external memory sat unused. Fixed: <strong>24.1 droughts per minute became none</strong>, free internal memory at rest 28 KB to 56 KB. ⚠ SD writes stopping ~30 s after boot is a SEPARATE shortage and is unchanged.</p>
+<p><strong>v1.16.5 makes the decoder keep up with the band.</strong> ⭐ <strong>Decoding is two to three times faster and stops dropping stations on a busy band</strong> — a slot's decode was taking 11-14 seconds, longer than an FT8 slot, so the message that decides your next transmission arrived after the moment to send it had passed. Work is now taken as each processor becomes free instead of split in half in advance: <strong>11-14 s → 2.7-5.9 s</strong>, <strong>nothing dropped</strong> where 56-68 candidates a slot were abandoned, <strong>3-15 stations per slot instead of 0-3</strong>. <strong>FT4 stops recording 2.5 seconds of silence</strong> before deciding what to say. <strong>Pick your next station while the closing 73 is still going out</strong> <em>(Randy N4OPI)</em>, and <strong>a station calling you out of the blue starts a full automatic QSO</strong>. <strong>AGC presets — Fast, Med, Slow and Off</strong> <em>(Samuel W7STF)</em>. <strong>The WiFi page says which network you are actually on.</strong> And <strong>switching between FT8 and FT4 could crash the unit</strong> — fixed.</p>
+<p><strong>v1.16.4 fixes four faults operators found in their own shacks.</strong> <strong>A station answering your CQ is answered in the very next slot — every time</strong> <em>(Gyula HA3HZ)</em>: decoding is split across both processors and only one half could act on a caller, so the same situation replied immediately about half the time and a cycle late the rest. <strong>Waiting for a busy station really is capped at six minutes now</strong> — the counter reset instead of latching, so it could wait over half an hour and never got back to calling them either. <strong>Headphones silence the internal speaker</strong> <em>(Roy KI0ER)</em>. <strong>Resource Management is renamed Audio Settings</strong>, with its own button in the settings drawer. <strong>Preferred network actually decides which WiFi you join</strong> <em>(Randy N4OPI)</em>. <strong>A restart caused by a power brownout says so</strong> <em>(Samuel W7STF)</em>. ⭐ And the recurring <strong>SD "dot goes yellow and writes stop" is root-caused</strong> — the card driver is refused a memory buffer, so the write never reaches a card that is mounted and healthy. ⚠ Audio still breaks up while a browser has the panadapter open.</p>
+<p><strong>v1.16.3 finishes the audio fix and gathers the controls.</strong> The <strong>crackle is actually gone</strong> — v1.16.2 shipped the first of five attempts at the clock correction and you could still hear it working. <strong>All four level controls are in one window</strong>: RX Volume moved into Resource Management, "Gain" is renamed <strong>AGC Ceiling</strong> and reaches 1500, and <strong>Attack</strong> and <strong>Release</strong> are adjustable for the first time. ⚠ The settings drawer's RX Audio section is gone, including its on/off box — long-press the top bar instead. <strong>A GPS that locks late is no longer missed</strong> <em>(John W5JSS)</em>: detection ran once 45 seconds after boot and never again; a QMX+ here locked 25 minutes in. <strong>WSPR gives the radio back its mode</strong> instead of leaving it in Digi. <strong>Preferred network</strong> decides which remembered WiFi wins <em>(Randy N4OPI)</em>. The <strong>SD dot</strong> is green only while writes are actually landing. ⚠ Audio still breaks up while a browser has the panadapter open — close the page while you listen.</p>
+<p><strong>v1.16.0 brings audio to the Tab5, as a beta.</strong> The I/Q the radio already sends becomes sound on the device, and the first thing built on it is a <strong>panoramic CW split</strong> — two stations on different frequencies placed left and right across the stereo image rather than on top of each other, with <strong>pan width</strong>, <strong>pan blend</strong> and <strong>overlap</strong> adjustable live while you listen. <strong>Binaural CW is a first implementation: use 300 Hz bandwidth and up, and do not expect much separation below 200 Hz.</strong> Audio costs resources, so <strong>long-press the top bar on the Panadapter page</strong> to open <strong>Resource Management</strong>, where it is switched on and off and where you can see what it competes with. The whole audio part is <strong>beta and subject to further development</strong> — the next step is the same features in the web interface, with only the I/Q sent to the PC and processed there. Full detail in the <a href="guide/audio/">Audio guide</a>. A <strong>Pause button</strong> also arrives for QSOs <em>(Randy N4OPI)</em>: skip one transmission to check your slot is still clear, then carry on with the same message.</p>
+<p><strong>v1.15.1 gives WSPR more working memory.</strong> The routine that picks signals out of a cycle needs a large block of it, and on a busy page it could be left with only just enough — so a cycle could come back empty with traces plainly visible on the waterfall, most often after moving between pages. Freeing 2.8 MB removes the squeeze. The <strong>Diagnostic download</strong> is now a single zip file you can attach to an email, and it no longer clears the log when a transfer fails. <strong>FT8, the SelfSpotter list and WSPR share one column order</strong> so the same information sits in the same place on every screen.</p>
+<p><strong>v1.14.4 fixed the reboots.</strong> Fifteen runs on the bench before the fix lasted a median
+of 15 minutes; with it, the same bench ran 14.7 hours with none.</p>
+<p><strong>v1.14.1 fixed a v1.14.0 crash on tuning or QMX power-on.</strong> A settings copy too
+large for a 4096-byte task stack, hit by nearly any frequency change. Thanks to Martin
+Howard and Rick Trommer W5NR for the reports, and Uwe DL8UG for the fix.</p>
+<p><strong>New in v1.14.0 — Calibrate Power.</strong> Sweeps <em>Max. PA voltage</em> through 45 points on a
+dummy load and measures the real RF output at each, per band. <strong>Declared power</strong> (WSPR)
+now only offers the standard dBm steps a band's calibration actually reaches, each one
+labelled with the real measured wattage rather than a textbook figure computed from the
+step's own name — so a declared level and what actually goes out can no longer disagree.
+The old fixed "hold the PA at 6 V for the whole beacon" guard is gone; protecting the
+finals is now just picking a low declared level, with a plain warning above 1 W. A
+separate <strong>Output power</strong> slider covers every other mode and stays off the WSPR page,
+since Declared power always owns the radio there. Both grow a <strong>Recalibrate this band</strong>
+button once calibrated. Also: <strong>SelfSpotter's</strong> callsign-to-country table rebuilt from an
+authoritative cty.dat-style source (~580 hand-curated prefixes → ~4,100 generated ones,
+Uwe DL8UG), plus a new <strong>ISO</strong> country-code column on the map's LIST tab.</p>
+<p><strong>In v1.13.0 — SelfSpotter</strong> <em>(Uwe DL8UG, who wrote the whole thing and sent it as
+a patch)</em>, a full-screen map and list answering "who is hearing me right now" from PSK
+Reporter, wsprnet, and RBN's own self-spot feed, opened from the settings drawer. It
+ships off by default. Land is filled in, not just outlined — LVGL has no built-in
+polygon fill, so this is a small scanline rasteriser of its own — with the coastline
+stroked back on top in its own colour so it doesn't disappear into the fill. A
+deterministic <strong>"Power-cycle QMX"</strong> sequence <em>(Randy N4OPI)</em> for the web UI's remote
+relay: pulse off, wait, pulse on, wait, then confirm over CAT rather than assume it
+worked. Diagnostic log volume cut from roughly 300 lines a minute to under 50 on a
+quiet bench. And this manual's own "Need guidance?" panel caught up with seven real
+features that had no way in from it at all — Radio Menus, Still Spectrum, FT8
+Simulation Mode, SWR protection, Antenna Tune, RIT, and "Release radio" — plus two
+guidance bugs and a stale description of how to reach the spot map, both fixed.</p>
+<p><strong>In v1.12.4 — one bug, twelve releases old.</strong> Tapping a spot after tuning away with
+the dial moved the spectrum and waterfall several kHz away from where the spot line
+itself stayed, reachable only above ×1 zoom. Fixed.</p>
+<p><strong>In v1.12.3 — the web page stops freezing, and WSPR stops reaching into your
+other modes.</strong> Writing the microSD card holds the spectrum stream, and on this
+hardware that write can take a very long time — measured at 3, 10, 15 and once
+29 seconds for four kilobytes, which is what made the web page look broken while
+the spot list carried on updating. Card writes now wait while a browser is
+actually watching, and go through anyway after three minutes so a crash still
+reaches the card. On <strong>WSPR</strong>, a band-hop list kept hopping after you left the
+page and wrote WSPR frequencies to the radio in the middle of an FT8 session, and
+the reduced transmit voltage WSPR sets for its long key-down was restored with a
+single unchecked command — so if that was lost, everything afterwards transmitted
+at about a watt. Both fixed. Returning to the WSPR page now says "waiting for the
+next cycle" instead of showing a frozen waterfall, the settings drawer sits above
+the decoded-CW line, and the QSO log opens showing contacts.</p>
+<p><strong>In v1.12.2 — the CW transcript reaches the microSD card at last, and WSPR stopped
+costing the receiver its own audio.</strong> Switch the decoded-CW transcript on, work a session,
+pull the card, and <code>cw-decode.txt</code> held almost nothing: the code that writes it only ever
+ran in the few seconds after boot, before WiFi came up — and <strong>v1.12.1 "fixed" that by
+adding a warning saying it was not happening.</strong> It now writes every 30 seconds, a failed
+write no longer throws the characters away, and a restart no longer welds two sessions
+onto one line <em>(the fix is Uwe DL8UG's, sent as a patch)</em>. The card also stops giving up
+for the rest of the session after three failed writes. On <strong>WSPR</strong>, the decoder was
+running on the same processor core as the USB audio service and losing up to 1.4 % of the
+audio the radio had already sent — more than a whole symbol of drift across a
+transmission, and enough to stop a cycle decoding at all; it now runs on the other core.
+The waterfall shows three minutes, every cycle is labelled, and letters appear as each
+line decodes. The Tab5 wakes on the page it was left on, and the manual's notes and
+warnings render properly again in the printable guide and on the device.</p>
+<p><strong>In v1.12.1 — letters on the WSPR waterfall, and a Band button that no longer
+retunes your radio.</strong> Every trace the decoder looks at is lettered A, B, C… left to right
+by tone, matched by a new first column in the decode list; a trace it could not read is
+marked <code>?</code>. On the WSPR page the top bar's Band control was sitting over the page's own
+band panel and winning the touch, so picking a band there wrote an FT8 frequency to the
+radio while WSPR carried on labelling spots with the old one. An FT8 reply can now make
+its own slot instead of waiting for the whole band to finish decoding, a band change
+during a transmission is held rather than lost, and the remote power-switch modification
+is documented in the manual with a schematic, by Randy N4OPI.</p>
+<p><strong>In v1.12.0 — CW profiles.</strong> The QMX holds one CW centre and one set of filter
+widths, and changing them means walking two separate menus on the radio. Four profiles
+now live on the Tab5 — a name, a centre frequency, and which of the eight filter widths
+to offer with it — edited on the web settings page and applied from there or from a
+picker in the settings drawer. Applying one writes the radio's own configuration, so
+every write is read back and retried rather than assumed. The bandwidth list also asks
+the radio which filters it actually has, instead of offering all eight regardless.</p>
+<p><strong>A CAT link could die and go on reporting itself healthy.</strong> One transient USB error
+could stop the Tab5 hearing the radio for good while the poll kept saying the link was
+fine — so the screen asked you to restart a radio that was working perfectly. Caught in
+a soak at four hours fifty-six minutes, with the link then dead for the following four.
+A watchdog now forces a reconnect after five seconds of silence.</p>
+<p><strong>WSPR</strong> gains a DT column on both screens, distances that follow the km/miles setting
+(they were always kilometres), a Clear button for the decode list, one capture countdown
+instead of two, hover-a-trace-to-name-the-station on the waterfall, and a band picker you
+drag through rather than a dropdown that commits wherever your finger lifts.</p>
+<p><strong>Tune snap can be switched off</strong> — Off / 250 Hz / 500 Hz / 1 kHz, defaulting to the
+present behaviour. And on the web page, the spectrum above ×1 zoom had no frequency scale
+at all, which is why clicking a signal tuned to the wrong place, the passband sat
+elsewhere than on the Tab5, and the band-plan slider came apart as it was dragged. Every
+field in a QSO can now be corrected, not four.</p>
+<p><strong>In v1.11.1 — decoded CW along the bottom of the panadapter.</strong> In CW or CW-R the
+Morse the radio is decoding runs along the bottom of the waterfall, with an estimate
+of the sending speed beside it, on the Tab5 and in the browser alike. The QMX decodes
+it itself and hands the text over the CAT link, so it costs the panadapter no
+processing and works on QMX firmware 1.03 and later.</p>
+<p><strong>In v1.10.5 — the spectrum holds still while you tune across it.</strong> The panadapter now
+behaves the way a Flex does: the spectrum and waterfall stay where they are and the VFO
+marker moves over them, so a signal stays put on screen while you tune towards it and the
+waterfall's history stays lined up under the frequency it belongs to. The view re-frames
+only when you tune far enough to need it, and what triggers it is your filter passband
+reaching the edge of the screen rather than a fixed percentage — so it feels the same in
+every mode. On by default above ×1; at ×1 the display stays centred on the dial, because
+the view is already the whole 48 kHz the radio sends.</p>
+<p><strong>The right-hand quarter of the ×1 view was showing real signals at the wrong frequency.</strong>
+The QMX's local oscillator sits 12 kHz below the dial, so there is no data above dial+12
+kHz — and the display was filling that quarter by wrapping the bottom of the band into it,
+with the frequency scale labelling it as dial+12 to +24. Tapping a signal there tuned you
+about 48 kHz away from it. That region is now hatched and inert on both screens.</p>
+<p><strong>From the groups.io reports:</strong> changing band ends a contact in progress instead of
+carrying the call sequence onto the new band, and the WSPR transmit button has moved clear
+of the left edge where a swipe could catch it <em>(both Randy N4OPI)</em>; WSPR spots show the
+band they were heard on <em>(Roy KI0ER)</em>; the WSPR waterfall marks a transmit cycle instead
+of leaving the previous picture looking frozen <em>(Dirk)</em>; the browser gets the FT8/FT4 band
+preset list; a LoTW upload shows LoTW's own reply rather than only our count of what was
+sent; the LoTW certificate can be replaced from a visible button; and the Tab5 can be
+given a static IP address.</p>
+<p><strong>Every earlier release</strong> is on the <a href="releases/">Releases</a> page, and in full detail in
+<a href="https://github.com/SteffenLav/qmx-panadapter/blob/main/docs/version-history.md">version-history.md</a>.</p>
+<h2 id="get-started">Get Started<a class="headerlink" href="#get-started" title="Permanent link">&para;</a></h2>
+<p><strong>New user?</strong> Start with the <a href="quick-start/">Quick Start</a> guide — 10 minutes to on-air.</p>
+<p><strong>Stuck, or not sure what something is called?</strong> The Tab5 can help you itself — see <a href="getting-help/">Getting Help</a>.</p>
+<p><strong>Want the whole guide at once?</strong> Download the <a href="QMX-Panadapter-UserGuide-v1.24.2.pdf">User Guide PDF</a> — the whole user guide as one printable document.</p>
+<p><strong>Builder?</strong> Head to <a href="build/build/">Build from Source</a> for ESP-IDF setup and the complete module map.</p>
+<h2 id="the-qmx-connection">The QMX Connection<a class="headerlink" href="#the-qmx-connection" title="Permanent link">&para;</a></h2>
+<p>The QMX exposes two USB interfaces:</p>
+<table>
+<thead>
+<tr>
+<th>Interface</th>
+<th>Data</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>UAC</strong> (USB Audio Class)</td>
+<td>I/Q stereo audio, 48 kHz, 24-bit</td>
+</tr>
+<tr>
+<td><strong>CDC-ACM</strong> (serial)</td>
+<td>Kenwood-style CAT commands (FA, MD, FW, TX, RX, etc.)</td>
+</tr>
+</tbody>
+</table>
+<p>The Tab5 connects as a <strong>USB host</strong>, receiving both streams over a single USB-A to USB-C cable. No drivers needed on the Tab5 — they're built into ESP-IDF.</p>
+<h2 id="quick-links">Quick Links<a class="headerlink" href="#quick-links" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong><a href="https://github.com/SteffenLav/qmx-panadapter">GitHub Repository</a></strong> — source code, releases, issue tracking</li>
+<li><strong><a href="https://www.qrp-labs.com/qmx.html">QRP Labs QMX Manual</a></strong> — radio specs and CAT reference</li>
+<li><strong><a href="https://docs.m5stack.com/en/core/tab5">M5Stack Tab5 Docs</a></strong> — hardware documentation</li>
+</ul>
+<hr />
+<p><em>QMX and QMX+ are products of <a href="https://www.qrp-labs.com">QRP Labs</a>. Tab5 is a product of <a href="https://m5stack.com">M5Stack</a>.</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.instant", "navigation.tabs", "navigation.sections", "toc.follow", "content.code.copy"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

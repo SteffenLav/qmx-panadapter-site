@@ -1,0 +1,2084 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://tab5.lav.dk/build/architecture/">
+      
+      
+        <link rel="prev" href="../build/">
+      
+      
+        <link rel="next" href="../contributing/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Architecture - QMX Panadapter</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="light" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#architecture-overview" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="QMX Panadapter" class="md-header__button md-logo" aria-label="QMX Panadapter" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            QMX Panadapter
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Architecture
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="light" data-md-color-primary="blue" data-md-color-accent="orange"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    <!-- Buy me a coffee (OZ1LAV) — just left of the search field -->
+    <style>
+      /* The official BMC widget renders ~51px tall (nearly the whole top bar).
+         zoom scales it (and its layout box, so no leftover gap) down to about
+         the search-field height. Tweak the factor to taste. */
+      .bmc-header-btn { display:flex; align-items:center; margin:0 .2rem; zoom:0.72; }
+    </style>
+    <div class="bmc-header-btn">
+      <script type="text/javascript"
+              src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js"
+              data-name="bmc-button"
+              data-slug="OZ1LAV"
+              data-color="#FFDD00"
+              data-emoji="☕"
+              data-font="Lato"
+              data-text="Buy me a coffee"
+              data-outline-color="#000000"
+              data-font-color="#000000"
+              data-coffee-color="#ffffff"></script>
+    </div>
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/SteffenLav/qmx-panadapter" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    qmx-panadapter
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../quick-start/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Quick Start
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../getting-help/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Getting Help
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../guide/panadapter/" class="md-tabs__link">
+          
+  
+  
+  User Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../reference/gestures/" class="md-tabs__link">
+          
+  
+  
+  Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../build/" class="md-tabs__link">
+          
+  
+  
+  For Builders
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../releases/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Releases
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="QMX Panadapter" class="md-nav__button md-logo" aria-label="QMX Panadapter" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    QMX Panadapter
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/SteffenLav/qmx-panadapter" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    qmx-panadapter
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quick-start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-help/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Help
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Guide
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    User Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/panadapter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Panadapter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/audio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/spots/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Live Spots
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/spot-map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spot Map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/web-ui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web UI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/ft8-rx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FT8 RX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/ft8-tx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FT8 TX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/cw/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CW (beta)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/webradio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web Radio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/js8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JS8 (beta)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/time-sync/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Time Sync
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/wspr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WSPR
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/radio-menus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Radio Menus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/gestures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gestures & Controls
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/hardware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hardware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/web-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/rigctld/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hamlib rigctld
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    For Builders
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    For Builders
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../build/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Build from Source
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#module-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Module Map
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Flow
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#audio-path-spectrum-waterfall" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Audio Path (Spectrum + Waterfall)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ft8-receive-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FT8 Receive Path
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ft8-transmit-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FT8 Transmit Path
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-priorities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task Priorities
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dsp-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DSP Pipeline
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DSP Pipeline">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spectrum-calculation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Spectrum Calculation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iq-balance-gram-schmidt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I/Q Balance (Gram-Schmidt)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#waterfall" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Waterfall
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ft8-decode-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FT8 Decode List
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Storage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Storage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nvs-non-volatile-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NVS (Non-Volatile Storage)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adif-log" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ADIF Log
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#timing-slots" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Timing &amp; Slots
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Timing &amp; Slots">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ft8-slot-15-seconds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FT8 Slot (15 seconds)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utc-boundary-alignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UTC Boundary Alignment
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing & Feedback
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Releases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#module-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Module Map
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Flow
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#audio-path-spectrum-waterfall" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Audio Path (Spectrum + Waterfall)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ft8-receive-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FT8 Receive Path
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ft8-transmit-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FT8 Transmit Path
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-priorities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task Priorities
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dsp-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DSP Pipeline
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DSP Pipeline">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spectrum-calculation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Spectrum Calculation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iq-balance-gram-schmidt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I/Q Balance (Gram-Schmidt)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#waterfall" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Waterfall
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ft8-decode-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FT8 Decode List
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Storage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Storage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nvs-non-volatile-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NVS (Non-Volatile Storage)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adif-log" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ADIF Log
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#timing-slots" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Timing &amp; Slots
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Timing &amp; Slots">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ft8-slot-15-seconds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FT8 Slot (15 seconds)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utc-boundary-alignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UTC Boundary Alignment
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="architecture-overview">Architecture Overview<a class="headerlink" href="#architecture-overview" title="Permanent link">&para;</a></h1>
+<h2 id="module-map">Module Map<a class="headerlink" href="#module-map" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Path</th>
+<th>What lives there</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>main.c</code></td>
+<td>app_main, task launch, orchestration</td>
+</tr>
+<tr>
+<td><code>display/</code></td>
+<td>display driver, BSP init, LCD + touch</td>
+</tr>
+<tr>
+<td><code>ui/</code></td>
+<td>LVGL widgets, spectrum/waterfall canvases, FT8 screen</td>
+</tr>
+<tr>
+<td><code>cat/</code></td>
+<td>USB CDC-ACM CAT polling, QMX control</td>
+</tr>
+<tr>
+<td><code>audio/</code></td>
+<td>USB UAC consumer (core 0, polling mode)</td>
+</tr>
+<tr>
+<td><code>dsp/</code></td>
+<td>FFT, spectrum, I/Q balance, CW demod</td>
+</tr>
+<tr>
+<td><code>ft8_tx.c</code></td>
+<td>FT8 TX engine, arm/run/abort, tone finder</td>
+</tr>
+<tr>
+<td><code>ft8_test.c</code></td>
+<td>FT8 RX: slot loop, capture, decode, state machine</td>
+</tr>
+<tr>
+<td><code>ft8_sim.c</code></td>
+<td>FT8 simulation mode (phantom stations)</td>
+</tr>
+<tr>
+<td><code>ft8_qso.c</code></td>
+<td>FT8 QSO state machine (pounce + CQ-run)</td>
+</tr>
+<tr>
+<td><code>render/</code></td>
+<td>10 Hz render task, spectrum smoothing, waterfall</td>
+</tr>
+<tr>
+<td><code>wifi/</code></td>
+<td>WiFi + SNTP</td>
+</tr>
+<tr>
+<td><code>net/webserver.c</code></td>
+<td>HTTP server, web UI endpoints, WebSocket</td>
+</tr>
+<tr>
+<td><code>adif/</code></td>
+<td>ADIF logging, QRZ/eQSL upload</td>
+</tr>
+<tr>
+<td><code>storage/</code></td>
+<td>NVS settings, config I/O</td>
+</tr>
+<tr>
+<td><code>rtc/</code></td>
+<td>RTC driver (RX8130CE)</td>
+</tr>
+<tr>
+<td><code>time_sync/</code></td>
+<td>Time orchestrator (SNTP/RTC/QMX/manual)</td>
+</tr>
+<tr>
+<td><code>util/</code></td>
+<td>Diagnostic logging, bandplan, CPU/frame-rate reporting</td>
+</tr>
+<tr>
+<td><code>espressif__usb_host_uac/</code></td>
+<td>UAC + CDC-ACM coexistence (patched)</td>
+</tr>
+<tr>
+<td><code>espressif__esp_lcd_touch_st7123/</code></td>
+<td>ST7121/ST7123 compatibility (patched)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="data-flow">Data Flow<a class="headerlink" href="#data-flow" title="Permanent link">&para;</a></h2>
+<h3 id="audio-path-spectrum-waterfall">Audio Path (Spectrum + Waterfall)<a class="headerlink" href="#audio-path-spectrum-waterfall" title="Permanent link">&para;</a></h3>
+<div class="qmx-diagram" style="overflow-x:auto"><svg viewBox="0 0 900 693" width="100%" role="img" xmlns="http://www.w3.org/2000/svg" style="max-width:900px"><rect x="0" y="0" width="900" height="693" rx="10" fill="#151B23" stroke="#2A3440"/><text x="18" y="32" font-size="17" fill="#E9C46A" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="600">From the radio to the screen</text><rect x="18" y="56" width="864" height="35" rx="6" fill="#1B232D" stroke="#2A3440"/><text x="30" y="78" font-size="16" fill="#E6EDF3" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">QMX USB audio - 48 kHz, 24-bit I/Q</text><path d="M44 97 l0 14" stroke="#93A4B1" stroke-width="1.5"/><path d="M44 115 l-4 -5 l8 0 z" fill="#93A4B1"/><rect x="18" y="119" width="864" height="35" rx="6" fill="#1B232D" stroke="#2A3440"/><text x="30" y="141" font-size="16" fill="#E6EDF3" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">audio_task - core 0, polling</text><rect x="58" y="160" width="824" height="29" rx="5" fill="#151B23" stroke="#2A3440"/><rect x="58" y="160" width="3" height="29" fill="#8AB4F8"/><text x="72" y="179" font-size="14" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">I/Q balance correction, per sample</text><rect x="58" y="197" width="824" height="29" rx="5" fill="#151B23" stroke="#2A3440"/><rect x="58" y="197" width="3" height="29" fill="#8AB4F8"/><text x="72" y="216" font-size="14" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">DC blocker</text><path d="M44 234 l0 14" stroke="#93A4B1" stroke-width="1.5"/><path d="M44 252 l-4 -5 l8 0 z" fill="#93A4B1"/><rect x="18" y="256" width="864" height="35" rx="6" fill="#1B232D" stroke="#2A3440"/><text x="30" y="278" font-size="16" fill="#E6EDF3" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">ring buffer in PSRAM</text><path d="M44 297 l0 14" stroke="#93A4B1" stroke-width="1.5"/><path d="M44 315 l-4 -5 l8 0 z" fill="#93A4B1"/><rect x="18" y="319" width="864" height="35" rx="6" fill="#1B232D" stroke="#2A3440"/><text x="30" y="341" font-size="16" fill="#E6EDF3" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">fft_task - core 1</text><rect x="58" y="360" width="824" height="29" rx="5" fill="#151B23" stroke="#2A3440"/><rect x="58" y="360" width="3" height="29" fill="#8AB4F8"/><text x="72" y="379" font-size="14" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">512-point FFT, Blackman-Harris window</text><rect x="58" y="397" width="824" height="29" rx="5" fill="#151B23" stroke="#2A3440"/><rect x="58" y="397" width="3" height="29" fill="#8AB4F8"/><text x="72" y="416" font-size="14" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">EMA smoothing, dB scaling</text><path d="M44 434 l0 14" stroke="#93A4B1" stroke-width="1.5"/><path d="M44 452 l-4 -5 l8 0 z" fill="#93A4B1"/><rect x="18" y="456" width="864" height="35" rx="6" fill="#1B232D" stroke="#2A3440"/><text x="30" y="478" font-size="16" fill="#E6EDF3" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">spectrum mutex</text><path d="M44 497 l0 14" stroke="#93A4B1" stroke-width="1.5"/><path d="M44 515 l-4 -5 l8 0 z" fill="#93A4B1"/><rect x="18" y="519" width="864" height="35" rx="6" fill="#1B232D" stroke="#2A3440"/><text x="30" y="541" font-size="16" fill="#E6EDF3" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">render_task - 30 Hz</text><path d="M44 560 l0 14" stroke="#93A4B1" stroke-width="1.5"/><path d="M44 578 l-4 -5 l8 0 z" fill="#93A4B1"/><rect x="18" y="582" width="864" height="35" rx="6" fill="#1B232D" stroke="#2A3440"/><text x="30" y="604" font-size="16" fill="#E6EDF3" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">LVGL canvases - spectrum and waterfall</text><rect x="18" y="622" width="14" height="14" rx="3" fill="#93A4B1" fill-opacity="0.50" stroke="#93A4B1"/><text x="42" y="633" font-size="15" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">the audio task polls rather than waiting on events: event-driven reads truncated the UAC chunks and</text><text x="42" y="652" font-size="15" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">pumped the noise floor</text></svg></div>
+
+<h3 id="ft8-receive-path">FT8 Receive Path<a class="headerlink" href="#ft8-receive-path" title="Permanent link">&para;</a></h3>
+<div class="qmx-diagram" style="overflow-x:auto"><svg viewBox="0 0 900 567" width="100%" role="img" xmlns="http://www.w3.org/2000/svg" style="max-width:900px"><rect x="0" y="0" width="900" height="567" rx="10" fill="#151B23" stroke="#2A3440"/><text x="18" y="32" font-size="17" fill="#E9C46A" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="600">From the slot boundary to a row on screen</text><rect x="18" y="56" width="864" height="35" rx="6" fill="#1B232D" stroke="#2A3440"/><text x="30" y="78" font-size="16" fill="#E6EDF3" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">RX slot boundary - every 15 s, UTC-aligned</text><path d="M44 97 l0 14" stroke="#93A4B1" stroke-width="1.5"/><path d="M44 115 l-4 -5 l8 0 z" fill="#93A4B1"/><rect x="18" y="119" width="864" height="35" rx="6" fill="#1B232D" stroke="#2A3440"/><text x="30" y="141" font-size="16" fill="#E6EDF3" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">ft8_task on core 1</text><rect x="58" y="160" width="824" height="29" rx="5" fill="#151B23" stroke="#2A3440"/><rect x="58" y="160" width="3" height="29" fill="#8AB4F8"/><text x="72" y="179" font-size="14" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">dsp_ft8_capture() - runs TO the next UTC boundary, ~180000 samples at 12 kHz</text><rect x="58" y="197" width="824" height="29" rx="5" fill="#151B23" stroke="#2A3440"/><rect x="58" y="197" width="3" height="29" fill="#8AB4F8"/><text x="72" y="216" font-size="14" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">streaming STFT builds the waterfall DURING capture, into PSRAM</text><rect x="58" y="234" width="824" height="29" rx="5" fill="#151B23" stroke="#2A3440"/><rect x="58" y="234" width="3" height="29" fill="#8AB4F8"/><text x="72" y="253" font-size="14" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">candidate search - up to FT8_MAX_CANDIDATES (140) sync hits</text><rect x="58" y="271" width="824" height="29" rx="5" fill="#151B23" stroke="#2A3440"/><rect x="58" y="271" width="3" height="29" fill="#8AB4F8"/><text x="72" y="290" font-size="14" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">decode_candidate_range() - LDPC per candidate</text><path d="M44 308 l0 14" stroke="#93A4B1" stroke-width="1.5"/><path d="M44 326 l-4 -5 l8 0 z" fill="#93A4B1"/><rect x="18" y="330" width="864" height="35" rx="6" fill="#1B232D" stroke="#2A3440"/><text x="30" y="352" font-size="16" fill="#E6EDF3" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">ft8_dec0 on core 0 takes the other half of the candidates in parallel</text><path d="M44 371 l0 14" stroke="#93A4B1" stroke-width="1.5"/><path d="M44 389 l-4 -5 l8 0 z" fill="#93A4B1"/><rect x="18" y="393" width="864" height="35" rx="6" fill="#1B232D" stroke="#2A3440"/><text x="30" y="415" font-size="16" fill="#E6EDF3" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">ft8_screen_record_decode() then ft8_qso_advance()</text><path d="M44 434 l0 14" stroke="#93A4B1" stroke-width="1.5"/><path d="M44 452 l-4 -5 l8 0 z" fill="#93A4B1"/><rect x="18" y="456" width="864" height="35" rx="6" fill="#1B232D" stroke="#2A3440"/><text x="30" y="478" font-size="16" fill="#E6EDF3" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">ft8_screen_view - the live decode list</text><rect x="18" y="496" width="14" height="14" rx="3" fill="#93A4B1" fill-opacity="0.50" stroke="#93A4B1"/><text x="42" y="507" font-size="15" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">the candidate cap is 140, not ~10: on a busy band the search hits it every slot, and most are false</text><text x="42" y="526" font-size="15" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">syncs that burn a full LDPC budget before failing</text></svg></div>
+
+<h3 id="ft8-transmit-path">FT8 Transmit Path<a class="headerlink" href="#ft8-transmit-path" title="Permanent link">&para;</a></h3>
+<div class="qmx-diagram" style="overflow-x:auto"><svg viewBox="0 0 900 548" width="100%" role="img" xmlns="http://www.w3.org/2000/svg" style="max-width:900px"><rect x="0" y="0" width="900" height="548" rx="10" fill="#151B23" stroke="#2A3440"/><text x="18" y="32" font-size="17" fill="#E9C46A" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="600">From a tap to a keyed radio</text><rect x="18" y="56" width="864" height="35" rx="6" fill="#1B232D" stroke="#2A3440"/><text x="30" y="78" font-size="16" fill="#E6EDF3" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">operator taps Transmit, or the QSO machine decides</text><path d="M44 97 l0 14" stroke="#93A4B1" stroke-width="1.5"/><path d="M44 115 l-4 -5 l8 0 z" fill="#93A4B1"/><rect x="18" y="119" width="864" height="35" rx="6" fill="#1B232D" stroke="#2A3440"/><text x="30" y="141" font-size="16" fill="#E6EDF3" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">ft8_tx_build_request() - build the message text</text><path d="M44 160 l0 14" stroke="#93A4B1" stroke-width="1.5"/><path d="M44 178 l-4 -5 l8 0 z" fill="#93A4B1"/><rect x="18" y="182" width="864" height="35" rx="6" fill="#1B232D" stroke="#2A3440"/><text x="30" y="204" font-size="16" fill="#E6EDF3" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">ft8_tx_arm() - stage it for a slot</text><rect x="58" y="223" width="824" height="29" rx="5" fill="#151B23" stroke="#2A3440"/><rect x="58" y="223" width="3" height="29" fill="#8AB4F8"/><text x="72" y="242" font-size="14" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">refuses while the radio is released (see "Let me use the QMX menus")</text><path d="M44 260 l0 14" stroke="#93A4B1" stroke-width="1.5"/><path d="M44 278 l-4 -5 l8 0 z" fill="#93A4B1"/><rect x="18" y="282" width="864" height="35" rx="6" fill="#1B232D" stroke="#2A3440"/><text x="30" y="304" font-size="16" fill="#E6EDF3" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">ft8_tx_run() at the slot boundary</text><rect x="58" y="323" width="824" height="29" rx="5" fill="#151B23" stroke="#2A3440"/><rect x="58" y="323" width="3" height="29" fill="#8AB4F8"/><text x="72" y="342" font-size="14" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">cat_poll_set_paused(true) for the whole burst</text><rect x="58" y="360" width="824" height="29" rx="5" fill="#151B23" stroke="#2A3440"/><rect x="58" y="360" width="3" height="29" fill="#8AB4F8"/><text x="72" y="379" font-size="14" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">TX; then 79 x TA&lt;freq&gt;; at 160 ms, then TA0; and RX;</text><rect x="58" y="397" width="824" height="29" rx="5" fill="#151B23" stroke="#2A3440"/><rect x="58" y="397" width="3" height="29" fill="#8AB4F8"/><text x="72" y="416" font-size="14" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">FT4: 105 tones at 48 ms instead</text><path d="M44 434 l0 14" stroke="#93A4B1" stroke-width="1.5"/><path d="M44 452 l-4 -5 l8 0 z" fill="#93A4B1"/><rect x="18" y="456" width="864" height="35" rx="6" fill="#1B232D" stroke="#2A3440"/><text x="30" y="478" font-size="16" fill="#E6EDF3" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">ft8_qso_on_tx_complete() - re-arm the next message</text><rect x="18" y="496" width="14" height="14" rx="3" fill="#FFA040" fill-opacity="0.50" stroke="#FFA040"/><text x="42" y="507" font-size="15" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">the tail always runs, even on an abort or an error, so the radio cannot be left keyed</text></svg></div>
+
+<h2 id="task-priorities">Task Priorities<a class="headerlink" href="#task-priorities" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>Priority 25 (highest) — app_main (setup only)
+Priority 24 — WiFi / SNTP
+Priority 10 — web server
+Priority 6  — FT8 transmit ISR
+Priority 4  — FFT (ring buffer consumer, spectrum producer)
+Priority 1  — FT8 decode, CAT poll, render, LVGL, time sync
+</code></pre></div>
+<p><strong>Critical:</strong> FT8 decode runs at priority 1 — lowest. This ensures real-time tasks (FFT, USB) never starve, and the UI thread remains responsive.</p>
+<h2 id="dsp-pipeline">DSP Pipeline<a class="headerlink" href="#dsp-pipeline" title="Permanent link">&para;</a></h2>
+<h3 id="spectrum-calculation">Spectrum Calculation<a class="headerlink" href="#spectrum-calculation" title="Permanent link">&para;</a></h3>
+<div class="qmx-diagram" style="overflow-x:auto"><svg viewBox="0 0 900 537" width="100%" role="img" xmlns="http://www.w3.org/2000/svg" style="max-width:900px"><rect x="0" y="0" width="900" height="537" rx="10" fill="#151B23" stroke="#2A3440"/><text x="18" y="32" font-size="17" fill="#E9C46A" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="600">Ring buffer to canvas</text><rect x="18" y="56" width="864" height="35" rx="6" fill="#1B232D" stroke="#2A3440"/><text x="30" y="78" font-size="16" fill="#E6EDF3" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">ring buffer - 64 KB in PSRAM, 16384 I/Q pairs, about 1.4 s at 12 kHz</text><path d="M44 97 l0 14" stroke="#93A4B1" stroke-width="1.5"/><path d="M44 115 l-4 -5 l8 0 z" fill="#93A4B1"/><rect x="18" y="119" width="864" height="35" rx="6" fill="#1B232D" stroke="#2A3440"/><text x="30" y="141" font-size="16" fill="#E6EDF3" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">FFT - 1024-point complex, Blackman-Harris by default</text><path d="M44 160 l0 14" stroke="#93A4B1" stroke-width="1.5"/><path d="M44 178 l-4 -5 l8 0 z" fill="#93A4B1"/><rect x="18" y="182" width="864" height="35" rx="6" fill="#1B232D" stroke="#2A3440"/><text x="30" y="204" font-size="16" fill="#E6EDF3" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">magnitude, then scaled</text><rect x="58" y="223" width="824" height="29" rx="5" fill="#151B23" stroke="#2A3440"/><rect x="58" y="223" width="3" height="29" fill="#8AB4F8"/><text x="72" y="242" font-size="14" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">dBm = 20*log10(mag) - 148 dB calibration offset</text><rect x="58" y="260" width="824" height="29" rx="5" fill="#151B23" stroke="#2A3440"/><rect x="58" y="260" width="3" height="29" fill="#8AB4F8"/><text x="72" y="279" font-size="14" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">flat = 20*log10(mag / per-bin floor)</text><path d="M44 297 l0 14" stroke="#93A4B1" stroke-width="1.5"/><path d="M44 315 l-4 -5 l8 0 z" fill="#93A4B1"/><rect x="18" y="319" width="864" height="35" rx="6" fill="#1B232D" stroke="#2A3440"/><text x="30" y="341" font-size="16" fill="#E6EDF3" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">spectrum mutex</text><path d="M44 360 l0 14" stroke="#93A4B1" stroke-width="1.5"/><path d="M44 378 l-4 -5 l8 0 z" fill="#93A4B1"/><rect x="18" y="382" width="864" height="35" rx="6" fill="#1B232D" stroke="#2A3440"/><text x="30" y="404" font-size="16" fill="#E6EDF3" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">render_task at 30 Hz - EMA smoothing</text><path d="M44 423 l0 14" stroke="#93A4B1" stroke-width="1.5"/><path d="M44 441 l-4 -5 l8 0 z" fill="#93A4B1"/><rect x="18" y="445" width="864" height="35" rx="6" fill="#1B232D" stroke="#2A3440"/><text x="30" y="467" font-size="16" fill="#E6EDF3" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">LVGL canvas push</text><rect x="18" y="485" width="14" height="14" rx="3" fill="#93A4B1" fill-opacity="0.50" stroke="#93A4B1"/><text x="42" y="496" font-size="15" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">the FFT window is selectable in the drawer: Blackman-Harris, Hann or Nuttall</text></svg></div>
+
+<p>Details worth knowing, each of them load-bearing:</p>
+<ul>
+<li><strong>FFT</strong> — 1024-point complex. The <strong>esp-dsp ANSI fallback</strong> is used deliberately: the PIE/vector build crashes under sustained WebSocket load on this silicon.</li>
+<li><strong>IF offset</strong> — the QMX presents I/Q at <strong>+12 kHz</strong>, so the spectrum, waterfall <em>and</em> S-meter all shift bin selection by <code>n_bins/4</code> to put the VFO signal at the visual centre. Miss that shift and the S-meter reads the DC/LO spike instead of the signal.</li>
+<li><strong>DC blocker</strong> — a one-pole IIR on the I/Q stream, ahead of the FFT.</li>
+<li><strong>Spectrum smoothing</strong> — per-bin EMA, α = 0.4 by default and adjustable in the
+  drawer. ⚠ The drawer and the web form show <strong>smoothing percent = 100 − α×100</strong>
+  (higher is smoother); α itself is what is stored and what the API's <code>ema_pct</code>
+  carries.</li>
+<li><strong>dBm calibration</strong> — <code>DSP_DB_CALIBRATION_OFFSET = −148.0 dB</code>, measured on a dummy load: the noise floor reads −130 dBm and S9 = −73 dBm.</li>
+<li><strong>Waterfall scroll</strong> — a 1280×824 double-height canvas, so a new row costs about <strong>130 µs</strong> instead of the ~92 ms a <code>memmove</code> would take.</li>
+<li><strong>Audio task</strong> — polling on core 0 with a drain loop, <strong>not</strong> event-driven. Event-driven reads returned truncated UAC chunks that saturated the FFT input and pumped the noise floor on a slow ~13 s cycle.</li>
+</ul>
+<h3 id="iq-balance-gram-schmidt">I/Q Balance (Gram-Schmidt)<a class="headerlink" href="#iq-balance-gram-schmidt" title="Permanent link">&para;</a></h3>
+<p>Per-sample correction applied in <code>audio.c</code> before ring buffer:</p>
+<div class="qmx-diagram" style="overflow-x:auto"><svg viewBox="0 0 900 534" width="100%" role="img" xmlns="http://www.w3.org/2000/svg" style="max-width:900px"><rect x="0" y="0" width="900" height="534" rx="10" fill="#151B23" stroke="#2A3440"/><text x="18" y="32" font-size="17" fill="#E9C46A" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="600">Blind adaptive correction, per sample</text><rect x="18" y="56" width="864" height="35" rx="6" fill="#1B232D" stroke="#2A3440"/><text x="30" y="78" font-size="16" fill="#E6EDF3" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">I_in, Q_in - core 0, 48 kHz</text><path d="M44 97 l0 14" stroke="#93A4B1" stroke-width="1.5"/><path d="M44 115 l-4 -5 l8 0 z" fill="#93A4B1"/><rect x="18" y="119" width="864" height="35" rx="6" fill="#1B232D" stroke="#2A3440"/><text x="30" y="141" font-size="16" fill="#E6EDF3" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">DC tracker, tau = 1 s</text><rect x="58" y="160" width="824" height="29" rx="5" fill="#151B23" stroke="#2A3440"/><rect x="58" y="160" width="3" height="29" fill="#8AB4F8"/><text x="72" y="179" font-size="14" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">I_out = I_in - I_dc, Q_out = Q_in - Q_dc</text><path d="M44 197 l0 14" stroke="#93A4B1" stroke-width="1.5"/><path d="M44 215 l-4 -5 l8 0 z" fill="#93A4B1"/><rect x="18" y="219" width="864" height="35" rx="6" fill="#1B232D" stroke="#2A3440"/><text x="30" y="241" font-size="16" fill="#E6EDF3" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">power and cross-product trackers</text><rect x="58" y="260" width="824" height="29" rx="5" fill="#151B23" stroke="#2A3440"/><rect x="58" y="260" width="3" height="29" fill="#8AB4F8"/><text x="72" y="279" font-size="14" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">K_amp from the I and Q powers, tau = 200 ms</text><rect x="58" y="297" width="824" height="29" rx="5" fill="#151B23" stroke="#2A3440"/><rect x="58" y="297" width="3" height="29" fill="#8AB4F8"/><text x="72" y="316" font-size="14" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">K_phi from the I*Q cross product, tau = 1 s</text><path d="M44 334 l0 14" stroke="#93A4B1" stroke-width="1.5"/><path d="M44 352 l-4 -5 l8 0 z" fill="#93A4B1"/><rect x="18" y="356" width="864" height="35" rx="6" fill="#1B232D" stroke="#2A3440"/><text x="30" y="378" font-size="16" fill="#E6EDF3" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">correction - Q_final = (Q_out - K_phi * I_out) * K_amp</text><path d="M44 397 l0 14" stroke="#93A4B1" stroke-width="1.5"/><path d="M44 415 l-4 -5 l8 0 z" fill="#93A4B1"/><rect x="18" y="419" width="864" height="35" rx="6" fill="#1B232D" stroke="#2A3440"/><text x="30" y="441" font-size="16" fill="#E6EDF3" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">ring buffer push</text><rect x="18" y="459" width="14" height="14" rx="3" fill="#8AB4F8" fill-opacity="0.50" stroke="#8AB4F8"/><text x="42" y="470" font-size="15" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">I is never touched; the whole correction lands on Q</text><rect x="18" y="482" width="14" height="14" rx="3" fill="#93A4B1" fill-opacity="0.50" stroke="#93A4B1"/><text x="42" y="493" font-size="15" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">all constants run 8x faster for the first 2 s after a reset, so it converges in about 125 ms</text></svg></div>
+
+<h2 id="waterfall">Waterfall<a class="headerlink" href="#waterfall" title="Permanent link">&para;</a></h2>
+<div class="qmx-diagram" style="overflow-x:auto"><svg viewBox="0 0 900 459" width="100%" role="img" xmlns="http://www.w3.org/2000/svg" style="max-width:900px"><rect x="0" y="0" width="900" height="459" rx="10" fill="#151B23" stroke="#2A3440"/><text x="18" y="32" font-size="17" fill="#E9C46A" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="600">Why the waterfall scrolls without moving memory</text><rect x="18" y="56" width="864" height="35" rx="6" fill="#1B232D" stroke="#2A3440"/><text x="30" y="78" font-size="16" fill="#E6EDF3" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">dsp_ft8_capture() during FT8 RX</text><rect x="58" y="97" width="824" height="29" rx="5" fill="#151B23" stroke="#2A3440"/><rect x="58" y="97" width="3" height="29" fill="#8AB4F8"/><text x="72" y="116" font-size="14" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">STFT while the slot is still being captured</text><rect x="58" y="134" width="824" height="29" rx="5" fill="#151B23" stroke="#2A3440"/><rect x="58" y="134" width="3" height="29" fill="#8AB4F8"/><text x="72" y="153" font-size="14" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">per-bin PSRAM buffer, rolling window</text><path d="M44 171 l0 14" stroke="#93A4B1" stroke-width="1.5"/><path d="M44 189 l-4 -5 l8 0 z" fill="#93A4B1"/><rect x="18" y="193" width="864" height="35" rx="6" fill="#1B232D" stroke="#2A3440"/><text x="30" y="215" font-size="16" fill="#E6EDF3" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">render_waterfall_tick()</text><rect x="58" y="234" width="824" height="29" rx="5" fill="#151B23" stroke="#2A3440"/><rect x="58" y="234" width="3" height="29" fill="#8AB4F8"/><text x="72" y="253" font-size="14" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">1280 x 824 canvas - twice the visible height</text><rect x="58" y="271" width="824" height="29" rx="5" fill="#151B23" stroke="#2A3440"/><rect x="58" y="271" width="3" height="29" fill="#8AB4F8"/><text x="72" y="290" font-size="14" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">the new row is written at s_wf_head AND at s_wf_head + WATERFALL_H</text><rect x="58" y="308" width="824" height="29" rx="5" fill="#151B23" stroke="#2A3440"/><rect x="58" y="308" width="3" height="29" fill="#8AB4F8"/><text x="72" y="327" font-size="14" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">the VIEW pointer moves; the pixels do not</text><path d="M44 345 l0 14" stroke="#93A4B1" stroke-width="1.5"/><path d="M44 363 l-4 -5 l8 0 z" fill="#93A4B1"/><rect x="18" y="367" width="864" height="35" rx="6" fill="#1B232D" stroke="#2A3440"/><text x="30" y="389" font-size="16" fill="#E6EDF3" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">colorise with the SDR gradient, then push to LVGL</text><rect x="18" y="407" width="14" height="14" rx="3" fill="#4CAF6A" fill-opacity="0.50" stroke="#4CAF6A"/><text x="42" y="418" font-size="15" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">this is the trick: a memmove per tick costs ~92 ms, moving the view pointer costs ~130 us</text></svg></div>
+
+<h2 id="ft8-decode-list">FT8 Decode List<a class="headerlink" href="#ft8-decode-list" title="Permanent link">&para;</a></h2>
+<div class="qmx-diagram" style="overflow-x:auto"><svg viewBox="0 0 900 541" width="100%" role="img" xmlns="http://www.w3.org/2000/svg" style="max-width:900px"><rect x="0" y="0" width="900" height="541" rx="10" fill="#151B23" stroke="#2A3440"/><text x="18" y="32" font-size="17" fill="#E9C46A" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="600">From a decode to a row you can tap</text><rect x="18" y="56" width="864" height="35" rx="6" fill="#1B232D" stroke="#2A3440"/><text x="30" y="78" font-size="16" fill="#E6EDF3" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">ft8_screen_decode_queue - 4-buffer pool</text><path d="M44 97 l0 14" stroke="#93A4B1" stroke-width="1.5"/><path d="M44 115 l-4 -5 l8 0 z" fill="#93A4B1"/><rect x="18" y="119" width="864" height="35" rx="6" fill="#1B232D" stroke="#2A3440"/><text x="30" y="141" font-size="16" fill="#E6EDF3" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">ft8_screen_record_decode()</text><rect x="58" y="160" width="824" height="29" rx="5" fill="#151B23" stroke="#2A3440"/><rect x="58" y="160" width="3" height="29" fill="#8AB4F8"/><text x="72" y="179" font-size="14" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">call, grid, SNR, audio tone, time</text><path d="M44 197 l0 14" stroke="#93A4B1" stroke-width="1.5"/><path d="M44 215 l-4 -5 l8 0 z" fill="#93A4B1"/><rect x="18" y="219" width="864" height="35" rx="6" fill="#1B232D" stroke="#2A3440"/><text x="30" y="241" font-size="16" fill="#E6EDF3" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">ft8_screen_get_all() - snapshot for the UI</text><rect x="58" y="260" width="824" height="29" rx="5" fill="#151B23" stroke="#2A3440"/><rect x="58" y="260" width="3" height="29" fill="#8AB4F8"/><text x="72" y="279" font-size="14" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">expire anything not re-heard within 60 s</text><rect x="58" y="297" width="824" height="29" rx="5" fill="#151B23" stroke="#2A3440"/><rect x="58" y="297" width="3" height="29" fill="#8AB4F8"/><text x="72" y="316" font-size="14" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">apply the include / exclude / worked-before filters</text><rect x="58" y="334" width="824" height="29" rx="5" fill="#151B23" stroke="#2A3440"/><rect x="58" y="334" width="3" height="29" fill="#8AB4F8"/><text x="72" y="353" font-size="14" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">sort - CQ callers and stations answering us first</text><path d="M44 371 l0 14" stroke="#93A4B1" stroke-width="1.5"/><path d="M44 389 l-4 -5 l8 0 z" fill="#93A4B1"/><rect x="18" y="393" width="864" height="35" rx="6" fill="#1B232D" stroke="#2A3440"/><text x="30" y="415" font-size="16" fill="#E6EDF3" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">ft8_screen_view.c - the LVGL list</text><rect x="58" y="434" width="824" height="29" rx="5" fill="#151B23" stroke="#2A3440"/><rect x="58" y="434" width="3" height="29" fill="#8AB4F8"/><text x="72" y="453" font-size="14" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">own-call rows inverted, red fill and white text</text><rect x="18" y="470" width="14" height="14" rx="3" fill="#93A4B1" fill-opacity="0.50" stroke="#93A4B1"/><text x="42" y="481" font-size="15" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">the list is a picture of who is on frequency NOW, not a log: a station that stops transmitting drops</text><text x="42" y="500" font-size="15" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">off after a minute</text></svg></div>
+
+<h2 id="storage">Storage<a class="headerlink" href="#storage" title="Permanent link">&para;</a></h2>
+<h3 id="nvs-non-volatile-storage">NVS (Non-Volatile Storage)<a class="headerlink" href="#nvs-non-volatile-storage" title="Permanent link">&para;</a></h3>
+<p>Settings namespace: <code>QMX</code></p>
+<div class="highlight"><pre><span></span><code>Key             Type     Example
+wifi_ssid       string   "MyNet"
+wifi_pass       string   "password123"
+callsign        string   "OZ1LAV"
+grid            string   "JO45"
+last_freq_20m   uint32   14074000
+last_mode_20m   uint8    2 (USB)
+memory_1        blob     { freq, mode, bw, name }
+...
+diag_log        uint8    1 (on/off)
+</code></pre></div>
+<h3 id="adif-log">ADIF Log<a class="headerlink" href="#adif-log" title="Permanent link">&para;</a></h3>
+<p>File: <code>/spiffs/qso.adi</code></p>
+<p>Format: Standard ADIF (one QSO per <code>&lt;EOR&gt;</code> record). Each QSO stores:</p>
+<div class="highlight"><pre><span></span><code>CALL, GRIDSQUARE, RST_SENT, RST_RCVD, QSO_DATE, TIME_ON, FREQ, BAND,
+MODE (+ SUBMODE on FT4), STATION_CALLSIGN, MY_GRIDSQUARE,
+MY_SIG/MY_SIG_INFO (our activation), SIG/SIG_INFO (theirs), ...
+</code></pre></div>
+<p>Downloaded via web UI or serial.</p>
+<h2 id="timing-slots">Timing &amp; Slots<a class="headerlink" href="#timing-slots" title="Permanent link">&para;</a></h2>
+<h3 id="ft8-slot-15-seconds">FT8 Slot (15 seconds)<a class="headerlink" href="#ft8-slot-15-seconds" title="Permanent link">&para;</a></h3>
+<div class="qmx-diagram" style="overflow-x:auto"><svg viewBox="0 0 900 300" width="100%" role="img" xmlns="http://www.w3.org/2000/svg" style="max-width:900px"><rect x="0" y="0" width="900" height="300" rx="10" fill="#151B23" stroke="#2A3440"/><text x="18" y="32" font-size="17" fill="#E9C46A" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="600">One FT8 slot, from the UTC boundary</text><rect x="18.0" y="56" width="760.3" height="44" rx="5" fill="#8AB4F8" fill-opacity="0.50" stroke="#8AB4F8"/><text x="398" y="84" font-size="16" fill="#E6EDF3" text-anchor="middle" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">Capture</text><rect x="778.3" y="56" width="103.7" height="44" rx="5" fill="#4CAF6A" fill-opacity="0.50" stroke="#4CAF6A"/><text x="830" y="84" font-size="16" fill="#E6EDF3" text-anchor="middle" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">Decode</text><rect x="18.0" y="86" width="161.3" height="14" rx="5" fill="#FFA040" fill-opacity="0.50" stroke="#FFA040"/><line x1="18.0" y1="104" x2="18.0" y2="110" stroke="#2A3440"/><text x="18" y="126" font-size="14" fill="#93A4B1" text-anchor="start" font-family="ui-monospace,'Cascadia Mono',Consolas,monospace" font-weight="normal">0</text><line x1="179.3" y1="104" x2="179.3" y2="110" stroke="#2A3440"/><text x="179" y="126" font-size="14" fill="#93A4B1" text-anchor="middle" font-family="ui-monospace,'Cascadia Mono',Consolas,monospace" font-weight="normal">2.8</text><line x1="778.3" y1="104" x2="778.3" y2="110" stroke="#2A3440"/><text x="778" y="126" font-size="14" fill="#93A4B1" text-anchor="middle" font-family="ui-monospace,'Cascadia Mono',Consolas,monospace" font-weight="normal">13.2</text><line x1="882.0" y1="104" x2="882.0" y2="110" stroke="#2A3440"/><text x="882" y="126" font-size="14" fill="#93A4B1" text-anchor="end" font-family="ui-monospace,'Cascadia Mono',Consolas,monospace" font-weight="normal">15</text><rect x="18" y="137" width="14" height="14" rx="3" fill="#8AB4F8" fill-opacity="0.50" stroke="#8AB4F8"/><text x="42" y="148" font-size="15" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">0 s - boundary. ft8_task wakes, checks for an armed TX, then dsp_ft8_capture_begin()</text><rect x="18" y="160" width="14" height="14" rx="3" fill="#FFA040" fill-opacity="0.50" stroke="#FFA040"/><text x="42" y="171" font-size="15" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">0-2.8 s - an armed reply fires on THIS slot, not the next one (FT8_REPLY_TX_WINDOW_MS)</text><rect x="18" y="183" width="14" height="14" rx="3" fill="#4CAF6A" fill-opacity="0.50" stroke="#4CAF6A"/><text x="42" y="194" font-size="15" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">13.2-15 s - capture is cut 1.8 s early (FT8_DECODE_RESERVE_MS) so the candidate search and LDPC</text><text x="42" y="213" font-size="15" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">finish BEFORE the boundary</text><rect x="18" y="225" width="14" height="14" rx="3" fill="#93A4B1" fill-opacity="0.50" stroke="#93A4B1"/><text x="42" y="236" font-size="15" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">the signal itself ends at 12.64 s - 79 symbols x 0.16 s</text><rect x="18" y="248" width="14" height="14" rx="3" fill="#93A4B1" fill-opacity="0.50" stroke="#93A4B1"/><text x="42" y="259" font-size="15" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">with Fast pounce off, capture instead runs to the boundary and the decode lands in the next slot</text></svg></div>
+
+<h3 id="utc-boundary-alignment">UTC Boundary Alignment<a class="headerlink" href="#utc-boundary-alignment" title="Permanent link">&para;</a></h3>
+<p>The capture window is <strong>UTC-clamped</strong>, not fixed-sample-count. Actual window length is computed:</p>
+<div class="highlight"><pre><span></span><code>ms_to_boundary = 15000 - (sys_time_ms % 15000)
+dsp_ft8_capture(timeout = min(ms_to_boundary, SLOT_TIMEOUT_MS))
+</code></pre></div>
+<p>If samples run short before the boundary, DSP zero-pads the rest. This keeps the capture window locked to UTC, preventing the multi-slot drift problem seen in earlier versions.</p>
+<hr />
+<p><strong>Next:</strong> Read <a href="https://github.com/SteffenLav/qmx-panadapter/blob/main/CLAUDE.md">CLAUDE.md</a> for the detailed quirks and critical knowledge, or contribute via <a href="../contributing/">Contributing</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.sections", "toc.follow", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

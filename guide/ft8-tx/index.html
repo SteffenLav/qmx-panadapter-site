@@ -1,0 +1,2604 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://tab5.lav.dk/guide/ft8-tx/">
+      
+      
+        <link rel="prev" href="../ft8-rx/">
+      
+      
+        <link rel="next" href="../cw/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>FT8 TX - QMX Panadapter</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="light" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ft8-and-ft4-transmit" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="QMX Panadapter" class="md-header__button md-logo" aria-label="QMX Panadapter" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            QMX Panadapter
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              FT8 TX
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="light" data-md-color-primary="blue" data-md-color-accent="orange"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    <!-- Buy me a coffee (OZ1LAV) — just left of the search field -->
+    <style>
+      /* The official BMC widget renders ~51px tall (nearly the whole top bar).
+         zoom scales it (and its layout box, so no leftover gap) down to about
+         the search-field height. Tweak the factor to taste. */
+      .bmc-header-btn { display:flex; align-items:center; margin:0 .2rem; zoom:0.72; }
+    </style>
+    <div class="bmc-header-btn">
+      <script type="text/javascript"
+              src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js"
+              data-name="bmc-button"
+              data-slug="OZ1LAV"
+              data-color="#FFDD00"
+              data-emoji="☕"
+              data-font="Lato"
+              data-text="Buy me a coffee"
+              data-outline-color="#000000"
+              data-font-color="#000000"
+              data-coffee-color="#ffffff"></script>
+    </div>
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/SteffenLav/qmx-panadapter" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    qmx-panadapter
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../quick-start/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Quick Start
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../getting-help/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Getting Help
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../panadapter/" class="md-tabs__link">
+          
+  
+  
+  User Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../reference/gestures/" class="md-tabs__link">
+          
+  
+  
+  Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../build/build/" class="md-tabs__link">
+          
+  
+  
+  For Builders
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../releases/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Releases
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="QMX Panadapter" class="md-nav__button md-logo" aria-label="QMX Panadapter" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    QMX Panadapter
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/SteffenLav/qmx-panadapter" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    qmx-panadapter
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quick-start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-help/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Help
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Guide
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    User Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../panadapter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Panadapter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../audio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spots/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Live Spots
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spot-map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spot Map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../web-ui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web UI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ft8-rx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FT8 RX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FT8 TX
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FT8 TX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-ft8-vs-ft4-which-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. FT8 vs FT4 — Which to Use?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-switching-between-ft8-and-ft4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Switching Between FT8 and FT4
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-modes-of-transmission" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Modes of Transmission
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Modes of Transmission">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-reply-to-a-cq" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Reply to a CQ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working-a-pile-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Working a pile-up
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pick-callers-myself" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pick callers myself
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-call-cq" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Call CQ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-your-transmission-sits-in-the-slot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where your transmission sits in the slot
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-the-tx-status-line-is-telling-you" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the TX status line is telling you
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What the TX status line is telling you">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#3-auto-reply-robot-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Auto-Reply (Robot Mode)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pause-skip-one-transmission" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pause — skip one transmission
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pause — skip one transmission">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4-ft8-simulation-mode-practice-qsos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. FT8 Simulation Mode (Practice QSOs)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-arrl-field-day-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. ARRL Field Day Mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-foxhound-dxpedition-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Fox/Hound (DXpedition) Mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-message-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Message Status
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-power-swr-readout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Power &amp; SWR Readout
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-cq-presets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. CQ Presets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-frequency-tone-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Frequency &amp; Tone Control
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#waiting-for-a-busy-station" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Waiting for a busy station
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11-adif-logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. ADIF Logging
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-upload-to-qrz-eqsl-lotw-cloudlog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Upload to QRZ, eQSL, LoTW &amp; Cloudlog
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12. Upload to QRZ, eQSL, LoTW &amp; Cloudlog">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cloudlog-and-wavelog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cloudlog and Wavelog
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Troubleshooting
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cw/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CW (beta)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../webradio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web Radio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../js8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JS8 (beta)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../time-sync/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Time Sync
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wspr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WSPR
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../radio-menus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Radio Menus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/gestures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gestures & Controls
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/hardware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hardware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/web-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/rigctld/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hamlib rigctld
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    For Builders
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    For Builders
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build/build/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Build from Source
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build/architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build/contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing & Feedback
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Releases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-ft8-vs-ft4-which-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. FT8 vs FT4 — Which to Use?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-switching-between-ft8-and-ft4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Switching Between FT8 and FT4
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-modes-of-transmission" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Modes of Transmission
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Modes of Transmission">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-reply-to-a-cq" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Reply to a CQ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working-a-pile-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Working a pile-up
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pick-callers-myself" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pick callers myself
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-call-cq" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Call CQ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-your-transmission-sits-in-the-slot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where your transmission sits in the slot
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-the-tx-status-line-is-telling-you" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the TX status line is telling you
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What the TX status line is telling you">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#3-auto-reply-robot-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Auto-Reply (Robot Mode)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pause-skip-one-transmission" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pause — skip one transmission
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pause — skip one transmission">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4-ft8-simulation-mode-practice-qsos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. FT8 Simulation Mode (Practice QSOs)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-arrl-field-day-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. ARRL Field Day Mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-foxhound-dxpedition-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Fox/Hound (DXpedition) Mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-message-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Message Status
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-power-swr-readout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Power &amp; SWR Readout
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-cq-presets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. CQ Presets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-frequency-tone-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Frequency &amp; Tone Control
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#waiting-for-a-busy-station" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Waiting for a busy station
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11-adif-logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. ADIF Logging
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-upload-to-qrz-eqsl-lotw-cloudlog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Upload to QRZ, eQSL, LoTW &amp; Cloudlog
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12. Upload to QRZ, eQSL, LoTW &amp; Cloudlog">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cloudlog-and-wavelog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cloudlog and Wavelog
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Troubleshooting
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="ft8-and-ft4-transmit">FT8 and FT4 Transmit<a class="headerlink" href="#ft8-and-ft4-transmit" title="Permanent link">&para;</a></h1>
+<p>The panadapter <strong>keys the QMX and transmits full FT8/FT4 QSOs</strong> — reply to CQ, run your own CQ, auto-answer (robot mode), or conduct a full exchange.</p>
+<h3 id="1-ft8-vs-ft4-which-to-use">1. FT8 vs FT4 — Which to Use?<a class="headerlink" href="#1-ft8-vs-ft4-which-to-use" title="Permanent link">&para;</a></h3>
+<p>Both modes transmit via the same CAT interface; the difference is <strong>slot length and symbol rate</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>FT8</th>
+<th>FT4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Slot length</strong></td>
+<td>15 seconds</td>
+<td>7.5 seconds</td>
+</tr>
+<tr>
+<td><strong>Symbols transmitted</strong></td>
+<td>79</td>
+<td>105</td>
+</tr>
+<tr>
+<td><strong>Symbol duration</strong></td>
+<td>160 ms</td>
+<td>48 ms</td>
+</tr>
+<tr>
+<td><strong>QSO time</strong> (full exchange)</td>
+<td>~90 sec (6 slots)</td>
+<td>~45 sec (6 slots)</td>
+</tr>
+<tr>
+<td><strong>Use case</strong></td>
+<td>Weak signal, SOTA/POTA</td>
+<td>Busy bands, contests</td>
+</tr>
+<tr>
+<td><strong>Preset picker</strong></td>
+<td>Panadapter mode -&gt; Freq dropdown</td>
+<td>FT8 mode -&gt; Preset picker</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Choose FT4 when:</strong>
+- The band is crowded (faster exchanges, less QRM)
+- You're in a contest (time is critical)
+- You want quicker pileup resolution</p>
+<p><strong>Choose FT8 when:</strong>
+- Signal is marginal (longer decode window tolerates more QRN)
+- You're portable/POTA (less pressure to transmit fast)
+- You prefer the relaxed pace</p>
+<p>FT4 has full feature parity with FT8, including time-sync from decoded signals (fixed in v0.19.3 — the time-sync modal shows "FT4" when appropriate and the bottom-bar clock correctly reads <code>UTC(FT4)</code> while in FT4 mode).</p>
+<h3 id="2-switching-between-ft8-and-ft4">2. Switching Between FT8 and FT4<a class="headerlink" href="#2-switching-between-ft8-and-ft4" title="Permanent link">&para;</a></h3>
+<p><strong>In FT8 screen (left pane):</strong>
+- Tap the <strong>Preset</strong> dropdown (shows current frequency/mode)
+- Select an FT4 frequency to switch to FT4
+- Select an FT8 frequency to switch back</p>
+<p><strong>In Panadapter screen:</strong>
+- Tap the <strong>Band preset dropdown</strong> (top left)
+- Some bands have both FT8 and FT4 frequencies listed
+- Tap the FT4 variant to switch</p>
+<p>Your <strong>settings are sticky</strong> — when you switch back to FT8 or FT4, the panadapter remembers your last frequency, bandwidth, and filter settings for each mode.</p>
+<p><strong>Each sub-mode keeps its own frequency.</strong> FT8, FT4 and JS8 have different
+calling frequencies on every band, so they are remembered separately: leave JS8
+on 14.078, come back to FT8, and you land on 14.074 rather than on where JS8
+was. Earlier versions shared one memory between the three, so a visit to one
+moved the other two.</p>
+<p>The <strong>decode list and pileup are cleared</strong> on the switch (v1.3.3). The two modes use different slot lengths, so stations decoded under the old timing describe a band the new mode cannot hear — and leaving them on screen meant you could tap one and try to work a station that was no longer there.</p>
+<h3 id="3-modes-of-transmission">3. Modes of Transmission<a class="headerlink" href="#3-modes-of-transmission" title="Permanent link">&para;</a></h3>
+<h4 id="1-reply-to-a-cq">1. Reply to a CQ<a class="headerlink" href="#1-reply-to-a-cq" title="Permanent link">&para;</a></h4>
+<p>In FT8 view, tap a CQ row in the decode list. A confirmation modal appears:</p>
+<div class="qmx-diagram" style="overflow-x:auto"><svg viewBox="0 0 900 336" width="100%" role="img" xmlns="http://www.w3.org/2000/svg" style="max-width:900px"><rect x="0" y="0" width="900" height="336" rx="10" fill="#151B23" stroke="#2A3440"/><text x="18" y="32" font-size="17" fill="#E9C46A" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="600">Confirm FT8 Transmission</text><rect x="18" y="56" width="864" height="32" rx="6" fill="#151B23" stroke="#2A3440"/><text x="28" y="77" font-size="15" fill="#E6EDF3" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">K9ZZ EN52 -07 2138 Hz</text><rect x="18" y="96" width="864" height="32" rx="6" fill="#151B23" stroke="#2A3440"/><text x="28" y="117" font-size="15" fill="#E6EDF3" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">W1AW FN31 -12 1406 Hz &lt;- the row you picked</text><rect x="18" y="136" width="864" height="32" rx="6" fill="#151B23" stroke="#2A3440"/><text x="28" y="157" font-size="15" fill="#E6EDF3" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">SV1ENG JN37 -09 1869 Hz</text><rect x="18" y="176" width="864" height="32" rx="6" fill="#151B23" stroke="#2A3440"/><text x="28" y="197" font-size="15" fill="#E6EDF3" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">TX1: W1AW OZ1LAV JO45</text><rect x="18.0" y="216" width="281.3" height="38" rx="6" fill="#962020"/><text x="158" y="241" font-size="15" fill="#ffffff" text-anchor="middle" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">Cancel</text><rect x="309.3" y="216" width="281.3" height="38" rx="6" fill="#2C5AA0"/><text x="450" y="241" font-size="15" fill="#ffffff" text-anchor="middle" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">Auto Pounce</text><rect x="600.7" y="216" width="281.3" height="38" rx="6" fill="#2A6B3C"/><text x="741" y="241" font-size="15" fill="#ffffff" text-anchor="middle" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">Transmit</text><rect x="18" y="261" width="14" height="14" rx="3" fill="#93A4B1" fill-opacity="0.50" stroke="#93A4B1"/><text x="42" y="272" font-size="15" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">drag up or down the list to move the highlight before you lift your finger</text><rect x="18" y="284" width="14" height="14" rx="3" fill="#FFA040" fill-opacity="0.50" stroke="#FFA040"/><text x="42" y="295" font-size="15" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">Transmit sends this message once; Auto Pounce runs the whole exchange for you</text></svg></div>
+
+<ul>
+<li><strong>Transmit</strong> (green) — send this one message on the next correct slot</li>
+<li><strong>Auto Pounce</strong> (blue) — handle the entire exchange automatically (TX1 -&gt; wait for report -&gt; TX2 -&gt; wait for RR73 -&gt; TX3 73)</li>
+<li><strong>▲ / ▼ Nudge</strong> — move the target to the row above or below, without closing the modal and redoing the selection gesture</li>
+<li><strong>Cancel</strong> — abort</li>
+</ul>
+<p><strong>Transmit is intelligent (v1.3.0)</strong> — it builds the correct <em>next</em> message from what that station last sent, exactly like a WSJT-X double-click: their CQ -&gt; your grid (or your report, with Skip TX1 on), their grid -&gt; your report, their report -&gt; <code>R</code>+your report, their <code>R</code>-report -&gt; <code>RR73</code>, their <code>RR73</code>/<code>73</code> -&gt; <code>73</code>. You can run a whole QSO one Transmit tap at a time — and sending the closing <code>RR73</code>/<code>73</code> <strong>logs the QSO to ADIF</strong> just like an automatic contact. Auto Pounce is offered on any first reply; once you're mid-exchange with a station, its rows offer Transmit only.</p>
+<p><strong>A quick tap is enough</strong> — you do not need to hold a row before releasing. Hold-and-drag still works for selecting across rows in a busy list.</p>
+<p>The reply follows <strong>correct FT8/FT4 parity</strong> — if you're replying to an even slot, you transmit on the odd slot, and vice versa. For FT4 the countdown timer correctly counts down in 7.5-second slot increments, not 15-second FT8 ones.</p>
+<p><strong>Skip TX1 (faster pounce).</strong> With <strong>Skip TX1</strong> enabled in the Options modal, pouncing a station opens with your signal report straight away instead of the grid exchange — saving one round trip. If the station has already dropped out of the decode list, it falls back to the normal grid exchange automatically.</p>
+<p><strong>If your target is working someone else</strong>, the panadapter holds instead of keying up over their exchange — the status shows "working <em>call</em> - waiting" with a <strong>TAP TO CANCEL</strong> line. Waiting costs nothing (a hold doesn't count toward the timeout), but if you'd rather move on, tap the status to cancel the pounce and pick a different station; the abandoned exchange stays resumable for a few minutes via the resume prompt.</p>
+<h4 id="working-a-pile-up">Working a pile-up<a class="headerlink" href="#working-a-pile-up" title="Permanent link">&para;</a></h4>
+<p>When you call CQ (or work a busy run), more than one station may answer at once — and a caller who replies while you're mid-QSO with someone else used to vanish from the live decode list as soon as they stopped transmitting. They are now kept in a <strong>Pileup</strong> list so you don't lose them:</p>
+<ul>
+<li>Whenever one or more stations are waiting, the <strong>ADIF-log</strong> button on the FT8 screen becomes a <strong>Pileup</strong> button in a distinct colour, and reverts once the list empties.</li>
+<li>Tap <strong>Pileup</strong> to see everyone who has called you and isn't worked yet.</li>
+<li><strong>Hold the button to open the ADIF log</strong> — the log stays reachable even while the button reads "Pileup" (a one-time hint appears the first time it flips).</li>
+<li>Tap a station in the list to work them (the same confirmation modal as a decode-list tap), or tap the small <strong>✕</strong> to dismiss them without working them. The reply is the correct <strong>next</strong> message for that station, built from whatever they actually last transmitted — usually a signal report for someone who has just called you, but an <code>R</code>+report if they came back later with a report of their own (v1.3.2; the same laddering as tapping a decode-list row).</li>
+<li>A station is removed from the list automatically once you start a QSO with them, and a just-completed contact's trailing 73 can't put them back.</li>
+<li>Stations you've worked before still appear in the pileup unless <strong>Never auto-call worked-before</strong> is checked — the pileup follows the same rule as the auto-answer.</li>
+</ul>
+<p>The pile-up tracker never transmits on its own — it only remembers callers; you choose who to work. If you'd rather it <em>did</em>, check <strong>Auto-work pileup</strong> in the Options modal: the strongest waiting caller is pounced automatically when your current QSO completes — or immediately, if you enable it with callers already waiting and nothing else in progress. It carries the same unattended-TX warning as the robot.</p>
+<h4 id="pick-callers-myself">Pick callers myself<a class="headerlink" href="#pick-callers-myself" title="Permanent link">&para;</a></h4>
+<p>Normally, while you are calling CQ, the first station to answer starts the exchange straight away. Check <strong>Pick callers myself</strong> in the Options modal and that no longer happens: an answering station waits in the pile-up until <em>you</em> tap them, and from that point the exchange runs automatically as usual.</p>
+<p>Only the <em>choice</em> becomes manual. You are not signing up to type anything, or to send each message by hand.</p>
+<p>Two things it deliberately does:</p>
+<ul>
+<li><strong>It keeps calling CQ while you decide.</strong> The pile-up carries on building, which is usually what you want when activating — and a radio that fell silent while you thought about it would look like it had stopped working.</li>
+<li><strong>It overrides Auto-work pileup.</strong> Both settings decide who to work next, so if you have asked to choose, nothing else picks for you a moment later.</li>
+</ul>
+<p>Off unless you turn it on, so nothing changes for anyone who does not want it.</p>
+<h3 id="2-call-cq">2. Call CQ<a class="headerlink" href="#2-call-cq" title="Permanent link">&para;</a></h3>
+<p>Tap the <strong>Call CQ</strong> button. A modal opens:</p>
+<div class="qmx-diagram" style="overflow-x:auto"><svg viewBox="0 0 900 273" width="100%" role="img" xmlns="http://www.w3.org/2000/svg" style="max-width:900px"><rect x="0" y="0" width="900" height="273" rx="10" fill="#151B23" stroke="#2A3440"/><text x="18" y="32" font-size="17" fill="#E9C46A" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="600">CQ Messages (check the active)</text><rect x="18" y="62" width="22" height="22" rx="4" fill="#2C5AA0" stroke="#2C5AA0" stroke-width="2"/><path d="M23 72 l4 5 l8 -10" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="50" y="56" width="832" height="32" rx="6" fill="#151B23" stroke="#2A3440"/><text x="60" y="77" font-size="15" fill="#E6EDF3" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">CQ OZ1LAV JO65</text><rect x="18" y="102" width="22" height="22" rx="4" fill="#151B23" stroke="#2A3440" stroke-width="2"/><rect x="50" y="96" width="832" height="32" rx="6" fill="#151B23" stroke="#2A3440"/><text x="60" y="117" font-size="15" fill="#E6EDF3" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">CQ DX OZ1LAV JO65</text><rect x="18" y="142" width="22" height="22" rx="4" fill="#151B23" stroke="#2A3440" stroke-width="2"/><rect x="50" y="136" width="832" height="32" rx="6" fill="#151B23" stroke="#2A3440"/><text x="60" y="157" font-size="15" fill="#E6EDF3" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">CQ POTA OZ1LAV JO65</text><rect x="18.0" y="176" width="281.3" height="38" rx="6" fill="#962020"/><text x="158" y="201" font-size="15" fill="#ffffff" text-anchor="middle" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">Cancel</text><rect x="309.3" y="176" width="281.3" height="38" rx="6" fill="#2C5AA0"/><text x="450" y="201" font-size="15" fill="#ffffff" text-anchor="middle" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">+ call grid</text><rect x="600.7" y="176" width="281.3" height="38" rx="6" fill="#2A6B3C"/><text x="741" y="201" font-size="15" fill="#ffffff" text-anchor="middle" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">Save</text><rect x="18" y="221" width="14" height="14" rx="3" fill="#93A4B1" fill-opacity="0.50" stroke="#93A4B1"/><text x="42" y="232" font-size="15" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">CQ stop and Listen sit top-right and apply on the tap - no Save needed</text></svg></div>
+
+<p>Choose a preset (or edit/save a new one), then tap <strong>Transmit</strong>. The QMX starts calling CQ and listening for replies.</p>
+<p><strong>CQ tone selection</strong> — the panadapter automatically picks a quiet frequency (6.25 Hz tone spacing, 200–2800 Hz audio range, no other stations nearby). If your chosen tone gets busy during a QSO, the panadapter <strong>auto-relocates to the nearest clear frequency</strong> to avoid stepping on other stations.</p>
+<h2 id="where-your-transmission-sits-in-the-slot">Where your transmission sits in the slot<a class="headerlink" href="#where-your-transmission-sits-in-the-slot" title="Permanent link">&para;</a></h2>
+<div class="qmx-diagram" style="overflow-x:auto"><svg viewBox="0 0 900 311" width="100%" role="img" xmlns="http://www.w3.org/2000/svg" style="max-width:900px"><rect x="0" y="0" width="900" height="311" rx="10" fill="#151B23" stroke="#2A3440"/><text x="18" y="32" font-size="17" fill="#E9C46A" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="600">One FT8 slot - 15 s, and what DT and DTR measure</text><rect x="18.0" y="56" width="728.1" height="44" rx="5" fill="#8AB4F8" fill-opacity="0.50" stroke="#8AB4F8"/><text x="382" y="84" font-size="16" fill="#E6EDF3" text-anchor="middle" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">a transmission - 12.64 s, 79 symbols</text><rect x="746.1" y="56" width="135.9" height="44" rx="5" fill="#93A4B1" fill-opacity="0.50" stroke="#93A4B1"/><rect x="18.0" y="86" width="2.0" height="14" rx="5" fill="#E06A5A" fill-opacity="0.50" stroke="#E06A5A"/><line x1="18.0" y1="104" x2="18.0" y2="110" stroke="#2A3440"/><text x="18" y="126" font-size="14" fill="#93A4B1" text-anchor="start" font-family="ui-monospace,'Cascadia Mono',Consolas,monospace" font-weight="normal">0</text><line x1="306.0" y1="104" x2="306.0" y2="110" stroke="#2A3440"/><text x="306" y="126" font-size="14" fill="#93A4B1" text-anchor="middle" font-family="ui-monospace,'Cascadia Mono',Consolas,monospace" font-weight="normal">5</text><line x1="594.0" y1="104" x2="594.0" y2="110" stroke="#2A3440"/><text x="594" y="126" font-size="14" fill="#93A4B1" text-anchor="middle" font-family="ui-monospace,'Cascadia Mono',Consolas,monospace" font-weight="normal">10</text><line x1="882.0" y1="104" x2="882.0" y2="110" stroke="#2A3440"/><text x="882" y="126" font-size="14" fill="#93A4B1" text-anchor="end" font-family="ui-monospace,'Cascadia Mono',Consolas,monospace" font-weight="normal">15</text><rect x="18" y="137" width="14" height="14" rx="3" fill="#8AB4F8" fill-opacity="0.50" stroke="#8AB4F8"/><text x="42" y="148" font-size="15" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">DTR is the RAW offset of a received signal from the slot boundary. It carries about 0.5 s of receive</text><text x="42" y="167" font-size="15" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">latency - the QMX SDR plus USB buffering - so it is not comparable with WSJT-X</text><rect x="18" y="179" width="14" height="14" rx="3" fill="#4CAF6A" fill-opacity="0.50" stroke="#4CAF6A"/><text x="42" y="190" font-size="15" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">DT is that same offset corrected against the band consensus, so the shared latency cancels and an</text><text x="42" y="209" font-size="15" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">on-time station reads about 0.0. This is the WSJT-X-style number</text><rect x="18" y="221" width="14" height="14" rx="3" fill="#93A4B1" fill-opacity="0.50" stroke="#93A4B1"/><text x="42" y="232" font-size="15" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">the decode runs after the capture, in the dead air and into the next slot. That is why a reply must</text><text x="42" y="251" font-size="15" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">be decided before the next boundary, not after it. FT4 is the same shape at 7.5 s - a 5.04 s burst</text><text x="42" y="270" font-size="15" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">and 2.46 s of dead air</text></svg></div>
+
+<p>Your burst starts <strong>14 ms after the slot boundary</strong> and runs 12.64 s, so the last
+2.36 s of every slot is dead air. That gap is the whole reason a reply has to be
+decided before the next boundary rather than after it — the decode of the slot you
+just heard is still running in it.</p>
+<h2 id="what-the-tx-status-line-is-telling-you">What the TX status line is telling you<a class="headerlink" href="#what-the-tx-status-line-is-telling-you" title="Permanent link">&para;</a></h2>
+<p>The left pane carries a persistent status line under the slot countdown. The
+colour is the quickest read; the text says which station and which tone.</p>
+<table>
+<thead>
+<tr>
+<th>Colour</th>
+<th>Line</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Red</strong></td>
+<td><code>TRANSMITTING: &lt;message&gt;</code></td>
+<td>A burst is going out, with your audio tone on its own line. Tap to abort.</td>
+</tr>
+<tr>
+<td><strong>Amber</strong></td>
+<td><code>TX armed: &lt;message&gt;</code> then <code>nnnn Hz -&gt; EVEN/ODD, ~Ns</code></td>
+<td>Waiting for the slot. Tap to cancel.</td>
+</tr>
+<tr>
+<td><strong>Red-orange</strong></td>
+<td><code>FREQ BUSY</code></td>
+<td>Your tone is occupied (+/-50 Hz guard), and the warning names the frequency. During a CQ run this self-heals - the next cycle hops to the nearest clear tone. Mid-exchange, move it yourself with the TX tone control.</td>
+</tr>
+<tr>
+<td><strong>Amber</strong></td>
+<td><code>working &lt;call&gt; - waiting</code> + <code>TAP TO CANCEL</code></td>
+<td>The station you are calling is mid-exchange with somebody else. Nothing transmits until they sign off or call CQ again.</td>
+</tr>
+<tr>
+<td><strong>Green</strong></td>
+<td>QSO complete</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Orange</strong></td>
+<td>QSO timed out</td>
+<td>Tap to clear.</td>
+</tr>
+<tr>
+<td><strong>Dim white</strong></td>
+<td>capturing / decoding / symbol count</td>
+<td>The engine's own status, passed through. Nothing is armed.</td>
+</tr>
+</tbody>
+</table>
+<p>!!! note "Amber means armed, not transmitting"
+    An armed burst has not keyed the radio yet. Cancelling an amber line costs
+    nothing; cancelling a red one aborts a transmission in progress.</p>
+<p><strong>CQ auto-stop</strong> — by default the panadapter keeps calling until someone answers. If you'd rather call a few times and then pause (a common courtesy on a quiet band), long-press <strong>Call CQ</strong> and tap the <strong>CQ stop</strong> button at the top-right of the preset editor: it cycles through never / 1 / 2 / 3 / 4 / 5 / 10 calls and applies immediately, no Save needed. While calling, the TX status shows the progress ("call 2 of 4"); after the last unanswered call the panadapter listens through one more receive slot (an answer to your final call still starts the QSO normally), then stops and goes idle. Applies to every CQ run, including the automatic resume after a completed or timed-out QSO — each fresh CQ sequence starts the count over.</p>
+<p><strong>Listening slot</strong> - while you are transmitting you are deaf to your own time window, so
+the occupancy picture for the window you transmit in is the one that goes stale. The
+<strong>Listen</strong> button in the preset editor (under <strong>CQ stop</strong>) can spend one slot receiving
+after every 3, 5 or 10 calls. Off by default, because it changes your on-air cadence, and
+like CQ stop it applies on the tap with no Save needed.</p>
+<h3 id="3-auto-reply-robot-mode">3. Auto-Reply (Robot Mode)<a class="headerlink" href="#3-auto-reply-robot-mode" title="Permanent link">&para;</a></h3>
+<p>⚠️ <strong>Requires explicit checkbox in the Options modal</strong> to enable.</p>
+<p>When robot mode is on and you're idle, the panadapter scans every FT8 decode for CQ callers matching your filters, picks the highest-priority match (Strongest SNR, Weakest SNR, or Most distant grid — your choice), and starts a full QSO:</p>
+<ol>
+<li><strong>TX1</strong> — send your call, grid</li>
+<li><strong>RX</strong> — wait for their report</li>
+<li><strong>TX2</strong> — send their report + your call back</li>
+<li><strong>RX</strong> — wait for RR73 or 73</li>
+<li><strong>TX3</strong> — send 73 or RR73 (exchange complete)</li>
+<li><strong>Log</strong> — ADIF entry created, move to next CQ</li>
+</ol>
+<h2 id="pause-skip-one-transmission">Pause — skip one transmission<a class="headerlink" href="#pause-skip-one-transmission" title="Permanent link">&para;</a></h2>
+<p>Sometimes you want to <em>listen</em> on your own slot: to check the frequency is still
+clear, or to hear whether the station you are working is actually answering you
+rather than someone else.</p>
+<p><strong>Pause</strong> sits with Re-send, RR73 and 73 in the mid-QSO row, and it is on the
+browser page as well as the Tab5 (v1.16.2). It skips exactly one transmission
+and leaves the exchange intact — unlike <strong>Cancel</strong>, which ends it.</p>
+<p><strong>The row now stays up until your final is acknowledged (v1.20.2).</strong> Until this
+release it vanished the instant the closing RR73 or 73 was sent - so the one
+window in which a missed final could still be put right was the one window with
+no buttons in it. The machine has always kept watching for five minutes and
+re-sending on its own; now you can see that it is doing so, and act inside it:</p>
+<ul>
+<li>Only <strong>Re-send</strong> and <strong>Cancel</strong> are offered, because RR73 and 73 are built
+  from an exchange that has already closed.</li>
+<li><strong>Re-send</strong> puts that same final back on the air - the RR73 if that is what
+  you sent, not a bare 73.</li>
+<li><strong>Cancel</strong>, or a tap on the Tab5's TX indicator, says the contact is over and
+  stops the machine re-sending too.</li>
+<li>Pressing Re-send does not use up the machine's own six tries.</li>
+</ul>
+<p>The QSO is logged when the final leaves the air, as it has been since v1.20.0 -
+none of this delays the log entry.</p>
+<ul>
+<li>It shows a <strong>pause</strong> symbol normally and a <strong>play</strong> symbol on yellow while a
+  transmission is being skipped, so you can see the state at a glance.</li>
+<li>Press it again and the pause is taken straight back, re-arming the
+  transmission if the slot still has room.</li>
+<li>It works while <strong>calling CQ</strong> as well as mid-exchange.</li>
+<li>A slot you skip on purpose <strong>does not count</strong> against the six cycles before
+  the Tab5 gives up on a contact. Pausing can never cost you the QSO.</li>
+</ul>
+<p><em>Asked for by Randy N4OPI, who works his station from another room; the
+countdown behaviour was caught by Gyula HA3HZ.</em></p>
+<p><strong>An experienced caller who skips a step is followed</strong> (v1.8.5): if someone answers
+your CQ with a <strong>report</strong> instead of a grid — common from operators who already know
+they have you — the reply acknowledges it with <code>R</code> plus your report and waits for
+<code>RR73</code>, rather than sending another bare report and losing a cycle. Reported by
+Gyula HA3HZ, who saw it twice. Tapping <strong>Transmit</strong> by hand always did the right
+thing here; it was only the automatic run that was a rung behind.</p>
+<p><strong>A busy pick is abandoned, not waited for</strong> (Roy KI0ER's reasoning adopted verbatim): when <em>you</em> pounce on a station that turns out to be mid-QSO with someone else, the Tab5 politely holds — a deliberate pounce means you want <em>that</em> station. But the robot picked its target off a list, so when its pick engages a third station the robot <strong>moves on to a different CQ caller</strong> instead of idling through someone else's QSO. No grey-list strike: busy is not unresponsive.</p>
+<p>Each QSO takes <strong>~90 seconds</strong> (6 FT8 slots × 15 s/slot). If a station doesn't respond in 4 slots, the panadapter times out and resumes scanning CQ.</p>
+<p><strong>Important:</strong> Robot mode <strong>transmits on the air unattended</strong>. Never enable it unless:</p>
+<ul>
+<li>Your station is physically attended</li>
+<li>Your filters are tested and correct</li>
+<li>Your antenna/SWR is known good</li>
+<li>Your QMX power is set appropriately</li>
+</ul>
+<p>A permanent on-screen warning appears whenever robot mode is available.</p>
+<p><strong>Four things now switch it off for you</strong>, all of them because the alternative is
+transmitting when you did not expect it (Roy KI0ER):</p>
+<ul>
+<li><strong>It waits before its first call.</strong> Straight after a band change or a restart
+  nothing has been heard yet, so both transmit windows are unmapped and a tone
+  would be chosen from no information at all. It holds, showing <em>"Auto-answer:
+  listening before first call"</em>, until it has heard both windows.</li>
+<li><strong>Cancelling a transmission switches it off.</strong> Tapping the TX indicator to stop a
+  transmission disarms it, abandons the QSO <strong>and</strong> turns auto-answer off — so
+  halting a transmission to go and check your antenna does what you expect, rather
+  than the radio starting again a cycle later.</li>
+<li><strong>A band change switches it off</strong>, whichever way you changed band — the band
+  buttons, the web page, a spot, a memory recall, or the radio's own knob. Few
+  stations have an automatic ATU, so the antenna is usually not tuned for the new
+  band yet.</li>
+<li><strong>It is off at every startup</strong>, however the last session ended. Unattended
+  transmission is never the state the panadapter powers up in; switching it on is
+  a deliberate act, once per session.</li>
+</ul>
+<p>Each of these says on screen why it stood down.</p>
+<h3 id="4-ft8-simulation-mode-practice-qsos">4. FT8 Simulation Mode (Practice QSOs)<a class="headerlink" href="#4-ft8-simulation-mode-practice-qsos" title="Permanent link">&para;</a></h3>
+<p>!!! info "Also labelled <strong>Test station</strong>"
+    This is <strong>one setting with two checkboxes</strong>. The FT8 settings drawer calls it
+    <strong>Simulation Mode</strong>; the WSPR settings drawer calls it <strong>Test station
+    (simulation)</strong>, because on that page it is the WSPR transmitter it holds down.
+    The web UI calls it <strong>Simulation mode (practice)</strong>. Tick any one of them and
+    all of them move together — there is no separate WSPR simulator.</p>
+<p>⚠️ <strong>For practice only</strong> — no real stations involved, radio never keys up. Since v1.3.0 the simulator needs <strong>no QMX connected at all</strong> — no radio, no antenna, zero RF.</p>
+<p>Enable <strong>FT8 Simulation Mode</strong> in the settings drawer to practice everything: manual step-by-step Transmit, Auto Pounce, CQ-runs, pileups, and Field Day exchanges. Useful for:</p>
+<ul>
+<li>Learning the full FT8 exchange sequence</li>
+<li>Testing your setup without risking interference</li>
+<li>Verifying ADIF logging works correctly</li>
+<li>Practicing the pileup tools on a genuine pileup</li>
+</ul>
+<p><strong>How it works:</strong>
+- <strong>Six phantom stations</strong> (three US, three DX) call CQ on their own tones — every message is real FT8, synthesized to actual GFSK audio and decoded through the same receive pipeline real RF uses
+- Tap a CQ to pounce (auto or fully manual — they answer either), or <strong>Call CQ</strong> yourself and <strong>four phantoms answer at once</strong>, building a real pileup
+- Phantoms are <strong>patient like real operators</strong>: each repeats its message every cycle, up to four times, before giving up and going back to CQing; one you're working stops CQing; one you've worked stops answering your CQs (toggle sim off/on to reset)
+- Their replies match <strong>what you actually transmitted</strong> — grid gets a report, a report gets a roger, <code>RR73</code> gets a courtesy <code>73</code>
+- The <strong>Fast pounce</strong> toggle is honoured, so you can watch what it changes: decodes surface just before the slot boundary with it on, just after with it off
+- Swiping to the Panadapter and back clears the phantom rows and pileup for a fresh session, and <strong>turning simulation mode off also clears them</strong> (v1.3.3) — phantom stations no longer linger in a list that is supposed to be real, where they were still tappable</p>
+<p>!!! note "Fixed in v1.3.3"
+    With <strong>Fast pounce</strong> turned <em>off</em> — which is the default — the phantoms never answered at all, so every practice pounce simply timed out. If you tried the simulator before v1.3.3 and concluded the phantom stations were ignoring you, that was this, not you.</p>
+<p><strong>Visual indicator:</strong> When simulation mode is active, a <strong>10 px red border pulses around the entire screen</strong> (breathing red frame). This is your visual reminder that you're in practice mode — if the red frame is gone, simulation is off and real stations are in play.</p>
+<p><strong>The interlock is in the firmware, not just the UI.</strong> While simulation is on, every CAT command that would key the radio is skipped and logged instead — so a QMX that happens to be connected is never keyed, regardless of what the screen is showing.</p>
+<p><strong>Important:</strong>
+- The QMX is <strong>never keyed</strong> in simulation mode, no matter what
+- QSOs are logged as real ADIF entries — deliberately, so the logging/upload paths get exercised too. When you're done, the ADIF viewer shows a <strong>"Del N test"</strong> button (only while practice contacts exist — they're recognized by their missing frequency): two taps deletes them all
+- All other features (panadapter, web UI, settings) work normally</p>
+<h3 id="5-arrl-field-day-mode">5. ARRL Field Day Mode<a class="headerlink" href="#5-arrl-field-day-mode" title="Permanent link">&para;</a></h3>
+<p>During <a href="https://www.arrl.org/field-day">ARRL Field Day</a>, tick <strong>Field Day mode</strong> in the Options modal and fill in the two fields beside it:</p>
+<ul>
+<li><strong>Class</strong> — your number of transmitters plus the category letter, written together: <code>16A</code>, <code>5B</code>, <code>1D</code>. It is not a power rating.</li>
+<li><strong>Section</strong> — your ARRL/RAC section, e.g. <code>EMA</code>, <code>WCF</code>, <code>NNJ</code>.</li>
+</ul>
+<p>This switches the FT8 exchange from grid-and-signal-report to Field Day's class+section format, using the standard FT8 message type WSJT-X uses for FD (<code>WA9XYZ KA1ABC R 16A EMA</code>). Both pounce and CQ-run follow the convention automatically: the opening message is unchanged — FT8's CQ format has no room for class and section — and the <em>report-equivalent</em> step carries them instead, with the receiving side echoing back <code>R</code>-prefixed.</p>
+<p>While the mode is on, <strong>Call CQ</strong> tags your CQ as <code>CQ FD &lt;call&gt; &lt;grid&gt;</code>, using the same modifier mechanism as <code>CQ POTA</code> or <code>CQ DX</code>, so other Field Day stations know to expect this exchange. It <strong>replaces</strong> any other modifier for as long as the mode is enabled — FT8 allows exactly one. The CQ preset editor reflects that: the three presets are dimmed and locked while FD mode is on, since their own modifier cannot apply, and a live preview line shows exactly what will go out.</p>
+<p>Completed Field Day contacts log the standard ADIF contest fields — <code>CONTEST_ID=ARRL-FD</code>, your section and theirs — alongside the usual call, frequency and time, so they import cleanly into contest-logging software.</p>
+<h3 id="6-foxhound-dxpedition-mode">6. Fox/Hound (DXpedition) Mode<a class="headerlink" href="#6-foxhound-dxpedition-mode" title="Permanent link">&para;</a></h3>
+<p>Big DXpeditions run FT8 in <strong>Fox/Hound</strong> mode, where one station (the <em>Fox</em>) works
+five callers at a time from below 1000 Hz while everybody chasing it (the <em>Hounds</em>)
+calls from above 1000 Hz. It is not the ordinary FT8 exchange: a hound that answers
+the Fox has to <strong>move onto the Fox's frequency</strong> to do it, because the Fox listens
+only to its own narrow slice.</p>
+<p>Set <strong>Fox/Hound (DXpedition)</strong> in the Options window to one of three positions:</p>
+<ul>
+<li><strong>Off</strong> — normal FT8. Nothing changes.</li>
+<li><strong>Guided</strong> — the Tab5 tells you when it can see a Fox, and you tap it to call.
+  Every transmission stays your decision.</li>
+<li><strong>Automatic</strong> — the Tab5 calls a Fox it recognises and runs the whole exchange.</li>
+</ul>
+<p>Whichever you choose, the awkward part is handled for you: your first call goes out
+<strong>above 1000 Hz</strong> on a clear slot, and the moment the Fox answers you with a report,
+your reply is <strong>moved down onto the Fox's own frequency</strong> — which is the step that
+makes the contact possible at all. The Fox's <code>RR73</code> ends it, and the Tab5 then
+returns to its calling tone ready for the next one.</p>
+<p><strong>The Tab5 does not send <code>73</code> to a Fox.</strong> The Fox's frequency is the scarcest thing
+on the band during a DXpedition and a courtesy <code>73</code> there is just clutter. The
+contact is complete, and logged, on the Fox's <code>RR73</code>.</p>
+<p><strong>How a Fox is recognised — and where it trusts you instead.</strong> For anything it does
+<em>by itself</em>, the Tab5 is strict: not frequency alone (plenty of ordinary stations
+work below 1000 Hz) but a station down there visibly working a <strong>queue</strong> — several
+different callsigns inside a few minutes, a pattern nothing else on the band
+produces. Until it has seen that, automatic mode will not call anything a Fox.</p>
+<p><strong>A tap from you needs no such evidence.</strong> While Fox/Hound is enabled, tapping any
+station in the Fox region runs the Fox/Hound exchange, because enabling the mode is
+your declaration that you are chasing a DXpedition — the same way WSJT-X's Hound
+tick works. The machine is deliberately more cautious than you are.</p>
+<p>The catch is leaving the mode on after the DXpedition has finished: a tap at an
+ordinary station low in the passband would then QSY onto their frequency and skip
+your <code>73</code>. So the transmit-confirmation window <strong>tells you before you commit</strong> —
+it adds a line reading <em>"as HOUND — will QSY onto 500 Hz, no 73 sent"</em> whenever
+Fox/Hound rules are about to apply. If you see that on a station you did not think
+was a DXpedition, set Fox/Hound back to <strong>Off</strong>.</p>
+<p>Three of the Tab5's usual courtesies stand down while a Fox contact runs, and all
+three would otherwise work against you:</p>
+<ul>
+<li>it <strong>keeps calling</strong> while the Fox is busy with other stations — a Fox is always
+  busy, and waiting for a free frequency means never calling at all;</li>
+<li>it <strong>does not re-send</strong> a closing message, because the Fox never asks for one;</li>
+<li>it <strong>does not grey-list</strong> the Fox for ignoring you, which in a pileup of hundreds
+  is entirely normal.</li>
+</ul>
+<p>Automatic mode will not call a Fox already in your log on that band, so it works one
+contact and then leaves the DXpedition alone.</p>
+<p>!!! note "Hound only — the Tab5 cannot be a Fox"
+    A Fox transmits up to five signals simultaneously. The Tab5 keys the QMX one
+    tone at a time over CAT, so a multi-signal transmission is not something this
+    radio can be asked for. This is a hardware limit, not a missing feature.</p>
+<h3 id="7-message-status">7. Message Status<a class="headerlink" href="#7-message-status" title="Permanent link">&para;</a></h3>
+<p>The FT8 left pane shows a <strong>status label</strong> indicating what's happening:</p>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ACTIVE</strong> (red)</td>
+<td>Transmitting right now</td>
+</tr>
+<tr>
+<td><strong>ARMED</strong> (amber)</td>
+<td>Ready to transmit next slot</td>
+</tr>
+<tr>
+<td><strong>QSO Complete</strong> (green)</td>
+<td>Exchange finished, logged to ADIF</td>
+</tr>
+<tr>
+<td><strong>QSO Timeout</strong> (orange)</td>
+<td>No response after 4 slots, exchange aborted</td>
+</tr>
+<tr>
+<td><em>(dim white)</em></td>
+<td>Idle, no active QSO</td>
+</tr>
+</tbody>
+</table>
+<p>Tap the status label to <strong>abort</strong> the current QSO (only works if ARMED or ACTIVE; once COMPLETE, it's logged).</p>
+<p><strong>Resume after timeout</strong> — if a QSO times out because the partner faded, and they come back within ~5 minutes calling you, the exchange <strong>resumes where it left off</strong> automatically (or tap their row to resume manually) instead of restarting from scratch.</p>
+<p><strong>If they never heard your final</strong> (v1.3.4, extended in v1.16.8) — a partner who does not decode your closing <code>73</code>/<code>RR73</code> keeps sending you their report, waiting for it. The Tab5 notices: if a station just worked comes back with a report rather than <code>RR73</code>/<code>73</code>/<code>RRR</code>, the final is sent again, up to six times within five minutes, <em>before</em> anything else can start a new contact. This now tracks <strong>up to four partners at once</strong> rather than only the most recent one — finishing a QSO and immediately working the next caller in a pileup no longer drops the first station's re-sends. The QSO is not logged a second time. Taking over by hand no longer produces a duplicate entry either — the same callsign on the same band inside ten minutes is recognised as the same contact.</p>
+<h3 id="8-power-swr-readout">8. Power &amp; SWR Readout<a class="headerlink" href="#8-power-swr-readout" title="Permanent link">&para;</a></h3>
+<p>After each transmit burst, the status bar briefly shows:</p>
+<div class="highlight"><pre><span></span><code>Last TX: 5.2W SWRx1.25 [N=79]
+</code></pre></div>
+<ul>
+<li><strong>5.2W</strong> — average output power measured via QMX <code>PC;</code> CAT command</li>
+<li><strong>SWRx1.25</strong> — SWR measured via QMX <code>SW;</code> CAT command (only valid during TX)</li>
+<li><strong>[N=79]</strong> — number of symbols transmitted</li>
+<li>FT8: always 79 symbols (~12.7 s at 160 ms/symbol)</li>
+<li>FT4: always 105 symbols (~5.0 s at 48 ms/symbol)</li>
+</ul>
+<p>These readings are <strong>informational only</strong> — the panadapter does not enforce limits. Monitor your antenna system independently.</p>
+<h3 id="9-cq-presets">9. CQ Presets<a class="headerlink" href="#9-cq-presets" title="Permanent link">&para;</a></h3>
+<p>You can save up to 3 custom CQ messages:</p>
+<ol>
+<li>Tap <strong>Call CQ</strong></li>
+<li>Tap <strong>Edit Presets</strong> (or long-press the active preset)</li>
+<li>Type your message: callsign, modifier (optional), grid</li>
+<li>Tap <strong>Save</strong></li>
+</ol>
+<p>Presets persist across power cycles. Common modifiers:</p>
+<ul>
+<li><strong>DX</strong> — calling DX only</li>
+<li><strong>POTA</strong> — Parks on the Air activation</li>
+<li><strong>SOTA</strong> — Summits on the Air activation</li>
+<li><em>(blank)</em> — standard CQ</li>
+</ul>
+<p>!!! tip "From v1.20.5 you do not have to set the modifier by hand"
+    While an <strong>activation is running</strong>, your CQ carries that programme's own
+    token — <code>CQ POTA</code>, <code>CQ SOTA</code>, <code>CQ WWFF</code>, <code>CQ IOTA</code>, <code>CQ GMA</code>, <code>CQ WCA</code> —
+    whatever the preset says, and goes back to normal when you stop the
+    session. Before this, starting an activation left the CQ unchanged, so
+    nobody hunting parks knew you were in one <em>(Bruce N9JCV)</em>. Field Day mode
+    has always worked this way and still outranks it: FT8 has room for exactly
+    one modifier.</p>
+<div class="highlight"><pre><span></span><code>⚠ **WWBOTA goes out as a plain `CQ`.** FT8's modifier is at most four
+characters and WWBOTA is six, so it cannot be encoded. A plain CQ tells
+hunters nothing; `CQ POTA` during a bunker activation would tell them
+something untrue, so it does not do that. Fixed in **v1.23.0** — before it,
+every programme past SOTA called `CQ POTA`.
+</code></pre></div>
+<p>The preset editor's top-right <strong>CQ stop</strong> button sets the CQ auto-stop limit (see <a href="#2-call-cq">Call CQ</a> above) — it cycles never / 1–5 / 10 and applies on tap, independent of Save/Cancel.</p>
+<h3 id="10-frequency-tone-control">10. Frequency &amp; Tone Control<a class="headerlink" href="#10-frequency-tone-control" title="Permanent link">&para;</a></h3>
+<p>Your transmit tone is chosen for you by default — the nearest clear 50 Hz slot, scanned against the stations currently decoded. You can see it, move it, and from v1.3.4 pin it.</p>
+<p><strong>The TX tone button</strong> is in the FT8 left pane, to the right of the <code>TXCQ</code> parity button, and always shows a number (1500 Hz until you change it). Tap it to open the picker.</p>
+<p><strong>The mini occupancy strip</strong> sits directly under the slot countdown in the same pane: the same 50 Hz grid and the same colours as the picker's full-size strip, so where the band is busy — and where you are in it — is answerable at a glance without opening anything.</p>
+<p><strong>Both time windows, always</strong> (asked for by Roy KI0ER). The strip is <strong>two rows — EVEN above, ODD below</strong>, marked <code>E</code> and <code>O</code> in the same blue/orange the slot countdown uses. Two stations only collide if they transmit in the <em>same</em> window, and only you know which window you are about to pounce into — so both pictures are on screen <strong>before</strong> you choose, not after a transmission has fixed your window. Your white marker sits on your own window's row once one is locked (both rows until then), and your partner's pink sits in <em>their</em> window. The picker's full-size strip is split the same way, and its verdict says where your pick stands: <em>"Clear in EVEN — busy in ODD"</em>.</p>
+<p>The picker <strong>repaints every second while it is open</strong>, so the occupancy you are choosing
+against is the live picture rather than a snapshot taken when you tapped the button.
+If it has just told you something in words, that message stays on screen for a few
+seconds rather than being overwritten by the next repaint.</p>
+<p>In the picker:</p>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Occupancy strip</strong></td>
+<td>The whole 200-2800 Hz window as 52 slots. <strong>Green</strong> free, <strong>red</strong> occupied, <strong>white</strong> you, <strong>pink</strong> your QSO partner</td>
+</tr>
+<tr>
+<td><strong>Touch and drag</strong></td>
+<td>Drag along the strip to pick a slot. The bar turns grey and follows your finger, the readout tracks it live, and it commits when you lift off</td>
+</tr>
+<tr>
+<td><strong>-50 / +50</strong></td>
+<td>Nudge one slot at a time</td>
+</tr>
+<tr>
+<td><strong>Find clear slot</strong></td>
+<td>Jumps to the nearest free slot, scanning outward from where you are</td>
+</tr>
+<tr>
+<td><strong>TX Hold</strong></td>
+<td>Pins the tone: every CQ and every reply goes out on it. See below</td>
+</tr>
+<tr>
+<td><strong>Apply nnnn Hz</strong></td>
+<td>Commits the tone and the hold setting</td>
+</tr>
+</tbody>
+</table>
+<p>The readout states in words whether your chosen slot is clear or occupied, and lists the nearest free slots as numbers.</p>
+<p><strong>Apply whenever you like, including in the middle of a transmission.</strong> If a burst is on the air the change is accepted and applied the moment that burst ends — the transmission in progress finishes on the old tone, because stopping it half way would send a corrupted frame, and the very next message carries your new one.</p>
+<p>That used to be a refusal, and it mattered more than it sounds (Roy KI0ER). A burst covers about 12.6 s of a 15 s slot and you transmit every other slot, so roughly four attempts in ten landed mid-burst and were rejected — leaving the QSO running on the offset it started with. Your choice depended on your timing, which is not a choice.</p>
+<p>Slot parity is untouched, so moving your tone mid-QSO does not disturb the exchange — your partner tracks the slot, not the frequency. Nothing in FT8 requires either station to stay on the offset it began on, only to stay in its time window. This is the same freedom WSJT-X gives you, and it is the way out from under a station that has landed on top of you.</p>
+<p><strong>TX Hold</strong> is WSJT-X's "Hold Tx Freq". With it <strong>off</strong> — the default — each transmission takes the nearest clear slot, and a CQ that gets clashed relocates itself on the next cycle. With it <strong>on</strong>, the tone you picked is the tone used for everything, a clash is reported but never acted on, and nothing moves you off the slot you chose. The line under the checkbox says which of the two you are getting. Both the tone and the hold setting survive a power cycle.</p>
+<p>!!! note "The strip shows decoded stations, not raw spectrum"
+    A station too weak to decode will not appear as occupied, and an all-grey strip means nothing has been heard yet rather than "the band is clear".</p>
+<p>!!! note "Occupancy is per time window"
+    Two stations only collide if they transmit in the <em>same</em> slot, so a tone busy in the odd window may be completely free for you in the even one. The strip accounts for this whenever your own transmit window is known — that is, once a reply or a CQ is armed, since a reply inherits the opposite of your partner's slot and a CQ carries your <code>TXCQ EVEN</code>/<code>ODD</code> choice. With <code>TXCQ ANY</code> and nothing armed there is nothing to work from, so both windows are shown combined. When the window <em>is</em> known, the free-slot line names it.</p>
+<h3 id="waiting-for-a-busy-station">Waiting for a busy station<a class="headerlink" href="#waiting-for-a-busy-station" title="Permanent link">&para;</a></h3>
+<p>On a crowded band several stations answer the same CQ and the caller works one of them. If that is not you, the Tab5 no longer keeps calling: while their last decoded message is addressed to somebody else, <strong>nothing is transmitted</strong>, and the status line shows <code>working &lt;call&gt; - waiting</code>. As soon as they send <code>73</code> or <code>RR73</code>, or call CQ again, it picks up where it left off.</p>
+<p><strong>You are not committed to the wait</strong> (Roy KI0ER's report). The status line carries a <strong>TAP TO CANCEL</strong> line while the hold is on; tapping it drops the pounce so you are free to work somebody else. The abandoned exchange stays resumable for a few minutes, in case the station frees up and you want back in.</p>
+<p>This also protects the grey-list. Giving up on a station used to count against it, so a popular station could end up permanently skipped by the robot and Auto-work-pileup for no reason other than being busy. A wait is not a failed attempt. The wait is capped at about six minutes so a station that vanishes mid-exchange still times out normally.</p>
+<p>!!! warning "Fixed in v1.16.4 — the six-minute cap did not work"</p>
+<div class="highlight"><pre><span></span><code>Before v1.16.4 that cap never actually took effect: the counter reset
+itself instead of stopping, so the Tab5 could wait **more than half an
+hour** for a station working somebody else. Worse, each held slot cancelled
+the call it had just queued, so it never got back to calling them either —
+which is why it could look like the radio had simply given up and gone
+quiet *(Gyula HA3HZ)*. Both are the same fault, and both are fixed.
+</code></pre></div>
+<p>To tune to a different frequency while CQ is running:</p>
+<ol>
+<li>Tap the <strong>Freq</strong> label on the top bar</li>
+<li>Enter a new frequency</li>
+<li>The CQ continues on the new frequency next slot</li>
+</ol>
+<h3 id="11-adif-logging">11. ADIF Logging<a class="headerlink" href="#11-adif-logging" title="Permanent link">&para;</a></h3>
+<p>Every completed QSO is <strong>automatically logged to ADIF</strong> on the Tab5's internal storage:</p>
+<ul>
+<li><strong>Callsign</strong>, grid, report (SNR), time (UTC)</li>
+<li><strong>Frequency</strong>, mode (<code>FT8</code>)</li>
+<li><strong>Duration</strong> (QSO start to finish)</li>
+<li><strong>Operator</strong> (your callsign)</li>
+</ul>
+<p>Download the log via the web UI (<strong>QSO Logs</strong> menu -&gt; <strong>ADIF download ↓</strong>) or Settings -&gt; ADIF Log.</p>
+<h3 id="12-upload-to-qrz-eqsl-lotw-cloudlog">12. Upload to QRZ, eQSL, LoTW &amp; Cloudlog<a class="headerlink" href="#12-upload-to-qrz-eqsl-lotw-cloudlog" title="Permanent link">&para;</a></h3>
+<p>Via the web UI:</p>
+<ol>
+<li>Open the <strong>QSO Logs</strong> menu in the bottom bar and click <strong>QRZ upload ↑</strong>, <strong>eQSL upload ↑</strong>, <strong>LoTW setup</strong> (reads <strong>LoTW ↑</strong> once configured), or <strong>Cloudlog upload ↑</strong></li>
+<li>Enter your API key (QRZ), username/password (eQSL), the guided certificate setup (LoTW), or your server address and API key (Cloudlog) when first prompted — credentials are saved for future sessions</li>
+<li>Click again to upload</li>
+</ol>
+<p>See <a href="../web-ui/#lotw-upload">Web UI -&gt; LoTW Upload</a> for the LoTW certificate setup details.</p>
+<h4 id="cloudlog-and-wavelog">Cloudlog and Wavelog<a class="headerlink" href="#cloudlog-and-wavelog" title="Permanent link">&para;</a></h4>
+<p>Cloudlog and Wavelog are the only logbooks here that you host yourself, so you supply
+the address as well as the API key. Both use the same interface, so either works.</p>
+<p>You are asked for three things: the server address, your API key, and the station
+profile ID (the number in the Cloudlog URL — leave it as <code>1</code> if you only have one).</p>
+<p><strong>Plain <code>http://</code> is allowed, but only to a server on the same network as the Tab5</strong>,
+and only to a numeric address such as <code>http://192.168.1.20</code>. That covers the usual
+case of a Cloudlog running on a machine at home with no certificate. Anything else
+needs <code>https://</code>.</p>
+<p>Two things follow from that, both deliberate:</p>
+<ul>
+<li>The check is made <strong>every time you upload</strong>, not once when you save the address. So
+  if you set it up at home and then operate from a park, the upload refuses rather
+  than sending your API key across a network you do not control. Upload when you get
+  home and it goes through.</li>
+<li>For plain <code>http://</code> the address must be numeric, not a name. A name has to be looked
+  up, and what answers the lookup away from home need not be your server. Use <code>https://</code>
+  if you want to use a hostname.</li>
+</ul>
+<p>If your server is on your own network this is the only upload that needs no internet
+connection at all, which suits POTA and SOTA better than the other three. Contacts are
+sent in batches, and Cloudlog does its own duplicate checking, so uploading again after
+a failure is harmless.</p>
+<p>Logs are batched — each upload session records which QSOs have been sent, so re-running skips already-submitted entries.</p>
+<p>Uploads work <strong>while FT8 or FT4 is actively running</strong> — the panadapter briefly steps the FFT and SD-archive activity aside for the duration of the HTTPS transfer, then resumes automatically. You typically miss one FT8 slot and won't notice. A progress result is shown once the upload completes.</p>
+<h3 id="13-troubleshooting">13. Troubleshooting<a class="headerlink" href="#13-troubleshooting" title="Permanent link">&para;</a></h3>
+<p><strong>"QMX not responding to TX command"</strong></p>
+<ul>
+<li>Check USB cable (must be data cable, not charge-only)</li>
+<li>Verify QMX is in the correct mode (USB/LSB/CW/DiGi, not AM)</li>
+<li>Try a manual <code>TX;</code> command via the web UI's CAT tab</li>
+</ul>
+<p><strong>"⚠ FREQ BUSY warning, but no other station is there"</strong></p>
+<ul>
+<li>The clash detector reserves a ±50 Hz guard band around each decoded station, so it flags a neighbour that is close rather than exactly on you</li>
+<li>It counts only stations <strong>in your own transmit window</strong> (it used to count both windows, so it could warn about a station that could never collide with you; Roy KI0ER caught it)</li>
+<li>The warning names the frequency. Tap <strong>TX nnnn Hz</strong> and either <strong>Find clear slot</strong> or drag to a green slot on the occupancy strip</li>
+<li>Remember the strip only knows about stations it has <em>decoded</em> — a very weak one will not show</li>
+</ul>
+<p><strong>"QSO timeout — no response"</strong></p>
+<ul>
+<li>The called station didn't hear you (too weak, bad timing, etc.)</li>
+<li>Try a different station, or switch to manual mode and check levels first</li>
+<li>See <a href="../../reference/troubleshooting/">Troubleshooting</a> for more</li>
+</ul>
+<hr />
+<p><strong>Next:</strong> Set up <a href="../time-sync/">Time Sync</a> for accurate FT8 timing, or explore the <a href="../web-ui/">Web UI</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.sections", "toc.follow", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

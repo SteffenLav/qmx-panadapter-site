@@ -1,0 +1,2116 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://tab5.lav.dk/guide/wspr/">
+      
+      
+        <link rel="prev" href="../time-sync/">
+      
+      
+        <link rel="next" href="../radio-menus/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>WSPR - QMX Panadapter</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="light" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#wspr" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="QMX Panadapter" class="md-header__button md-logo" aria-label="QMX Panadapter" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            QMX Panadapter
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              WSPR
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="light" data-md-color-primary="blue" data-md-color-accent="orange"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    <!-- Buy me a coffee (OZ1LAV) — just left of the search field -->
+    <style>
+      /* The official BMC widget renders ~51px tall (nearly the whole top bar).
+         zoom scales it (and its layout box, so no leftover gap) down to about
+         the search-field height. Tweak the factor to taste. */
+      .bmc-header-btn { display:flex; align-items:center; margin:0 .2rem; zoom:0.72; }
+    </style>
+    <div class="bmc-header-btn">
+      <script type="text/javascript"
+              src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js"
+              data-name="bmc-button"
+              data-slug="OZ1LAV"
+              data-color="#FFDD00"
+              data-emoji="☕"
+              data-font="Lato"
+              data-text="Buy me a coffee"
+              data-outline-color="#000000"
+              data-font-color="#000000"
+              data-coffee-color="#ffffff"></script>
+    </div>
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/SteffenLav/qmx-panadapter" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    qmx-panadapter
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../quick-start/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Quick Start
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../getting-help/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Getting Help
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../panadapter/" class="md-tabs__link">
+          
+  
+  
+  User Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../reference/gestures/" class="md-tabs__link">
+          
+  
+  
+  Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../build/build/" class="md-tabs__link">
+          
+  
+  
+  For Builders
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../releases/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Releases
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="QMX Panadapter" class="md-nav__button md-logo" aria-label="QMX Panadapter" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    QMX Panadapter
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/SteffenLav/qmx-panadapter" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    qmx-panadapter
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quick-start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-help/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Help
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Guide
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    User Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../panadapter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Panadapter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../audio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spots/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Live Spots
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spot-map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spot Map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../web-ui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web UI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ft8-rx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FT8 RX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ft8-tx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FT8 TX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cw/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CW (beta)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../webradio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web Radio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../js8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JS8 (beta)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../time-sync/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Time Sync
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WSPR
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WSPR
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-the-two-minute-rhythm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. The two-minute rhythm
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-reading-the-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Reading the page
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Reading the page">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#which-trace-is-which" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Which trace is which
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Settings
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#transmitting-is-the-tx-button-and-nothing-else" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transmitting is the TX button, and nothing else
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calibrate-power" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Calibrate Power
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#declared-power" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Declared power
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output-power" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Output power
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-wspr-from-a-lower-supply-voltage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Running WSPR from a lower supply voltage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transmit-schedule-changed-in-v1145" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transmit schedule (changed in v1.14.5)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#band-hopping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Band hopping
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#publish-spots-to-wsprnet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Publish spots to wsprnet
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-transmitting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Transmitting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-from-the-browser" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. From the browser
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-if-nothing-is-decoded" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. If nothing is decoded
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../radio-menus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Radio Menus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/gestures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gestures & Controls
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/hardware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hardware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/web-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/rigctld/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hamlib rigctld
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    For Builders
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    For Builders
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build/build/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Build from Source
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build/architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build/contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing & Feedback
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Releases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-the-two-minute-rhythm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. The two-minute rhythm
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-reading-the-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Reading the page
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Reading the page">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#which-trace-is-which" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Which trace is which
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Settings
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#transmitting-is-the-tx-button-and-nothing-else" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transmitting is the TX button, and nothing else
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calibrate-power" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Calibrate Power
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#declared-power" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Declared power
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output-power" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Output power
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-wspr-from-a-lower-supply-voltage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Running WSPR from a lower supply voltage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transmit-schedule-changed-in-v1145" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transmit schedule (changed in v1.14.5)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#band-hopping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Band hopping
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#publish-spots-to-wsprnet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Publish spots to wsprnet
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-transmitting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Transmitting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-from-the-browser" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. From the browser
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-if-nothing-is-decoded" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. If nothing is decoded
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="wspr">WSPR<a class="headerlink" href="#wspr" title="Permanent link">&para;</a></h1>
+<p><strong>WSPR</strong> (Weak Signal Propagation Reporter, pronounced "whisper") answers one question: <em>where does my signal actually go?</em> You transmit a very short, very slow beacon carrying only your callsign, grid and power — and stations all over the world that hear it report the fact. Over a few hours you get a map of what your antenna and your band are really doing, at power levels where nothing else would be heard at all.</p>
+<p>It is not a contact mode. Nobody replies, there is no exchange, and nothing goes in your log. That is the point: it measures propagation instead of working people.</p>
+<p>Swipe → from the left edge to open the <strong>page picker</strong> and tap <strong>MODE: WSPR</strong>. Choosing the page is what enables it - there is no separate unlock step.</p>
+<hr />
+<h3 id="1-the-two-minute-rhythm">1. The two-minute rhythm<a class="headerlink" href="#1-the-two-minute-rhythm" title="Permanent link">&para;</a></h3>
+<p>Everything in WSPR is built on a <strong>two-minute cycle</strong>, aligned to UTC. A transmission starts a second or two after each even minute and lasts about 110 seconds, so one cycle carries exactly one beacon.</p>
+<div class="qmx-diagram" style="overflow-x:auto"><svg viewBox="0 0 900 334" width="100%" role="img" xmlns="http://www.w3.org/2000/svg" style="max-width:900px"><rect x="0" y="0" width="900" height="334" rx="10" fill="#151B23" stroke="#2A3440"/><text x="18" y="32" font-size="17" fill="#E9C46A" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="600">One WSPR cycle - 2 minutes</text><rect x="25.2" y="56" width="796.3" height="44" rx="5" fill="#E06A5A" fill-opacity="0.50" stroke="#E06A5A"/><text x="423" y="84" font-size="16" fill="#E6EDF3" text-anchor="middle" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">transmitting - 110.6 s, 162 symbols of 0.683 s</text><rect x="821.5" y="56" width="60.5" height="44" rx="5" fill="#93A4B1" fill-opacity="0.50" stroke="#93A4B1"/><text x="851" y="84" font-size="16" fill="#E6EDF3" text-anchor="middle" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">~8 s</text><line x1="18.0" y1="104" x2="18.0" y2="110" stroke="#2A3440"/><text x="18" y="126" font-size="14" fill="#93A4B1" text-anchor="start" font-family="ui-monospace,'Cascadia Mono',Consolas,monospace" font-weight="normal">0</text><line x1="234.0" y1="104" x2="234.0" y2="110" stroke="#2A3440"/><text x="234" y="126" font-size="14" fill="#93A4B1" text-anchor="middle" font-family="ui-monospace,'Cascadia Mono',Consolas,monospace" font-weight="normal">30</text><line x1="450.0" y1="104" x2="450.0" y2="110" stroke="#2A3440"/><text x="450" y="126" font-size="14" fill="#93A4B1" text-anchor="middle" font-family="ui-monospace,'Cascadia Mono',Consolas,monospace" font-weight="normal">60</text><line x1="666.0" y1="104" x2="666.0" y2="110" stroke="#2A3440"/><text x="666" y="126" font-size="14" fill="#93A4B1" text-anchor="middle" font-family="ui-monospace,'Cascadia Mono',Consolas,monospace" font-weight="normal">90</text><line x1="882.0" y1="104" x2="882.0" y2="110" stroke="#2A3440"/><text x="882" y="126" font-size="14" fill="#93A4B1" text-anchor="end" font-family="ui-monospace,'Cascadia Mono',Consolas,monospace" font-weight="normal">120</text><rect x="18" y="137" width="14" height="14" rx="3" fill="#E06A5A" fill-opacity="0.50" stroke="#E06A5A"/><text x="42" y="148" font-size="15" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">a transmission starts one second into an even minute, by the protocol</text><rect x="18" y="160" width="14" height="14" rx="3" fill="#4CAF6A" fill-opacity="0.50" stroke="#4CAF6A"/><text x="42" y="171" font-size="15" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">on a RECEIVE cycle the whole two minutes is captured, and the decode has a 115 s budget to work</text><text x="42" y="190" font-size="15" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">through as many candidates as fit</text><rect x="18" y="202" width="14" height="14" rx="3" fill="#93A4B1" fill-opacity="0.50" stroke="#93A4B1"/><text x="42" y="213" font-size="15" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">the schedule is two COUNTS of cycles, not a percentage: transmit this many, then receive this many,</text><text x="42" y="232" font-size="15" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">repeating. Transmit 2 and receive 8 is one pair of bursts every 20 minutes. Transmit cycles = 0 is</text><text x="42" y="251" font-size="15" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">how transmitting is turned off</text><rect x="18" y="263" width="14" height="14" rx="3" fill="#FFA040" fill-opacity="0.50" stroke="#FFA040"/><text x="42" y="274" font-size="15" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">the first burst after you switch transmitting on is always the very next cycle, whatever the</text><text x="42" y="293" font-size="15" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">schedule says - the duty has nothing useful to say about the first one</text></svg></div>
+
+<p>Exactly: 162 symbols of 0.683 s is <strong>110.6 s</strong> of the 120 s cycle. The schedule at the
+bottom is the part worth studying before you switch transmitting on — it is two
+counts, not a percentage.</p>
+<p>That slow rhythm is why the page looks calm compared with the FT8 screen. There is no countdown urging you on and no QSO furniture, because there is nothing to answer. The countdown at the top left simply tells you where you are in the current window.</p>
+<p><strong>Your clock has to be right.</strong> WSPR's decoder searches only a narrow slice of time either side of the cycle boundary, so a clock that is out by more than a couple of seconds will hear nothing and be heard by nobody. The Tab5 keeps itself right from SNTP over WiFi, from the QMX's own clock, or from its internal RTC — see <a href="../time-sync/">Time Sync</a>. If you are running with no network and no GPS, check the clock before you trust an empty screen.</p>
+<hr />
+<h3 id="2-reading-the-page">2. Reading the page<a class="headerlink" href="#2-reading-the-page" title="Permanent link">&para;</a></h3>
+<p>The browser's WSPR list carries the same columns, and from <strong>v1.20.2</strong> that
+includes <strong>BAND</strong> - it was on the Tab5 and not in the browser. It matters most
+with band hopping on, where every spot sits inside the same 200 Hz window and
+the frequency column alone cannot tell them apart. It is blank for spots
+recorded before the dial was kept.</p>
+<p>The left pane is a log, not a live list of who is on frequency. Spots stay where they are and new cycles are added — an opening band looks different from a closing one only over time, so the page is arranged to let you see that.</p>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>S</strong></td>
+<td>The letter this station is marked with on the waterfall for that cycle — see <a href="#which-trace-is-which">Which trace is which</a> below. Blank once the cycle it belongs to has scrolled out of the picture</td>
+</tr>
+<tr>
+<td><strong>UTC</strong></td>
+<td>The cycle this spot came from</td>
+</tr>
+<tr>
+<td><strong>CALL</strong></td>
+<td>The station heard</td>
+</tr>
+<tr>
+<td><strong>GRID</strong></td>
+<td>Their Maidenhead locator, as transmitted</td>
+</tr>
+<tr>
+<td><strong>COUNTRY</strong></td>
+<td>Country from the callsign prefix, spelled out where it fits and shortened where it does not - never a 3-letter code</td>
+</tr>
+<tr>
+<td><strong>BND</strong></td>
+<td>The band it was heard on, in metres. Blank for spots recorded before v1.10.5, and worth having the moment band hopping is on</td>
+</tr>
+<tr>
+<td><strong>PWR</strong></td>
+<td>The power <strong>they declared</strong>, not a measurement</td>
+</tr>
+<tr>
+<td><strong>SNR</strong></td>
+<td>Signal-to-noise, in the WSPR convention (a 2500 Hz reference — figures around −25 dB are entirely normal and perfectly decodable)</td>
+</tr>
+<tr>
+<td><strong>TONE</strong></td>
+<td>Where in the 200 Hz sub-band they were heard</td>
+</tr>
+<tr>
+<td><strong>DR</strong></td>
+<td>Drift: how far the sender moved during the transmission. A stable, oven- or GPS-referenced transmitter reads +0; a crystal warming through the burst reads +1 or -2. Whole Hz, which is what wsprnet publishes, and a coarser measurement than TONE beside it - it is the difference between two half-window estimates, so read a trend across several spots rather than one</td>
+</tr>
+<tr>
+<td><strong>DT</strong></td>
+<td>How far into the two-minute cycle that transmission actually started, in seconds. <strong>Nominal is +1.0</strong>, because a WSPR transmission begins one second into its even minute — so a value far from that is the other station's clock rather than anything at your end</td>
+</tr>
+<tr>
+<td><strong>KM</strong></td>
+<td>Great-circle distance from your grid. The heading reads <strong>MI</strong> if you have chosen miles — see <a href="../settings/">Settings</a>. A leading <code>~</code> means the distance came from the station's country rather than its grid</td>
+</tr>
+</tbody>
+</table>
+<p>Below the list:</p>
+<ul>
+<li><strong>DX</strong> — the furthest station of the session, which is usually the number you actually want.</li>
+<li><strong>WSPRNET</strong> — whether spots are being published, and how many can be. <strong>"N of M publishable"</strong> is the publication gate: a station is only sent to wsprnet once it has been heard <strong>more than once</strong>, so N is how many of the M calls heard so far are eligible. This is also why a site like wspr.rocks can show fewer unique calls than this page reports hearing — it only ever received the publishable ones.</li>
+<li><strong>Flush</strong> — empties the decode list. It asks first, because the list is also the upload queue: anything not yet sent to wsprnet goes with it, and the publishable count resets.</li>
+</ul>
+<p>!!! tip "With a mouse, point at a trace to see whose it is"</p>
+<div class="highlight"><pre><span></span><code>Hovering a trace on the waterfall names the station, its tone and its signal
+report, beside the pointer. It matches within about half a WSPR signal's
+width, so you have to be on the trace rather than near it. There is no hover
+on a touchscreen, so this adds to the list rather than replacing it —
+everything it shows is in the table underneath.
+</code></pre></div>
+<p>The right pane shows the captured 200 Hz window for the cycle just decoded. WSPR's whole sub-band is narrower than a single FT8 signal, so this is a very close-up view: individual beacons appear as near-horizontal lines, and a sloping line is a drifting transmitter.</p>
+<p><strong>On a cycle you transmit, the waterfall does not advance</strong> — the receiver is stood down for the whole two minutes, so there is nothing to draw. Rather than leave the previous cycle's picture sitting there looking frozen, the display lays down its cycle-boundary marker and keeps the last received image below it, so you can still see what was there before you transmitted. The status line reads <strong>transmitting</strong> throughout.</p>
+<p><strong>The panadapter spectrum is not available while WSPR runs.</strong> The receiver takes the IQ stream for the whole cycle, so there is nothing left to draw a live spectrum from. This is expected, not a fault.</p>
+<h4 id="which-trace-is-which">Which trace is which<a class="headerlink" href="#which-trace-is-which" title="Permanent link">&para;</a></h4>
+<p>Each time a cycle finishes, the traces the decoder examined are lettered on the
+waterfall — <strong>A, B, C… from left to right by tone</strong> — and the cycle's UTC time is
+printed at the left end of the row. The same letter appears in the list's <strong>S</strong>
+column, so a line of text and a mark on the carpet are the same station, and you
+can tell at a glance which of five traces produced the report you are reading.</p>
+<p>The letters describe the cycle <strong>below</strong> the boundary line they sit under, since
+that is the cycle that just finished. They scroll down the carpet with it and are
+gone once it leaves the picture, which is why an older row's <strong>S</strong> column is
+blank.</p>
+<ul>
+<li><strong>A <code>?</code> is a trace the decoder tried and could not read.</strong> That is worth
+  seeing: it is the difference between "nothing was there" and "something was
+  there and was too weak", which is the whole question when you are judging an
+  antenna or a band. It usually means a signal a few dB below the decode
+  threshold, but a birdie or a carrier sitting in the sub-band will also collect
+  one.</li>
+<li><strong>Not everything gets a mark.</strong> The candidate finder always returns a full
+  quota of possibilities, most of which are its own noise floor rather than
+  signals, so a <code>?</code> is only drawn for a candidate well above the middle of that
+  cycle's crop. Expect a handful, not a row of punctuation.</li>
+<li><strong>A mark that cannot be placed honestly is left out.</strong> Where several traces are
+  too close together to letter separately, decoded stations are placed first and
+  the rest are dropped rather than nudged aside — a marker pointing at the wrong
+  trace is worse than no marker.</li>
+<li>The letter is drawn a couple of Hz above the tone in the table. A WSPR
+  transmission is four tones about 4.4 Hz wide and the reported frequency is the
+  lowest of them, so the mark sits on the middle of the trace rather than its
+  left-hand edge.</li>
+</ul>
+<hr />
+<p><strong>Changing band</strong> — tap the button at the top of the left pane and a list drops
+below it. Touch a line and it lights up; if it is the wrong one, keep your finger
+down and drag until you are on the one you want, then lift to choose it.
+Releasing outside the list chooses nothing. The band you are on is named in
+amber.</p>
+<p>!!! warning "Use <em>this</em> button, not the top bar"
+    On the WSPR page the top bar's <strong>Band</strong>, <strong>Mode</strong>, <strong>BW</strong> and <strong>Zoom</strong> are
+    greyed out and do nothing: they belong to the panadapter's idea of the radio,
+    while this page owns the dial. Only <strong>Freq</strong> stays live, so a beacon found off
+    the standard dial frequency can still be chased by typing it in.</p>
+<div class="highlight"><pre><span></span><code>On **v1.12.0 only**, the top bar's Band control overlapped this panel and took
+the touch — picking a band from it wrote an FT8 frequency to the radio while
+WSPR carried on capturing and labelling its spots with the band it thought it
+was on. If you used the WSPR page on that release, check which band your radio
+is actually on.
+</code></pre></div>
+<hr />
+<h3 id="3-settings">3. Settings<a class="headerlink" href="#3-settings" title="Permanent link">&para;</a></h3>
+<p>All of WSPR's settings live in the <strong>settings drawer</strong> (swipe ← from the right edge) under <strong>WSPR</strong>, and appear only while the WSPR page is up. The page itself keeps just one control — the <strong>TX</strong> button — because that is the only one you reach while a session is running.</p>
+<h4 id="transmitting-is-the-tx-button-and-nothing-else">Transmitting is the TX button, and nothing else<a class="headerlink" href="#transmitting-is-the-tx-button-and-nothing-else" title="Permanent link">&para;</a></h4>
+<p>There is no separate "allow transmitting" setting. The <strong>TX</strong> button on the page is the only control, so there is nothing that can disagree with it.</p>
+<p><strong>It is off every time you open the WSPR page</strong>, whatever you did last session. A beacon that resumes on its own because of how you left it a week ago is not a decision you made, so the page always starts as a pure receiver — which is a perfectly good way to use WSPR — and transmitting is something you switch on deliberately each time.</p>
+<p><strong>Your callsign and grid must be set</strong>, in <strong>Station -&gt; Callsign &amp; Grid square</strong>. Without them there is no transmission at all — the same rule FT8 follows. WSPR sends your callsign to every station that hears you and publishes it to a public database, so it uses the identity you entered and nothing else.</p>
+<h4 id="calibrate-power">Calibrate Power<a class="headerlink" href="#calibrate-power" title="Permanent link">&para;</a></h4>
+<p>Before Declared power can offer anything real, the current band needs calibrating. <strong>Calibrate Power</strong> sweeps the QMX's <em>Max. PA voltage</em> on a <strong>dummy load</strong> — not the antenna — and records the real RF output at each step with the radio's own <code>PC;</code> readback. The result is saved for that band and used from then on.</p>
+<p><strong>The sweep runs the full 1.0–12.0 V range</strong> unless you tell it not to, and it puts your Max. PA voltage back when it finishes.</p>
+<p>It does not stop at your Max. PA voltage, and it is worth knowing why. Declared power, the Output power slider and WSPR all write that same setting, so the figure in it is usually one this app put there rather than a limit you chose — one station swept a 600 mW ceiling because a WSPR session had left his radio at 6.0 V, and every reconnect re-applied it. Capping the sweep at it measured a fraction of the radio.</p>
+<p><strong>If your radio must never see a certain voltage, set "Never exceed PA voltage"</strong> in the Output power section. That is a setting of your own that nothing else writes, so the sweep obeys it, and the window tells you the range it will actually cover before you start. Use it for a 9 V build, a radio with a known weakness in the finals, or any PA you do not want driven to 12 V. It is off by default.</p>
+<p>The sweep also <strong>stops early once the measured power stops rising</strong>, which is what happens above your supply voltage: on an 8 V supply every step above ~8 V would otherwise re-measure the same watts for minutes of pointless key-down. That is measured rather than assumed, so it works without the app knowing your radio. Bruce N9JCV found it. Note what it does and does not protect: it stops a radio that <em>cannot</em> reach a voltage, not one that can reach it but should not — that is what the limit above is for.</p>
+<p>Because the sweep can end early, a shorter results table is normal rather than a failure — the window says what ended it.</p>
+<p>You reach it two ways: the <strong>"Calibrate this band"</strong> button that appears in place of Declared power (or Output power, on other modes) whenever the current band has no data yet, or <strong>"Recalibrate this band"</strong> in the same place once it does — for redoing a band after a change to your antenna or feedline.</p>
+<h4 id="declared-power">Declared power<a class="headerlink" href="#declared-power" title="Permanent link">&para;</a></h4>
+<p>This is <strong>a claim, not a measurement</strong> — every station that hears you publishes it worldwide, where other operators use it to reason about propagation. But once the band is calibrated, the dropdown only offers the standard WSPR dBm steps your radio actually reaches, and each one is labelled with the <strong>real measured wattage</strong>, not the textbook figure the step's name implies. Picking "33 dBm" no longer means finding out afterwards that the radio actually did something else.</p>
+<p><strong>This is also where you protect the finals now.</strong> WSPR transmits for about <strong>110 seconds out of every 120</strong> — nothing else this radio does comes close, and QRP Labs warn about exactly this kind of sustained duty cycle in the QMX manual. There is no separate switch for it any more: picking a low declared level (a few hundred milliwatts is plenty to be heard) keeps the finals cool for the length of a beacon run, the same way choosing any other setting on this dropdown does. Anything above 1 W gets a plain warning label, rather than a guard acting on your behalf underneath you.</p>
+<p><strong>During each transmission the Tab5 asks the radio what it actually put out</strong>, and shows the answer under the dropdown — <em>"radio measured 1.6 W last burst = 32 dBm"</em> — so you can see whether a burst matched what you declared.</p>
+<p><strong>Switching transmit off stops a burst that is already on the air.</strong> The <strong>TX</strong> button keys the radio down at once rather than waiting for the two-minute cycle to end.</p>
+<h4 id="output-power">Output power<a class="headerlink" href="#output-power" title="Permanent link">&para;</a></h4>
+<p>A separate slider, filed next to Calibrate Power, sets the radio's output for every mode <strong>other</strong> than WSPR — FT8, CW, SSB, and so on. It shares the same per-band calibration but is a genuinely different control: WSPR's Declared power always owns the radio while WSPR is running, so the Output power slider doesn't appear on this page at all. Leaving WSPR hands control back to it immediately.</p>
+<h4 id="running-wspr-from-a-lower-supply-voltage">Running WSPR from a lower supply voltage<a class="headerlink" href="#running-wspr-from-a-lower-supply-voltage" title="Permanent link">&para;</a></h4>
+<p><strong>A low declared power reduces the heat in the finals. It does not remove it from the radio.</strong> The QMX limits PA voltage with a pass transistor, so the difference between your supply and the PA voltage in force is dropped inside the radio as heat instead — measured on a bench QMX, holding the PA at 6 V against a 12 V supply cut the finals' own heat by 76% but total heat by only 18%. That trade is worth making — the PA transistors are the fragile, hard-to-replace part — but it is not the whole answer.</p>
+<p><strong>If you intend to beacon on WSPR for hours, feed the QMX from a lower supply.</strong> The QMX accepts <strong>6.0 to 12.0 V</strong>, and running it at around 9 V means less voltage to throw away as heat anywhere in the radio. This is the one thing that helps which no firmware setting can do for you.</p>
+<h4 id="transmit-schedule-changed-in-v1145">Transmit schedule <em>(changed in v1.14.5)</em><a class="headerlink" href="#transmit-schedule-changed-in-v1145" title="Permanent link">&para;</a></h4>
+<p>Two numbers describe one repeating group: <strong>Transmit cycles</strong>, then <strong>Receive cycles</strong>.</p>
+<p>Set transmit to 2 and receive to 8, and the beacon transmits for two cycles, listens for eight, and repeats for ever. The period is simply the two added together — ten cycles, twenty minutes — and the Tab5 spells it out under the two controls as you change them:</p>
+<blockquote>
+<p>Transmit 2, then listen 8 — repeating every 20 min. Transmitting 20% of the time.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Transmit</th>
+<th>Receive</th>
+<th>Pattern, repeating</th>
+<th>Period</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>4</td>
+<td>Tx Rx Rx Rx Rx</td>
+<td>10 min</td>
+</tr>
+<tr>
+<td>1</td>
+<td>9</td>
+<td>Tx Rx ×9</td>
+<td>20 min</td>
+</tr>
+<tr>
+<td>2</td>
+<td>8</td>
+<td>Tx Tx Rx ×8</td>
+<td>20 min</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3</td>
+<td>Tx Tx Rx Rx Rx</td>
+<td>10 min</td>
+</tr>
+</tbody>
+</table>
+<p>Setting transmit to <strong>Receive only</strong> never keys the radio, and greys out the receive count — with no transmission there is no group to space out.</p>
+<p><strong>Why two numbers and not a duty cycle.</strong> This used to be "1 in N" plus a separate "bursts per transmission", and that pair had no agreed meaning. "1 in 5" plainly means one cycle in five, and with a single burst that is exactly what it did — but ask for two bursts and the phrase stops saying anything. Does the group grow into the listening time, or is the listening time kept? Two people can read it two ways, and did. Two counts cannot be read two ways.</p>
+<p><strong>Your existing setting is carried over exactly.</strong> A Tab5 upgrading from v1.14.4 or earlier keeps the schedule it was already running, cycle for cycle — the old "1 in 5" becomes 1 transmit and 4 receive, which is the same thing said plainly.</p>
+<p><strong>Transmitting more means keying the finals more.</strong> Two cycles in a row give a distant receiver a second chance at you when the first falls in a fade, which is why the QMX's own beacon offers it — and it doubles your share of key-down time. Pick the declared power to match; see <strong>Declared power</strong> above.</p>
+<h4 id="band-hopping">Band hopping<a class="headerlink" href="#band-hopping" title="Permanent link">&para;</a></h4>
+<p>Tap <strong>Choose bands…</strong> and tick the bands you want. <strong>Ticking two or more turns hopping on</strong>; leaving one ticked keeps you on that band. There is no separate on/off switch, because the list of bands already says what you want.</p>
+<p>Only the bands your radio can actually reach are offered. A QMX is built with a fixed set of filters, so the list is asked of the radio rather than assumed — the bench QMX offers 60/40/30/20/17/15 while a QMX+ covers 160–6 m.</p>
+<p>Hopping changes band <strong>between</strong> cycles, never during one, and the waterfall's noise floor is reset on each hop so a quiet band is not painted against the last one's noise.</p>
+<h4 id="publish-spots-to-wsprnet">Publish spots to wsprnet<a class="headerlink" href="#publish-spots-to-wsprnet" title="Permanent link">&para;</a></h4>
+<p>Off by default. When on, the stations you hear are uploaded to <strong>wsprnet.org</strong>, where they join the public database. This is how WSPR is useful to anyone other than you: your receiver becomes one of the reporting stations that lets other operators see where <em>their</em> signals went.</p>
+<p>It needs WiFi and your callsign and grid.</p>
+<hr />
+<h3 id="4-transmitting">4. Transmitting<a class="headerlink" href="#4-transmitting" title="Permanent link">&para;</a></h3>
+<p>!!! danger "The 60 m dial was wrong, and it transmitted out of band — fixed in v1.20.3"</p>
+<div class="highlight"><pre><span></span><code>The 60 metre entry in the band list was **5.287200 MHz**. WSPR puts its
+signal 1400–1600 Hz above the dial, so that dial emitted at about
+**5.2886–5.2888 MHz** — roughly **63 kHz below the bottom of the 60 m
+allocation in all three IARU regions**. If you ran WSPR on 60 m on any
+earlier version, those transmissions were outside the band.
+
+The entry is now **5.364700 MHz**, which emits inside the band in all three
+regions. **A stored 5.287200 is moved for you** when the firmware starts —
+changing the list alone would have fixed nobody who had already chosen 60 m,
+because the selection is stored, not read from the list each time. The other
+ten bands were checked the same way and are inside the allocation
+everywhere.
+
+Reported by Wolfgang DF1KZ. From v1.20.3 the firmware also refuses to key
+the radio outside your region's allocation at all — see
+[Transmitting outside the band plan](settings.md#transmitting-outside-the-band-plan).
+</code></pre></div>
+<p>With a callsign and grid set and a transmit count other than <strong>Receive only</strong>, the <strong>TX</strong> button on the page arms the station. Which cycles actually transmit is decided by the transmit schedule, and the button shows what is happening.</p>
+<p><strong>The countdown on the button is the time until a real transmission.</strong> The schedule is worked out in advance, so <code>TX ON next 6:14</code> means a burst is coming in six minutes and fourteen seconds — not that a cycle boundary is due and might or might not be used.</p>
+<p>A few things worth knowing before you leave it running:</p>
+<ul>
+<li><strong>Your radio is keyed for real,</strong> for about 110 seconds at a time. Make sure it is connected to an antenna or a dummy load, and that the power it is producing matches what you declared.</li>
+<li><strong>SWR protection still applies.</strong> If the SWR limit in <strong>Radio -&gt; SWR protection</strong> is exceeded, transmitting stops. From v1.19.0 that means the burst in flight is cut where it stands rather than running to its end, and arming the next one is refused until you clear the latch. Before v1.19.0 this page said so and the firmware did not do it - WSPR measured the SWR, wrote it in the log and carried on.</li>
+<li><strong>The Tab5 wakes up on the page you left it on, but not transmitting.</strong> It returns to the WSPR page after a power cycle and starts receiving; the <strong>TX</strong> button is off, so it will not resume beaconing on its own. Switch it on again when you are ready.</li>
+<li><strong>Split stops it, and says so.</strong> WSPR is transmitted on the dial frequency, and
+  the spot you publish names that frequency. If your radio is in split it keys VFO
+  B while still reporting VFO A, so every spot would name somewhere the signal
+  never was. Before each transmission the Tab5 asks the radio, and if split is on
+  it holds the burst and shows <strong>TX held - radio is in SPLIT, clear VFO B</strong>. It
+  will not clear it for you: that is your setting, and on the QMX split cannot be
+  cleared over the cable anyway — use the radio's own menu or power-cycle it.</li>
+<li><strong>Simulation mode blocks every byte.</strong> If you want to watch the mechanics without keying anything, turn on <strong>Test station (simulation)</strong> in the WSPR drawer; it interlocks WSPR TX as well. It is the same setting the FT8 drawer calls <strong>Simulation Mode</strong> — one flag, two labels, so ticking it here also puts the FT8 phantom stations on the air. See <a href="../ft8-tx/#4-ft8-simulation-mode-practice-qsos">FT8 Simulation Mode</a>.</li>
+</ul>
+<hr />
+<h3 id="5-from-the-browser">5. From the browser<a class="headerlink" href="#5-from-the-browser" title="Permanent link">&para;</a></h3>
+<p>The web UI mirrors whatever page the Tab5 is on. Switch it to WSPR with the <strong>Switch to WSPR</strong> link in the bottom bar, and the browser shows the same page the Tab5 does: a <strong>MODE: WSPR</strong> heading, the band selection, the <strong>TX</strong> button with its countdown, the finals-guard voltage, best DX, stations heard per cycle, the wsprnet publishing status — and the table of spots.</p>
+<p>The table is shown only while the Tab5 is on the WSPR page, because that is the only time the receiver is running — on any other page it would be a frozen list that looked live.</p>
+<p>Transmitting from the browser uses your stored callsign, grid and declared power. They cannot be overridden per request: what goes on the air is the identity you set on the device.</p>
+<hr />
+<h3 id="6-if-nothing-is-decoded">6. If nothing is decoded<a class="headerlink" href="#6-if-nothing-is-decoded" title="Permanent link">&para;</a></h3>
+<p>WSPR is quiet by nature — an empty screen for one cycle means very little. Before assuming a fault:</p>
+<ul>
+<li><strong>Check the clock.</strong> The bottom bar shows the time source. A clock more than a couple of seconds out will decode nothing.</li>
+<li><strong>Check the band and the hour.</strong> WSPR follows propagation; 20 m at midnight will be emptier than 40 m.</li>
+<li><strong>Check the dial.</strong> Each band has exactly one WSPR sub-band, and the picker only offers those — but if you tuned the radio by hand afterwards, you may not be on it.</li>
+<li><strong>Give it several cycles.</strong> At two minutes each, four cycles is eight minutes. That is a normal amount of patience for this mode.</li>
+</ul>
+<p>See also <a href="../../reference/troubleshooting/">Troubleshooting</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.sections", "toc.follow", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

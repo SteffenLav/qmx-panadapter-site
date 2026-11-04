@@ -1,0 +1,2432 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://tab5.lav.dk/guide/panadapter/">
+      
+      
+        <link rel="prev" href="../../getting-help/">
+      
+      
+        <link rel="next" href="../audio/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Panadapter - QMX Panadapter</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="light" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#panadapter" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="QMX Panadapter" class="md-header__button md-logo" aria-label="QMX Panadapter" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            QMX Panadapter
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Panadapter
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="light" data-md-color-primary="blue" data-md-color-accent="orange"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    <!-- Buy me a coffee (OZ1LAV) — just left of the search field -->
+    <style>
+      /* The official BMC widget renders ~51px tall (nearly the whole top bar).
+         zoom scales it (and its layout box, so no leftover gap) down to about
+         the search-field height. Tweak the factor to taste. */
+      .bmc-header-btn { display:flex; align-items:center; margin:0 .2rem; zoom:0.72; }
+    </style>
+    <div class="bmc-header-btn">
+      <script type="text/javascript"
+              src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js"
+              data-name="bmc-button"
+              data-slug="OZ1LAV"
+              data-color="#FFDD00"
+              data-emoji="☕"
+              data-font="Lato"
+              data-text="Buy me a coffee"
+              data-outline-color="#000000"
+              data-font-color="#000000"
+              data-coffee-color="#ffffff"></script>
+    </div>
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/SteffenLav/qmx-panadapter" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    qmx-panadapter
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../quick-start/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Quick Start
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../getting-help/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Getting Help
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  User Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../reference/gestures/" class="md-tabs__link">
+          
+  
+  
+  Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../build/build/" class="md-tabs__link">
+          
+  
+  
+  For Builders
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../releases/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Releases
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="QMX Panadapter" class="md-nav__button md-logo" aria-label="QMX Panadapter" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    QMX Panadapter
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/SteffenLav/qmx-panadapter" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    qmx-panadapter
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quick-start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-help/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Help
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Guide
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    User Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Panadapter
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Panadapter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Layout
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-touch-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Touch Controls
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Touch Controls">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tap-to-tune" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tap to Tune
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rit-receiving-off-your-transmit-frequency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RIT — receiving off your transmit frequency
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pinch-to-zoom" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pinch to Zoom
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pan-one-finger-drag" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pan (One-Finger Drag)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#band-plan-strip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Band-Plan Strip
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#memory-channels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Memory Channels
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-top-bar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Top Bar
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-spectrum-waterfall" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Spectrum &amp; Waterfall
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-frequency-keypad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Frequency Keypad
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-memory-channels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Memory Channels
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-band-presets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Band Presets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-zoom-pan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Zoom &amp; Pan
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-still-spectrum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Still Spectrum
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-the-hatched-region" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. The Hatched Region
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-decoded-cw" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Decoded CW
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-s-meter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. S-Meter
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-settings-drawer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Settings Drawer
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../audio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spots/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Live Spots
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spot-map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spot Map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../web-ui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web UI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ft8-rx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FT8 RX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ft8-tx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FT8 TX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cw/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CW (beta)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../webradio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web Radio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../js8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JS8 (beta)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../time-sync/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Time Sync
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wspr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WSPR
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../radio-menus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Radio Menus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/gestures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gestures & Controls
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/hardware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hardware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/web-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/rigctld/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hamlib rigctld
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    For Builders
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    For Builders
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build/build/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Build from Source
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build/architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build/contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing & Feedback
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Releases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Layout
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-touch-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Touch Controls
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Touch Controls">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tap-to-tune" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tap to Tune
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rit-receiving-off-your-transmit-frequency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RIT — receiving off your transmit frequency
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pinch-to-zoom" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pinch to Zoom
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pan-one-finger-drag" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pan (One-Finger Drag)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#band-plan-strip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Band-Plan Strip
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#memory-channels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Memory Channels
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-top-bar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Top Bar
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-spectrum-waterfall" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Spectrum &amp; Waterfall
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-frequency-keypad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Frequency Keypad
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-memory-channels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Memory Channels
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-band-presets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Band Presets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-zoom-pan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Zoom &amp; Pan
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-still-spectrum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Still Spectrum
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-the-hatched-region" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. The Hatched Region
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-decoded-cw" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Decoded CW
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-s-meter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. S-Meter
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-settings-drawer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Settings Drawer
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="panadapter">Panadapter<a class="headerlink" href="#panadapter" title="Permanent link">&para;</a></h1>
+<p>The panadapter is your primary view — a real-time spectrum analyser and waterfall for the QMX.</p>
+<h3 id="1-layout">1. Layout<a class="headerlink" href="#1-layout" title="Permanent link">&para;</a></h3>
+<div class="qmx-diagram" style="overflow-x:auto"><svg viewBox="0 0 900 638" width="100%" role="img" xmlns="http://www.w3.org/2000/svg" style="max-width:900px"><rect x="0" y="0" width="900" height="638" rx="10" fill="#151B23" stroke="#2A3440"/><text x="18" y="32" font-size="17" fill="#E9C46A" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="600">The panadapter screen, top to bottom</text><rect x="18" y="56" width="501" height="30" rx="6" fill="#1B232D" stroke="#2A3440"/><text x="30" y="77" font-size="16" fill="#E6EDF3" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">Top bar</text><text x="536" y="76" font-size="15" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">60 px - frequency, mode, filter width,</text><text x="536" y="95" font-size="15" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">S-meter, zoom</text><rect x="18" y="94" width="501" height="91" rx="6" fill="#1B232D" stroke="#2A3440"/><text x="30" y="145" font-size="16" fill="#E6EDF3" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">Spectrum</text><text x="536" y="114" font-size="15" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">200 px - green trace, amber VFO cursor,</text><text x="536" y="133" font-size="15" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">tinted passband</text><rect x="18" y="193" width="501" height="30" rx="6" fill="#1B232D" stroke="#2A3440"/><text x="30" y="214" font-size="16" fill="#E6EDF3" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">Frequency axis</text><text x="536" y="213" font-size="15" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">32 px - absolute MHz labels</text><rect x="18" y="231" width="501" height="169" rx="6" fill="#1B232D" stroke="#2A3440"/><text x="30" y="321" font-size="16" fill="#E6EDF3" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">Waterfall</text><text x="536" y="251" font-size="15" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">370 px - newest row at the top, SDR</text><text x="536" y="270" font-size="15" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">gradient</text><rect x="18" y="408" width="501" height="30" rx="6" fill="#1B232D" stroke="#2A3440"/><text x="30" y="429" font-size="16" fill="#E6EDF3" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">Band-plan strip</text><text x="536" y="428" font-size="15" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">22 px - CW / Digi / Phone segments, with</text><text x="536" y="447" font-size="15" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">the visible span marked</text><rect x="18" y="446" width="501" height="30" rx="6" fill="#1B232D" stroke="#2A3440"/><text x="30" y="467" font-size="16" fill="#E6EDF3" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">Status bar</text><text x="536" y="466" font-size="15" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">36 px - battery, UTC clock, WiFi</text><rect x="18" y="483" width="14" height="14" rx="3" fill="#FFA040" fill-opacity="0.50" stroke="#FFA040"/><text x="42" y="494" font-size="15" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">the VFO cursor sits at the dial frequency; in USB the passband tint runs upward from it, in LSB</text><text x="42" y="513" font-size="15" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">downward</text><rect x="18" y="525" width="14" height="14" rx="3" fill="#93A4B1" fill-opacity="0.50" stroke="#93A4B1"/><text x="42" y="536" font-size="15" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">in a digital mode the tint spans 150-3200 Hz, the QMX's one fixed digital filter (corrected in</text><text x="42" y="555" font-size="15" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">v1.8.3)</text><rect x="18" y="567" width="14" height="14" rx="3" fill="#93A4B1" fill-opacity="0.50" stroke="#93A4B1"/><text x="42" y="578" font-size="15" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">the top-right 200 x 120 of the spectrum is a deadzone, so a tap near the drawer grip cannot retune</text><text x="42" y="597" font-size="15" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">you</text></svg></div>
+
+<p><strong>Status bar indicators:</strong></p>
+<p>Left to right: battery, the SD dot, the firmware version, the UTC clock, and the
+WiFi indicator with the network name and IP address.</p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Battery %</td>
+<td>Charge level (e.g. <code>88%</code>, or <code>88%  ⚡</code> while charging). <code>(limit)</code> is appended when charging has been deliberately capped at your Battery Care setting - it reads identically to "not charging" otherwise, and this tells you it's on purpose (v1.9.4)</td>
+</tr>
+<tr>
+<td><strong>SD</strong> (green dot)</td>
+<td>A card is mounted and <strong>writes are reaching it</strong> — something landed in the last 90 seconds (see <a href="../settings/">Settings</a>)</td>
+</tr>
+<tr>
+<td><strong>SD</strong> (yellow dot)</td>
+<td>A card is mounted but <strong>nothing has been written lately</strong>. Either there is genuinely nothing to write, or writes are failing — see <a href="../../reference/troubleshooting/">Troubleshooting</a></td>
+</tr>
+<tr>
+<td><strong>SD</strong> (grey dot, struck through)</td>
+<td>No card in the slot. Not an error</td>
+</tr>
+<tr>
+<td><code>UTC(GPS)</code> / <code>UTC(NTP)</code> / <code>UTC(FT8)</code> / <code>UTC(FT4)</code></td>
+<td>The time source <strong>currently</strong> in charge — GPS-disciplined QMX, WiFi/SNTP, or FT8/FT4 offline sync (RTC / manual show as <code>UTC(RTC)</code> / <code>UTC(MAN)</code>)</td>
+</tr>
+<tr>
+<td>Firmware version</td>
+<td>Currently flashed firmware version</td>
+</tr>
+<tr>
+<td>WiFi fan icon</td>
+<td>Link strength, at the right-hand end with the network name and IP address. The dot alone means a weak link (above 25 %), plus the first bow above 50 %, plus the second above 80 %; all three faint means connected but very weak, or <code>off</code>. From v1.3.4 this replaces the old <code>-NN dBm</code> figure — the width went to the network name, which is far more often too long to fit</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-touch-controls">2. Touch Controls<a class="headerlink" href="#2-touch-controls" title="Permanent link">&para;</a></h3>
+<h4 id="tap-to-tune">Tap to Tune<a class="headerlink" href="#tap-to-tune" title="Permanent link">&para;</a></h4>
+<p>Tap anywhere on the spectrum or waterfall to jump to that frequency. The tap snaps to a frequency grid so you land on a sensible frequency rather than wherever your fingertip happened to be.</p>
+<p>With a mouse the rule is simply the colour of the pointer: <strong>white means clicking tunes,
+green means you are over something that will act instead</strong> — a callsign, a top-bar control,
+an edge handle. Press and hold, or click and hold, and drag if you want to place the cursor
+before committing; a finger and a pointer behave identically.</p>
+<p>!!! note "Fixed in v1.8.1"
+    Before v1.8.1 a band across the upper part of the spectrum quietly refused to tune —
+    the touch areas behind the top bar had been made shallower without the tune code being
+    told, so that strip belonged to nobody. It looked as though tuning only worked near the
+    centre frequency, while the waterfall was fine.</p>
+<blockquote>
+<p>Callsigns from <a href="../spots/">Live Spots</a> are drawn over the spectrum and are the
+one exception: tapping a <strong>callsign</strong> tunes to that station and sets the mode,
+rather than tuning to the point you touched.</p>
+</blockquote>
+<p>The snap step follows the <strong>mode</strong>, not the zoom level — a CW signal needs to be found to the hertz, an FT8 dial frequency does not:</p>
+<table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>Snap step</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CW / CW-R</td>
+<td>10 Hz</td>
+</tr>
+<tr>
+<td>USB / LSB</td>
+<td>500 Hz</td>
+</tr>
+<tr>
+<td>DiGi / FT8 / FT4 / RTTY</td>
+<td>500 Hz</td>
+</tr>
+</tbody>
+</table>
+<p>!!! note "In CW the display allows for your CW offset — including when you change it"
+    A CW signal you can hear at 700 Hz is not on the dial frequency, so the
+    spectrum, the waterfall and tap-to-tune all allow for the radio's <strong>CW
+    offset</strong>. That figure is read from the radio, and since v1.8.5 it is
+    <strong>re-read every few seconds while you are in CW</strong>, so changing CW offset or
+    CW centre on the radio itself is followed within a few seconds.</p>
+<div class="highlight"><pre><span></span><code>Before that it was read only once when the Tab5 connected, so if you changed
+it afterwards the display kept compensating by the old value and tapping a
+signal tuned you slightly off frequency — you would then transmit off
+frequency as though XIT were on. Reported by Roy KI0ER.
+</code></pre></div>
+<p>| AM / FM | 1 kHz |</p>
+<h4 id="rit-receiving-off-your-transmit-frequency">RIT — receiving off your transmit frequency<a class="headerlink" href="#rit-receiving-off-your-transmit-frequency" title="Permanent link">&para;</a></h4>
+<p>Someone answering your call a couple of hundred hertz off your frequency is the ordinary
+case this is for: you want to hear them without moving your own transmit frequency, which
+everyone else is listening on.</p>
+<ol>
+<li>Tap <strong>RIT</strong> at the top right of the spectrum. It turns amber and reads <em>click a signal</em>
+   (in the browser) or waits for a tap.</li>
+<li>Tap the caller on the spectrum or waterfall. The dial does <strong>not</strong> move. A dashed
+   magenta line appears where you are now listening, in the spectrum and down the
+   waterfall, and the filter window moves onto them.</li>
+<li>It stays armed, so the next caller is another tap.</li>
+<li>Tap <strong>RIT</strong> again to clear the offset and switch it off.</li>
+</ol>
+<p>The offset is also printed beside its own marker over the waterfall, as <code>+250 Hz</code>,
+so you can read how far off you are listening without looking at the corner.</p>
+<p><strong>Long-press RIT to park the offset instead of clearing it.</strong> The offset is
+remembered and RIT switches off; long-press again and it comes back unchanged. The
+button reads <code>RIT (+250)</code> in brackets while an offset is parked. This is for a round
+robin or a net where one station is off frequency: you drop the offset when the turn
+passes back to the stations who are on frequency, and pick it up again without
+re-dialling anything (suggested by Roy KI0ER). A parked offset is discarded when you
+retune — it belonged to that one station.</p>
+<p>If you never use RIT, the button can be hidden: <strong>Settings -&gt; Radio -&gt; Show RIT button</strong>
+(also in the web settings). It is shown by default. If an offset is actually engaged the
+button appears regardless of that setting — the radio listening away from your dial is not
+something to leave unsaid on screen.</p>
+<p>The gold line goes on marking the <strong>dial</strong> — which is where you transmit — so seeing both
+lines at once tells you transmit has not followed your receiver. Tuning anywhere by any
+means clears RIT, on the assumption that you have moved on.</p>
+<p>While RIT is armed, taps use a 10 Hz grid whatever the mode. The normal grid above exists
+to land the dial on a tidy frequency; RIT is a fine adjustment onto one caller's tone, and
+SSB's 250 Hz step would leave only a handful of usable offsets. The range is ±500 Hz —
+tapping further away clamps to the limit and says so.</p>
+<p>Available in the browser too, where a click does the same thing. The offset itself is
+shared, so setting it on either screen shows on both; the <em>armed</em> state is per-screen,
+because arming changes what a click does and a click in a browser is not a finger on the
+Tab5.</p>
+<p>The grid is anchored to absolute frequency, not to where your finger first touched, so the cursor always lands on the same set of points no matter where the drag began.</p>
+<h4 id="pinch-to-zoom">Pinch to Zoom<a class="headerlink" href="#pinch-to-zoom" title="Permanent link">&para;</a></h4>
+<p>Use two fingers to pinch in (zoom out) or pinch out (zoom in). The display centers on the passband width — in USB/LSB modes, the passband center stays on screen even when the VFO is off to the side.</p>
+<p>!!! note "The darker band at each end of a zoomed view (improved in v1.8.3)"</p>
+<div class="highlight"><pre><span></span><code>Zooming filters the signal before it is re-analysed, and that filter starts
+rolling off just inside the edge of what is drawn — so the outer part of a
+zoomed view is slightly attenuated. It is a property of the filter, not a
+fault, and it has behaved this way since zoom was added.
+
+v1.8.3 doubles the length of that filter, which roughly **halves the width of
+the darkened band** at each side. The alternative — widening the filter
+instead — was rejected deliberately: it would trade the dark edge for false
+signals appearing where nothing is transmitting. Measured and reported by
+Samuel W7STF, whose own estimate of the affected width was accurate.
+</code></pre></div>
+<h4 id="pan-one-finger-drag">Pan (One-Finger Drag)<a class="headerlink" href="#pan-one-finger-drag" title="Permanent link">&para;</a></h4>
+<p>Drag horizontally with one finger to scroll the spectrum left/right. Release to tune to the new center frequency.</p>
+<p><strong>With a Bluetooth mouse</strong>, hold the <strong>right</strong> button and drag to pan instead.
+It moves the window without touching the dial, so the frequency stays where it
+is — the same gesture, direction and behaviour as the browser. The picture
+slides under the pointer while the button is down and the pan is applied when
+you release. The left button is unchanged, so a left drag still tunes exactly
+as a finger does, and the wheel still tunes in steps. The gesture needs the
+<strong>still display</strong> on, which is the default; with it off the spectrum follows
+the dial and there is no separate window to move.</p>
+<p>The <strong>passband marker dims to about a third while you drag</strong> rather than
+disappearing, so there is still something to aim at when you are pulling a
+station into the receive window. It returns to full brightness the moment you
+let go. This happens in every mode. It used to vanish for the whole drag, which
+made landing on a narrow CW signal a matter of guesswork — reported by Gyula
+HA3HZ.</p>
+<h4 id="band-plan-strip">Band-Plan Strip<a class="headerlink" href="#band-plan-strip" title="Permanent link">&para;</a></h4>
+<p>Along the bottom of the screen — just above the status bar, below the waterfall — is a thin coloured strip showing where you are within the band at a glance. Each colour zone marks the conventional segment (CW, Digi, Phone) for your selected region (auto / ITU Region 1/2/3, set in settings).</p>
+<p>The <strong>visible-span block</strong> inside the strip shows the exact portion of the band the spectrum and waterfall are currently displaying — it narrows as you zoom in and shifts as you pan.</p>
+<p>A <strong>passband sub-block</strong> inside the visible-span block mirrors the current filter width at band scale (grey tint), so you can see how your passband sits within the CW/Digi/Phone zones.</p>
+<p><strong>Tap and drag do different things, on purpose:</strong></p>
+<ul>
+<li><strong>Tap</strong> anywhere on the strip to jump to that frequency. Tapping says <em>go there</em>.</li>
+<li><strong>Drag the visible-span block</strong> to move the window along the band. Dragging says
+  <em>look there</em>. The block, the VFO marker and the passband all travel together as
+  one piece, keeping the dial exactly where it sits inside the window, and the
+  radio follows. Let go and it stays where you put it.</li>
+</ul>
+<p>The CW/Digi/Phone labels hide while you drag and fade back in when you let go,
+so you can see the VFO marker arrive at its new home. The <strong>filter passband
+block dims rather than hiding</strong>, so you can still see where the window you are
+aiming at will land.</p>
+<p><strong>The grab area is taller than the strip looks.</strong> The strip itself is only a few
+millimetres, which is not a finger, so touches are accepted for about 8 mm of the
+waterfall directly above it as well. Tap-to-tune gives up that last centimetre of
+the waterfall — nothing interesting lives there, and it is the difference between
+catching the handle first time and getting a tune cursor instead.</p>
+<p><strong>Drag from the bottom bar too.</strong> The visible-span block acts as a slider handle that reaches <em>below</em> the thin strip: touch on or just under it — anywhere along the bottom status bar — and <strong>drag sideways</strong> to scrub the band, exactly like dragging the strip itself. This gives you a much taller grab target. It coexists with the memory-picker gesture on the same row: a <strong>sideways</strong> drag retunes the band-plan, while a <strong>vertical up-swipe</strong> still opens the memory picker.</p>
+<p>The strip updates live as you zoom, pan, or change bands.</p>
+<p><strong>Outside a band</strong>, the strip reads <strong>"Out of band — drag to tune"</strong> in one flat
+colour instead of the CW/Digi/Phone zones, and returns to normal as soon as you are
+back inside a band. The frequency marker is hidden while you are out, because there is
+no band plan to position it against.</p>
+<p><strong>Out of band the strip becomes a coarse tuner</strong> (v1.8.3). Inside a band the strip is
+a <em>map</em> — where you touch is the frequency you get. Outside one there is no map to
+touch, so it works the other way round: a handle sits in the middle of the strip,
+and you <strong>drag it off centre to move the dial</strong>. Let go and it springs back to the
+middle, ready for the next pull.</p>
+<ul>
+<li>Dragging all the way to either edge moves by <strong>half of what is currently on
+  screen</strong>, so two drags in the same direction overlap rather than skipping a gap.
+  Nothing can scroll past unseen.</li>
+<li>It follows the zoom: zoomed in, the same drag is a finer step.</li>
+<li>A plain <strong>tap</strong> out of band does nothing on purpose — with no band plan behind it,
+  a tapped position has no frequency to mean.</li>
+</ul>
+<p>Suggested by Samuel W7STF, who pointed out that a row saying only "out of band"
+earns nothing when <code>Band: ---</code> in the top-left already tells you that.</p>
+<h4 id="memory-channels">Memory Channels<a class="headerlink" href="#memory-channels" title="Permanent link">&para;</a></h4>
+<p>Swipe ↑ from the bottom edge to open the memory picker — a 4×8 grid of 32 channels, each free to hold any frequency/mode (not tied to a band). Each channel stores:</p>
+<ul>
+<li>Frequency</li>
+<li>Mode (USB, LSB, CW, DiGi)</li>
+<li>Label (your own name for the channel)</li>
+</ul>
+<p>Each button shows the mode colour (CW = green, DiGi = teal, USB = brick red, LSB = purple) so you can tell mode at a glance without reading the label.</p>
+<p><strong>Recall:</strong> Tap a filled channel to immediately retune to it.</p>
+<p><strong>Tap an empty slot</strong> to create a new channel there directly — the frequency keypad opens straight away.</p>
+<p><strong>Long-press + drag a filled channel</strong> to move it to a different empty slot — no editing needed, the data follows your finger. Release on an empty slot to drop.</p>
+<p><strong>Long-press in place</strong> to open the editor (change name, frequency, or mode).</p>
+<p>Entering a frequency outside the legal amateur band edges is rejected immediately with an error — the pad stays open so you can correct it without starting over.</p>
+<h3 id="3-top-bar">3. Top Bar<a class="headerlink" href="#3-top-bar" title="Permanent link">&para;</a></h3>
+<p>Tap any item to open its selector:</p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>14.074</strong></td>
+<td>Frequency. Tap to open the frequency keypad.</td>
+</tr>
+<tr>
+<td><strong>USB</strong></td>
+<td>Mode. Tap to open the picker: USB, LSB, CW, DiGi — plus <strong>AM</strong> once the connected QMX reports 1.04 or newer firmware.</td>
+</tr>
+<tr>
+<td><strong>2.5 kHz</strong></td>
+<td>Bandwidth (SSB only). Tap to choose 2.5, 2.7, 2.9, or 3.2 kHz.</td>
+</tr>
+<tr>
+<td><strong>2.5 kHz</strong>, held</td>
+<td><strong>CW-Tune</strong> — a long press puts the dial on the nearest CW signal within ±400 Hz. See <a href="../settings/#panadapter-zoom">Settings</a>.</td>
+</tr>
+<tr>
+<td><strong>S7</strong></td>
+<td>S-meter. Shows received signal strength. Tap it to open the <a href="../audio/#the-audio-panel-one-tap-on-the-s-meter">audio panel</a>.</td>
+</tr>
+<tr>
+<td><strong>1.0x</strong></td>
+<td>Zoom level. Tap to choose x1, x2, x4, x8, x16 or x24. Pinching sets any value in between.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4-spectrum-waterfall">4. Spectrum &amp; Waterfall<a class="headerlink" href="#4-spectrum-waterfall" title="Permanent link">&para;</a></h3>
+<p>The <strong>spectrum</strong> shows signal power in dBm (default range −130 to −30 dBm) as a green curve with a dim fill. Each frame is smoothed per-bin with a running average — the <strong>Smoothing</strong> control in the drawer, 60% by default, where 0 is off and higher is smoother — which balances a stable picture against a snappy response to CW keying and SSB attack transients.</p>
+<p>The scale labels down the right-hand edge are <strong>worked out from the dB range you set</strong>
+(v1.8.3): the firmware picks round values that fit inside your Min and Max, choosing a
+finer step for a narrow range. Before this they were fixed at −40 to −120 regardless,
+so any range other than the default was described by labels that did not belong to it
+(found by Samuel W7STF running −118/−13). At the default range the labels are unchanged.</p>
+<p>The <strong>frequency axis</strong> shows absolute MHz labels across whatever span is on screen, refreshed on every CAT frequency update. At high zoom the labels resolve to kHz or Hz precision. With <strong>Still Spectrum</strong> on — the default above ×1 — the axis stays put as you tune and the VFO marker moves along it; with it off, the axis is centred on the QMX VFO.</p>
+<p>The <strong>waterfall</strong> runs newest row at the top, in a thermal SDR palette (black -&gt; dark blue -&gt; teal -&gt; green -&gt; yellow -&gt; red). Four colour maps are available in the drawer: <strong>Thermal, Viridis, Turbo</strong> and <strong>Grayscale</strong>.</p>
+<p><strong>The waterfall floor tracks the band automatically.</strong> Its black level follows a running median sampled only from bins <em>inside the passband</em>, EMA-smoothed, so the background colour follows conditions instead of sitting at a fixed anchor. Bins outside the passband are drawn darker and excluded from that calculation, so they cannot wash out dim in-band signals.</p>
+<p><strong>Flat-spectrum mode</strong> (drawer toggle, persisted) switches both spectrum and waterfall to a per-bin adaptive display: every bin renders as dB <em>above its own running noise floor</em>. Real signals — weak CW tones especially — stand out sharply against a calm baseline, which is why it is the mode to reach for on a noisy band. The dB-range sliders have no effect while it is on, and the axis shows relative dB above floor rather than absolute dBm.</p>
+<p><strong>The picture is cleared when it would otherwise mislead.</strong> Switching between Panadapter, FT8 and FT4, or changing band, clears the waterfall and resets the spectrum baseline, so stale signals from the old band cannot linger in the new one. The noise floor recalibrates and a new baseline settles in about a second.</p>
+<p><strong>Waterfall controls</strong> (in settings):</p>
+<ul>
+<li><strong>Black level</strong> — how far above noise-floor to go black (default 9 dB)</li>
+<li><strong>Contrast</strong> — dB span of the colour ramp (default 45 dB)</li>
+<li><strong>FFT window</strong> — Blackman-Harris, Hann, or Nuttall (default Blackman-Harris)</li>
+</ul>
+<p>!!! note "Adaptive floor was removed in v1.8.3"</p>
+<div class="highlight"><pre><span></span><code>That slider could not change anything: the per-bin noise floor it blended
+towards is re-seeded many times a second, so both ends of it produced the
+same picture. It has been taken out of the drawer, as it already had been
+from the browser. The stored value is still kept and still exported with
+your configuration, so the control can come back the day the underlying
+floor tracking runs.
+</code></pre></div>
+<h3 id="5-frequency-keypad">5. Frequency Keypad<a class="headerlink" href="#5-frequency-keypad" title="Permanent link">&para;</a></h3>
+<p>Tap the <strong>frequency</strong> on the top bar to open the keypad. Enter frequency in MHz format:</p>
+<ul>
+<li><strong>14.074</strong> for 14.074 MHz</li>
+<li><strong>1.832</strong> for 1.832 MHz</li>
+<li><strong>14.074.250</strong> for 14,074,250 Hz — a third group is hertz within the kilohertz</li>
+</ul>
+<p>Each group after a <code>.</code> is padded to three digits, so <code>14.07</code> is 14.070 MHz, not 14.007. Type a number with <strong>no <code>.</code> at all</strong> and it is taken as plain hertz.</p>
+<p>The digit layout toggles between <strong>10 Key</strong> (calculator order, 7-8-9 on the top row) and <strong>Phone</strong> (1-2-3 on the top row). Pick whichever your fingers already know — the choice persists across reboots.</p>
+<p><strong>Resize the keypad:</strong> Pinch it or swipe up/down on it to toggle between the normal and a compact layout. Your choice is remembered across reboots. The compact layout reveals more of the spectrum behind it.</p>
+<p><strong>Reposition the keypad:</strong> Drag it by the <strong>"Enter freq"</strong> title label (the only non-button area at the top of the panel) to move it anywhere on screen, clamped to stay fully visible. The position is remembered so it reopens exactly where you left it.</p>
+<p>The background behind the keypad is intentionally semi-transparent (40% dim) so the spectrum and waterfall stay visible while you're entering a frequency.</p>
+<p><strong>Cancel and Enter are the only exits</strong> — tapping outside the keypad does nothing, so an accidental background touch cannot silently discard what you were typing.</p>
+<h3 id="6-memory-channels">6. Memory Channels<a class="headerlink" href="#6-memory-channels" title="Permanent link">&para;</a></h3>
+<p>32 memory channels (4×8 grid), free to hold any frequency/mode — not tied to a band. Each stores frequency, mode, and name. Swipe up from the bottom edge to open the memory picker.</p>
+<p>Each slot shows its <strong>label in large text</strong>, with the mode and frequency dimmed beneath. Mode is also colour-coded — CW (blue), DiGi (amber), USB (brick red), LSB (purple) and AM (teal) — so the grid is scannable at a glance without reading every label.</p>
+<p>!!! info "New in v1.20.3 — AM can be stored in a memory channel"</p>
+<div class="highlight"><pre><span></span><code>The editor's mode row offered DiGi, USB, LSB and CW only. AM was missing for no reason: the slot could always hold it and recall already sent the right command, there was simply no button. It appears on a QMX running firmware **1.04 or later** — older radios reject the AM mode command, and a channel the radio refuses to recall is worse than no channel. Asked for by Gyula HA3HZ.
+
+⚠ The colours above were wrong in earlier versions of this page: CW was listed as green and DiGi as teal.
+</code></pre></div>
+<p><strong>To recall a channel:</strong> Tap it. The QMX retunes immediately.</p>
+<p><strong>To create a new channel (empty slot):</strong> Tap the empty slot — the frequency/mode picker opens directly, pre-filled with the current VFO so you can adjust both before naming it. No long-press needed.</p>
+<p><strong>To edit an existing channel:</strong> Long-press it in place. Change the name, frequency, or mode, then tap <strong>Save</strong>.</p>
+<p><strong>To move a channel to a different slot:</strong> Long-press and drag it to any empty slot. Release to drop. Only the data moves — the grid positions stay fixed.</p>
+<p><strong>To save the current QMX frequency/mode to a slot:</strong>
+1. Swipe ↑ to open the memory picker
+2. Long-press the slot you want to overwrite
+3. The current frequency/mode pre-fills the editor — adjust the label if you like, then tap <strong>Save</strong></p>
+<p><strong>To delete a channel — drag it onto the wastebin:</strong> the bottom-right cell (channel 32) is a <strong>wastebin</strong>. Long-press any filled channel and drag it onto the wastebin to delete it (it fades out). This is the way to clear a slot you no longer want.</p>
+<p><strong>Example channels on first use.</strong> A brand-new device ships with a few example channels already filled in (rather than 32 blank cells), so the grid is explorable straight away. These only seed empty slots — they never overwrite anything you've saved.</p>
+<p><strong>First-run tour.</strong> The very first time you open the memory picker, a brief (~10-second) one-time animation shows that channels can be <strong>dragged</strong> to move them and <strong>dropped on the wastebin</strong> to delete them. It plays once and never again.</p>
+<p><strong>Out-of-band frequencies are rejected immediately</strong> — if you enter a frequency outside a recognised amateur band, the keypad stays open so you can correct it rather than silently saving a wrong value.</p>
+<h3 id="7-band-presets">7. Band Presets<a class="headerlink" href="#7-band-presets" title="Permanent link">&para;</a></h3>
+<p>Tap the <strong>band name</strong> on the top bar to switch between configured bands. The band selector shows:</p>
+<ul>
+<li><strong>160m, 80m, 60m, 40m, 30m, 20m, 17m, 15m, 12m, 10m, 6m</strong> — standard bands (whichever your radio has configured)</li>
+<li><strong>11m</strong> — the CB segment (26.9–27.5 MHz), shown on QMX+ radios that expose it</li>
+<li><strong>Custom</strong> — user-added bands (via settings)</li>
+</ul>
+<p>On radios with many configured bands (QMX+), the picker lays the bands out in <strong>two side-by-side columns</strong> so every band is visible without scrolling. Selecting a band jumps to the <strong>nearest</strong> band centre, so closely-spaced bands like 10 m and 11 m are no longer confused for one another.</p>
+<p>Switching bands <strong>remembers the last frequency you visited on each band</strong>, so you can flip between 20m and 40m without losing your place.</p>
+<h3 id="8-zoom-pan">8. Zoom &amp; Pan<a class="headerlink" href="#8-zoom-pan" title="Permanent link">&para;</a></h3>
+<p>The QMX sends a 48 kHz-wide slice of I/Q, so <strong>×1 shows 48 kHz</strong> centred on the dial. Zooming narrows that window with a true zoom-FFT — you get finer resolution, not a stretched picture.</p>
+<p>The zoom level is displayed on the top bar (e.g. <strong>2.0x</strong>). Tap it to choose a preset:</p>
+<table>
+<thead>
+<tr>
+<th>Zoom</th>
+<th>Visible span</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>×1</td>
+<td>48 kHz — the whole slice</td>
+</tr>
+<tr>
+<td>×2</td>
+<td>24 kHz</td>
+</tr>
+<tr>
+<td>×4</td>
+<td>12 kHz</td>
+</tr>
+<tr>
+<td>×8</td>
+<td>6 kHz — CW pile-up detail</td>
+</tr>
+<tr>
+<td>×16</td>
+<td>3 kHz</td>
+</tr>
+<tr>
+<td>×24</td>
+<td>2 kHz — individual CW signals well separated</td>
+</tr>
+</tbody>
+</table>
+<p>Pinching sets any value in between; double-tap returns to ×1 and re-centres.</p>
+<table>
+<thead>
+<tr>
+<th>Gesture</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>One-finger fast horizontal swipe</td>
+<td>Pan ("stroll") the view — retunes to the new centre on release</td>
+</tr>
+<tr>
+<td>Pinch (two fingers)</td>
+<td>Zoom ×1.0 – ×24.0</td>
+</tr>
+<tr>
+<td>Two-finger drag</td>
+<td>Pan the zoomed window</td>
+</tr>
+<tr>
+<td>Double-tap</td>
+<td>Reset zoom and pan to ×1.0, centred</td>
+</tr>
+<tr>
+<td>Top-bar <strong>Zoom</strong> -&gt; tap</td>
+<td>Pick a preset</td>
+</tr>
+</tbody>
+</table>
+<p><strong>One-finger pan (stroll).</strong> A fast horizontal swipe — more than about 70 px of movement within the first 250 ms of touching down — slides the spectrum and waterfall under your finger in real time, with a live frequency tooltip, and retunes to wherever you release. It works at any zoom level, alongside the two-finger pinch and pan, and it is the quickest way to move along a band without dropping into a deliberate tune-drag.</p>
+<p>At zoom levels above ×1 the display <strong>centres on the passband</strong>, not the VFO dial — which matters in USB and LSB, where the passband sits to one side of the carrier. It re-centres whenever you change mode, filter width or zoom, so the active receive area stays on screen, and the passband lines and frequency axis track correctly at every zoom level. What happens as you <em>tune</em> is governed by <strong>Still Spectrum</strong>, below.</p>
+<p>The zoom level is <strong>persisted</strong>, and comes back at full zoom-FFT resolution on the next boot.</p>
+<h3 id="9-still-spectrum">9. Still Spectrum<a class="headerlink" href="#9-still-spectrum" title="Permanent link">&para;</a></h3>
+<p>By default the spectrum and waterfall <strong>hold still and the VFO marker moves across them</strong>, so a signal stays where you last saw it while you tune towards it. This is how a Flex behaves, and it is what makes the waterfall readable as history: a signal's past sits directly above its present, under the frequency it belongs to, instead of the whole picture sliding sideways every time you touch the dial.</p>
+<p>The view re-frames only when you tune far enough to need it:</p>
+<table>
+<thead>
+<tr>
+<th>Where you are</th>
+<th>What the display does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Inside the view</td>
+<td>nothing moves at all</td>
+</tr>
+<tr>
+<td>Your passband reaches the screen edge</td>
+<td>still nothing — it keeps holding, and your passband begins to slide off the edge</td>
+</tr>
+<tr>
+<td>Half a passband width past that</td>
+<td>a page, carrying part of the old screen across so you can see where you came from</td>
+</tr>
+</tbody>
+</table>
+<p>The trigger is <strong>your filter passband reaching the edge of the screen</strong>, not a fixed percentage of the view. That distinction matters because the passband is not centred on the dial — in USB it runs roughly +200 to +2900 Hz — so a percentage rule re-frames too early at one edge and too late at the other, and mirrors itself in LSB. RIT is counted in, since it changes what you are actually listening to.</p>
+<p>The display holds completely still right up to the page — it is never dragged along by the tuning. The cost is that your passband slides off the screen edge for a moment before the jump, which is why the allowance is <strong>half</strong> a filter width and not a whole one: long enough that a station right at the edge can still be worked, short enough that you are not tuning blind. How far you can tune between pages therefore depends on your filter — roughly a screen-width less half a filter, so about 4.7 kHz of a 6 kHz view on a 2.7 kHz SSB filter.</p>
+<p><strong>Picking a spot brings it into view only if it is not already usable where it is.</strong> Tap a spot that is comfortably on screen and the display does not move at all — only the VFO marker jumps to it, which is the whole point of holding still. Tap one that is off screen, or so close to an edge that your passband would not fit, and the display re-frames on it rather than leaving it stuck at the edge.</p>
+<p>Changing mode, filter width or zoom re-centres the view on the passband, as before.</p>
+<p>Switch it off under <strong>Settings -&gt; Radio &amp; display -&gt; Still spectrum</strong>, and the display returns to re-centring on the dial at every step with the marker in the middle.</p>
+<p>!!! warning "×1 is always dial-centred"
+    Holding a view still needs somewhere for it to stay while the capture window slides underneath it. At ×1 the view is already the whole 48 kHz the radio sends, so there is no room and the setting has nothing to work with. Zoom to <strong>×2 or beyond</strong> for the still display.</p>
+<h3 id="10-the-hatched-region">10. The Hatched Region<a class="headerlink" href="#10-the-hatched-region" title="Permanent link">&para;</a></h3>
+<p>The QMX's local oscillator sits <strong>12 kHz below the dial</strong>. The 48 kHz it delivers therefore covers <strong>dial−36 kHz to dial+12 kHz</strong> — all of it real, but only 12 kHz of it above the frequency you are tuned to.</p>
+<p>Above dial+12 kHz there is no data, and there never was. That part of the display is drawn <strong>hatched</strong> and does not respond to tapping, on the Tab5 and in the browser alike, with a caption saying why it is empty.</p>
+<p>Before v1.10.5 the display filled that quarter of the ×1 view by wrapping the bottom of the band into it, and the frequency scale labelled it as dial+12 to +24. The signals shown there were real, but they were about 48 kHz from where the scale claimed — so tapping one tuned you to the wrong place entirely.</p>
+<p>If a signal you want falls into the hatching, tune down or zoom in. The radio cannot hear above dial+12 kHz, and no display setting can change that.</p>
+<h3 id="11-decoded-cw">11. Decoded CW<a class="headerlink" href="#11-decoded-cw" title="Permanent link">&para;</a></h3>
+<p>In <strong>CW or CW-R</strong>, a single line along the bottom of the waterfall shows the
+Morse the radio is decoding — on the Tab5 and in the browser alike.</p>
+<p>The decoding is not done by the Tab5. <strong>The QMX has its own CW decoder</strong> and
+hands the text over the CAT link, so this costs the panadapter nothing: no
+audio processing, no effect on the spectrum, no effect on FT8. It works on QMX
+firmware 1.03 and later — there is nothing to enable on the radio for most
+people, since its own <strong>Decoder -&gt; Enable Rx</strong> setting is on by default
+<em>(suggested by Uwe DL8UG)</em>.</p>
+<p>The line reads:</p>
+<div class="highlight"><pre><span></span><code>CW ~18wpm:  CQ CQ DE OZ1LAV OZ1LAV K
+</code></pre></div>
+<ul>
+<li>The <strong>green header</strong> carries the estimated sending speed and never moves. The
+  number is zero-padded, so the text after it does not shift as the estimate
+  crosses ten.</li>
+<li>The <strong>cyan text</strong> is what the radio decoded, in a fixed grid of 72 characters.</li>
+<li>When the line fills, it <strong>wraps and writes over the oldest end</strong> rather than
+  scrolling. Nothing slides sideways, so a callsign you are half-way through
+  reading stays where it is. Two blank spaces travel ahead of the writing
+  position — after the first wrap, that gap is what tells new text from old.</li>
+</ul>
+<p><strong>It is written to the microSD card too</strong>, if one is in the slot: everything decoded
+goes to <code>qmx-panadapter/cw-decode.txt</code> with a timestamp on each line, so a callsign
+you only half-caught can be resolved afterwards <em>(Michael K Johnson KZ4LY)</em>. The
+line on screen holds one screenful; the card holds the session.</p>
+<p>With WiFi on, the card is written every 30 seconds rather than continuously, so
+the last few characters of a session may still be in memory when you pull the
+card. Switch the radio off and give it half a minute if you want the very end of
+an over.</p>
+<p>While the web page is open the card writes wait, because writing the card stalls
+the spectrum stream for several seconds on this hardware. They go through anyway
+after three minutes, so nothing is lost — but if you want the transcript fully
+up to date, close the browser tab and give it half a minute.</p>
+<p><strong>About the speed.</strong> It is a <em>throughput</em> figure: characters per unit time,
+counting the gaps between words and between overs. During a real exchange it
+therefore reads <strong>lower</strong> than the other operator is actually sending, and only
+approaches their true speed during continuous sending. The radio hands over
+finished characters, so the element timing a true speed measurement needs is
+already gone. That is why it is shown with a <code>~</code>, and why it reads <code>??</code> rather
+than guessing when there is not enough to go on.</p>
+<p><strong>About the noise.</strong> With no signal the decoder chews on noise. Two kinds of
+rubbish are filtered out before anything reaches the screen:</p>
+<ul>
+<li><code>*</code> — the decoder's marker for a symbol it could not resolve. Measured on a
+  live band it was the single most common thing arriving, and it is never part
+  of real text, so it is dropped outright.</li>
+<li>Long runs of <strong>E</strong> and <strong>T</strong> — the two shortest Morse symbols, so noise lands
+  on them more often than on anything longer, and worst just after switching to
+  CW while the decoder settles. A long run is dropped; a short one is kept,
+  because those are real letters and words like TEST and BETTER must survive.</li>
+</ul>
+<p>A dropped run leaves one space behind, so words either side of it are not welded
+together.</p>
+<p><strong>Clearing it, and how many rows</strong> (from v1.20.1). A <strong>Clear</strong> button empties the
+pane, and the row count is <strong>2 or 4</strong>, chosen beside the on/off switch. Four rows
+of wrapped text can make it hard to find the boundary between fresh decode and
+old; two rows keeps the recent text where you can see it <em>(Bryan N0LUF)</em>.</p>
+<p>A click <em>inside</em> the pane still tunes the radio rather than clearing it. That is
+deliberate - the waterfall underneath stays click-to-tune - which is why Clear is
+its own button.</p>
+<p><strong>Turning it off.</strong> Settings drawer -&gt; <strong>Radio</strong> -&gt; <strong>Show decoded CW</strong>, beside CW
+centre and the transmit offset. It is on by default and the setting is shared
+with the browser.</p>
+<h3 id="12-s-meter">12. S-Meter<a class="headerlink" href="#12-s-meter" title="Permanent link">&para;</a></h3>
+<p>The <strong>Signal</strong> field in the top bar is a tick-scale bar labelled S1, S3, S5, S7, S9, +10, +20, with a moving green bar beneath it.</p>
+<ul>
+<li><strong>S1 to S9</strong> — standard S-units, −130 to −73 dBm</li>
+<li><strong>+10 / +20</strong> — above S9, in 10 dB steps</li>
+</ul>
+<p>The scale is <strong>S9 = −73 dBm</strong>, 6 dB per S-unit below S9 and 1 dB per unit above it.</p>
+<p>The reading is the peak level in a ±64-bin window centred on the <strong>IF-shifted VFO bin</strong> — corrected for the QMX's +12 kHz IF offset, so it measures the signal actually under your cursor rather than the DC/local-oscillator spike sitting at the centre of the spectrum. It stays live during FT8 capture.</p>
+<p>The bar itself is a readout and holds no peak. Tapping it opens the <a href="../audio/#the-audio-panel-one-tap-on-the-s-meter">audio panel</a> — the peak-hold line is a <strong>spectrum</strong> control, in the drawer under Smoothing &amp; peak hold.</p>
+<h3 id="13-settings-drawer">13. Settings Drawer<a class="headerlink" href="#13-settings-drawer" title="Permanent link">&para;</a></h3>
+<p>Swipe ← from the right edge to open the settings drawer, or tap the right grip handle.</p>
+<p>It is grouped — <strong>Station, Device, Radio, Network, Display, FT8, WSPR, Spectrum</strong> — with a <strong>BASIC / ADVANCED</strong> button at the top. Basic shows what an operating session needs; Advanced holds everything, including the tuning and calibration controls you set once. Which sections sit in which view is yours to change, from the web UI's <strong>Settings -&gt; Tab5 config</strong>.</p>
+<p><strong>Every control, group by group, is documented once in <a href="../settings/">Settings</a></strong> — deliberately in one place rather than summarised here as well.</p>
+<hr />
+<p><strong>Next:</strong> Learn about <a href="../ft8-rx/">FT8 Receive</a> or <a href="../web-ui/">Web UI</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.sections", "toc.follow", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

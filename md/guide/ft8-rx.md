@@ -1,0 +1,213 @@
+# FT8/FT4 Receive & Decode List
+
+The panadapter includes **on-device FT8 and FT4 decoders** with real-time spectrum waterfall and a live list of heard stations.
+
+
+### 1. FT8 & FT4 View
+
+Swipe → from the left edge to open the **page picker**, then tap **MODE: FT8** or **MODE: FT4**. The picker lists all five pages - Panadapter, FT8, FT4, JS8 and WSPR - so each one is a single tap rather than a sequence of swipes. The same decode list and waterfall serve all three modes — FT8, FT4 and **JS8** — switched with the **Preset** dropdown in the left pane (top). JS8 adds a Conversation tab and free-text sending; see [JS8](js8.md).
+
+**FT4 notes:**
+- Decodes refresh roughly twice as fast as FT8 because slots are 7.5 seconds
+- Slot countdown shows 7.5 s instead of 15 s
+- All filtering, priority, and auto-reply features work identically in FT4
+- Time-sync from decoded signal timing works in both FT4 and FT8 (the bottom-bar clock shows `UTC(FT4)` when synced from an FT4 decode)
+- **v0.19.4 made FT4 reliable**: a memory-placement fault previously killed decoding on every other slot (FT8's longer slots mostly hid it), the EVEN/ODD slot markers were on the wrong 15-second grid, and the slot clock could visibly jump between slots — all fixed; if FT4 seemed deaf or erratic on an earlier version, update the firmware
+
+You'll see:
+
+- **Decode list** (left pane) — every station heard, ordered so the ones that matter to you are at the top (see [Decode List](#2-decode-list) below)
+- **Waterfall** (right pane) — same real-time spectrum as panadapter mode
+- **Call CQ button** — start a CQ (requires QMX on the air)
+- **Options button** — include/exclude stations, prioritise by SNR/distance, show only CQ callers
+
+### 2. Decode List
+
+The list shows every decoded FT8 message:
+
+```qmxdiagram
+type: timeline
+title: One FT8 slot - 15 s, and what DT and DTR measure
+span: 15
+seg: 0-12.64 steel a transmission - 12.64 s, 79 symbols
+seg: 12.64-15 dim dead air - 2.36 s
+mark: 0-0.014 red our TX starts at +14 ms
+tick: 0, 5, 10, 15
+note: steel | DTR is the RAW offset of a received signal from the slot boundary. It carries about 0.5 s of receive latency - the QMX SDR plus USB buffering - so it is not comparable with WSJT-X
+note: trace | DT is that same offset corrected against the band consensus, so the shared latency cancels and an on-time station reads about 0.0. This is the WSJT-X-style number
+note: dim | the decode runs after the capture, in the dead air and into the next slot. That is why a reply must be decided before the next boundary, not after it. FT4 is the same shape at 7.5 s - a 5.04 s burst and 2.46 s of dead air
+```
+
+**DT and DTR are two different quantities**, which the table below spells out and the
+picture above shows: DTR is the raw offset from the slot boundary and carries about
+half a second of receive latency, while DT is that offset corrected against the band
+consensus, so the shared latency cancels and an on-time station reads about zero.
+
+| Column | Meaning |
+|---|---|
+| **SL** | Slot parity: **E** (blue) or **O** (amber) |
+| **CALL** | Their callsign |
+| **MESSAGE** | The full decoded message text |
+| **COUNTRY** | Country, spelled out where it fits and shortened where it does not - never a 3-letter code (v1.15.0) |
+| **SNR** | Signal-to-noise estimate, colour-banded by strength |
+| **TONE** | The station's audio tone within the FT8 passband (v1.3.1) |
+| **DT** | Slot-timing offset in seconds, corrected against the band consensus — an on-time station reads ~0.0. This is the WSJT-X-style number. It reads `--` until at least **two separate stations** have been heard, because with one station the correction is that station's own offset minus itself, which is zero by construction and not a measurement (v1.3.1, corrected in v1.17.0) |
+| **DTR** | *Browser only.* The **raw** slot-boundary-relative offset, uncorrected. It includes about 0.5 s of one-way receive audio latency (the QMX SDR plus USB buffering), so it is **not** comparable with WSJT-X's DT — but it is the number that moves when a transmitter's timing moves, which is what you want when you are checking your own TX. Both columns sort on the raw value (v1.17.0) |
+| **KM / MI** | Great-circle distance from your grid. A `~` means the station never sent a grid, so the distance is worked out from its country and is approximate (v1.14.4) |
+| **HRD** | Times decoded since last appearance |
+
+The **BRG** column was removed in v1.14.4 to make room for spelled-out country
+names; a bearing is derivable from the distance and the map.
+
+All three lists — this one, the SelfSpotter LIST tab and WSPR — use the same
+column order and capitalised headings since v1.15.1, so the same kind of
+information sits in the same place whichever screen you are on.
+
+**Own call highlight** — your callsign is shown in **inverted colours** (red fill, white text) so you spot replies to you instantly.
+
+**How the list is ordered.** Top to bottom:
+
+1. **The station you are working** (asked for by Don WB0LQW) — during an exchange there are several transmissions each way, and the partner's messages used to sort down-screen where you had to hunt for them. Now *everything* from them stays at the top: their reply to you, their CQ while you are mid-exchange, and a message they send to a third station — which is exactly when you most want to see it. It covers a hand-typed reply as well as an automatic exchange, and matches on their **callsign**, so a third station merely mentioning them is not promoted. It releases the moment the QSO completes (their closing `73` contains your callsign, so rule 2 keeps it up there anyway).
+2. **Messages addressed to you** — anything containing your callsign.
+3. **CQ calls.**
+4. **Everything else, strongest signal first.**
+
+**Stale entries** — the list is a live picture of who's on frequency now; stations not heard again within **2 minutes** drop off automatically.
+
+**During your own CQ run** — stations transmitting on *your* transmit slot (which you can't hear while transmitting) are hidden from the list and return when the run ends; other stations' CQ rows are hidden during a run as before.
+
+**Nonstandard callsigns** — special-event and compound calls now resolve to the full callsign instead of showing `<...>`, once the station has been heard in full.
+
+### 3. FT8 Options
+
+Tap the **Options** button to open the Options modal:
+
+- **Include callsigns** — only show these calls (space or comma-separated)
+- **Include callsigns containing** — show any call with these substrings (e.g., `/P` for portable)
+- **Exclude callsigns** — hide these calls
+- **Exclude if contains** — hide any call matching these substrings
+- **Never auto-call worked-before** — the one entry in this list that does *not*
+  change the list. Every other filter here hides rows; this one only stops the
+  **machine** calling a station already in your log on this band — CQ answers,
+  the pile-up, Auto-work and the robot all pass over them. Worked stations stay
+  in the decode list either way, greyed, and you can still tap one to work it.
+  Per band: the same call on another band counts as new. (It was called
+  "Exclude stations worked before", which read as a promise about the list.)
+- **Hide worked-before** — the companion to the entry
+  above rather than part of it. This one *does* change the list: tick it and a
+  station already in your log on this band disappears from the decode list
+  altogether, on the Tab5 and in the browser. Off by default, so the grey
+  behaviour above is what you keep unless you ask for this. The two are
+  separate on purpose - working duplicates by hand while the machine leaves
+  them alone is a perfectly normal way to operate. The station you are
+  mid-exchange with is never hidden.
+- **Show only CQ callers** — hide replies, show only CQ messages
+- **Show CQs in my run** — off by default. While you are running your own CQ, other
+  stations' plain CQ calls are hidden so that replies addressed to you are not buried
+  under unrelated traffic. Turn this on to keep seeing them, so you can spot a station
+  worth breaking off for during your listening slot. It changes the list only; it does
+  not change who the robot or Auto-work-pileup will answer
+- **Skip TX1** — when you pounce a station, open with your signal report straight away instead of the grid exchange, for a quicker QSO (falls back to the normal grid exchange if the station has dropped out of the decode list)
+- **Allow grey-listing** — off by default. A station that times out two of your pounces in a row is set aside: the robot and Auto-work-pileup skip it, its decode row turns **violet**, and tapping it offers to clear it from the grey-list instead of opening the TX dialog. Handy on a busy band where one station simply never comes back. The list is held in memory only and forgotten at power-off
+- **Auto-reply priority** — Strongest SNR, Weakest SNR, Most distant grid
+- **Robot mode** — auto-answer CQ (disabled by default; see [FT8 Transmit](ft8-tx.md))
+
+All filters persist across sessions. Toggle any filter on/off to enable or disable it without erasing the criteria.
+
+#### Stations you skipped (v1.20.5)
+
+The **Skip** button ends the exchange in progress and leaves the robot running;
+the station is not called again this session. From v1.20.5 the web FT8 page
+lists those stations under the grey-list line, and each one can be cleared on
+its own or all at once *(Randy N4OPI)*.
+
+It is a **separate list** from the grey-list above: that one is the software
+setting aside a station that never answers, this one is your own decision, and
+one button should not quietly undo both.
+
+#### Your state (v1.20.5)
+
+**Settings → Station → Your state**, beside Your grid. Two letters. With it set,
+the robot passes over a CQ aimed at a different US state. Leave it empty — as
+everyone outside the USA should — and every state call is answered as before,
+because the radio knows which country you are in but not which state.
+
+!!! warning "`CQ DE` is never read as Delaware"
+    On the air `DE` almost always means *from*, not the state. In one operator's
+    log there were fifty-one `CQ DE` decodes, from Florida, New York and
+    California, and none from Delaware — so treating it as a state call would
+    have cost every one of those contacts.
+
+### 4. Decoding Performance
+
+On a reasonably busy band, expect roughly **15–20 distinct messages per slot** in
+either mode. That is messages, not contacts — one QSO produces several.
+
+Decoding uses **both processor cores**: the decode task works one half of the
+candidate list on core 1 while a helper takes the other half on core 0, and both
+run against a waterfall that was built during the capture rather than after it.
+That is what makes the results appear a second or two into the following slot
+instead of most of the way through it.
+
+**What limits it:**
+
+- **LDPC error correction is heavy**, and most candidates the search finds are
+  false alarms that use the full iteration budget before being discarded
+- **The spectrum and waterfall** are being drawn from the same audio at the same time
+- **USB audio must be serviced continuously** — a gap there costs decodes far more
+  than a slow decoder does
+
+**FT4 advantage:** because FT4 slots are half as long (7.5 s vs 15 s), you get refresh feedback roughly twice as fast, which feels snappier on a crowded band even though the per-slot decode count is the same.
+
+The panadapter prioritises **receive latency** (decode every 15 s, not accumulate) over volume.
+
+### 5. Real-Time Waterfall
+
+Unlike WSJT-X (which buffers a whole 15-second capture), the Tab5 **builds the waterfall on-the-fly** as audio arrives. You see CW and other traffic in real time, and FT8 stations appear instantly as their symbol blocks are decoded.
+
+The waterfall also shows **non-FT8 activity**:
+- CW (carrier lines)
+- SSB (broader vertical smears)
+- RTTY (FSK sidebands)
+- Interference (wideband noise)
+
+### 6. Tap to Reply
+
+Tap any FT8 row in the decode list to **prepare a reply**:
+
+1. A confirmation modal pops up showing your message
+2. You can review the target callsign, grid, and SNR
+3. Tap **Transmit** to send, or **Cancel** to abort
+
+The reply always follows FT8 protocol (correct parity, proper message sequence) — you can't accidentally send a garbled or out-of-order message.
+
+**Pile-up list.** If a station answers you while you're busy with another contact, they used to disappear from the list once they stopped transmitting. They're now remembered in a **Pileup** list — the **ADIF-log** button on the FT8 screen turns into a **Pileup** button (a different colour) whenever callers are waiting. Tap it to see who's called you, tap a station to work them, or tap the ✕ to dismiss one. See [FT8 Transmit](ft8-tx.md) for the full workflow.
+
+### 7. Auto-Reply (Robot Mode)
+
+⚠️ **Experimental** — enabled via a checkbox in the Options modal.
+
+When robot mode is on, the Tab5 **automatically replies to CQ** without waiting for you to tap. It scans each FT8 slot for CQ callers matching your filters, picks the highest-priority station, and sends a full QSO exchange (TX1 -> wait for report -> TX2 -> wait for RR73 -> TX3). Everything is logged to ADIF.
+
+**Important:** Robot mode **keys the QMX for real** — your signal goes on the air. Never leave it unattended unless you're confident in your filters and your station is in a safe state.
+
+### 8. Search & Window
+
+The decoder uses an **FFT-based search window** to find candidate tone blocks, at whichever tone spacing the active mode uses — **6.25 Hz** for FT8's 8 tones, **20.83 Hz** for FT4's 4.
+
+**Frequency stability:** The QMX's USB audio clock isn't bit-exact 48 kHz, so decodes slide slowly over time. The panadapter **re-locks to UTC boundaries every 15 seconds** (the slot boundary), preventing long-term drift.
+
+### 9. Time Sync for FT8
+
+FT8 requires **UTC time accurate to ±1 second** for slot synchronisation. The panadapter gets time from:
+
+1. **WiFi + SNTP** (if available) — most accurate, syncs every ~hour
+2. **Tab5 RTC** (if set) — accurate to ±1 min, no internet needed (POTA)
+3. **QMX GPS** (if QMX has GPS) — re-syncs the RTC every 5 minutes
+4. **Manual** — you can set time via the settings drawer
+
+See [Time Sync](time-sync.md) for details.
+
+---
+
+**Next:** Learn about [FT8 Transmit](ft8-tx.md) or go back to [Panadapter](panadapter.md).

@@ -1,0 +1,2322 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://tab5.lav.dk/guide/time-sync/">
+      
+      
+        <link rel="prev" href="../js8/">
+      
+      
+        <link rel="next" href="../wspr/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Time Sync - QMX Panadapter</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="light" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#time-sync" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="QMX Panadapter" class="md-header__button md-logo" aria-label="QMX Panadapter" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            QMX Panadapter
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Time Sync
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="light" data-md-color-primary="blue" data-md-color-accent="orange"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    <!-- Buy me a coffee (OZ1LAV) — just left of the search field -->
+    <style>
+      /* The official BMC widget renders ~51px tall (nearly the whole top bar).
+         zoom scales it (and its layout box, so no leftover gap) down to about
+         the search-field height. Tweak the factor to taste. */
+      .bmc-header-btn { display:flex; align-items:center; margin:0 .2rem; zoom:0.72; }
+    </style>
+    <div class="bmc-header-btn">
+      <script type="text/javascript"
+              src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js"
+              data-name="bmc-button"
+              data-slug="OZ1LAV"
+              data-color="#FFDD00"
+              data-emoji="☕"
+              data-font="Lato"
+              data-text="Buy me a coffee"
+              data-outline-color="#000000"
+              data-font-color="#000000"
+              data-coffee-color="#ffffff"></script>
+    </div>
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/SteffenLav/qmx-panadapter" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    qmx-panadapter
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../quick-start/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Quick Start
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../getting-help/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Getting Help
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../panadapter/" class="md-tabs__link">
+          
+  
+  
+  User Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../reference/gestures/" class="md-tabs__link">
+          
+  
+  
+  Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../build/build/" class="md-tabs__link">
+          
+  
+  
+  For Builders
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../releases/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Releases
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="QMX Panadapter" class="md-nav__button md-logo" aria-label="QMX Panadapter" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    QMX Panadapter
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/SteffenLav/qmx-panadapter" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    qmx-panadapter
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quick-start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-help/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Help
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Guide
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    User Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../panadapter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Panadapter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../audio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spots/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Live Spots
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spot-map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spot Map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../web-ui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web UI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ft8-rx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FT8 RX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ft8-tx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FT8 TX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cw/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CW (beta)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../webradio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web Radio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../js8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JS8 (beta)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Time Sync
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Time Sync
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-time-sources-priority-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Time Sources (Priority Order)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unit-gps-time-source-porta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unit GPS Time Source (PORT.A)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#module-gps-v21-on-the-30-pin-bus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Module GPS v2.1 on the 30-pin bus
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-offline-pota-portable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Offline (POTA / Portable)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-wifi-sntp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. WiFi + SNTP
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-qmx-gps-time-sync-auto-detected" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. QMX GPS Time Sync (auto-detected)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-setting-the-time-by-hand" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Setting the time by hand
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-ft8-derived-sync-offline-fallback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. FT8-Derived Sync (Offline Fallback)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. FT8-Derived Sync (Offline Fallback)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fine-tune-time-with-sync-time-ft8-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fine-Tune Time with "Sync Time" (FT8 Only)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-bottom-bar-time-display" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Bottom Bar Time Display
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7b-where-to-see-the-date" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7b. Where to see the DATE
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-slot-timing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Slot Timing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8b-gps-stats-the-sky-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8b. GPS Stats - the sky view
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-time-sources-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Time Sources Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wspr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WSPR
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../radio-menus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Radio Menus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/gestures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gestures & Controls
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/hardware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hardware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/web-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/rigctld/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hamlib rigctld
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    For Builders
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    For Builders
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build/build/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Build from Source
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build/architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build/contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing & Feedback
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Releases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-time-sources-priority-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Time Sources (Priority Order)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unit-gps-time-source-porta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unit GPS Time Source (PORT.A)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#module-gps-v21-on-the-30-pin-bus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Module GPS v2.1 on the 30-pin bus
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-offline-pota-portable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Offline (POTA / Portable)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-wifi-sntp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. WiFi + SNTP
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-qmx-gps-time-sync-auto-detected" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. QMX GPS Time Sync (auto-detected)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-setting-the-time-by-hand" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Setting the time by hand
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-ft8-derived-sync-offline-fallback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. FT8-Derived Sync (Offline Fallback)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. FT8-Derived Sync (Offline Fallback)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fine-tune-time-with-sync-time-ft8-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fine-Tune Time with "Sync Time" (FT8 Only)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-bottom-bar-time-display" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Bottom Bar Time Display
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7b-where-to-see-the-date" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7b. Where to see the DATE
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-slot-timing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Slot Timing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8b-gps-stats-the-sky-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8b. GPS Stats - the sky view
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-time-sources-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Time Sources Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="time-sync">Time Sync<a class="headerlink" href="#time-sync" title="Permanent link">&para;</a></h1>
+<p>FT8 requires accurate UTC time — within ±1 second of the real thing. The panadapter syncs time from multiple sources in priority order.</p>
+<h3 id="1-time-sources-priority-order">1. Time Sources (Priority Order)<a class="headerlink" href="#1-time-sources-priority-order" title="Permanent link">&para;</a></h3>
+<div class="qmx-diagram" style="overflow-x:auto"><svg viewBox="0 0 900 734" width="100%" role="img" xmlns="http://www.w3.org/2000/svg" style="max-width:900px"><rect x="0" y="0" width="900" height="734" rx="10" fill="#151B23" stroke="#2A3440"/><text x="18" y="32" font-size="17" fill="#E9C46A" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="600">Which clock source wins - highest authority first</text><rect x="18" y="56" width="864" height="35" rx="6" fill="#1B232D" stroke="#2A3440"/><text x="30" y="78" font-size="16" fill="#E6EDF3" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">Unit GPS on PORT.A - a satellite clock, and it carries its own DATE</text><path d="M44 97 l0 14" stroke="#93A4B1" stroke-width="1.5"/><path d="M44 115 l-4 -5 l8 0 z" fill="#93A4B1"/><rect x="18" y="119" width="864" height="35" rx="6" fill="#1B232D" stroke="#2A3440"/><text x="30" y="141" font-size="16" fill="#E6EDF3" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">QMX+ GPS second-tick - only when the QMX GPS flag is set, and then it OUTRANKS SNTP</text><rect x="58" y="160" width="824" height="29" rx="5" fill="#151B23" stroke="#2A3440"/><rect x="58" y="160" width="3" height="29" fill="#8AB4F8"/><text x="72" y="179" font-size="14" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">phase-locked to the second boundary, about +/-25 ms, re-locked every 5 minutes</text><rect x="58" y="197" width="824" height="29" rx="5" fill="#151B23" stroke="#2A3440"/><rect x="58" y="197" width="3" height="29" fill="#8AB4F8"/><text x="72" y="216" font-size="14" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">drift-free and independent of WiFi, so better than our own SNTP</text><path d="M44 234 l0 14" stroke="#93A4B1" stroke-width="1.5"/><path d="M44 252 l-4 -5 l8 0 z" fill="#93A4B1"/><rect x="18" y="256" width="864" height="35" rx="6" fill="#1B232D" stroke="#2A3440"/><text x="30" y="278" font-size="16" fill="#E6EDF3" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">SNTP over WiFi - authoritative whenever WiFi is up</text><path d="M44 297 l0 14" stroke="#93A4B1" stroke-width="1.5"/><path d="M44 315 l-4 -5 l8 0 z" fill="#93A4B1"/><rect x="18" y="319" width="864" height="35" rx="6" fill="#1B232D" stroke="#2A3440"/><text x="30" y="341" font-size="16" fill="#E6EDF3" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">Tab5 RTC - holds the clock until something better arrives</text><path d="M44 360 l0 14" stroke="#93A4B1" stroke-width="1.5"/><path d="M44 378 l-4 -5 l8 0 z" fill="#93A4B1"/><rect x="18" y="382" width="864" height="35" rx="6" fill="#1B232D" stroke="#2A3440"/><text x="30" y="404" font-size="16" fill="#E6EDF3" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">QMX time-of-day - offline fallback ONLY</text><rect x="58" y="423" width="824" height="48" rx="5" fill="#151B23" stroke="#2A3440"/><rect x="58" y="423" width="3" height="48" fill="#8AB4F8"/><text x="72" y="442" font-size="14" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">undisciplined, the QMX's own clock drifts freely; trusting it above SNTP would break FT8 timing</text><text x="72" y="461" font-size="14" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">whenever it had wandered</text><path d="M44 479 l0 14" stroke="#93A4B1" stroke-width="1.5"/><path d="M44 497 l-4 -5 l8 0 z" fill="#93A4B1"/><rect x="18" y="501" width="864" height="35" rx="6" fill="#1B232D" stroke="#2A3440"/><text x="30" y="523" font-size="16" fill="#E6EDF3" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">manual entry - last resort, no network and no GPS</text><rect x="18" y="541" width="14" height="14" rx="3" fill="#FFA040" fill-opacity="0.50" stroke="#FFA040"/><text x="42" y="552" font-size="15" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">the BOOT order is not the authority order. The Tab5 RTC is applied first of all, before SNTP or the</text><text x="42" y="571" font-size="15" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">QMX can answer, which makes it first in TIME and not highest in authority - anything above it</text><text x="42" y="590" font-size="15" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">replaces it as soon as it arrives</text><rect x="18" y="602" width="14" height="14" rx="3" fill="#8AB4F8" fill-opacity="0.50" stroke="#8AB4F8"/><text x="42" y="613" font-size="15" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">an FT8-derived nudge sits below all of these and is not really a source: it is blocked outright</text><text x="42" y="632" font-size="15" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">whenever SNTP or a live GPS exists, so it only ever disciplines a unit that has no absolute</text><text x="42" y="651" font-size="15" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">reference at all</text><rect x="18" y="663" width="14" height="14" rx="3" fill="#93A4B1" fill-opacity="0.50" stroke="#93A4B1"/><text x="42" y="674" font-size="15" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">WSPR and FT8 both search only a narrow slice of time either side of the slot boundary, so a clock</text><text x="42" y="693" font-size="15" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">out by a couple of seconds hears nothing and is heard by nobody</text></svg></div>
+
+<p>⚠ <strong>The boot order is not the authority order.</strong> The Tab5 RTC is applied first of
+all, at boot, before SNTP or the QMX can answer — that makes it the first source in
+<em>time</em>, not the highest in authority. Anything above it replaces it as soon as it
+arrives.</p>
+<ol>
+<li><strong>Unit GPS v1.1 on PORT.A</strong> (if selected in Settings -&gt; Device -&gt; Port mode) — satellite UTC <strong>including the full date</strong>, phase-locked to the second, works offline</li>
+<li><strong>GPS-disciplined QMX</strong> (auto-detected) — phase-locked to the GPS second, ~10 ms, works offline; on radio firmware 1.04_004 and later it brings the <strong>date</strong> as well</li>
+<li><strong>WiFi + SNTP</strong> (if available) — ~10 ms, re-syncs every ~1 hour</li>
+<li><strong>Tab5 RTC</strong> (if set) — persists across power cycles (±1 min accuracy)</li>
+<li><strong>The QMX's own clock</strong> (<code>TM;</code> over CAT) — offline fallback only, used when SNTP has gone stale. This is a <em>plain</em> QMX, with no GPS discipline: its clock drifts freely, which is exactly why it sits below the RTC rather than above SNTP</li>
+<li><strong>FT8/FT4-derived</strong> — a <em>nudge</em>, not a source. It is blocked outright whenever a real absolute reference exists (SNTP, a live Unit GPS, or a GPS-disciplined QMX), so it only ever disciplines a unit that has none</li>
+<li><strong>Manual set</strong> — enter time manually via the settings drawer</li>
+</ol>
+<p>GPS and SNTP are the accurate sources and are used whenever present; if you're offline with neither, the panadapter falls back to the RTC (or FT8-derived / manual). The Unit GPS outranks the others while it has a fresh lock — see <a href="#unit-gps-time-source-porta">Unit GPS Time Source</a>.</p>
+<p>!!! note "Both GPS sources show <code>UTC(GPS)</code>"</p>
+<div class="highlight"><pre><span></span><code>A Unit GPS and a GPS-disciplined QMX are both GPS, so the clock suffix is
+the same word for both. Which one you have is told apart by the **GPS
+indicator** on the bottom bar (see [Bottom Bar Time Display](#7-bottom-bar-time-display))
+and by the apply lines in the log, not by a different suffix.
+</code></pre></div>
+<h3 id="unit-gps-time-source-porta">Unit GPS Time Source (PORT.A)<a class="headerlink" href="#unit-gps-time-source-porta" title="Permanent link">&para;</a></h3>
+<p>With <strong>Settings -&gt; Device -&gt; Port mode</strong> set to <em>Unit GPS v1.1</em>, the M5Stack Unit GPS on PORT.A disciplines the clock. It is the only offline source that brings the <strong>date</strong> with it, so it answers the "Is today's date right?" question by itself.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>What it needs</strong></td>
+<td>Port mode = <em>Unit GPS v1.1</em>, the Unit GPS plugged into PORT.A, sky view for the antenna</td>
+</tr>
+<tr>
+<td><strong>What it gives</strong></td>
+<td>UTC time and the <strong>full date</strong>, from the satellite's RMC sentence</td>
+</tr>
+<tr>
+<td><strong>Priority</strong></td>
+<td>Highest, while it has a fresh lock (see the table above)</td>
+</tr>
+<tr>
+<td><strong>Date</strong></td>
+<td>Verified automatically on every accepted fix — the modal does not appear</td>
+</tr>
+<tr>
+<td><strong>Accuracy</strong></td>
+<td>Phase-locked to the second; no measured figure is documented yet, and none will be until it has been measured against a reference on hardware</td>
+</tr>
+</tbody>
+</table>
+<p>The bottom-bar <strong>GPS indicator</strong> — one GPS symbol, coloured by state, the same construction as the Bluetooth glyph beside it — shows what the <em>receiver</em> is doing, which is a different question from the clock suffix (which shows who is <em>disciplining</em> the clock). The colour is the whole message:</p>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>amber</strong></td>
+<td>Running, no fresh fix yet — antenna unplugged, indoors, or still acquiring</td>
+</tr>
+<tr>
+<td><strong>green</strong></td>
+<td>Locked: a fresh fix, and this is the clock's authority</td>
+</tr>
+<tr>
+<td><strong>red</strong></td>
+<td>Had a lock, it has gone stale (cable out, sky lost) — the clock falls back to whatever else is live</td>
+</tr>
+<tr>
+<td><em>(hidden)</em></td>
+<td>Port mode is <strong>Relay</strong> — there is no receiver to describe</td>
+</tr>
+</tbody>
+</table>
+<p>Locking takes 30 s to a few minutes from cold with a clear sky. <strong>Switch the mode before plugging the GPS in</strong> (enable-then-plug); see <a href="../settings/">Settings</a> for why.</p>
+<h3 id="module-gps-v21-on-the-30-pin-bus">Module GPS v2.1 on the 30-pin bus<a class="headerlink" href="#module-gps-v21-on-the-30-pin-bus" title="Permanent link">&para;</a></h3>
+<p>!!! warning "Works, but there is no control for it on screen"</p>
+<div class="highlight"><pre><span></span><code>A **Module GPS v2.1 (M5Stack M003-V21)** stacked on the 30-pin bus is
+handled by the same driver as the Unit GPS — it is the same AT6668
+receiver, and the only difference is which pin the data arrives on
+(GPIO38). The receiver has now been run on hardware and delivers NMEA, but
+there is still no control for it on screen: it is switched on over the API
+only:
+
+```
+POST /api/cmd   {"action":"gnss_mbus","on":true}
+```
+
+**Set DIP switch 6 on the module — the first switch of the group the
+silkscreen labels "RXD" — and leave every other switch off.** The groups
+are named from the host's side, not the module's: the module's data output
+drives the host's *receive* line, so it is the RXD group that selects it.
+The TXD group produces nothing at all.
+
+Being on the 30-pin bus, it does not conflict with the PORT.A relay, so
+both can be fitted at once.
+
+Measured on the bench with the antenna at a window: a lock, a fix 64 ms
+old, about 530 bytes per second of well-formed NMEA, and the clock
+taking it every second. Indoors it sat without a fix for three minutes,
+which is normal for this receiver.
+</code></pre></div>
+<h3 id="2-offline-pota-portable">2. Offline (POTA / Portable)<a class="headerlink" href="#2-offline-pota-portable" title="Permanent link">&para;</a></h3>
+<p>If you're operating <strong>without WiFi</strong> (POTA, portable, SOTA):</p>
+<ol>
+<li><strong>Best: take a Unit GPS.</strong> With Port mode set to <em>Unit GPS v1.1</em>, the satellite gives you time <strong>and the date</strong> with no internet, no RTC remembered from home and no question to answer — see <a href="#unit-gps-time-source-porta">Unit GPS Time Source</a>. Everything below is what to do when you have no Unit GPS.</li>
+<li><strong>Set the Tab5 RTC before you leave home</strong> (settings -&gt; Time)</li>
+<li>The RTC is powered by a <strong>supercap battery</strong> and holds time for <strong>30–40 hours</strong> without power</li>
+<li>When you turn the Tab5 on in the field, it reads the RTC immediately</li>
+<li><strong>Turn the QMX on whenever you like — you do not have to do anything about its
+   clock.</strong> A QMX without GPS comes up at 00:00 and its clock free-runs, so the
+   panadapter does not take the time from it while the Tab5's own clock is good.
+   It sets the radio's clock instead, and only when the radio is more than a few
+   seconds out.</li>
+<li>Optional: if your QMX has GPS, the panadapter syncs the RTC from QMX GPS every 5 minutes</li>
+</ol>
+<p>No internet needed — FT8 timing works offline.</p>
+<p>!!! note "Why step 4 says that"</p>
+<div class="highlight"><pre><span></span><code>Earlier versions took the time from a GPS-less QMX when there was no WiFi,
+which meant switching the radio on in the field replaced your accurate RTC
+time with the radio's 00:00 — and FT8 stopped decoding. Reported by
+Don WB0LQW. The Tab5's supercap RTC is the better clock of the two offline,
+so it now wins, and the radio gets set from it.
+
+If you have no accurate time at all — the RTC was never set, or it has been
+unpowered for more than a day or two — then a QMX reading *is* used, because
+something is better than nothing. Failing that, set the clock by hand
+(**FT8 -&gt; Options -&gt; Sync Time**), which also accepts seconds.
+</code></pre></div>
+<p>!!! warning "The date is checked separately from the time"</p>
+<div class="highlight"><pre><span></span><code>The QMX, its GPS and the hours/minutes/seconds boxes all give only a
+**time of day**. If the Tab5 has been off longer than its clock lasts and
+there is no internet, the date it has is simply the last day it was used —
+so a perfectly set time can still be logged under the wrong day.
+Reported by Don WB0LQW, whose POTA log came out two days behind.
+
+So when the date cannot be checked, the Tab5 asks about a minute after it
+starts: **"Is today's date right?"** Step it with **- day / + day** if
+needed and tap **This date is right**. If the Tab5 asked by itself and
+WiFi then comes up, the question closes by itself; if **you** opened the
+window to change the date, it stays open until you are done with it. QSOs
+are still logged if you do not answer — nothing is ever held back.
+
+The Tab5's own clock surviving a power-off is **not** taken as proof that
+the date is right. That clock keeps running as long as its small battery
+holds, but it says nothing about who last wrote it — another firmware
+flashed onto the same Tab5 can leave a date decades out with the battery
+perfectly healthy, which is what happened to royord. The clock is trusted
+only when this firmware's own record agrees with it, the clock has not
+gone backwards since that record, and the gap is short enough that
+somebody has plausibly been watching.
+
+The **Unit GPS on PORT.A is the exception**: its sentences carry the
+satellite date, so the date is verified by the fix itself and the question
+never has to be asked. See
+[Unit GPS Time Source](#unit-gps-time-source-porta).
+
+The **Set and Sync the Clock** window also shows the date on its second
+line, marked *(unverified)* when it has not been checked. Tap that line to
+change it.
+
+**The main screen does not show the date at all.** For every place it
+*is* shown, see [Where to see the DATE](#7b-where-to-see-the-date).
+</code></pre></div>
+<h3 id="3-wifi-sntp">3. WiFi + SNTP<a class="headerlink" href="#3-wifi-sntp" title="Permanent link">&para;</a></h3>
+<p>When WiFi is active:</p>
+<ol>
+<li>The panadapter connects to an SNTP server (default pool.ntp.org)</li>
+<li>Gets the current UTC time</li>
+<li>Sets the system clock and writes it to the Tab5 RTC</li>
+<li>Checks periodically (~hourly) and re-syncs if time has drifted</li>
+</ol>
+<p>!!! info "New in v1.20.3 — the hourly sync no longer throws away the fraction"</p>
+<div class="highlight"><pre><span></span><code>Each SNTP sync used to set the clock to the **whole second below** the real
+time, so it left you up to a second slow until the next one, with a fresh
+error every hour. On a Tab5 with its own GPS this was invisible: the
+satellite put it right within the second, which is what the hourly
+*"Unit-GPS off SNTP by 890 ms"* line in the log actually was. **A Tab5 with
+no GPS of its own had nothing to put it right**, and that error went
+straight into FT8 and WSPR slot timing. The sub-second is now kept.
+</code></pre></div>
+<p>SNTP sync is <strong>automatic</strong> — you don't need to do anything. The bottom bar shows the current time (updates every second).</p>
+<h3 id="4-qmx-gps-time-sync-auto-detected">4. QMX GPS Time Sync (auto-detected)<a class="headerlink" href="#4-qmx-gps-time-sync-auto-detected" title="Permanent link">&para;</a></h3>
+<p>If your QMX has <strong>internal GPS</strong> (QMX+ models often do), there is <strong>nothing to enable</strong> — the Tab5 detects it automatically:</p>
+<ol>
+<li><strong>On radio firmware 1.04_004 and later it asks the GPS receiver directly</strong> (<code>GP;</code>). A reply settles two things at once: this radio <em>has</em> a GPS — the receiver's own answer, not a guess — and <strong>today's date</strong>, which the radio's clock has never carried. Both work offline and on the first try.</li>
+<li>It then catches the QMX's <code>TM;</code> seconds <em>flip</em> (the true GPS second boundary) and <strong>phase-locks the clock to that edge</strong> (~10 ms, drift-free), not just to the whole second. Re-locks every 5 minutes.</li>
+<li>On older radio firmware, or a radio with no GPS, there is no <code>GP;</code> answer. Then the <code>TM;</code> flip is compared against SNTP: if they agree tightly — <strong>and the Tab5 has not itself set that radio's clock</strong> — the QMX is flagged GPS-disciplined. If they don't agree (a non-GPS QMX with a free-running RTC), it's used only as a low-priority offline fallback, and the check is <strong>repeated every 5 minutes</strong> until it does agree.</li>
+</ol>
+<p>!!! info "New in v1.20.3 — a receiver that has a fix beats a radio that only claims one"</p>
+<div class="highlight"><pre><span></span><code>Three things changed here, after a QMX+ on the bench ran **3 h 17 m** behind
+for a whole day without the Tab5 correcting it.
+
+- **A GPS that is fitted but never locks no longer blocks the correction.**
+  The radio reports a permanently fitted GPS from its own menu, and that
+  report used to stop the Tab5 setting its clock — correctly, because an
+  inference of ours once corrupted a good radio's clock. It now asks the
+  radio what time it thinks it is, and if that disagrees with ours by more
+  than **60 seconds on two readings five minutes apart**, it sets the clock
+  anyway and says so. Sixty seconds is far enough above the one-second
+  write resolution that the disagreement cannot be our own correction
+  coming back.
+- **If your Tab5 has its own GPS and it is locked, the radio's clock is not
+  used at all.** Two receivers were both writing the clock, and the one
+  with no fix was dragging the one with a fix — measured at 109 ms in a
+  single step. The locked receiver wins.
+- **A clock the Tab5 set can no longer make a radio look GPS-disciplined.**
+  It never could when the radio stayed silent about its GPS; it could when
+  the radio claimed one.
+
+None of this makes an unlocked GPS work. A QMX+ whose GPS never gets a fix
+is usually an antenna matter, and the firmware was only failing to paper
+over it.
+</code></pre></div>
+<p>!!! note "Why the time still comes from <code>TM;</code> when <code>GP;</code> is the receiver"</p>
+<div class="highlight"><pre><span></span><code>`GP;` is asked for the **date** and for the GPS answer, not for the clock
+phase. Measured on the bench against a reference: the second boundary
+`GP;` reports is roughly **a second behind** UTC, because a GPS receiver
+emits the sentence for one second during the next one. The radio's own
+clock, set from the satellite at power-on, is within about **100 ms** —
+an order of magnitude better. So the date comes from the receiver and the
+phase comes from the radio, each from whichever is actually good at it.
+</code></pre></div>
+<p>!!! note "A GPS that locks late is no longer missed (v1.16.3)"
+    Before v1.16.3 that check ran <strong>once</strong>, about 45 seconds after boot, and its
+    verdict stuck for the whole session. A receiver still hunting for satellites
+    at that moment was written off as "no GPS" and never looked at again, short
+    of a reboot. That is not a rare case: a cold start, or an antenna that has
+    just been moved, can easily take longer than 45 seconds.</p>
+<div class="highlight"><pre><span></span><code>Measured on the bench: a QMX+ with a genuine fix failed the one-shot three
+times, then locked — and the panadapter picked it up **25 minutes after
+boot**, which the old code could never have reached. If your GPS takes its
+time, you no longer have to do anything.
+</code></pre></div>
+<p>A GPS-disciplined QMX shows <strong>UTC(GPS)</strong> in the bottom bar and is a top-tier source (as good as SNTP); a non-GPS QMX shows <strong>UTC(QMX)</strong> and only helps when offline.</p>
+<p>!!! note "Why step 2 asks who set the clock"
+    The Tab5 pushes its own time into a non-GPS QMX to set that radio's clock —
+    which leaves the radio agreeing with the Tab5 <em>because the Tab5 put it
+    there</em>. Until v1.8.5 a close-enough agreement was taken as proof of GPS, so a
+    radio with no GPS at all could be labelled <code>UTC(GPS)</code>, and worse, the Tab5
+    then stopped maintaining the clock of the one radio that had no other source.
+    A clock the Tab5 has set is no longer accepted as evidence about itself. The
+    flag clears when the radio's clock is plainly its own again — a QMX's clock is
+    not kept across a power cycle, so switching it off and on is what re-arms
+    detection.</p>
+<p>!!! note "The label needs the radio to still be there"
+    A remembered verdict says <em>this radio is GPS-disciplined</em>, not <em>GPS is
+    keeping time right now</em>. With the QMX unplugged the Tab5 has no GPS of its
+    own, so the label falls back to whatever is actually in charge — usually
+    <code>UTC(NTP)</code>. Reported by Don N2VGU, whose Tab5 read <code>UTC(GPS)</code> with the radio
+    disconnected; the time was correct throughout, only the label was wrong.</p>
+<h3 id="5-setting-the-time-by-hand">5. Setting the time by hand<a class="headerlink" href="#5-setting-the-time-by-hand" title="Permanent link">&para;</a></h3>
+<p><strong>There is no "Set Manual Time" control in the settings drawer.</strong> Earlier versions of this
+guide said there was, and there never has been on recent firmware — Don WB0LQW went looking
+for it during a POTA activation and could not find it. Apologies. The clock is set from the
+FT8 screen:</p>
+<ol>
+<li>Switch to <strong>FT8</strong></li>
+<li>Tap <strong>Options</strong> (left pane)</li>
+<li>Tap <strong>Sync Time</strong> (bottom right of the modal)</li>
+<li>A panel appears with three boxes: <strong>[HH] : [MM] : [SS]</strong></li>
+<li>Tap <strong>HH</strong> or <strong>MM</strong> to type them on the numpad (0–23, 0–59)</li>
+<li><strong>Hold the SS box and let go exactly on the minute</strong> — the seconds are set to 00 the
+   instant you release</li>
+<li>Tap <strong>Apply</strong></li>
+</ol>
+<p>Step 6 is the one that matters off-grid. FT8 needs the clock right to about a second, and
+until v1.8.1 the seconds could not be set at all — hours and minutes were editable and the
+seconds were not, which left no way to get inside a second with no WiFi and no GPS.</p>
+<p>The clock is set <strong>when you release</strong>, not when you tap Apply. The release is the
+measurement, so an Apply a few seconds later would be a few seconds late. Use a watch with
+a second hand, or listen for the gap between FT8 transmissions. While you hold the box it
+turns amber and tells you what letting go will do.</p>
+<p>If you have typed hours and minutes first, those are used. If you have not, the Tab5 takes
+the nearest minute to its own clock — so this corrects the seconds without disturbing an
+hour and minute that are already right.</p>
+<p>The time is written to the RTC as well as the system clock, so it survives a power-off.</p>
+<h3 id="6-ft8-derived-sync-offline-fallback">6. FT8-Derived Sync (Offline Fallback)<a class="headerlink" href="#6-ft8-derived-sync-offline-fallback" title="Permanent link">&para;</a></h3>
+<p>The panadapter can also <strong>estimate the UTC offset</strong> from decoded FT8/FT4 signal timing and nudge the clock:</p>
+<ol>
+<li>Decode several messages (requires on-air activity)</li>
+<li>Measure their timing relative to the slot boundary</li>
+<li>Estimate the error and apply a damped correction</li>
+</ol>
+<p><strong>This runs only as an offline fallback.</strong> While SNTP or a GPS-disciplined QMX is available they are authoritative and FT8-derived sync is <strong>ignored</strong> — deliberately. The FT8 slot offset the device measures is dominated by ~½ second of one-way <em>receive audio latency</em> (QMX SDR + USB buffering), which is <strong>not</strong> a clock error; letting it pull the clock would actually drag your transmit timing late. So it only touches the clock when you're off-grid with no SNTP/GPS.</p>
+<p>Most useful when: WiFi is unavailable, no GPS QMX, and your RTC has drifted.</p>
+<h4 id="fine-tune-time-with-sync-time-ft8-only">Fine-Tune Time with "Sync Time" (FT8 Only)<a class="headerlink" href="#fine-tune-time-with-sync-time-ft8-only" title="Permanent link">&para;</a></h4>
+<p>In <strong>FT8 mode</strong>, the Options modal includes a <strong>"Sync Time" button</strong> that opens an interactive time-setting panel:</p>
+<ol>
+<li>Tap the <strong>Options</strong> button (FT8 screen, left pane)</li>
+<li>Tap the <strong>Sync Time</strong> button (bottom right of the modal)</li>
+<li>A panel appears with three fields: <strong>[HH] : [MM] : [SS]</strong></li>
+<li><strong>HH</strong> / <strong>MM</strong> (hours/minutes) — tap to edit via numpad (0–23, 0–59)</li>
+<li><strong>SS</strong> (seconds) — auto-syncs from FT8 signals (blue frame = actively syncing, grey =
+     locked). <strong>Hold it and release on the minute</strong> to set the seconds to 00 yourself, which
+     is what you want when there are no FT8 signals to sync from</li>
+<li>Tap <strong>Apply</strong> to write the time to the RTC and system clock</li>
+</ol>
+<p>The <strong>SS field</strong> updates automatically from decoded FT8 messages — each decode gives a sub-second correction estimate. Tap <strong>SS</strong> to toggle between auto-syncing (blue) and locked (grey). While locked, seconds still count at the captured offset, so you don't lose precision after locking.</p>
+<p><strong>Use case:</strong> You're operating portable without WiFi, your RTC is ~5 seconds off, and there's on-air FT8 activity. Set HH/MM manually, let SS auto-sync to the decoded signal timing for a few seconds, lock it, and you're done — FT8 timing is now precise.</p>
+<p>FT8-derived sync shows <strong>SS (sub-second)</strong> in the bottom bar when active.</p>
+<h3 id="7-bottom-bar-time-display">7. Bottom Bar Time Display<a class="headerlink" href="#7-bottom-bar-time-display" title="Permanent link">&para;</a></h3>
+<p>The center of the bottom bar shows the current UTC time and which source is active:</p>
+<table>
+<thead>
+<tr>
+<th>Indicator</th>
+<th>Meaning</th>
+<th>Updates</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>UTC(U-GPS)</strong></td>
+<td>A receiver on the <strong>Tab5 itself</strong> — Unit GPS on PORT.A, or Module GPS v2.1 on the M-Bus. Phase-locked to the satellite second</td>
+<td>every fix (1 Hz)</td>
+</tr>
+<tr>
+<td><strong>UTC(GPS)</strong></td>
+<td>The <strong>QMX’s own</strong> GPS, auto-detected as GPS-disciplined (phase-locked, ~10 ms)</td>
+<td>every 5 min</td>
+</tr>
+<tr>
+<td><strong>UTC(NTP)</strong></td>
+<td>WiFi + SNTP</td>
+<td>~1 hour</td>
+</tr>
+<tr>
+<td><strong>UTC(FT4)</strong> / <strong>UTC(FT8)</strong></td>
+<td>FT4/FT8-derived offline sync</td>
+<td>Continuous (when decoding, offline only)</td>
+</tr>
+<tr>
+<td><strong>UTC(RTC)</strong></td>
+<td>Tab5 supercap RTC</td>
+<td>At boot</td>
+</tr>
+<tr>
+<td><strong>UTC(MAN)</strong></td>
+<td>Manual time set</td>
+<td>On-demand</td>
+</tr>
+<tr>
+<td><strong>UTC(QMX)</strong></td>
+<td>Non-GPS QMX RTC fallback (offline only)</td>
+<td>Every 5 min</td>
+</tr>
+<tr>
+<td><strong>UTC</strong></td>
+<td>Fallback (no sync source)</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p>The suffix tells you at a glance which source is <strong>currently in charge</strong> (the active authority, not merely the last one that wrote the clock). A GPS source (<code>UTC(U-GPS)</code> or <code>UTC(GPS)</code>) and WiFi/SNTP (<code>UTC(NTP)</code>) are both accurate — if you see either, you're set. If you're off-grid you'll see <code>UTC(FT8)</code>/<code>UTC(FT4)</code> (on-air digital activity), <code>UTC(QMX)</code> (non-GPS QMX clock), or <code>UTC(RTC)</code> (the supercap RTC you set before leaving home).</p>
+<p>At the right-hand end of the bar, just left of the Bluetooth glyph, sits the <strong>GPS indicator</strong> when Port mode is <em>Unit GPS v1.1</em>: one GPS symbol, coloured by state, with no words beside it — the Bluetooth glyph's construction. It reports the <strong>receiver</strong>, not the clock: amber while it is acquiring, green when locked, red when a lock has gone stale. The suffix only says <code>UTC(U-GPS)</code> when the symbol is green — the two never disagree, because the suffix is derived from the same lock the symbol shows.</p>
+<h3 id="7b-where-to-see-the-date">7b. Where to see the DATE<a class="headerlink" href="#7b-where-to-see-the-date" title="Permanent link">&para;</a></h3>
+<p><strong>The main screen never shows the date.</strong> The bottom bar shows the time and the
+source and nothing else, and that is deliberate: the clock is centred there, and
+a date would push the firmware version off the right-hand end of the bar.</p>
+<p>So if you are looking for today's date, it is in these places and only these:</p>
+<table>
+<thead>
+<tr>
+<th>Where</th>
+<th>What it shows</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>GPS page</strong> — tap the <strong>UTC</strong> field in the bottom bar</td>
+<td>row 3, <strong>UT date</strong>, as <code>DD-Mon-YY</code>, straight from the receiver's own sentence</td>
+</tr>
+<tr>
+<td><strong>Set and Sync the Clock</strong></td>
+<td>second line, with a pencil to edit it, and <code>(unverified)</code> when the date is not trusted</td>
+</tr>
+<tr>
+<td>The browser's <strong>GPS page</strong></td>
+<td>the same rows the Tab5 draws</td>
+</tr>
+</tbody>
+</table>
+<p>A Unit GPS brings the date with it, so with one fitted the date is verified on
+every fix, the second line carries no <code>(unverified)</code> marker, and the <em>"Is
+today's date right?"</em> question never appears at all — that question exists for
+stations <strong>without</strong> a GPS.</p>
+<p>Your QSOs are logged with the satellite date whether or not it is on screen.</p>
+<p>!!! tip "If the GPS page shows a dash for the date"
+    <code>UT date</code> is filled from every well-formed RMC sentence, including one sent
+    before the receiver has a fix. So a page showing <strong>Validity A</strong> cannot also
+    show <code>-</code> for the date. If you ever see that combination, it is a fault worth
+    reporting.</p>
+<p><em>Two operators have gone looking for the date and not found it — Don WB0LQW,
+whose log ran two days behind before the Unit GPS path existed, and Greg ZL4GW,
+who fitted one and reasonably assumed he had missed a setting.</em></p>
+<h3 id="8-slot-timing">8. Slot Timing<a class="headerlink" href="#8-slot-timing" title="Permanent link">&para;</a></h3>
+<p>FT8 operates on <strong>15-second slot boundaries</strong> aligned to UTC. The panadapter:</p>
+<ol>
+<li>Reads the current system time</li>
+<li>Waits until the next 15-second boundary (hh:mm:00, hh:mm:15, hh:mm:30, hh:mm:45)</li>
+<li>Starts a 15-second capture window</li>
+<li>Decodes the received FT8</li>
+<li>Transmits (if armed) at the start of the next boundary</li>
+</ol>
+<p>This alignment is <strong>automatic</strong> — you don't configure slots. But <strong>time accuracy is critical</strong>:</p>
+<ul>
+<li>±500 ms error -&gt; can miss decodes or transmit off-slot</li>
+<li>±1 s error -&gt; very few decodes, transmit often off-time</li>
+<li>±2 s error or worse -&gt; FT8 doesn't work</li>
+</ul>
+<h3 id="8b-gps-stats-the-sky-view">8b. GPS Stats - the sky view<a class="headerlink" href="#8b-gps-stats-the-sky-view" title="Permanent link">&para;</a></h3>
+<p><strong>Tap the UTC clock</strong> on the bottom bar, or open <strong>Radio -&gt; GPS Stats</strong> in the drawer, and
+the Tab5 draws what the GPS receiver can see:</p>
+<ul>
+<li>A <strong>sky view</strong> - the satellites in use plotted by bearing and elevation, with elevation
+  rings and the compass axes drawn behind them</li>
+<li>The fix itself, the satellite count, and <strong>which receiver answered</strong></li>
+<li>The same page is in the browser, composed by the device so the two cannot drift</li>
+</ul>
+<p>The bottom-bar clock now distinguishes its source: <strong>U-GPS</strong> for a GPS attached to the
+Tab5, <strong>GPS</strong> for a GPS-equipped QMX+ answering over CAT.</p>
+<p><strong>Two receivers work, and both are confirmed on hardware:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Receiver</th>
+<th>Where</th>
+<th>How to enable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Unit GPS v1.1</strong></td>
+<td>PORT.A</td>
+<td>Drawer -&gt; <strong>Port mode (relay / Unit GPS)</strong> -&gt; <em>Unit GPS v1.1</em></td>
+</tr>
+<tr>
+<td><strong>Module GPS v2.1</strong></td>
+<td>30-pin M-Bus</td>
+<td><strong>DIP switch 6</strong></td>
+</tr>
+</tbody>
+</table>
+<p>⚠ On the Module GPS v2.1 the silkscreen DIP labels read backwards until you realise the
+groups are named from the <strong>host's</strong> side, not the module's. v1.16.12 shipped with this
+receiver supported in code but never run on hardware; it runs now.</p>
+<p><strong>Your grid fills itself from the fix.</strong> If the GPS has a position, the station grid is
+filled in for you - and a grid you have typed by hand is never overwritten.</p>
+<p>⛔ The Unit GPS and the remote power-cycle relay share PORT.A. One cable, two uses: the
+relay cannot fire while the GPS owns the port, so unplug the GPS before switching back.</p>
+<h3 id="9-time-sources-summary">9. Time Sources Summary<a class="headerlink" href="#9-time-sources-summary" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Source</th>
+<th>Accuracy</th>
+<th>Updates</th>
+<th>Works Offline?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Unit GPS (PORT.A)</strong></td>
+<td>phase-locked to the second — no measured figure documented yet</td>
+<td>every fix (1 Hz)</td>
+<td>Yes (plus the <strong>date</strong>)</td>
+</tr>
+<tr>
+<td><strong>QMX GPS</strong></td>
+<td>~10 ms (auto-detected, tick phase-lock)</td>
+<td>every 5 min</td>
+<td>Yes (if QMX has GPS)</td>
+</tr>
+<tr>
+<td><strong>SNTP</strong></td>
+<td>±10 ms</td>
+<td>~1 hour</td>
+<td>No</td>
+</tr>
+<tr>
+<td><strong>RTC</strong></td>
+<td>±1 min</td>
+<td>at boot</td>
+<td>Yes (30–40 h)</td>
+</tr>
+<tr>
+<td><strong>Manual</strong></td>
+<td>±1 sec</td>
+<td>on-demand</td>
+<td>Yes (until power cycle)</td>
+</tr>
+<tr>
+<td><strong>FT8-derived</strong></td>
+<td>offline fallback only</td>
+<td>continuous</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>Next:</strong> Configure <a href="../settings/">Settings</a> or troubleshoot <a href="../../reference/troubleshooting/#time-is-wrong-ft8-doesnt-work">Time Sync Problems</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.sections", "toc.follow", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,2140 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://tab5.lav.dk/reference/hardware/">
+      
+      
+        <link rel="prev" href="../gestures/">
+      
+      
+        <link rel="next" href="../web-api/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Hardware - QMX Panadapter</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="light" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#hardware-reference" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="QMX Panadapter" class="md-header__button md-logo" aria-label="QMX Panadapter" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            QMX Panadapter
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Hardware
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="light" data-md-color-primary="blue" data-md-color-accent="orange"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    <!-- Buy me a coffee (OZ1LAV) — just left of the search field -->
+    <style>
+      /* The official BMC widget renders ~51px tall (nearly the whole top bar).
+         zoom scales it (and its layout box, so no leftover gap) down to about
+         the search-field height. Tweak the factor to taste. */
+      .bmc-header-btn { display:flex; align-items:center; margin:0 .2rem; zoom:0.72; }
+    </style>
+    <div class="bmc-header-btn">
+      <script type="text/javascript"
+              src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js"
+              data-name="bmc-button"
+              data-slug="OZ1LAV"
+              data-color="#FFDD00"
+              data-emoji="☕"
+              data-font="Lato"
+              data-text="Buy me a coffee"
+              data-outline-color="#000000"
+              data-font-color="#000000"
+              data-coffee-color="#ffffff"></script>
+    </div>
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/SteffenLav/qmx-panadapter" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    qmx-panadapter
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../quick-start/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Quick Start
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../getting-help/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Getting Help
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../guide/panadapter/" class="md-tabs__link">
+          
+  
+  
+  User Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../gestures/" class="md-tabs__link">
+          
+  
+  
+  Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../build/build/" class="md-tabs__link">
+          
+  
+  
+  For Builders
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../releases/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Releases
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="QMX Panadapter" class="md-nav__button md-logo" aria-label="QMX Panadapter" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    QMX Panadapter
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/SteffenLav/qmx-panadapter" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    qmx-panadapter
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quick-start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-help/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Help
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Guide
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    User Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/panadapter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Panadapter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/audio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/spots/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Live Spots
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/spot-map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spot Map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/web-ui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web UI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/ft8-rx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FT8 RX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/ft8-tx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FT8 TX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/cw/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CW (beta)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/webradio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web Radio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/js8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JS8 (beta)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/time-sync/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Time Sync
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/wspr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WSPR
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/radio-menus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Radio Menus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gestures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gestures & Controls
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hardware
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hardware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#m5stack-tab5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        M5Stack Tab5
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qrp-labs-qmx-qmx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QRP Labs QMX / QMX+
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="QRP Labs QMX / QMX+">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usb-audio-uac" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        USB Audio (UAC)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usb-cat-cdc-acm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        USB CAT (CDC-ACM)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cat-commands-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CAT Commands (Reference)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssb-filter-control-special" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SSB Filter Control (Special)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cables
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tab5-qmx-usb-audio-cat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tab5 &lt;- QMX (USB Audio + CAT)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tab5-power" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tab5 &lt;- Power
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frequency-ranges" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frequency Ranges
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#power-consumption" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Power Consumption
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Power Consumption">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tab5-estimated" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tab5 (estimated)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qmx-qmx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QMX / QMX+
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rf-power-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RF Power Output
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#antennas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Antennas
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../web-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rigctld/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hamlib rigctld
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    For Builders
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    For Builders
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build/build/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Build from Source
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build/architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build/contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing & Feedback
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Releases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#m5stack-tab5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        M5Stack Tab5
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qrp-labs-qmx-qmx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QRP Labs QMX / QMX+
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="QRP Labs QMX / QMX+">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usb-audio-uac" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        USB Audio (UAC)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usb-cat-cdc-acm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        USB CAT (CDC-ACM)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cat-commands-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CAT Commands (Reference)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssb-filter-control-special" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SSB Filter Control (Special)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cables
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tab5-qmx-usb-audio-cat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tab5 &lt;- QMX (USB Audio + CAT)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tab5-power" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tab5 &lt;- Power
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frequency-ranges" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frequency Ranges
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#power-consumption" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Power Consumption
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Power Consumption">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tab5-estimated" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tab5 (estimated)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qmx-qmx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QMX / QMX+
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rf-power-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RF Power Output
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#antennas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Antennas
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="hardware-reference">Hardware Reference<a class="headerlink" href="#hardware-reference" title="Permanent link">&para;</a></h1>
+<h2 id="m5stack-tab5">M5Stack Tab5<a class="headerlink" href="#m5stack-tab5" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Processor</strong>: ESP32-P4 @ 360 MHz</li>
+<li><strong>RAM</strong>: 2 MB SRAM + 28 MB PSRAM</li>
+<li><strong>Storage</strong>: 16 MB flash (firmware + settings)</li>
+<li><strong>Display</strong>: 5" IPS LCD, 720×1280 landscape (10-bit parallel)</li>
+<li><strong>Touch</strong>: ST7121 or ST7123 capacitive (100 kHz I2C)</li>
+<li><strong>Audio</strong>: I2S codec ES8388 (CW audio output)</li>
+<li><strong>WiFi</strong>: C6 co-processor (WiFi 6 802.11ax)</li>
+<li><strong>USB</strong>: USB 2.0 host (USB-A port) + USB 2.0 device (USB-C port)</li>
+<li><strong>Battery</strong>: 2500 mAh Li-poly (~4 hours panadapter, ~6 hours idle)</li>
+<li><strong>RTC</strong>: Epson RX8130CE + 70 mF supercap (30–40 h time retention)</li>
+<li><strong>Optional Keyboard</strong>: M5Stack SKU A164 (STM32F030, I2C slave @ 0x6D)</li>
+<li><strong>Optional USB mouse</strong> (v1.3.0): plug into the USB-A port — a cursor appears and clicks drive every control. <em>The mouse and the QMX cannot share the port: a USB hub doesn't help, because the ESP32-P4's USB host lacks the Transaction Translator a high-speed hub needs for full/low-speed devices. Use the mouse for setup, log review and manual reading with the radio unplugged.</em></li>
+</ul>
+<h2 id="qrp-labs-qmx-qmx">QRP Labs QMX / QMX+<a class="headerlink" href="#qrp-labs-qmx-qmx" title="Permanent link">&para;</a></h2>
+<h3 id="usb-audio-uac">USB Audio (UAC)<a class="headerlink" href="#usb-audio-uac" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Interface</strong>: USB Audio Class (no drivers needed)</li>
+<li><strong>Format</strong>: Stereo I/Q, 48 kHz sample rate, 24-bit PCM</li>
+<li><strong>Latency</strong>: ~50 ms (ring buffer)</li>
+<li><strong>I/Q Offset</strong>: +12 kHz IF (VFO signal at +12 kHz in baseband)</li>
+</ul>
+<h3 id="usb-cat-cdc-acm">USB CAT (CDC-ACM)<a class="headerlink" href="#usb-cat-cdc-acm" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Interface</strong>: USB CDC-ACM (virtual serial port)</li>
+<li><strong>Baudrate</strong>: 9600 (fixed)</li>
+<li><strong>Protocol</strong>: Kenwood-style commands (FA, MD, FW, TX, RX, PC, SW, etc.)</li>
+<li><strong>Format</strong>: Command; (terminated with semicolon)</li>
+</ul>
+<h3 id="cat-commands-reference">CAT Commands (Reference)<a class="headerlink" href="#cat-commands-reference" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Query</th>
+<th>Set</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>FA</strong></td>
+<td><code>FA;</code> -&gt; <code>FA14074000;</code></td>
+<td><code>FA14074000;</code></td>
+<td>Frequency (Hz)</td>
+</tr>
+<tr>
+<td><strong>MD</strong></td>
+<td><code>MD;</code> -&gt; <code>MD2;</code></td>
+<td><code>MD2;</code></td>
+<td>Mode (1=LSB, 2=USB, 3=CW, 5=DiGi)</td>
+</tr>
+<tr>
+<td><strong>FW</strong></td>
+<td><code>FW;</code> -&gt; <code>FW2500;</code></td>
+<td><code>FW2500;</code></td>
+<td>Filter width (Hz, SSB only)</td>
+</tr>
+<tr>
+<td><strong>TX</strong></td>
+<td>—</td>
+<td><code>TX;</code></td>
+<td>Key transmitter</td>
+</tr>
+<tr>
+<td><strong>RX</strong></td>
+<td>—</td>
+<td><code>RX;</code></td>
+<td>Release transmitter</td>
+</tr>
+<tr>
+<td><strong>TA</strong></td>
+<td>—</td>
+<td><code>TA14074000;</code></td>
+<td>Tune and key (FT8 burst)</td>
+</tr>
+<tr>
+<td><strong>PC</strong></td>
+<td><code>PC;</code> -&gt; <code>PC05.0;</code></td>
+<td><code>PC05.0;</code></td>
+<td>Power (watts, query only)</td>
+</tr>
+<tr>
+<td><strong>SW</strong></td>
+<td><code>SW;</code> -&gt; <code>SW1.25;</code></td>
+<td>—</td>
+<td>SWR (query while keyed)</td>
+</tr>
+<tr>
+<td><strong>TM</strong></td>
+<td><code>TM;</code> -&gt; <code>TM123000;</code></td>
+<td>—</td>
+<td>Time (hhmmss, query only)</td>
+</tr>
+<tr>
+<td><strong>VN</strong></td>
+<td><code>VN;</code> -&gt; <code>VN1_03_002QMX;</code></td>
+<td>—</td>
+<td>Firmware version (query only)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ssb-filter-control-special">SSB Filter Control (Special)<a class="headerlink" href="#ssb-filter-control-special" title="Permanent link">&para;</a></h3>
+<p>The QMX menu-manager controls SSB filter via:</p>
+<ul>
+<li><strong><code>MMSSB|Filter RX=&lt;hz&gt;;</code></strong> — commit filter (persists)</li>
+<li><strong><code>MMSSB|Bandwidth=&lt;hz&gt;;</code></strong> — apply live filter</li>
+<li>Both must be set to the same value for a clean change</li>
+</ul>
+<p>See <a href="https://github.com/SteffenLav/qmx-panadapter/blob/main/CLAUDE.md#ssb-filter-bandwidth-needs-three-coordinated-writes-the-hard-won-recipe">CLAUDE.md</a> for the full recipe.</p>
+<h2 id="cables">Cables<a class="headerlink" href="#cables" title="Permanent link">&para;</a></h2>
+<div class="qmx-diagram" style="overflow-x:auto"><svg viewBox="0 0 900 559" width="100%" role="img" xmlns="http://www.w3.org/2000/svg" style="max-width:900px"><rect x="0" y="0" width="900" height="559" rx="10" fill="#151B23" stroke="#2A3440"/><text x="18" y="32" font-size="17" fill="#E9C46A" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="600">What plugs into what</text><rect x="18" y="56" width="864" height="35" rx="6" fill="#1B232D" stroke="#2A3440"/><text x="30" y="78" font-size="16" fill="#E6EDF3" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">antenna - to the RADIO, never to the Tab5</text><path d="M44 97 l0 14" stroke="#93A4B1" stroke-width="1.5"/><path d="M44 115 l-4 -5 l8 0 z" fill="#93A4B1"/><rect x="18" y="119" width="864" height="35" rx="6" fill="#1B232D" stroke="#2A3440"/><text x="30" y="141" font-size="16" fill="#E6EDF3" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">QMX / QMX+ - the receiver and the PA. Everything on the air happens here</text><path d="M44 160 l0 14" stroke="#93A4B1" stroke-width="1.5"/><path d="M44 178 l-4 -5 l8 0 z" fill="#93A4B1"/><rect x="18" y="182" width="864" height="35" rx="6" fill="#1B232D" stroke="#2A3440"/><text x="30" y="204" font-size="16" fill="#E6EDF3" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">ONE USB cable carries both services</text><rect x="58" y="223" width="824" height="29" rx="5" fill="#151B23" stroke="#2A3440"/><rect x="58" y="223" width="3" height="29" fill="#8AB4F8"/><text x="72" y="242" font-size="14" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">USB-A at the Tab5, which is the HOST, to USB-C at the radio</text><rect x="58" y="260" width="824" height="29" rx="5" fill="#151B23" stroke="#2A3440"/><rect x="58" y="260" width="3" height="29" fill="#8AB4F8"/><text x="72" y="279" font-size="14" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">data lines required - a charge-only lead looks plugged in and does nothing</text><rect x="58" y="297" width="824" height="29" rx="5" fill="#151B23" stroke="#2A3440"/><rect x="58" y="297" width="3" height="29" fill="#8AB4F8"/><text x="72" y="316" font-size="14" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">3 m or less. It also carries 5 V to the radio, which is optional</text><path d="M44 334 l0 14" stroke="#93A4B1" stroke-width="1.5"/><path d="M44 352 l-4 -5 l8 0 z" fill="#93A4B1"/><rect x="18" y="356" width="864" height="35" rx="6" fill="#1B232D" stroke="#2A3440"/><text x="30" y="378" font-size="16" fill="#E6EDF3" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">M5Stack Tab5 - spectrum, waterfall, decoding and the web UI</text><rect x="58" y="397" width="824" height="29" rx="5" fill="#151B23" stroke="#2A3440"/><rect x="58" y="397" width="3" height="29" fill="#8AB4F8"/><text x="72" y="416" font-size="14" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">CAT commands out, I/Q audio back, over that same cable</text><rect x="58" y="434" width="824" height="29" rx="5" fill="#151B23" stroke="#2A3440"/><rect x="58" y="434" width="3" height="29" fill="#8AB4F8"/><text x="72" y="453" font-size="14" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">separately powered from USB-C, 5 V at 2 A minimum</text><rect x="58" y="471" width="824" height="29" rx="5" fill="#151B23" stroke="#2A3440"/><rect x="58" y="471" width="3" height="29" fill="#8AB4F8"/><text x="72" y="490" font-size="14" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">a GPS receiver is optional, on PORT.A or on the 30-pin bus</text><rect x="18" y="507" width="14" height="14" rx="3" fill="#93A4B1" fill-opacity="0.50" stroke="#93A4B1"/><text x="42" y="518" font-size="15" fill="#93A4B1" text-anchor="start" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="normal">nothing RF reaches the Tab5. It only ever sees audio and text over USB</text></svg></div>
+
+<p><strong>One cable does two jobs.</strong> The same USB lead carries the CAT commands out and the
+I/Q audio back — there is no second cable and no audio lead. The Tab5 is the <strong>host</strong>,
+so it is USB-A at the Tab5 end and USB-C at the radio, and a charge-only lead will
+look plugged in and do nothing.</p>
+<h3 id="tab5-qmx-usb-audio-cat">Tab5 &lt;- QMX (USB Audio + CAT)<a class="headerlink" href="#tab5-qmx-usb-audio-cat" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Type</strong>: USB-A (Tab5 host) -&gt; USB-C (QMX)</li>
+<li><strong>Data lines</strong>: Required (not charge-only)</li>
+<li><strong>Power</strong>: Carries 5 V to QMX (optional; QMX can be separately powered)</li>
+<li><strong>Cable quality</strong>: 3 m or less recommended (signal integrity)</li>
+</ul>
+<h3 id="tab5-power">Tab5 &lt;- Power<a class="headerlink" href="#tab5-power" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Type</strong>: USB-C, 5 V DC</li>
+<li><strong>Current</strong>: 2 A minimum (Tab5 draws ~2.5 A at full brightness + FT8 TX)</li>
+<li><strong>Source</strong>: USB power adapter, power bank, or solar panel</li>
+</ul>
+<h2 id="frequency-ranges">Frequency Ranges<a class="headerlink" href="#frequency-ranges" title="Permanent link">&para;</a></h2>
+<p>Band coverage depends on which radio you have:</p>
+<ul>
+<li><strong>QMX+</strong> — full <strong>160 m through 6 m</strong> coverage.</li>
+<li><strong>QMX</strong> — ships in fixed band-group builds (for example 80/60/40/30/20 m, or 60/40/30/20/17/15 m, or 20/17/15/12/10 m). A given QMX only covers the bands it was built for, not the whole range below.</li>
+</ul>
+<p>The panadapter works on whichever bands your radio supports:</p>
+<table>
+<thead>
+<tr>
+<th>Band</th>
+<th>Frequency</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>160 m</strong></td>
+<td>1.8–2.0 MHz</td>
+<td>QMX+ only</td>
+</tr>
+<tr>
+<td><strong>80 m</strong></td>
+<td>3.5–3.8 MHz</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>60 m</strong></td>
+<td>~5.3–5.4 MHz</td>
+<td>Channelised in many regions</td>
+</tr>
+<tr>
+<td><strong>40 m</strong></td>
+<td>7.0–7.3 MHz</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>30 m</strong></td>
+<td>10.1–10.15 MHz</td>
+<td>SSB not available (CW/DiGi only)</td>
+</tr>
+<tr>
+<td><strong>20 m</strong></td>
+<td>14.0–14.35 MHz</td>
+<td>Most FT8 activity</td>
+</tr>
+<tr>
+<td><strong>17 m</strong></td>
+<td>18.068–18.168 MHz</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>15 m</strong></td>
+<td>21.0–21.45 MHz</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>12 m</strong></td>
+<td>24.89–24.99 MHz</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>10 m</strong></td>
+<td>28.0–29.7 MHz</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>6 m</strong></td>
+<td>50–54 MHz</td>
+<td>QMX+ only</td>
+</tr>
+</tbody>
+</table>
+<p>The Tab5 panadapter shows roughly a <strong>48 kHz span</strong> (±24 kHz around the VFO) by default, narrowing as you zoom in. This is the full bandwidth of the QMX's 48 kHz IQ audio stream over USB.</p>
+<h2 id="power-consumption">Power Consumption<a class="headerlink" href="#power-consumption" title="Permanent link">&para;</a></h2>
+<h3 id="tab5-estimated">Tab5 (estimated)<a class="headerlink" href="#tab5-estimated" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th>Current</th>
+<th>Duration (2500 mAh)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Idle</strong> (display off)</td>
+<td>~50 mA</td>
+<td>50 h</td>
+</tr>
+<tr>
+<td><strong>Panadapter</strong> (RX only, display on)</td>
+<td>~600 mA</td>
+<td>4 h</td>
+</tr>
+<tr>
+<td><strong>FT8 RX</strong> (decoding, display on)</td>
+<td>~700 mA</td>
+<td>3.5 h</td>
+</tr>
+<tr>
+<td><strong>FT8 TX</strong> (5 W burst)</td>
+<td>~1.5 A</td>
+<td>1.5 h (peak)</td>
+</tr>
+<tr>
+<td><strong>WiFi + RX</strong></td>
+<td>~800 mA</td>
+<td>3 h</td>
+</tr>
+</tbody>
+</table>
+<h3 id="qmx-qmx">QMX / QMX+<a class="headerlink" href="#qmx-qmx" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th>Current</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Receive</strong></td>
+<td>~80 mA</td>
+<td>At 12 V</td>
+</tr>
+<tr>
+<td><strong>Transmit</strong> (5 W)</td>
+<td>~0.7 A @ 12 V<br>~1.0–1.1 A @ 9 V</td>
+<td>A lower supply voltage draws more current for the same RF output</td>
+</tr>
+</tbody>
+</table>
+<p>Running both devices in the field: a Tab5 (2500 mAh internal) plus a small external battery for the QMX gives roughly 2–3 hours of active FT8 operation — the Tab5's display and CPU dominate the total draw, not the radio.</p>
+<h3 id="rf-power-output">RF Power Output<a class="headerlink" href="#rf-power-output" title="Permanent link">&para;</a></h3>
+<p>Both the QMX and QMX+ are <strong>5 W-class</strong> transmitters delivering roughly <strong>3–5 W</strong>, depending on band and supply voltage:</p>
+<ul>
+<li>Output is highest (~5 W) on the lower bands and tapers off toward the higher bands.</li>
+<li>The radio is built and tuned for either a <strong>9 V</strong> or <strong>12 V</strong> supply. Typical figures from QRP Labs: QMX ≈ 4–5 W at 9 V or 3–5 W at 12 V; QMX+ ≈ 3–5 W on either supply.</li>
+</ul>
+<p>Both radios are the same 5 W power class — the QMX+ differs by covering more bands (full 160 m–6 m), not by transmitting more power.</p>
+<h2 id="antennas">Antennas<a class="headerlink" href="#antennas" title="Permanent link">&para;</a></h2>
+<p>The QMX/QMX+ uses a <strong>50 Ω coaxial antenna connector</strong> (SMA or BNC depending on model).</p>
+<p>Recommended antennas:
+- <strong>Dipole</strong> (1/2 wave) — best all-round performance
+- <strong>EFHW</strong> (end-fed half-wave) — portable, single-wire
+- <strong>Vertical</strong> (1/4 wave + radials) — omnidirectional
+- <strong>Magnetic loop</strong> (small, tuned) — RFI rejection, low noise</p>
+<p>Both are 5 W-class radios (≈3–5 W — see <a href="#rf-power-output">RF Power Output</a> above) — a good antenna and low SWR matter at these QRP power levels.</p>
+<hr />
+<p><strong>Next:</strong> Review the <a href="../web-api/">Web API</a> or troubleshoot via <a href="../troubleshooting/">Troubleshooting</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.sections", "toc.follow", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

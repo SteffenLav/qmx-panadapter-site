@@ -1,0 +1,2084 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://tab5.lav.dk/quick-start/">
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../getting-help/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Quick Start - QMX Panadapter</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="light" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#quick-start" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="QMX Panadapter" class="md-header__button md-logo" aria-label="QMX Panadapter" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            QMX Panadapter
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Quick Start
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="light" data-md-color-primary="blue" data-md-color-accent="orange"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    <!-- Buy me a coffee (OZ1LAV) — just left of the search field -->
+    <style>
+      /* The official BMC widget renders ~51px tall (nearly the whole top bar).
+         zoom scales it (and its layout box, so no leftover gap) down to about
+         the search-field height. Tweak the factor to taste. */
+      .bmc-header-btn { display:flex; align-items:center; margin:0 .2rem; zoom:0.72; }
+    </style>
+    <div class="bmc-header-btn">
+      <script type="text/javascript"
+              src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js"
+              data-name="bmc-button"
+              data-slug="OZ1LAV"
+              data-color="#FFDD00"
+              data-emoji="☕"
+              data-font="Lato"
+              data-text="Buy me a coffee"
+              data-outline-color="#000000"
+              data-font-color="#000000"
+              data-coffee-color="#ffffff"></script>
+    </div>
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/SteffenLav/qmx-panadapter" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    qmx-panadapter
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Quick Start
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../getting-help/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Getting Help
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../guide/panadapter/" class="md-tabs__link">
+          
+  
+  
+  User Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../reference/gestures/" class="md-tabs__link">
+          
+  
+  
+  Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../build/build/" class="md-tabs__link">
+          
+  
+  
+  For Builders
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../releases/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Releases
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="QMX Panadapter" class="md-nav__button md-logo" aria-label="QMX Panadapter" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    QMX Panadapter
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/SteffenLav/qmx-panadapter" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    qmx-panadapter
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-verify-qmx-firmware" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Verify QMX Firmware
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-flash-the-tab5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Flash the Tab5
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-connect-the-cables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Connect the Cables
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-power-on" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: Power On
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-fill-in-your-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5: Fill in Your Settings
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5b-optional-microsd-card-station-backup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5b: Optional — microSD Card (station backup)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-6-navigate-the-screen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 6: Navigate the Screen
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-7-start-listening" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 7: Start Listening
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-8-ft8-ft4-and-js8-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 8: FT8, FT4 and JS8 (Optional)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-9-wifi-web-ui-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 9: WiFi &amp; Web UI (Optional)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-10-keeping-it-up-to-date" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 10: Keeping It Up To Date
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 10: Keeping It Up To Date">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#checking-straight-away" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Checking straight away
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-help/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Help
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Guide
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    User Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide/panadapter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Panadapter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide/audio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide/spots/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Live Spots
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide/spot-map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spot Map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide/web-ui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web UI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide/ft8-rx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FT8 RX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide/ft8-tx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FT8 TX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide/cw/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CW (beta)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide/webradio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web Radio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide/js8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JS8 (beta)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide/time-sync/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Time Sync
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide/wspr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WSPR
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide/radio-menus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Radio Menus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide/settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/gestures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gestures & Controls
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/hardware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hardware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/web-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/rigctld/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hamlib rigctld
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    For Builders
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    For Builders
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../build/build/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Build from Source
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../build/architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../build/contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing & Feedback
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../releases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Releases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-verify-qmx-firmware" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Verify QMX Firmware
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-flash-the-tab5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Flash the Tab5
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-connect-the-cables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Connect the Cables
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-power-on" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: Power On
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-fill-in-your-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5: Fill in Your Settings
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5b-optional-microsd-card-station-backup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5b: Optional — microSD Card (station backup)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-6-navigate-the-screen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 6: Navigate the Screen
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-7-start-listening" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 7: Start Listening
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-8-ft8-ft4-and-js8-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 8: FT8, FT4 and JS8 (Optional)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-9-wifi-web-ui-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 9: WiFi &amp; Web UI (Optional)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-10-keeping-it-up-to-date" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 10: Keeping It Up To Date
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 10: Keeping It Up To Date">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#checking-straight-away" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Checking straight away
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="quick-start">Quick Start<a class="headerlink" href="#quick-start" title="Permanent link">&para;</a></h1>
+<p>Get your QMX Panadapter on air in 10 minutes.</p>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>M5Stack Tab5</strong> (ESP32-P4, 5" display)</li>
+<li><strong>QRP Labs QMX or QMX+</strong> transceiver</li>
+<li><strong>USB-C power cable</strong> (5 V / 2 A minimum)</li>
+<li><strong>USB-A to USB-C data cable</strong> (connects Tab5 to QMX)</li>
+<li><strong>WiFi network</strong> (optional, for remote control and logging)</li>
+</ul>
+<h2 id="step-1-verify-qmx-firmware">Step 1: Verify QMX Firmware<a class="headerlink" href="#step-1-verify-qmx-firmware" title="Permanent link">&para;</a></h2>
+<p>Power the QMX on standalone and check the firmware version displayed on its screen. You need <strong>v1.03.002 or newer</strong>. If yours is older, update the QMX first — everything that follows depends on recent firmware. Everything from <strong>v1.03.002</strong> up to and including <strong>v1.04.010</strong> works with the panadapter; on v1.04 you additionally get <strong>AM mode</strong> and an <strong>Antenna Tune</strong> button (SWR tune with a live power/SWR readout). Both stay hidden on v1.03.002, so either firmware is fine.</p>
+<p>!!! warning "Stay on v1.04.010 for now"</p>
+<div class="highlight"><pre><span></span><code>**v1.04.011** (19-Sep-2026) is not recommended with the panadapter yet. One operator reports the radio producing **no transmit output** when keyed over CAT from the Tab5, and others report the radio's own Tune SWR and Hardware Test screens freezing until it is power-cycled — all of which go away on v1.04.010. These are being reported to QRP Labs. If you are already on v1.04.011 and see either, roll back to v1.04.010.
+</code></pre></div>
+<h2 id="step-2-flash-the-tab5">Step 2: Flash the Tab5<a class="headerlink" href="#step-2-flash-the-tab5" title="Permanent link">&para;</a></h2>
+<p>Download the latest flasher from the <a href="https://github.com/SteffenLav/qmx-panadapter/releases">Releases page</a>:</p>
+<p>!!! warning "Use this flasher, not the M5Stack launcher"
+    Install the panadapter with the flasher below, unpacked onto your computer
+    first. <strong>Do not install it with the M5Launcher.</strong></p>
+<div class="highlight"><pre><span></span><code>The launcher writes its own partition layout, which has no place for the
+panadapter's saved settings and no room for its file storage. A unit
+installed that way can still receive, but your callsign, grid and WiFi
+will not save - and with no callsign stored, every transmit refuses. The
+cure is `flash.bat` with **E**, which rewrites the partition table.
+</code></pre></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Windows</label><label for="__tabbed_1_2">macOS</label><label for="__tabbed_1_3">Linux</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ol>
+<li>Plug Tab5 into your computer with a <strong>USB-C data cable</strong></li>
+<li>Double-click <code>flash.bat</code></li>
+<li>Press <strong>Enter</strong> for a normal flash (keeps your settings) or type <strong>E</strong> for a clean flash (wipes everything)</li>
+<li>Wait for <code>SUCCESS</code></li>
+</ol>
+</div>
+<div class="tabbed-block">
+<ol>
+<li>Plug Tab5 into your computer with a <strong>USB-C data cable</strong></li>
+<li>Open Terminal and run: <code>bash flash.command</code></li>
+<li>If you haven't installed esptool: <code>brew install esptool</code></li>
+<li>Press <strong>Enter</strong> for normal flash</li>
+<li>Wait for <code>SUCCESS</code></li>
+</ol>
+</div>
+<div class="tabbed-block">
+<ol>
+<li>Plug Tab5 into your computer with a <strong>USB-C data cable</strong></li>
+<li>Run: <code>bash flash.command</code></li>
+<li>If you haven't installed esptool: <code>pip3 install esptool</code></li>
+<li>Press <strong>Enter</strong> for normal flash</li>
+<li>Wait for <code>SUCCESS</code></li>
+</ol>
+</div>
+</div>
+</div>
+<p>The firmware is already inside the zip — the three <code>.bin</code> files next to the script are what get flashed. The only thing fetched from the internet is <code>esptool</code>, once, if your computer doesn't already have it, so after the first successful run the flasher works offline.</p>
+<h2 id="step-3-connect-the-cables">Step 3: Connect the Cables<a class="headerlink" href="#step-3-connect-the-cables" title="Permanent link">&para;</a></h2>
+<p>You need <strong>two USB connections</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Connection</th>
+<th>Tab5 Port</th>
+<th>Cable</th>
+<th>Carries</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tab5 &lt;- QMX</td>
+<td>USB-A (host)</td>
+<td>USB-A to USB-C, <strong>data cable</strong></td>
+<td>I/Q audio + CAT control</td>
+</tr>
+<tr>
+<td>Tab5 &lt;- Power</td>
+<td>USB-C</td>
+<td>Any USB-C power cable</td>
+<td>5V power</td>
+</tr>
+</tbody>
+</table>
+<p>⚠️ <strong>Cable gotcha:</strong> Many USB-C cables are charge-only. If the spectrum stays flat and the top bar shows <code>Band: ---</code>, you have a charge-only cable. Swap it for one you know does data (USB stick, phone sync, etc.).</p>
+<h2 id="step-4-power-on">Step 4: Power On<a class="headerlink" href="#step-4-power-on" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Tab5 first</strong> — turn it on. The screen fades up gently from black as it loads.</li>
+<li><strong>Wait for the Tab5 to settle before switching the radio on.</strong> Give it until the spectrum is running and the WiFi indicator in the bottom bar shows a network — usually a few seconds after the screen appears.</li>
+<li><strong>QMX last</strong> — now turn on the QMX. Until the radio is connected, the Tab5 shows a full-screen <strong>"turn on / reboot your QMX"</strong> prompt — that's normal, not a fault, and it clears automatically once the QMX is talking.</li>
+<li>Within a few seconds the top bar should show Band / Mode / BW, and the spectrum should come alive</li>
+</ol>
+<p>!!! warning "Don't switch the QMX on while the Tab5 is still starting up"</p>
+<div class="highlight"><pre><span></span><code>It is tempting to power everything from one switch, or to turn the radio on straight
+after the Tab5 so it is ready sooner. Avoid it for now.
+
+The Tab5 sets up WiFi, the web server and the decoders in its first few seconds, and a
+radio appearing over USB in the middle of that competes for the same small pool of
+internal memory. The result is a Tab5 that comes up short of memory for the rest of the
+session — the web interface may be unreachable, and it makes a crash more likely.
+
+Waiting a few seconds avoids it completely. This is a limitation of the current
+firmware rather than something you are doing wrong, and it is on the list to fix.
+</code></pre></div>
+<h2 id="step-5-fill-in-your-settings">Step 5: Fill in Your Settings<a class="headerlink" href="#step-5-fill-in-your-settings" title="Permanent link">&para;</a></h2>
+<p>On first boot you'll be prompted for:</p>
+<ul>
+<li><strong>Callsign</strong> — your amateur radio callsign</li>
+<li><strong>Grid</strong> — your Maidenhead grid square (e.g., JO45)</li>
+<li><strong>WiFi</strong> — SSID and password (optional, skip if you're portable)</li>
+</ul>
+<p>You can change these anytime by swiping right from the screen edge to open the settings drawer.</p>
+<h2 id="step-5b-optional-microsd-card-station-backup">Step 5b: Optional — microSD Card (station backup)<a class="headerlink" href="#step-5b-optional-microsd-card-station-backup" title="Permanent link">&para;</a></h2>
+<p>Insert a microSD card (a plain <strong>FAT32 32 GB</strong> card is ideal) into the Tab5's slot and it automatically mirrors your whole station to <code>/qmx-panadapter/</code> on the card — a <strong>grab-and-go backup</strong> you can pull into a PC or another Tab5, no computer needed in the field:</p>
+<ul>
+<li><strong>ADIF QSO log</strong> — mirrored after each new QSO</li>
+<li><strong>Config export</strong> — all settings + memory channels (restore via the web <strong>Config</strong> upload)</li>
+<li><strong>LoTW certificate + key</strong> — so a restored device can sign QSOs for LoTW</li>
+<li><strong>Diagnostic log</strong> — rolling copy</li>
+<li><strong>README.txt</strong> — describes every file on the card</li>
+</ul>
+<p>The <strong>SD</strong> dot in the bottom status bar shows what is happening:</p>
+<ul>
+<li><strong>Green</strong> — writes are reaching the card (something landed in the last 90 seconds).</li>
+<li><strong>Yellow</strong> — a card is mounted, but nothing has been written lately. On a quiet session that can simply mean there was nothing to write; if it stays yellow while the Tab5 is busy, writes are failing — see <a href="../reference/troubleshooting/">Troubleshooting</a>.</li>
+<li><strong>Grey, struck through</strong> — no card in the slot. Not an error.</li>
+</ul>
+<p>With <strong>WiFi off</strong> (normal POTA/SOTA operating) everything is mirrored continuously. With <strong>WiFi on</strong> the card and the WiFi co-processor share a bus and can't both use it reliably, so the Tab5 takes the full backup within a few seconds of switching on and then only keeps the diagnostic log and CW transcript going every 30 seconds. QSOs made later in that session are written at the next start-up.</p>
+<blockquote>
+<p><strong>After inserting the SD card your Tab5 needs a restart.</strong> The card is claimed during a short window early in boot, so one pushed in while the Tab5 is running isn't used until you restart it.</p>
+<p>⚠️ The backup contains credentials (WiFi password, QRZ/eQSL logins, LoTW private key) — keep the card physically secure. Skipping this step is fine; your logs and settings always live in the device's own storage too.</p>
+</blockquote>
+<h2 id="step-6-navigate-the-screen">Step 6: Navigate the Screen<a class="headerlink" href="#step-6-navigate-the-screen" title="Permanent link">&para;</a></h2>
+<p>The entire app runs on <strong>edge swipes and taps on the top bar</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Swipe → from <strong>left edge</strong></td>
+<td>Open the <strong>page picker</strong> - tap Panadapter, FT8, FT4, JS8 or WSPR</td>
+</tr>
+<tr>
+<td>Swipe ← from <strong>right edge</strong></td>
+<td>Open settings drawer</td>
+</tr>
+<tr>
+<td>Swipe ↑ from <strong>bottom edge</strong></td>
+<td>Open memory channel picker</td>
+</tr>
+<tr>
+<td>Tap any <strong>top bar item</strong></td>
+<td>Open that item's selector (Freq, Mode, BW, etc.)</td>
+</tr>
+</tbody>
+</table>
+<p>You'll see faint "breathing" grip handles on the edges — they show you where to swipe.</p>
+<p>!!! note "This is the short version"
+    <a href="../reference/gestures/">Gestures &amp; Controls</a> is the authoritative list and
+    covers the top-bar selectors, the drawer and the spectrum gestures as well.
+    The four rows above are a summary for getting started — <strong>if the two ever
+    disagree, the reference page is right</strong>, and a change to the gestures
+    belongs there first.</p>
+<h2 id="step-7-start-listening">Step 7: Start Listening<a class="headerlink" href="#step-7-start-listening" title="Permanent link">&para;</a></h2>
+<p>You're now receiving. The <strong>spectrum</strong> shows signal strength across the band, and the <strong>waterfall</strong> scrolls down showing signal activity over time.</p>
+<ul>
+<li><strong>Tap the spectrum or waterfall</strong> to tune to that frequency</li>
+<li><strong>Pinch</strong> to zoom in/out; <strong>one-finger horizontal drag</strong> to pan and retune</li>
+<li><strong>Tap the coloured band-plan strip</strong> (along the bottom, just above the status bar) to jump to a frequency, or <strong>drag along it</strong> to scrub through the band — you can also grab it from <em>anywhere on the bottom bar</em> and drag sideways (a vertical up-swipe there still opens memory channels)</li>
+<li><strong>Tap the Freq label</strong> on the top bar to open the frequency keypad — drag the "Enter freq" title bar to reposition it, pinch or swipe up/down to resize it</li>
+<li><strong>Swipe ↑ from the bottom edge</strong> to open memory channels — tap an empty slot to create one, long-press a filled slot to edit it, long-press and drag to move a channel (or drag it onto the <strong>wastebin</strong> cell to delete it). A new device comes with a few example channels and plays a one-time tour of these gestures the first time you open the picker</li>
+<li><strong>Tap Band</strong> to switch between your configured bands</li>
+<li><strong>Tap Mode</strong> to switch USB/LSB/CW/DiGi</li>
+</ul>
+<h2 id="step-8-ft8-ft4-and-js8-optional">Step 8: FT8, FT4 and JS8 (Optional)<a class="headerlink" href="#step-8-ft8-ft4-and-js8-optional" title="Permanent link">&para;</a></h2>
+<p>Swipe → from the left edge to switch to the <strong>decode view</strong>. You'll see:</p>
+<ul>
+<li><strong>Live decode list</strong> — every station heard on frequency</li>
+<li><strong>Waterfall</strong> — same real-time spectrum waterfall</li>
+<li><strong>Call CQ</strong> button — transmit a CQ (requires QMX to be on the air)</li>
+<li><strong>Reply</strong> rows — tap a station to reply to their CQ</li>
+</ul>
+<p><strong>Three modes share this page.</strong> Tap the <strong>Preset</strong> button at the top of the left
+column to pick <strong>FT8</strong>, <strong>FT4</strong> or <strong>JS8</strong>; the Tab5 retunes to that mode's calling
+frequency on the band you are on.</p>
+<p><strong>JS8</strong> <em>(beta)</em> is the keyboard mode: it carries free text instead of FT8's fixed
+exchange, so you hold a short conversation. In JS8 the page gains a <strong>Conversation</strong>
+tab beside <strong>Stations</strong>, and a <strong>Free text</strong> button under Call CQ opens a box to type
+a message — it tells you how many seconds the message will hold the frequency before
+anything is transmitted. See <a href="../guide/js8/">JS8</a>.</p>
+<h2 id="step-9-wifi-web-ui-optional">Step 9: WiFi &amp; Web UI (Optional)<a class="headerlink" href="#step-9-wifi-web-ui-optional" title="Permanent link">&para;</a></h2>
+<p>If you set up WiFi:</p>
+<ol>
+<li>Open your browser to <strong><code>http://qmx.local</code></strong> (or the IP shown in the Tab5's bottom bar, if your network blocks <code>.local</code> names)</li>
+<li>You'll see a remote spectrum, waterfall, and control panel — plus QSO log downloads and uploads to QRZ, eQSL, and LoTW</li>
+<li>No installation or configuration needed — just open and go</li>
+</ol>
+<h2 id="step-10-keeping-it-up-to-date">Step 10: Keeping It Up To Date<a class="headerlink" href="#step-10-keeping-it-up-to-date" title="Permanent link">&para;</a></h2>
+<p>From v1.8.9 the Tab5 can update itself over WiFi. You do not need the cable
+again unless something goes badly wrong. The version on the bottom bar turns
+amber when a newer one exists; tap it, choose <strong>Download now</strong>, and then
+<strong>Restart now</strong> when it suits you — nothing is fetched or installed until you
+ask for it.</p>
+<p>!!! warning "v1.15.0 needs a USB-C cable, once"</p>
+<div class="highlight"><pre><span></span><code>v1.15.0 reclaims 2.81 MB of flash that had never been used, and that means
+rewriting the partition table — something an over-the-air update cannot do,
+by design. It is the only release that needs the cable, and afterwards
+over-the-air updates work as before, with more than twice the room.
+
+So v1.15.0 comes as a **flasher download**: the same USB-C data cable and
+the same script you used to install the firmware the first time.
+
+If you tap the update notice instead, it will simply fail — there is no
+over-the-air image to fetch, on purpose.
+
+**Your settings, memories, QSO log and LoTW certificate are kept.** Press
+**Enter** at the flash-type prompt — not **E**, which erases everything
+including your LoTW private key.
+
+You will not have to remember this. When that release appears, the update
+window tells you instead of offering a download.
+</code></pre></div>
+<p>When a newer release is available, the version at the bottom of the screen
+changes to show it, in light green, and breathes gently so you notice it:</p>
+<div class="highlight"><pre><span></span><code>v1.14.3 -&gt; v1.14.4 ?
+</code></pre></div>
+<p>Tap the bar — anywhere along it — and a window opens in the middle of the
+screen with the version and two buttons:</p>
+<ul>
+<li><strong>Download now</strong> — the download runs in the background while the spectrum,
+  waterfall and FT8 decoding keep working. Expect a slight stutter and one brief
+  pause right at the end while the new firmware is verified.</li>
+<li><strong>Dismiss</strong> — the window closes. The line stays, quietly, and tapping it opens
+  the window again whenever you are ready.</li>
+</ul>
+<p>While the download runs the window shows the percentage:</p>
+<div class="highlight"><pre><span></span><code>Downloading  42%
+</code></pre></div>
+<p>When it finishes, the same window offers <strong>Restart now</strong> — the screen goes dark
+and the Tab5 comes back on the new firmware, about 20 seconds.</p>
+<p>Nothing is fetched until you press <strong>Download now</strong>, and nothing restarts until
+you press <strong>Restart now</strong>. It can never interrupt a contact.</p>
+<p>The same window is available from the web page, in the same words.</p>
+<h3 id="checking-straight-away">Checking straight away<a class="headerlink" href="#checking-straight-away" title="Permanent link">&para;</a></h3>
+<p>The Tab5 looks for a new release <strong>every 30 minutes</strong>, so an announcement can
+take that long to show up. If you have just read that a release is out and want
+to see it now, <strong>tap the version even while it says you are up to date</strong>. The
+window offers <strong>Check now</strong>. Tapping the version in the web page does the same.</p>
+<p>That is also the quickest way to satisfy yourself the whole mechanism works
+before you ever need it.</p>
+<p>Your settings, QSO log, LoTW certificate and memories are untouched by an
+update. The previous firmware is also kept, so a failed update falls back to it
+by itself.</p>
+<p>⚠ Restarting the Tab5 with the QMX connected usually means switching the radio
+off and on again afterwards — the screen will tell you if so.</p>
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<p><strong>Spectrum is flat?</strong>
+- Check the USB cable between Tab5 and QMX — charge-only cables won't work
+- Verify QMX is powered on and not in standby
+- Restart both devices (Tab5 first, then QMX)</p>
+<p><strong>QMX doesn't appear?</strong>
+- Check QMX firmware version (Step 1 above) — v1.03.002 up to v1.04.010 (not v1.04.011 yet — see Step 1)
+- Try a different USB cable</p>
+<p><strong>Flashing keeps failing, but the COM port is there?</strong>
+- <strong>Reboot the Tab5 and try again — do this first.</strong> The Tab5's USB serial connection is produced by the ESP32-P4 itself rather than by a separate chip, so a busy running firmware can leave the port listed in Windows Device Manager while it no longer answers the flasher. A reboot clears it.
+- Then the usual suspects: a charge-only USB-C cable, or a serial monitor still holding the port.</p>
+<p><strong>WiFi won't connect?</strong>
+- Check your SSID and password spelling
+- Restart the Tab5 and try again
+- See <a href="../reference/troubleshooting/">Troubleshooting</a> for more</p>
+<p><strong>Still stuck?</strong>
+- <strong>Ask the Tab5 first.</strong> Open the settings drawer (swipe in from the right edge) and tap <strong>Need guidance?</strong> — pick the symptom in plain words and it opens the manual at the answer. Anything the device can see for itself is highlighted at the top of that list. See <a href="../getting-help/">Getting Help</a>
+- The <strong>diagnostic log is always on</strong> — nothing to enable. Download it via the web UI: open the <strong>Files</strong> menu in the web page's bottom bar and click <strong>Diagnostic download ↓</strong> (downloads both the live log and the saved pre-reboot copy), or pull <code>qmx-log.txt</code> from an inserted microSD card
+- Report the issue on <a href="https://github.com/SteffenLav/qmx-panadapter/issues">GitHub Issues</a> or the <a href="https://groups.io/g/QRPLabs/topic/119565643">QRPLabs Groups.io thread</a> and attach the log</p>
+<hr />
+<p><strong>Next steps:</strong> Read the full <a href="../guide/panadapter/">User Guide</a>, or dive into <a href="../guide/ft8-tx/">FT8 Transmit</a> or <a href="../guide/js8/">JS8</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.tabs", "navigation.sections", "toc.follow", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

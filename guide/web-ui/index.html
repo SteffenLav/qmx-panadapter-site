@@ -1,0 +1,2972 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://tab5.lav.dk/guide/web-ui/">
+      
+      
+        <link rel="prev" href="../spot-map/">
+      
+      
+        <link rel="next" href="../ft8-rx/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Web UI - QMX Panadapter</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="light" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#web-ui" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="QMX Panadapter" class="md-header__button md-logo" aria-label="QMX Panadapter" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            QMX Panadapter
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Web UI
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="light" data-md-color-primary="blue" data-md-color-accent="orange"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    <!-- Buy me a coffee (OZ1LAV) — just left of the search field -->
+    <style>
+      /* The official BMC widget renders ~51px tall (nearly the whole top bar).
+         zoom scales it (and its layout box, so no leftover gap) down to about
+         the search-field height. Tweak the factor to taste. */
+      .bmc-header-btn { display:flex; align-items:center; margin:0 .2rem; zoom:0.72; }
+    </style>
+    <div class="bmc-header-btn">
+      <script type="text/javascript"
+              src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js"
+              data-name="bmc-button"
+              data-slug="OZ1LAV"
+              data-color="#FFDD00"
+              data-emoji="☕"
+              data-font="Lato"
+              data-text="Buy me a coffee"
+              data-outline-color="#000000"
+              data-font-color="#000000"
+              data-coffee-color="#ffffff"></script>
+    </div>
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/SteffenLav/qmx-panadapter" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    qmx-panadapter
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../quick-start/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Quick Start
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../getting-help/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Getting Help
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../panadapter/" class="md-tabs__link">
+          
+  
+  
+  User Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../reference/gestures/" class="md-tabs__link">
+          
+  
+  
+  Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../build/build/" class="md-tabs__link">
+          
+  
+  
+  For Builders
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../releases/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Releases
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="QMX Panadapter" class="md-nav__button md-logo" aria-label="QMX Panadapter" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    QMX Panadapter
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/SteffenLav/qmx-panadapter" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    qmx-panadapter
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quick-start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-help/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Help
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Guide
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    User Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../panadapter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Panadapter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../audio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spots/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Live Spots
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spot-map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spot Map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web UI
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web UI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#quick-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Start
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-a-phone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        On a phone
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remote-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Remote Control
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spectrum-waterfall" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Spectrum Waterfall
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ft8-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FT8 Control
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="FT8 Control">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#live-spots-on-the-browser-spectrum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Live spots on the browser spectrum
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-decode-list-from-another-room" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The decode list, from another room
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#switching-the-tab5-back-to-the-panadapter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Switching the Tab5 back to the panadapter
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#call-cq-from-the-browser" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Call CQ from the browser
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mid-qso-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mid-QSO controls
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mid-QSO controls">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#switching-to-a-different-caller-mid-exchange" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Switching to a different caller mid-exchange
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skipping-a-cq-before-you-answer-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Skipping a CQ before you answer it
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#choosing-your-tx-tone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Choosing your TX tone
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory-channels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Memory channels
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#antenna-tune-from-the-browser-qmx-104" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Antenna Tune from the browser (QMX 1.04+)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#settings-with-a-real-keyboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Settings, with a real keyboard
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Settings, with a real keyboard">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#preferred-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preferred network
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#help-in-the-browser" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Help, in the browser
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cat-control-advanced" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CAT Control (Advanced)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bottom-bar-menus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bottom Bar Menus
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bottom Bar Menus">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#power-cycle-relay-building-the-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Power-cycle relay: building the interface
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Power-cycle relay: building the interface">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wiring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wiring
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#settings-that-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Settings that work
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keyboard-shortcuts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Keyboard shortcuts
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tab5shot-what-the-screen-looks-like-right-now" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tab5Shot - what the screen looks like right now
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#config-backup-restore-and-edit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Config backup, restore and edit
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lotw-upload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LoTW Upload
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#upload-behaviour" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Upload Behaviour
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Network Requirements
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Limitations
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ft8-rx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FT8 RX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ft8-tx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FT8 TX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cw/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CW (beta)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../webradio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web Radio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../js8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JS8 (beta)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../time-sync/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Time Sync
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wspr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WSPR
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../radio-menus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Radio Menus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/gestures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gestures & Controls
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/hardware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hardware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/web-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/rigctld/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hamlib rigctld
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    For Builders
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    For Builders
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build/build/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Build from Source
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build/architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build/contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing & Feedback
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Releases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#quick-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Start
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-a-phone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        On a phone
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remote-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Remote Control
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spectrum-waterfall" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Spectrum Waterfall
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ft8-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FT8 Control
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="FT8 Control">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#live-spots-on-the-browser-spectrum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Live spots on the browser spectrum
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-decode-list-from-another-room" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The decode list, from another room
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#switching-the-tab5-back-to-the-panadapter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Switching the Tab5 back to the panadapter
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#call-cq-from-the-browser" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Call CQ from the browser
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mid-qso-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mid-QSO controls
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mid-QSO controls">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#switching-to-a-different-caller-mid-exchange" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Switching to a different caller mid-exchange
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skipping-a-cq-before-you-answer-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Skipping a CQ before you answer it
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#choosing-your-tx-tone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Choosing your TX tone
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory-channels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Memory channels
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#antenna-tune-from-the-browser-qmx-104" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Antenna Tune from the browser (QMX 1.04+)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#settings-with-a-real-keyboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Settings, with a real keyboard
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Settings, with a real keyboard">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#preferred-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preferred network
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#help-in-the-browser" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Help, in the browser
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cat-control-advanced" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CAT Control (Advanced)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bottom-bar-menus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bottom Bar Menus
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bottom Bar Menus">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#power-cycle-relay-building-the-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Power-cycle relay: building the interface
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Power-cycle relay: building the interface">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wiring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wiring
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#settings-that-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Settings that work
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keyboard-shortcuts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Keyboard shortcuts
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tab5shot-what-the-screen-looks-like-right-now" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tab5Shot - what the screen looks like right now
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#config-backup-restore-and-edit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Config backup, restore and edit
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lotw-upload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LoTW Upload
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#upload-behaviour" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Upload Behaviour
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Network Requirements
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Limitations
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="web-ui">Web UI<a class="headerlink" href="#web-ui" title="Permanent link">&para;</a></h1>
+<p>Access the panadapter remotely from any browser on your WiFi network.</p>
+<h2 id="quick-start">Quick Start<a class="headerlink" href="#quick-start" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Enable <strong>WiFi</strong> in the settings drawer</li>
+<li>Open your browser to <strong><code>http://qmx.local</code></strong></li>
+<li>You'll see the same spectrum and waterfall as the Tab5</li>
+</ol>
+<p>No installation, no configuration, and <strong>no IP address to write down</strong>.</p>
+<blockquote>
+<p><strong>Why a name and not an address.</strong> The Tab5 picks its own network - it remembers
+up to six and moves to whichever is on the air - so its IP address changes
+without anyone deciding it should, and the only place it is shown is the Tab5's
+own bottom bar, which is no help when the Tab5 is in the shack and you are not.
+<code>qmx.local</code> does not change.</p>
+<p>If <code>qmx.local</code> does not resolve, the IP still works exactly as before - read it
+off the Tab5's bottom bar. Windows and macOS resolve <code>.local</code> names out of the
+box; a few Linux setups need <code>avahi-daemon</code> installed, and some guest/hotel
+networks block the multicast that makes it work.</p>
+</blockquote>
+<h2 id="on-a-phone">On a phone<a class="headerlink" href="#on-a-phone" title="Permanent link">&para;</a></h2>
+<p>The layout is built for a landscape screen and reflows fine there. In
+<strong>portrait</strong> on a phone (v1.9.4), the top and bottom bars now scroll
+sideways if a control doesn't fit — swipe them like the decode list — and
+the page itself scrolls vertically if the whole layout is taller than the
+screen. Before this a portrait phone (Randy N4OPI, iPhone Safari) could
+lose the top and bottom bar controls entirely with no way to reach them.</p>
+<h2 id="remote-control">Remote Control<a class="headerlink" href="#remote-control" title="Permanent link">&para;</a></h2>
+<p>The web UI provides full remote control:</p>
+<ul>
+<li><strong>Frequency</strong> — tap the VFO to open the numeric keypad (drag it by its title bar to reposition; toggle between a 10-key and a phone-style digit layout), or click the spectrum to tune (right-drag it to pan instead — see below)</li>
+<li><strong>Mode</strong> — buttons for USB, LSB, CW, DiGi</li>
+<li><strong>Bandwidth</strong> — selectors for SSB filter width or CW passband</li>
+<li><strong>Band</strong> — jump between configured bands</li>
+<li><strong>Memory</strong> — recall, edit and clear your 32 saved channels (see <a href="#memory-channels">Memory channels</a> below)</li>
+<li><strong>Zoom</strong> — pinch or scroll to zoom the spectrum</li>
+<li><strong>RIT</strong> — click the <strong>RIT</strong> pill to arm it, then click a caller to receive off your
+  transmit frequency without moving the dial. See
+  <a href="../panadapter/#rit-receiving-off-your-transmit-frequency">RIT</a></li>
+<li><strong>Park / Restore</strong> — appears beside RIT only when there is an offset to stand down,
+  or a parked one to put back. Parking keeps the value; clearing RIT throws it away.
+  The Tab5 does the same thing with a long press on its RIT pill, and both screens
+  share the one parked value</li>
+<li><strong>Tune</strong> — put the dial on the signal. In CW it zero-beats the carrier; in USB or
+  LSB it snaps to the far station's own filter edge and onto the grid they are almost
+  certainly on. One press, one move — it never runs by itself, and it cannot transmit.
+  It says how far the dial went, or why it would not move</li>
+<li><strong>Keyer</strong> — your CW keyer speed, shown only when the radio is in CW. The speed is
+  sent to the radio and read back, so the figure is what the QMX accepted. <strong>0</strong> is a
+  real setting: it selects Straight Key mode, which is the quick way to key down for a
+  tune-up. This is what <em>you</em> send — the decoded-CW line shows the speed of the station
+  you are <em>hearing</em>, which is a different number</li>
+<li><strong>PWR</strong> — transmit power on this band, shown only where that band has been through
+  Calibrate Power. The levels offered are the ones your own sweep measured, so a figure
+  the PA never produced is refused rather than rounded to a neighbour. While a
+  transmission is in progress, or while WSPR owns the PA, the target is stored and the
+  page says so</li>
+</ul>
+<p>Everything mirrors the Tab5 display with sub-second latency.</p>
+<h2 id="spectrum-waterfall">Spectrum Waterfall<a class="headerlink" href="#spectrum-waterfall" title="Permanent link">&para;</a></h2>
+<p>The waterfall is <strong>live-streamed</strong> from the Tab5 every ~100 ms. You see the same real-time signal activity as on the device itself.</p>
+<p>Click anywhere on the spectrum to tune to that frequency. The waterfall updates continuously — no refresh needed.</p>
+<p><strong>Right-drag to pan.</strong> Hold the <strong>right</strong> mouse button on the spectrum or waterfall and drag sideways to move the window along the band. Left-drag still tunes — it puts the dial where you release — so the two gestures do not collide: <strong>left moves the radio, right moves the view.</strong></p>
+<p>A pan never moves the dial. It moves the window inside what the radio is already receiving, so the frequency stays exactly where it was and the passband marker slides across the screen instead of sitting still. Drag right and you pull the spectrum right with you, bringing lower frequencies into view — the way a map drags. The passband stays visible throughout, in every mode.</p>
+<p>It needs the <strong>still display</strong> to be on, which is the default. With it off the spectrum follows the dial, so there is no separate window to move and the gesture is declined with that reason. The browser's own context menu is suppressed over those two panels so the drag can happen; it still works everywhere else on the page.</p>
+<p>The band-plan strip below drags the <em>opposite</em> way, on purpose: there your hand is on the window <strong>marker</strong> rather than on the picture, so the marker travels with your hand and the frequency rises as you drag right. That one does retune.</p>
+<p><strong>Whole-band plan strip.</strong> Along the bottom of the view (above the status bar) is a colour-coded CW/Digi/Phone strip spanning the entire current band, mirroring the one on the Tab5. A draggable "visible window" marks the slice currently on screen — drag it, or tap anywhere on the strip, to retune — and a marker shows the VFO position.</p>
+<p><strong>Adjustable split.</strong> Drag the divider between the spectrum and the waterfall to give either one more room. Your chosen split is remembered in the browser.</p>
+<blockquote>
+<p><strong>In FT8 or FT4 mode the live stream pauses.</strong> The browser stops streaming the spectrum/waterfall and shows a notice plus the log and upload controls instead. This is deliberate — while you're operating digital modes the stream would compete with the on-device decoder and the WiFi link, so pausing it keeps FT8 decoding and WiFi noticeably steadier. Switch the Tab5 back to Panadapter mode and the stream resumes automatically.</p>
+</blockquote>
+<h2 id="ft8-control">FT8 Control<a class="headerlink" href="#ft8-control" title="Permanent link">&para;</a></h2>
+<p>When the Tab5 is in <strong>FT8/FT4 mode</strong>, the browser pauses the live spectrum stream (see <a href="#spectrum-waterfall">Spectrum Waterfall</a> above) and instead shows a <strong>live TX status banner</strong>, a <strong>Call CQ</strong> button, and the <strong>log and upload controls</strong> — download your ADIF, upload to QRZ/eQSL/LoTW, grab the diagnostic log. Everything else about operating FT8 (watching the decode list, tapping a station to reply) happens <strong>on the Tab5 itself</strong>.</p>
+<p><strong>Band presets.</strong> A dropdown beside the TX tone lists the standard FT8 or FT4 calling frequencies — the same list the Tab5's own <strong>Preset</strong> button offers, and it switches sub-mode and frequency together, so picking an FT4 frequency puts the Tab5 into FT4. The list follows whichever mode the Tab5 is in.</p>
+<p>The status banner mirrors the Tab5's own TX label so you can watch the radio from another room: <strong>red</strong> while transmitting — including the "call 2 of 4" counter when a <a href="../ft8-tx/">CQ stop limit</a> is set — <strong>amber</strong> when a transmission is armed or a QSO is waiting, <strong>green</strong> on QSO complete, <strong>orange</strong> on timeout, and the persistent <strong>"CQ stopped after N calls - no answer"</strong> once an auto-stopped CQ run ends. The browser tab's title also shows a red dot while transmitting, so even a background tab signals when the radio is on the air.</p>
+<p><strong>A finished QSO waits for you.</strong> When an exchange completes, the browser shows
+<code>&lt;callsign&gt;  QSO complete</code> in green and <strong>leaves it there</strong> until you do
+something else — every other message in that line clears itself after twenty
+seconds, this one does not. The radio does not wait: it returns to idle and
+carries on. The message is a record that the contact finished, kept for whoever
+walks back into the room <em>(Randy N4OPI)</em>. The Tab5's own label is unchanged; it
+is only the browser that has to cope with nobody watching.</p>
+<h3 id="live-spots-on-the-browser-spectrum">Live spots on the browser spectrum<a class="headerlink" href="#live-spots-on-the-browser-spectrum" title="Permanent link">&para;</a></h3>
+<p>The <strong>POTA</strong> and <strong>RBN</strong> spots the Tab5 draws on its own
+trace are now drawn on the browser's spectrum too, from the same store on the
+device - so the two screens can never disagree about who is on the air.</p>
+<ul>
+<li><strong>Amber</strong> is a POTA activation, <strong>green</strong> an RBN (CW skimmer) spot, and <strong>grey</strong>
+  a station you have already worked <em>on this band</em>.</li>
+<li>Spots fade with age and are gone at 30 minutes, exactly as on the Tab5.</li>
+<li><strong>Click a callsign to tune to it</strong> - frequency <em>and</em> mode (CW, DiGi, or USB/LSB
+  by band). Bandwidth is deliberately left alone: the QMX keeps a filter per mode.</li>
+<li>Counts at the bottom corners - <code>&lt; spots (3)</code> - say how many more are on this
+  band just outside your window; click one to jump to the nearest.</li>
+<li>On a crowded band only so many callsigns fit; unworked and fresher spots keep
+  their labels, and a spot that cannot fit one is not drawn at all rather than
+  left as a line pointing at nothing.</li>
+</ul>
+<p>Spots are sent only while the Tab5 is showing the panadapter, and only when they
+have actually changed, so they cost the WiFi link almost nothing between refreshes.</p>
+<h3 id="the-decode-list-from-another-room">The decode list, from another room<a class="headerlink" href="#the-decode-list-from-another-room" title="Permanent link">&para;</a></h3>
+<p>In FT8/FT4 the browser used to show a transmit banner and
+nothing else - you could see that your radio was transmitting, but not who was
+answering. The FT8 panel now carries the <strong>decode list</strong>: callsign, message, <strong>country</strong>,
+SNR, <strong>DT and DTR</strong>, audio tone, <strong>distance and bearing</strong>, slot (E/O) and age.</p>
+<p><strong>DT and DTR are two different quantities, not a repeat.</strong> <strong>DT</strong> is corrected
+against the band consensus and is character-for-character what the Tab5 prints —
+the WSJT-X-style number, blank until two separate stations have been heard.
+<strong>DTR</strong> is the raw boundary-relative offset and carries about 0.5 s of receive
+audio latency, so it is not comparable with WSJT-X, but it is the one that moves
+when a transmitter's timing moves. Hover either heading for the same explanation
+on the page. <em>(Randy N4OPI, who put the two screens side by side and found them
+disagreeing under one heading.)</em></p>
+<p>The country column replaced a GRID column, because the grid was already sitting
+in the message text next to it. The country is the one thing in that row you
+cannot read off the message, and unlike the Tab5 — where it has to squeeze into
+three letters — the browser has room to spell it out. Both screens work it out
+the same way from the callsign, so they cannot disagree. <em>(Randy N4OPI)</em></p>
+<p>The <strong>KM</strong> and <strong>BRG</strong> columns arrived in v1.8.3 (asked for by Tony Abbey). They sit
+after the tone, in the same order the Tab5 uses, and the header reads <strong>MI</strong> instead
+of KM if you have <em>Distance in miles</em> ticked. The Tab5 works the distance out and
+sends it, rather than the browser calculating its own, so the two screens cannot
+disagree — and where a station has not sent a grid the column shows a dash rather
+than a made-up number.</p>
+<p>It is the <strong>same list the Tab5 shows</strong>, not a second opinion: the ordering comes
+from the device (the station you are working first, then anything addressed to
+you, then CQ calls, then strongest signal) and your Options-window settings are
+applied to it. The station being worked is highlighted, and anything carrying your
+own callsign stands out, as on the Tab5.</p>
+<p><strong>Click a station to work it</strong> (at the operator's own
+request). The confirm dialog states what will happen, and then the browser runs
+the <strong>same intelligent Transmit a Tab5 row-tap runs</strong>: anything that opens an
+exchange starts the <strong>full automatic QSO</strong> — whether you are answering a CQ or
+answering someone who called <em>you</em> — because you are not in front of the radio
+to click each step. A closing 73 still goes out as a single message. The outcome
+comes back in plain words under the TX banner - "Armed: ...", "Working X (auto
+QSO)", or a refusal if the station has aged out of the list, because
+transmitting at a station that may have left is worse than asking you to click
+again.</p>
+<p><strong>You can pick your next station before the current one has finished.</strong> From the
+moment your closing 73 is armed the exchange is settled, but it is not <em>over</em>
+for the best part of a minute — long enough for the caller you wanted to drop
+off the list. Clicking one during that window used to answer "Busy: working X"
+and discard the choice. It is now <strong>held</strong> and acted on the moment the machine
+is free, reported as "Queued: X, after this exchange". The callsign is what is
+remembered, not the prepared message, so the reply is built fresh from the live
+decode when it is actually sent. <strong>Auto Pounce</strong> on the Tab5 itself behaves the
+same way.</p>
+<p><strong>Who is calling you.</strong> Below the table, the <strong>pileup</strong> - stations answering you
+while you are busy - each clickable with the same confirm. And the <strong>grey-list</strong>
+(stations the auto pickers skip after repeated no-answers) is shown with a
+one-click clear, so "why is it ignoring that station?" is answerable from
+another room.</p>
+<h3 id="switching-the-tab5-back-to-the-panadapter">Switching the Tab5 back to the panadapter<a class="headerlink" href="#switching-the-tab5-back-to-the-panadapter" title="Permanent link">&para;</a></h3>
+<p>If you left the Tab5 in FT8/FT4 and want the spectrum
+back, use the <strong>Radio</strong> menu in the bottom bar — it carries the
+Panadapter &lt;-&gt; FT8 switch.</p>
+<p>Next to <strong>Call CQ</strong> is <strong>TXCQ ANY / EVEN / ODD</strong>, which chooses the 15-second
+slot your CQ transmits in — the same three states as the button on the Tab5,
+and the same setting underneath, so changing it on either surface is reflected
+on the other. ANY takes whichever window comes first; EVEN and ODD lock it.</p>
+<h3 id="call-cq-from-the-browser">Call CQ from the browser<a class="headerlink" href="#call-cq-from-the-browser" title="Permanent link">&para;</a></h3>
+<p>Asked for by Dennis WN4FLA. A CQ run that has timed out, or that has reached its <a href="../ft8-tx/">CQ stop limit</a>, otherwise needs a walk back to the Tab5 to start it again. The <strong>Call CQ</strong> button under the status banner does it from wherever you are.</p>
+<ul>
+<li><strong>It asks first.</strong> The button <strong>keys the radio</strong>, and a mis-click from another room should not put a carrier on the air, so it confirms ("Start calling CQ on the Tab5?") before anything is sent.</li>
+<li><strong>It calls exactly what the Tab5 would.</strong> The active CQ preset, the current TX tone (honouring <strong>TX Hold</strong>, or picking the nearest clear slot as usual) and the <strong>TXCQ ANY / EVEN / ODD</strong> parity are all the ones set on the device — the two buttons share one code path, so they cannot drift apart. To change any of those, long-press <strong>Call CQ</strong> on the Tab5.</li>
+<li><strong>It takes about a second.</strong> The request is handed to the Tab5's own display task rather than acted on inside the web request, so the button greys out and reads "Calling..." briefly. Watch the status banner, not the button, to see the CQ start.</li>
+<li><strong>Only in FT8/FT4 mode.</strong> The button is part of the FT8 panel, and a request that arrives when the Tab5 is not in FT8 is discarded rather than queued — so it can never fire minutes later, unasked, when you next switch modes.</li>
+<li>If your callsign and grid are not set, the Tab5 shows the reason on its own screen and nothing is transmitted.</li>
+</ul>
+<blockquote>
+<p><strong>Not yet confirmed on the air.</strong> The endpoint, the hand-off, the preset/tone/parity reuse and the error path are all verified on hardware; the final key-down is inferred from sharing the Tab5 button's code. Please report how it behaves.</p>
+</blockquote>
+<p>Apart from Call CQ, transmit is still initiated on the Tab5 — replies and pounces need the decode list in front of you, and only one interface should be keying the QMX.</p>
+<h2 id="mid-qso-controls">Mid-QSO controls<a class="headerlink" href="#mid-qso-controls" title="Permanent link">&para;</a></h2>
+<p>While an exchange is running, a <strong>Mid-QSO</strong> row appears under the FT8 controls:</p>
+<ul>
+<li><strong>Re-send</strong> — send the current message again</li>
+<li><strong>RR73</strong> / <strong>73</strong> — jump straight to either</li>
+<li><strong>Pause</strong> — skip exactly one transmission and keep the exchange</li>
+<li><strong>Skip</strong> — give up on <em>this station</em> and go back to answering</li>
+<li><strong>Cancel</strong> — stop transmitting and end the exchange</li>
+</ul>
+<p><strong>Skip</strong> and <strong>Cancel</strong> are not the same thing, and the difference is
+auto-answer. <strong>Cancel</strong> stops everything, auto-answer included: you are
+cancelling in order to go and do something else, so the Tab5 does not start
+calling again a cycle later. <strong>Skip</strong> means "not this station, carry on" —
+it ends the exchange and leaves <strong>Auto-answer CQ (robot)</strong> running, so the next
+CQ caller is answered as normal.</p>
+<p>Two things make it worth having rather than just pressing Cancel and turning
+the robot back on:</p>
+<ul>
+<li>a station calling <strong>CQ DX</strong>, or <strong>CQ</strong> for a state you are not in, was never
+  looking for you, and neither of you wants to spend slots on it;</li>
+<li>a station that keeps calling CQ while you are calling <em>it</em> cannot hear you —
+  which happens to everybody running QRP.</li>
+</ul>
+<p>The station you skip is added to the <strong>grey-list</strong> at once, so the automatic
+pickers will not call it again. That is deliberate: without it, the robot would
+answer the same station's very next CQ and you would be back where you started.
+The grey-list is shown in the decode view and lives in memory only — it is
+cleared by a reboot, or you can clear it yourself.</p>
+<h3 id="switching-to-a-different-caller-mid-exchange">Switching to a different caller mid-exchange<a class="headerlink" href="#switching-to-a-different-caller-mid-exchange" title="Permanent link">&para;</a></h3>
+<p><strong>Double-click</strong> another station in the decode list and the Tab5 drops the
+exchange it is in and calls that one instead. Auto-answer stays on, and the
+station you dropped is grey-listed so the robot does not go straight back to
+it.</p>
+<p>A <strong>single</strong> click still refuses while an exchange is running — it says
+"Busy: working ..." as before. That is deliberate: abandoning a contact in
+progress is destructive, and one stray click on a busy list should not cost
+you one. Double-clicking makes it a decision.</p>
+<p>Two cases behave differently on purpose:</p>
+<ul>
+<li><strong>Double-clicking the station you are already working</strong> does nothing. It is
+  not a re-target, and restarting the exchange you are in is never what was
+  meant.</li>
+<li><strong>If the contact is already finished</strong> — your 73 or RR73 is sent and waiting
+  to go out — the pick is queued rather than used to abandon anything. The
+  station is worked; grey-listing them then would be wrong.</li>
+</ul>
+<p>If you are calling CQ with nobody answering yet, a double-click simply ends the
+CQ run and calls that station. Nothing is grey-listed, because there was no
+partner to give up on.</p>
+<p><em>Randy N4OPI asked for this, 21 October 2026.</em></p>
+<h3 id="skipping-a-cq-before-you-answer-it">Skipping a CQ before you answer it<a class="headerlink" href="#skipping-a-cq-before-you-answer-it" title="Permanent link">&para;</a></h3>
+<p><strong>Skip</strong> ends an exchange you are already in. The other half of Randy's request
+is the robot not starting one: <strong>FT8 filters → Auto-answer: skip CQs not aimed
+at me</strong> (off by default, on both screens — "Skip CQs not for me" in the Tab5's
+Options panel).</p>
+<p>With it on, while auto-answer is running the Tab5 passes over:</p>
+<ul>
+<li><strong>CQ DX</strong> from a station in your own country — you cannot be their DX;</li>
+<li>a <strong>US state call</strong> (<code>CQ FL</code>, <code>CQ TX</code>) when you are not in the USA.</li>
+</ul>
+<p>It is deliberately cautious, and these are the limits:</p>
+<ul>
+<li><strong>Continent calls are always answered.</strong> <code>CQ EU</code>, <code>CQ NA</code> — deciding those
+  needs a continent for every DXCC entity, which the Tab5 does not carry.</li>
+<li><strong>Contest and activity calls are always answered</strong> — <code>CQ POTA</code>, <code>CQ TEST</code>,
+  <code>CQ WW</code>. Anyone may answer those.</li>
+<li><strong>A state call is never skipped if you are in the USA</strong>, because the Tab5
+  knows your country, not your state. A Florida station still answers <code>CQ FL</code>.</li>
+<li>Several state codes are also callsign prefixes elsewhere — <code>OK</code> is Oklahoma
+  <em>and</em> Czechia, <code>CA</code> California <em>and</em> Chile, <code>DE</code> Delaware <em>and</em> Germany. If
+  the code matches your own country as a prefix, the call is answered.</li>
+<li>It needs <strong>your callsign set</strong>. Without it nothing is judged.</li>
+</ul>
+<p>A skipped caller is written to the log with the reason, so a station missing
+from the robot's choices can be explained afterwards rather than guessed at.</p>
+<p>!!! note "Skip is in the browser only, for now"
+    The Tab5's own Mid-QSO row is four buttons wide to the pixel, and a fifth
+    needs the row re-measured on the glass rather than re-guessed. Randy asked
+    for the web page, so that is where it is.</p>
+<p><em>Randy N4OPI asked for Skip, 21 October 2026.</em></p>
+<p><strong>Pause</strong> is the one to reach for when you want to listen on your own slot: to
+check the frequency is still clear, or to hear whether the station is really
+answering <em>you</em>. It shows a <strong>pause</strong> symbol normally and a <strong>play</strong> symbol on
+yellow while a transmission is being skipped, and pressing it again takes the
+pause back. A slot you skip on purpose never counts against giving up on the
+contact.</p>
+<p>The Tab5's own button does exactly the same thing, so the two screens always
+agree about whether you are paused.</p>
+<p><em>Randy N4OPI asked for this on the web page specifically — he runs his station
+from another room and rarely touches the Tab5 itself.</em></p>
+<h2 id="choosing-your-tx-tone">Choosing your TX tone<a class="headerlink" href="#choosing-your-tx-tone" title="Permanent link">&para;</a></h2>
+<p><strong>TX tone</strong> on the FT8 panel opens the same picker the
+Tab5 has, against the same live occupancy of the 200-2800 Hz window - it is the
+device's own map, the one its automatic clear-slot picker uses, so a slot shown
+busy here is one the device would avoid anyway.</p>
+<ul>
+<li><strong>Green</strong> is free, <strong>red</strong> a station or its guard band, <strong>pink</strong> the station you
+  are working, <strong>white</strong> where you will transmit.</li>
+<li><strong>Click a slot</strong> to choose it - a mouse can go straight there, where the Tab5
+  needs a drag. <strong>&minus;50 / +50</strong> nudge, and <strong>Find a clear slot</strong> walks outward
+  to the nearest free one, exactly as the automatic picker does.</li>
+<li><strong>TX Hold</strong> keeps the exact tone you picked. With it off, each transmission
+  takes the nearest clear slot, and a CQ that gets clashed moves itself.</li>
+<li><strong>Grey means unknown, not free.</strong> If nothing has been decoded yet the device has
+  no picture of the band, and the strip says so rather than showing reassuring
+  green.</li>
+<li><strong>The occupancy picture refreshes itself every 3 seconds while the picker is
+  open</strong> (v1.9.4) — it used to be read once, when you opened it, so a slow
+  decision (reading the strip, weighing E vs O) could cross a 15-second slot
+  boundary and land you on a slot that filled in while you were choosing. Your
+  own in-progress pick is never disturbed by the refresh, only the busy/clear
+  colouring under it.</li>
+</ul>
+<p>Changing the tone mid-QSO is fine - your partner tracks your time slot, not your
+audio frequency - but it is refused <strong>mid-burst</strong>, and the reason is shown rather
+than the change silently half-applying.</p>
+<p><strong>Both time windows, always</strong> (asked for by Roy KI0ER).
+The strip is two rows - <strong>EVEN above, ODD below</strong> - because two stations only
+collide if they transmit in the <em>same</em> window, and only you know which window you
+are about to pounce into. The verdict says where your pick stands: <em>"Clear in
+EVEN - busy in ODD"</em>, or judges just your own window once a transmission has
+fixed it. The Tab5's own mini strip and picker show the same two rows.</p>
+<h2 id="memory-channels">Memory channels<a class="headerlink" href="#memory-channels" title="Permanent link">&para;</a></h2>
+<p>The <strong>Memory</strong> button opens your 32 channels as a grid.
+<strong>Tune</strong> recalls one - frequency and mode together - and <strong>Edit</strong> changes or
+clears it. An empty slot offers the frequency you are on now, so storing the
+current VFO is two clicks.</p>
+<p>A frequency outside an amateur band is <strong>refused</strong>, exactly as the Tab5 refuses
+it: a channel you cannot legally tune is worse than no channel.</p>
+<h2 id="antenna-tune-from-the-browser-qmx-104">Antenna Tune from the browser (QMX 1.04+)<a class="headerlink" href="#antenna-tune-from-the-browser-qmx-104" title="Permanent link">&para;</a></h2>
+<p>With a QMX on firmware 1.04+, an <strong>Antenna Tune</strong> button
+appears in the bottom bar. It <strong>keys the radio with a steady carrier</strong> the
+moment you click it - there is no confirmation step, because tuning into a load
+is an ordinary part of operating and the 60-second stop is the real safety net.</p>
+<p>While it runs, a <strong>panel appears in the middle of the page</strong> with the live
+<strong>SWR</strong>, the <strong>power</strong> in watts, and the <strong>seconds left</strong> before the tune stops
+itself, plus a <strong>STOP Tune</strong> button. The panel stays up whatever else you click,
+so you can keep both hands on an ATU and still read the SWR; the rest of the
+page carries on working underneath it. The SWR figure is also colour-coded -
+green below 1.5, amber below 2.5, red above - and the number itself is always
+shown, so the colour is never the only thing telling you.</p>
+<p>The bottom-bar button doubles as the same readout and the same stop, for when
+the menu happens to be open.</p>
+<p>Both ends carry a <strong>60-second safety stop</strong>: the device's own timer fires even
+if the browser tab dies, and the radio's prior mode is restored, never left
+keyed. Stopping Tune from the QMX's own front panel is honoured too.</p>
+<h2 id="settings-with-a-real-keyboard">Settings, with a real keyboard<a class="headerlink" href="#settings-with-a-real-keyboard" title="Permanent link">&para;</a></h2>
+<p>The <strong>Settings</strong> button in the bottom bar edits the
+things you <em>type</em> - which is exactly what the Tab5's touchscreen is worst at:</p>
+<ul>
+<li><strong>Your callsign and grid.</strong> Previously reachable from a browser only by
+  downloading the config file, editing it and uploading it back.</li>
+<li><strong>The three CQ messages</strong>, which preset is active, and the CQ stop limit.</li>
+<li><strong>The FT8 include/exclude filter terms</strong> (both pairs) and the filter toggles.</li>
+<li><strong>Everyday switches</strong>: POTA and RBN spots, PSK Reporter, grey-listing, distance
+  units, I/Q balance, band-plan region, and the QMX volume in dB.</li>
+<li><strong>WiFi</strong>: add another network from a laptop. The Tab5 remembers up to six, and
+  a <strong>Preferred network</strong> field (under network name and password) decides which
+  one wins — see below.</li>
+<li><strong>Show RIT button</strong>, matching the Tab5 setting — hide the RIT button on the panadapter
+  if you never use it.</li>
+<li><strong>The rest of the radio and display settings</strong>, which used to be Tab5-only: CW pitch,
+  IF calibration, SWR protection, the battery charge limit, the 180° screen flip,
+  Fox/Hound mode, simulation mode and the spot mode filter.</li>
+<li>
+<p><strong>New in v1.20.3, and the last three that were Tab5-only:</strong> the
+  <strong>SelfSpotter (spot map)</strong> switch under <em>Spots &amp; reporting</em>, and <strong>Audio
+  source</strong> and <strong>Line-in gain</strong> under <em>Radio &amp; display</em>. The audio pair is
+  worth a word: the browser had always been <em>able</em> to set them, but the page
+  had no value to show, so there was no control to set them with.</p>
+<p>⚠ <strong>Audio source behaves differently here than on the Tab5.</strong> From the
+browser the change is <strong>stored and takes effect at the next restart</strong>;
+the Tab5's own <em>Audio Settings</em> window restarts for you when you press
+Save.</p>
+<p>⛔ Two switches are deliberately <strong>not</strong> on this page. The test-tone
+controls key the radio, and a transmit control belongs nowhere a stray
+click can reach it; the resource-monitor overlay is a diagnostic, not an
+operator switch.</p>
+</li>
+</ul>
+<p>Saved straight to the Tab5 - its own settings drawer shows the same values next
+time you open it.</p>
+<h3 id="preferred-network">Preferred network<a class="headerlink" href="#preferred-network" title="Permanent link">&para;</a></h3>
+<p>The Tab5 remembers up to six networks. Before this field existed it always took
+whichever remembered network was <strong>loudest</strong>, which is the wrong answer on a
+site with more than one — a DMZ and a house network, say, where the loud one is
+not the one you want the panadapter on.</p>
+<p>Set <strong>Preferred network</strong> to the SSID you want and the Tab5 takes it over any
+stronger alternative whenever it is reachable. Leave it empty and nothing
+changes, so nobody who does not need this is affected.</p>
+<p>Both this field and <strong>Network name</strong> list the networks your Tab5 actually
+remembers, under the field itself. Only a name from that list will work.</p>
+<p>!!! warning "v1.16.3 — the field was there but it did almost nothing"</p>
+<div class="highlight"><pre><span></span><code>In v1.16.3 the preference was only consulted after the Tab5 had **failed**
+to connect twice. So it worked when your usual network was down, and did
+nothing in the case it was written for: both networks up, the usual one
+answers immediately, and you wanted the other. It also did not take effect
+until the next reboot. If you set it on v1.16.3 and saw no difference, that
+is why — and it was not something you did wrong.
+
+**Fixed in v1.16.4**: the preference is read when the Tab5 connects, and
+saving it moves the Tab5 straight away *(Randy N4OPI)*.
+</code></pre></div>
+<p>If the preferred network does not answer, the Tab5 falls back to the strongest
+remembered one after a few seconds, so an unreachable preference costs you
+about ten seconds at start-up and nothing else. It is re-tried on every later
+fallback too, so it wins again the moment it comes back.</p>
+<p><strong>Switching to a network the Tab5 already knows</strong> needs only the <strong>Network
+name</strong> — leave the password blank and the stored one is used. (Up to v1.16.3 a
+blank password made the Tab5 discard the name silently, which read as the
+setting not saving. Fixed in v1.16.4.)</p>
+<p><strong>The FT8 transmit tone saves properly too, from v1.16.4.</strong> Setting <code>tx_tone_hz</code>
+on the settings page used to answer <em>Saved</em> and write it down without telling
+the radio, so bursts kept going out on the old tone until the next restart. The
+tone control on the FT8 page was never affected.</p>
+<blockquote>
+<p>Not carried in a config backup. A restored config does not bring the
+preferred network with it; set it again on each unit.</p>
+</blockquote>
+<p>Also here: the <strong>Display &amp; waterfall</strong> group -
+brightness, waterfall black level, contrast, FFT window, colour map, display
+sleep, the 180° flip, the dB scale range, spectrum smoothing and <strong>spur
+suppression</strong> - the controls you
+want to tune from a laptop <em>while watching the Tab5's screen</em>. Every change
+applies live and is stored, exactly as the drawer's own sliders do, and the
+browser's own spectrum and waterfall follow them as well. <strong>Adaptive floor is
+gone from both the browser and the Tab5 drawer</strong> as of v1.8.3 — it could not
+change anything (see
+<a href="../panadapter/#4-spectrum-waterfall">Spectrum &amp; Waterfall</a>), and a control that
+cannot change anything is worse than a missing one. The
+<strong>auto-answer robot</strong> switch is here too, carrying the same permanent warning the
+Tab5 shows beside it: it transmits unattended - never leave it running
+unsupervised.</p>
+<p>One deliberate omission: <strong>your WiFi password is never sent to the browser</strong>, so
+the field is always blank; leave it blank and the stored one is kept.</p>
+<h2 id="help-in-the-browser">Help, in the browser<a class="headerlink" href="#help-in-the-browser" title="Permanent link">&para;</a></h2>
+<p>The <strong>Help ?</strong> button in the bottom bar opens the same two
+doors the Tab5 has, served <strong>by the Tab5 itself</strong> - so it works with no internet at
+all, and the text always matches the firmware you are running.</p>
+<ul>
+<li><strong>A list of symptoms and questions in plain words</strong> - "My radio is not showing
+  up", "Nothing appears in the decode list", "How do I change what my CQ says?".
+  Pick the one that fits and the manual opens at the section that answers it.</li>
+<li><strong>Rows the Tab5 can see are happening right now are highlighted</strong> and moved to
+  the top, exactly as on the device. It ranks; you choose.</li>
+<li><strong>The whole manual</strong>, with a Contents list, Back, and links between chapters.</li>
+</ul>
+<p>See <a href="../../getting-help/">Getting Help</a> for what the device can detect and why it
+never navigates for you.</p>
+<h2 id="cat-control-advanced">CAT Control (Advanced)<a class="headerlink" href="#cat-control-advanced" title="Permanent link">&para;</a></h2>
+<p>The <strong>CAT</strong> section lets you send raw Kenwood-style commands directly to the QMX:</p>
+<div class="highlight"><pre><span></span><code>FA;        -&gt; reads current frequency
+FA14074000;  -&gt; sets frequency to 14.074 MHz
+MD;        -&gt; reads current mode
+MD2;       -&gt; sets USB mode
+</code></pre></div>
+<p>This is for advanced troubleshooting — most users don't need it.</p>
+<h2 id="bottom-bar-menus">Bottom Bar Menus<a class="headerlink" href="#bottom-bar-menus" title="Permanent link">&para;</a></h2>
+<p>The bottom bar groups its actions into four popup menus, plus a battery indicator (e.g. <code>🔋 87% (8.0V)</code>):</p>
+<p><strong>QSO Logs (n) ▲</strong> — only visible when QSOs exist; <em>n</em> is the QSO count:</p>
+<ul>
+<li><strong>ADIF download ↓</strong> — QSO log as an ADIF file (import into WSJT-X, EQSL, etc.)</li>
+<li><strong>Today only, dated file ↓</strong> — just today's contacts, named <code>qso-YYYY-MM-DD.adi</code>. For anyone who files each day's log separately, the date is already in the filename rather than something to add by hand afterwards <em>(Gyula HA3HZ)</em></li>
+<li><strong>ADIF restore ↑</strong> — merges a previously downloaded (or any logger's) ADIF file back into the log, skipping any contact already there (matched on callsign, date and time). For after an erase-and-reinstall: <strong>Config upload</strong> never touches the QSO log on purpose, so this is the only way to get worked-station history back <em>(Randy N4OPI)</em>. A prompt lets you say whether the restored contacts should be marked as already uploaded to QRZ/eQSL/LoTW (the usual answer is yes, since "restore" almost always means a log that was already sent) or as not-yet-uploaded, so the next upload sends them. <strong>From v1.11.3 the first prompt asks whether the file contains <em>corrections</em>.</strong> Say yes and a contact already logged with the same callsign, date and time is <strong>replaced</strong> by the version in the file, instead of being skipped as a duplicate — which is what a merge otherwise has to do, since a correction keeps the very fields it is matched on. This is the way to repair records in another logger and put them back <em>(Gyula HA3HZ: "the corrected file cannot be installed, the previous incorrect version remains")</em>. Corrected contacts are sent to QRZ/eQSL/LoTW again afterwards, because the copy held there is the one carrying the error, and all three ignore a repeat. Callsign, date and time still cannot be changed this way — a contact with a wrong date is a different contact</li>
+<li><strong>↳ Restore from SD card</strong> — the same merge, but read straight off the microSD card the Tab5 already backs up to, with no file to find and nothing to choose. Contacts already logged are skipped, so pressing it twice does nothing. The card mirrors the <em>present</em>, so a deletion that survives a restart is on the card too — which is why the copy from just before the log last got smaller is kept beside it as <code>qso.prev.adi</code> (download it from <strong>Files ▲ -&gt; SD Files</strong> and feed it to <strong>ADIF restore ↑</strong> if you need it) <em>(Gyula HA3HZ)</em></li>
+<li><strong>QRZ upload ↑</strong> — upload ADIF to QRZ Logbook (requires API key on first use, saved for future sessions)</li>
+<li><strong>↳ Change QRZ API key</strong> — appears once a key is stored, and replaces it. New in v1.8.3: before that the prompt only ever appeared when <em>nothing</em> was stored, so a key typed wrongly or later reissued could not be changed from the page at all (reported by Brian WA6JFK)</li>
+<li><strong>eQSL upload ↑</strong> — upload ADIF to eQSL (requires username/password on first use, saved)</li>
+<li><strong>↳ Change eQSL login</strong> — same, for the eQSL username and password</li>
+<li><strong>LoTW setup</strong> / <strong>LoTW ↑</strong> — upload ADIF to ARRL's Logbook of The World (see <a href="#lotw-upload">LoTW Upload</a> below)</li>
+<li><strong>Cloudlog upload ↑</strong> — upload to your own Cloudlog or Wavelog. Asks for the server address, your API key and the station profile ID on first use. Plain <code>http://</code> is accepted for a server on the same network as the Tab5, given as a numeric address such as <code>http://192.168.1.20</code>; anything else needs <code>https://</code>. The check is repeated at every upload, so away from home the upload refuses instead of sending your key across someone else's network. If the server is on your own LAN this is the only upload that needs no internet at all <em>(Mark G4MEM)</em></li>
+<li><strong>↳ Change Cloudlog server</strong> — appears once a server is stored, and replaces the address, key and station profile</li>
+<li><strong>Check log</strong> — looks through the log for records that are missing something a programme will want: a callsign, a date that is not in the right form, no station callsign, a reference that does not look like a reference, or — if you say you were activating — no reference of your own. It asks which of those two you mean when you press it. It can only tell you a record is not <em>obviously</em> incomplete: the Tab5 cannot see POTA's or SOTA's rules or their databases, so it never tells you a file will be accepted. Born from <em>"I wish POTA and SOTA had a feature allowing you to test your file for syntax and completeness without submitting it for credit"</em> — two trips to a park to get contacts to test with <em>(Don Adams WB0LQW)</em>. The Tab5's own Activation panel shows the same count under the contact total, so you can read it without a laptop.</li>
+<li><strong>View / edit log</strong> — opens the QSO log right in the browser (call, mode, band, frequency, date/time, reports, grid — newest first). <strong>Click any column header to sort</strong> by it (click again to reverse) — sorting by Date groups an activation's QSOs together. <strong>Search</strong> filters the list as you type, matching any part of a callsign, band, mode, date, grid or reference; several words must all match, so <code>ea 20m</code> narrows to Spanish contacts on 20 m. A search that finds nothing says so — <em>"so this one has not been worked"</em> — which is the question worth asking of a log <em>(Gyula HA3HZ)</em>. <strong>Tick the box on any row</strong> and <strong>Export selected</strong> saves just those contacts as an ADIF file on your computer; the box in the header ticks everything <strong>currently shown</strong>, so a search and one tick gives you a single day, band or park as its own file. The export carries each record exactly as the Tab5 wrote it, so fields the table does not display are preserved. Each row has a ✕ to delete that one record, and a <strong>Delete all</strong> button clears the whole log (no undo, so it asks you to type <code>DELETE</code> to confirm — download the ADIF first if you want a copy). Handy before a POTA activation: start with an empty log and the ADIF at the end is exactly the file you submit. <strong>Every field is editable</strong> <em>(Gyula HA3HZ)</em> — the two reports, <strong>Grid</strong>, <strong>Their ref</strong>, and from v1.12.0 also the callsign, band, mode, frequency, date and time. Which record a logbook matches is a decision for the logbook, not one the Tab5 should make on its behalf. <strong>Be aware of what that means</strong>: callsign, band, mode, date and time are exactly what QRZ, eQSL and LoTW match a contact on, so changing one of those turns the record into a different contact as far as they are concerned. If the QSO has already been uploaded, the copy the logbook holds is unchanged. Click one and type the corrected value, or leave it empty (for a report, that records that none was exchanged). <strong>Their ref</strong> is the park or summit the <em>other</em> station was activating: while you are operating, that reference is on the POTA spots page on your phone and in nothing the radio sends you, so you write it down and enter it when you get home <em>(Don Adams WB0LQW)</em>. It fills itself in when the contact came from a spot, whether or not you were activating yourself — that is what the ADIF <code>SIG</code>/<code>SIG_INFO</code> fields mean, and a hunter's log should say which park they worked. It is only <em>Park-to-Park</em> when you were in a park too, which is why the column is not called that. <strong>An empty cell is not a fault</strong>: the reference comes from the POTA spot feed matched on the exact callsign, and not everyone activating in a digital mode registers the activation — some simply start calling <code>CQ POTA</code> — so an unregistered activator produces no reference at all rather than a wrong one <em>(Don Adams WB0LQW)</em>. Type it in by hand if you have it. Type the reference alone — <code>US-1241</code>, <code>G/LD-049</code>, <code>DLFF-0123</code> — and the Tab5 works out the programme from its shape and writes both <code>SIG</code> and <code>SIG_INFO</code>; clear the reference and both go with it. <strong>Grid</strong> is the other station's locator, correctable because it is the field most likely to be wrong through no fault of yours — a partner's grid arrives once, in their first message, and a marginal contact can complete without it ever being heard cleanly <em>(Gyula HA3HZ, who was correcting them in ADIFMaster)</em>. It is checked as a real Maidenhead locator, four or six characters, and refused otherwise: it drives distance and bearing on both screens and goes to three logbooks, so a typo would be a wrong measurement presented as a real one. Clearing it removes the field, which is the honest state when no grid was ever exchanged. Malformed values are refused rather than stored: a date must be eight digits, a time four or six, and a grid a real Maidenhead locator — those fields drive distance, bearing and three logbook uploads, so a typo would become a wrong measurement presented as a real one.</li>
+</ul>
+<p><strong>Files ▲</strong>:</p>
+<ul>
+<li>
+<p><strong>Config download ↓</strong> — all settings as a text file (backup or transfer to another Tab5). It is also the way to change a stored credential by hand: an edited file uploaded back takes effect on the next upload with no restart.</p>
+<p>!!! danger "This file contains secrets in clear text"
+    It holds your <strong>WiFi password</strong>, your <strong>QRZ API key</strong>, your <strong>eQSL
+    password</strong> and your <strong>LoTW certificate and private key</strong> - all
+    readable, none of them obscured. Anyone who has the LoTW key can sign
+    contacts as you.</p>
+<div class="highlight"><pre><span></span><code>Treat it exactly like a password list. In particular, **do not attach
+it to a forum post, a GitHub issue or an email when asking for
+help** - that has already happened once. If you need to share
+settings for diagnosis, delete the `wifi_pass`, `qrz_key`,
+`eqsl_pass`, `lotw_cert` and `lotw_key` lines first; everything else
+in the file is harmless.
+
+The browser asks you to confirm before the download for this reason.
+</code></pre></div>
+<ul>
+<li><strong>Config upload ↑</strong> — restore settings from a backup file</li>
+<li><strong>SD Files</strong> — opens the <strong>microSD file browser</strong> (<code>http://&lt;tab5-ip&gt;/files</code>): browse the card from your computer without pulling it — download logs and config backups, upload files, delete</li>
+</ul>
+</li>
+<li>
+<p><strong>Diagnostic download ↓</strong> — downloads <strong>both</strong> diagnostic logs: the live session log (always on, nothing to enable) and the flash-persisted copy from before the last reboot/power-off</p>
+</li>
+</ul>
+<p><strong>Miscellaneous ▲</strong> also carries <strong>Prepare for flashing</strong> — closes the USB host cleanly before you unplug the radio or reflash the Tab5, so the QMX is not left half-open.</p>
+<p><strong>Radio ▲</strong> — the things that reach the radio itself:</p>
+<ul>
+<li><strong>Switch to Panadapter / FT8 / FT4 / JS8 / WSPR</strong> — changes the Tab5’s own screen from the browser. The <strong>Radio</strong> menu lists all five pages, so each one is a single click; it no longer steps through them in sequence. Choosing a page is what enables it, and the menu follows the Tab5 if you switch there instead</li>
+<li><strong>Memory channels</strong> — your 32 channels: click one to tune to it, drag one onto another slot to move it, or onto the bin to clear it</li>
+<li><strong>Let me use the QMX menus</strong> — stops the Tab5 talking to the QMX so you can use the radio's own menus or its Band Configuration terminal. A bar appears until you hand it back. See <a href="../settings/#radio">Settings</a></li>
+<li><strong>Antenna Tune</strong> — QMX 1.04+ only; keys a steady carrier with live power and SWR, and stops itself after 60 seconds</li>
+<li><strong>Activation</strong> — start or stop a POTA/SOTA session from the browser. While one is running a badge appears in the top bar with the reference and the contact count, so it cannot be forgotten on the drive home</li>
+<li><strong>Log a contact</strong> — log a CW or SSB contact you worked by hand. You type the callsign and the two reports; the frequency, mode, band, date, time, your own callsign and grid and the running activation all come from the radio. The report you send arrives filled in from the mode — 599 for CW, 59 for phone — and from v1.23.0 the S digit of the report you received is measured off the S-meter instead of being a 9 every time <em>(Gyula HA3HZ)</em>. Clearing one logs the contact without a report rather than with a wrong one. It <strong>stays open</strong> after Log, with the callsign cleared and the reports kept, because a run of contacts is not one dialog at a time. It is refused if the radio is not connected, since the record would have no frequency <em>(Gyula HA3HZ, Brian KB9WFS)</em></li>
+<li><strong>Scheduled events</strong> — the contest calendar and announced POTA/SOTA activations on one timeline, soonest first, with what is on the air now below what is coming. Filter to Contests or ?OTA when you have already decided which kind of evening it is. The list is fetched at most every 15 minutes; Refresh asks for it now. The source being down is normal — the last list stays up and the age line says how old it is</li>
+<li><strong>Radio menus</strong> — the QMX's own 80×24 menu system, in the browser. Arrow keys, Enter and Back on screen, and your real keyboard works too. Needs the radio's second USB serial port switched on first. See <a href="../radio-menus/">Radio Menus</a></li>
+</ul>
+<p><strong>Miscellaneous ▲</strong>:</p>
+<ul>
+<li><strong>Tab5 screenshot</strong> — current display as PNG, including any open pop-up (band/mode dropdown), not just the base screen</li>
+<li><strong>Reboot the Tab5</strong> — restarts it there and then; receiving stops for about ten seconds. Until now a restart was only offered after a firmware update, which is no use when you are in another room and something is stuck <em>(Randy N4OPI)</em></li>
+<li><strong>Power off the Tab5</strong> (from v1.20.1) — shuts the unit down from the browser. It does <strong>not</strong> come back on its own; somebody has to press the button, or cut and restore its power. It asks for confirmation. The radio is put back into receive first, so a transmission in progress cannot be left keyed. Measured to stay off with 5 V still present on the USB-C input. The same control is in the Tab5's own drawer, under Restart, in the Advanced section <em>(Randy N4OPI, whose headless QMX+ runs from 18650s the Tab5 was draining after the radio shut itself off)</em></li>
+<li><strong>Port mode</strong> — chooses what owns PORT.A, the same connector the relay below uses: <strong>Relay</strong> or <strong>Unit GPS v1.1</strong>. It sits directly above the relay row because it decides whether that row can do anything. Switching is applied live through the same sequencer the Tab5 drawer uses, so both screens always agree; a refusal comes back as <code>refused: PORT.A mode not changed: a relay pulse or power cycle is running, or the Unit GPS UART failed to start</code>, and the row snaps back to what the device is actually in. When <strong>Unit GPS</strong> owns the port the whole relay row greys out with the reason in its tooltip. See <a href="../settings/#port-mode-porta">Settings ▸ Port mode</a> and <a href="../time-sync/#unit-gps-time-source-porta">Unit GPS Time Source</a>.</li>
+<li>
+<p><strong>Power-cycle relay</strong> — pulses one of two Tab5 GPIO pins (GPIO53 or GPIO54) for a chosen level and duration. Wire an external relay's trigger input to the pin and its contacts to your QMX's PWR_ON/GND <strong>signals</strong>, and this lets you power-cycle the radio remotely — the piece a remote firmware upgrade otherwise needs someone at the bench for, since the QMX always needs a manual power cycle after a Tab5 flash.</p>
+<p>!!! warning "Experimenter feature — you fit the connector yourself"
+    <strong>The QMX does not have a PWR_ON/GND jack.</strong> Those signals have to be
+    extended from the main board out to a connector you add yourself. Do not
+    go looking for an existing socket, and do not connect them to some other
+    connector that looks plausible <em>(Randy N4OPI)</em>. Randy has documented the
+    whole modification, including a schematic — see
+    <a href="#power-cycle-relay-building-the-interface">Power-cycle relay: building the interface</a>
+    below.</p>
+<div class="highlight"><pre><span></span><code>Both pins are held as **driven outputs** from boot — they never float.
+From v1.11.3 they rest on the **inactive side of the active level you
+have chosen**, so a relay wired to them cannot be closed by the Tab5
+booting, crashing or being reflashed. Before v1.11.3 they always rested
+LOW, which for an active-Low setting meant the relay was held **closed**
+from power-on until the first pulse released it *(Randy N4OPI)*.
+Changing the active level re-applies the resting level immediately.
+
+!!! warning "Not while Port mode is Unit GPS"
+    The relay and the Unit GPS v1.1 are **the same two pins**, so only
+    one of them can be plugged in. With Port mode on **Unit GPS** the
+    row above is greyed, `gpio_pulse` and `gpio_power_cycle` answer
+    `PORT.A is in Unit GPS mode`, and nothing is driven — including the
+    pins resting. Switch back to **Relay** first (and unplug the GPS).
+    See [Port mode](settings.md#port-mode-porta).
+</code></pre></div>
+<ul>
+<li><strong>Keyboard shortcuts</strong> — assign what the Tab5's snap-on keyboard does (see below)</li>
+<li><strong>Reset settings</strong> — clear stored settings back to defaults (see <a href="../../reference/troubleshooting/">Troubleshooting</a>)</li>
+<li><strong>Reset WiFi</strong> — clear just the WiFi/network state</li>
+</ul>
+</li>
+</ul>
+<h3 id="power-cycle-relay-building-the-interface">Power-cycle relay: building the interface<a class="headerlink" href="#power-cycle-relay-building-the-interface" title="Permanent link">&para;</a></h3>
+<p><em>Designed, built and documented by </em><em>Randy N4OPI</em><em>, and published here with his
+permission. The Tab5 side of this — the pin, the level and the pulse length —
+is all the firmware does; everything below is the hardware that turns a pulse
+into a QMX that switches itself on.</em></p>
+<p><strong>Why bother.</strong> A Tab5 firmware upgrade is a warm reset, and a warm reset with
+the radio attached always leaves the QMX needing a manual power cycle. That one
+step is what otherwise keeps a remote station from being upgradeable from
+another room — or another country.</p>
+<p>!!! warning "Use G53, not G54 — the drawing below is REV 1.0, corrected"
+    The schematic reproduced here is Randy's <strong>REV 1.0</strong> (2026-09-07) and draws
+    the Grove plug's <strong><code>G54</code></strong> going to R1. <strong>Wire it to <code>G53</code> instead.</strong> The
+    copy below is marked up with that correction — the ring on the P1 pin and
+    the red band along the bottom are added here, not part of his drawing.</p>
+<div class="highlight"><pre><span></span><code>`G54` is the same pin the **M5Stack Unit GPS v1.1** receives on, and both
+are on PORT.A — the one 4-pin socket. A relay interface on `G54` therefore
+sits across the GPS's transmitter, and there is no setting that gets you
+out of it: "Relay: drive only the selected pin" protects the pin you did
+**not** select. See
+[Settings ▸ Sharing PORT.A](settings.md#port-mode-porta).
+
+Nothing else in the drawing changes — same two components, same jack, same
+patch lead. Randy has issued a revised drawing; look in the
+[QRPLabs groups.io **Files** area](https://groups.io/g/QRPLabs/files) for
+his current version, which will carry the change in the artwork itself.
+</code></pre></div>
+<p><img alt="Schematic: M5Stack Tab5 power switch for QRP Labs QMX(+), REV 1.0 with a correction marked on it — wire G53, not the G54 the drawing shows — a 4-pin Grove plug on the Tab5's EXT socket feeds a 100 ohm resistor into a PC817C optoisolator, whose output drives a 3.5 mm stereo jack on the module, reaching a 2.5 mm TRS jack wired to PWR_ON and GND inside the radio through a patch lead" src="../../img/relay-schematic-n4opi.png" /></p>
+<h4 id="parts">Parts<a class="headerlink" href="#parts" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Ref</th>
+<th>Part</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P1</td>
+<td>4-pin Grove plug (HY2.0-4P)</td>
+<td>Into the Tab5's side EXT socket. Its four pins are <code>EXT 5V</code>, <code>G53</code>, <code>G54</code>, <code>GND</code></td>
+</tr>
+<tr>
+<td>R1</td>
+<td>100 Ω, ¼ W, 5 %</td>
+<td>In series with the optoisolator's LED</td>
+</tr>
+<tr>
+<td>U1</td>
+<td>PC817C optoisolator</td>
+<td>Keeps the Tab5 and the radio electrically apart — the reason this is safe</td>
+</tr>
+<tr>
+<td>J1</td>
+<td>3.5 mm stereo audio jack</td>
+<td>The output side, mounted on the module — <strong>not</strong> the jack that goes in the radio</td>
+</tr>
+<tr>
+<td>—</td>
+<td>3.5 mm to 2.5 mm TRS patch cable</td>
+<td>Joins the module's 3.5 mm jack to the 2.5 mm jack in the radio. Tip to tip, sleeve to sleeve</td>
+</tr>
+</tbody>
+</table>
+<h4 id="wiring">Wiring<a class="headerlink" href="#wiring" title="Permanent link">&para;</a></h4>
+<ol>
+<li><strong>In the radio.</strong> Fit a <strong>2.5 mm TRS jack</strong> somewhere accessible on the case
+   and wire it internally: <strong>tip to <code>PWR_ON</code>, sleeve to <code>GND</code></strong>. This is the
+   only irreversible part of the job, and the only part that involves opening
+   the QMX. Randy brought his out on the rear panel beside the ATU RF input.</li>
+<li><strong>The interface.</strong> <strong><code>G53</code></strong> goes through
+   <strong>R1</strong> into the PC817C's LED, with the Grove plug's <code>GND</code> completing that
+   side. (<code>G54</code> works electrically and the firmware will pulse it, but it is
+   the Unit GPS's receive pin on the same socket — use <code>G53</code> unless you are
+   certain no GPS will ever be fitted.) The PC817C's phototransistor goes across <strong>J1</strong>, the module's 3.5 mm jack, tip and sleeve, so
+   a pulse from the Tab5 briefly connects <code>PWR_ON</code> to <code>GND</code>. <strong>The
+   phototransistor side is polarity-sensitive — follow the schematic</strong>, and note
+   that the <code>EXT 5V</code> pin is not used at all.</li>
+<li><strong>Assembly.</strong> In Randy's words: <em>"I built it onto a small chunk of
+   breadboard, but with just 2 components it could just as easily be connected
+   point to point and sealed up inside a piece of heatshrink tubing. Make sure
+   you insulate your wires so the heatshrink doesn't squeeze them together and
+   create a short."</em></li>
+</ol>
+<h4 id="settings-that-work">Settings that work<a class="headerlink" href="#settings-that-work" title="Permanent link">&para;</a></h4>
+<p>In <strong>Miscellaneous ▸ Power-cycle relay</strong>: the pin you actually wired (<strong>G53</strong>),
+active level <strong>High</strong>, and <strong>2000 ms</strong> — <em>"I've found 2000ms to be
+sufficient"</em>. The firmware's own default is 1000 ms, so this is one to set and
+save; it is remembered from v1.10.9 on.</p>
+<p>If a Unit GPS shares the socket, also tick <strong>Relay: drive only the selected
+pin</strong> (v1.20.2) so relay mode stops holding <code>G54</code> as a driven output against
+the GPS's transmitter.</p>
+<p>!!! note "Why the bottom-edge Dupont pins are not offered"
+    A neater cable run would leave the Tab5's bottom edge rather than the side,
+    and Randy asked about exposing <code>G0</code>, <code>G1</code>, <code>G49</code> and <code>G50</code> for it — then
+    talked himself out of it in the same message: <em>"The Dupont connector isn't
+    keyed, so a person could make a disastrous mistake if they are also trying
+    to power the Tab5 using the 12V IN pin."</em></p>
+<div class="highlight"><pre><span></span><code>There is a second reason he could not have known: **`G0` and `G1` are the
+I2C bus for the snap-on keyboard**, so a relay pulse there would fight a
+keyboard on any Tab5 that has one. `G53` and `G54` are on a keyed connector
+and are held as driven outputs from boot, which is what makes them safe to
+hand to people — so those two are the only pins the firmware will pulse.
+</code></pre></div>
+<h3 id="keyboard-shortcuts">Keyboard shortcuts<a class="headerlink" href="#keyboard-shortcuts" title="Permanent link">&para;</a></h3>
+<p><strong>Miscellaneous ▸ Keyboard shortcuts</strong> assigns what the Tab5's snap-on keyboard
+does. Each row is a modifier, a key and an action; <strong>Add shortcut</strong> makes a new
+one, <strong>Remove</strong> deletes it, and <strong>Restore defaults</strong> puts back the nine the
+firmware ships with.</p>
+<p>There are <strong>25 actions</strong> — opening any of the setup windows, the manual, the log,
+the radio menus, plus zoom in and out, brighter and dimmer, flat spectrum, and
+releasing the radio to its own front panel. <strong>Alt is left completely unused</strong> by
+the defaults, so it is free for your own bindings.</p>
+<p>The editor is here rather than on the Tab5 for a simple reason: assigning
+shortcuts is a setup job done once, and doing it on the Tab5 would mean typing
+on the very keyboard you are configuring.</p>
+<p>!!! note "Nothing that transmits can be bound"
+    A button you deliberately press is one thing; a two-key combination that a
+    slipped finger can produce is another.</p>
+<h2 id="tab5shot-what-the-screen-looks-like-right-now">Tab5Shot - what the screen looks like right now<a class="headerlink" href="#tab5shot-what-the-screen-looks-like-right-now" title="Permanent link">&para;</a></h2>
+<p><strong>Tab5Shot</strong> in the bottom bar opens a live <code>/ss.bmp</code> capture of the Tab5's
+screen in a new tab. It is the quickest way to put what you are seeing into a
+bug report or a message to the group, without a camera and without reaching for
+the device.</p>
+<p>!!! note "It stops animations while it reads"
+    The capture comes from the live framebuffer, so the waterfall pauses for the
+    moment it takes. Nothing else is affected.</p>
+<h2 id="config-backup-restore-and-edit">Config backup, restore and edit<a class="headerlink" href="#config-backup-restore-and-edit" title="Permanent link">&para;</a></h2>
+<p>The <strong>Config down / Config up</strong> buttons in the bottom bar save every setting to
+a plain text file, so you can edit it on a PC, put it back, or share part of it.</p>
+<p><strong>Config down</strong> downloads <code>qmx-config.txt</code>, an INI-style file grouped into
+sections:</p>
+<table>
+<thead>
+<tr>
+<th>Section</th>
+<th>What is in it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>[settings]</code></td>
+<td>Callsign, grid, WiFi SSID and password, CW pitch, IF trim, I/Q balance, flat spectrum, zoom, colour map, brightness, dB range, EMA, GPS toggle, keypad layout, QRZ key, eQSL user and password</td>
+</tr>
+<tr>
+<td><code>[cq]</code></td>
+<td>The three FT8 CQ-message presets, and which one is active</td>
+</tr>
+<tr>
+<td><code>[ft8_filters]</code></td>
+<td>The CQ-run include/exclude filter terms and toggles</td>
+</tr>
+<tr>
+<td><code>[memories]</code></td>
+<td>The 32 memory channels, one per line: <code>slot = freq_hz, mode, label</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Config up</strong> picks an edited file and <strong>merges</strong> it back. Only the keys and
+sections actually present in the file change; everything else is left alone, and
+unknown keys are ignored, so a file from a newer firmware still loads. Memory
+channels apply at once, other settings after a restart.</p>
+<p>!!! danger "The file contains your passwords in clear text"
+    It holds your <strong>WiFi password</strong> and your <strong>QRZ and eQSL credentials</strong>
+    unencrypted, because it is meant to work as a complete backup. Keep it
+    private, and strip those lines before sending the file to anyone.</p>
+<p>Three things it is good for:</p>
+<ol>
+<li><strong>Back up before a clean flash.</strong> Config down, erase and flash, Config up -
+   seconds instead of re-typing everything on glass.</li>
+<li><strong>Edit with a real keyboard.</strong> Faster for callsign, grid, CQ messages, or
+   entering a batch of memory channels.</li>
+<li><strong>Share a band plan.</strong> Copy just the <code>[memories]</code> section into a message;
+   another operator pastes it into their own file and uploads it, and their
+   other settings are untouched.</li>
+</ol>
+<h2 id="lotw-upload">LoTW Upload<a class="headerlink" href="#lotw-upload" title="Permanent link">&para;</a></h2>
+<p>Uploading to ARRL's <strong>Logbook of The World</strong> requires an existing LoTW account and a callsign certificate (made with ARRL's TQSL program).</p>
+<p><strong>One-time setup:</strong> open the <strong>QSO Logs</strong> menu -&gt; <strong>LoTW setup</strong>. A guided two-page window walks you through it:</p>
+<ol>
+<li><strong>Page 1</strong> explains how to export your callsign certificate from the TQSL program on your PC (<strong>Callsign Certificate -&gt; Save the Callsign Certificate</strong>, which produces a <code>.p12</code> file), with a button that opens ARRL's own instructions.</li>
+<li><strong>Page 2</strong> imports the <code>.p12</code> file, its passphrase, and your DXCC entity (plus optional CQ/ITU zones, and <strong>US state and county</strong> — see below). The <code>.p12</code> is parsed <strong>in the browser</strong> — the passphrase never reaches the device.</li>
+</ol>
+<p>After setup the button reads <strong>LoTW ↑</strong>. Each click signs all not-yet-uploaded QSOs on the device with your certificate and uploads them to lotw.arrl.org.</p>
+<p><strong>US stations: fill in state and county</strong>. These were not being sent at all before, which meant US operators' uploaded QSOs earned <strong>no Worked All States and no county credit</strong> — for them or for the stations they worked. Fill them in if your TQSL station location has them. The county is the <strong>name on its own</strong> (<code>Arlington</code>), not <code>VA,Arlington</code>. Operators outside the US can leave both blank.</p>
+<p><strong>Certificate renewal</strong> — LoTW certificates expire roughly every 3 years. Use the <strong>↳ Change LoTW certificate</strong> row beneath the upload button to re-run setup (<strong>Ctrl-click</strong> on <strong>LoTW ↑</strong> still works, and was the only way in before v1.10.5). From v1.3.3, re-submitting the <em>same</em> certificate no longer re-uploads your whole log — only an actually-changed certificate resets the upload position, because a new key means every QSO has to be re-signed. So you can go back in to add a state and county without resending everything.</p>
+<p><strong>What the result tells you.</strong> From v1.10.5 the message shown after an upload is <strong>LoTW's own reply</strong>, not just our count. That matters: LoTW accepts a <em>file</em> and processes the contacts in it afterwards, so a figure like "22 uploaded" only ever described what was sent. If contacts are being rejected, the server's own words are what say why.</p>
+<p><strong>If an upload does not appear on LoTW</strong>, check <a href="https://www.arrl.org/logbook-queue-status">ARRL's queue status</a> before assuming a fault — the queue has run hours behind at busy times. LoTW rejects a malformed file at upload time, so anything that reached the queue was signed correctly.</p>
+<h2 id="upload-behaviour">Upload Behaviour<a class="headerlink" href="#upload-behaviour" title="Permanent link">&para;</a></h2>
+<p>Uploads work <strong>while FT8 or FT4 is actively running</strong> — the panadapter briefly pauses the FFT and SD-archive activity during the HTTPS transfer, then resumes automatically. A result is shown once the upload completes, reporting how many QSOs were sent.</p>
+<p>Each upload remembers where it left off — re-uploading skips QSOs that were already sent in a previous session.</p>
+<h2 id="network-requirements">Network Requirements<a class="headerlink" href="#network-requirements" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>WiFi must be on</strong> (settings drawer)</li>
+<li><strong>IP address shown</strong> in settings (or static IP if you prefer)</li>
+<li><strong>Both Tab5 and browser on the same LAN</strong> (no internet needed)</li>
+<li><strong><code>qmx.local</code></strong> resolves on most networks; guest/hotel WiFi often blocks the multicast it needs, in which case use the IP</li>
+<li><strong>5 GHz WiFi works</strong> but 2.4 GHz is recommended (longer range)</li>
+</ul>
+<h2 id="limitations">Limitations<a class="headerlink" href="#limitations" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>One browser at a time</strong> — the Tab5 streams the spectrum to a single browser. Open a
+  second one (or a phone, or another tab) and it takes over; the first says <em>"another
+  browser took the live view — click to take it back"</em> and stops, rather than the two
+  fighting over it. Click that message to reclaim it.</li>
+<li><strong>Clock sync</strong> — the time-sync window is still on the Tab5 only</li>
+<li><strong>Real-time chat</strong> — no operator messaging</li>
+<li><strong>Export formats</strong> — ADIF only (import to EQSL, WSJT-X, etc. yourself)</li>
+<li><strong>Latency</strong> — ~200 ms typical (WiFi dependent)</li>
+<li><strong>Stale connection recovery</strong> — if the browser's network drops without a clean disconnect (e.g., putting a laptop to sleep), the web view may freeze briefly before recovering. Recovery is automatic and capped at ~5 seconds.</li>
+</ul>
+<hr />
+<p><strong>Next:</strong> Set up <a href="../time-sync/">Time Sync</a> or explore <a href="../settings/">Settings</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.sections", "toc.follow", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

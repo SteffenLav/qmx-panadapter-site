@@ -1,0 +1,2163 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://tab5.lav.dk/guide/cw/">
+      
+      
+        <link rel="prev" href="../ft8-tx/">
+      
+      
+        <link rel="next" href="../webradio/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>CW (beta) - QMX Panadapter</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="light" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#cw-beta" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="QMX Panadapter" class="md-header__button md-logo" aria-label="QMX Panadapter" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            QMX Panadapter
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              CW (beta)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="light" data-md-color-primary="blue" data-md-color-accent="orange"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    <!-- Buy me a coffee (OZ1LAV) — just left of the search field -->
+    <style>
+      /* The official BMC widget renders ~51px tall (nearly the whole top bar).
+         zoom scales it (and its layout box, so no leftover gap) down to about
+         the search-field height. Tweak the factor to taste. */
+      .bmc-header-btn { display:flex; align-items:center; margin:0 .2rem; zoom:0.72; }
+    </style>
+    <div class="bmc-header-btn">
+      <script type="text/javascript"
+              src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js"
+              data-name="bmc-button"
+              data-slug="OZ1LAV"
+              data-color="#FFDD00"
+              data-emoji="☕"
+              data-font="Lato"
+              data-text="Buy me a coffee"
+              data-outline-color="#000000"
+              data-font-color="#000000"
+              data-coffee-color="#ffffff"></script>
+    </div>
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/SteffenLav/qmx-panadapter" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    qmx-panadapter
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../quick-start/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Quick Start
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../getting-help/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Getting Help
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../panadapter/" class="md-tabs__link">
+          
+  
+  
+  User Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../reference/gestures/" class="md-tabs__link">
+          
+  
+  
+  Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../build/build/" class="md-tabs__link">
+          
+  
+  
+  For Builders
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../releases/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Releases
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="QMX Panadapter" class="md-nav__button md-logo" aria-label="QMX Panadapter" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    QMX Panadapter
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/SteffenLav/qmx-panadapter" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    qmx-panadapter
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quick-start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-help/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Help
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Guide
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    User Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../panadapter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Panadapter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../audio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spots/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Live Spots
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spot-map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spot Map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../web-ui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web UI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ft8-rx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FT8 RX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ft8-tx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FT8 TX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CW (beta)
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CW (beta)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-screen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The screen
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#band-discipline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Band discipline
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tx-offset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TX offset
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#filter-bandwidth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Filter bandwidth
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#break-in-delay-semi-qsk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Break-in delay (Semi QSK)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory-messages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Memory messages
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#macro-sets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Macro sets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reading-the-band" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reading the band
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#listening-the-two-audio-paths-and-what-each-one-can-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Listening: the two audio paths, and what each one can do
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Listening: the two audio paths, and what each one can do">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-the-tab5-cannot-give-you-a-sidetone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why the Tab5 cannot give you a sidetone
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#binaural-cw-needs-both-ears" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Binaural CW needs both ears
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-recommended-setup-for-working-stations-by-paddle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The recommended setup for working stations by paddle
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-a-qso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Running a QSO
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practice-mode-no-radio-needed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practice mode (no radio needed)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gestures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestures
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#known-limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Known limitations
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../webradio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web Radio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../js8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JS8 (beta)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../time-sync/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Time Sync
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wspr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WSPR
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../radio-menus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Radio Menus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/gestures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gestures & Controls
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/hardware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hardware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/web-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/rigctld/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hamlib rigctld
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    For Builders
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    For Builders
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build/build/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Build from Source
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build/architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build/contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing & Feedback
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Releases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-screen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The screen
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#band-discipline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Band discipline
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tx-offset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TX offset
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#filter-bandwidth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Filter bandwidth
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#break-in-delay-semi-qsk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Break-in delay (Semi QSK)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory-messages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Memory messages
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#macro-sets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Macro sets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reading-the-band" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reading the band
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#listening-the-two-audio-paths-and-what-each-one-can-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Listening: the two audio paths, and what each one can do
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Listening: the two audio paths, and what each one can do">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-the-tab5-cannot-give-you-a-sidetone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why the Tab5 cannot give you a sidetone
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#binaural-cw-needs-both-ears" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Binaural CW needs both ears
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-recommended-setup-for-working-stations-by-paddle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The recommended setup for working stations by paddle
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-a-qso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Running a QSO
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practice-mode-no-radio-needed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practice mode (no radio needed)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gestures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestures
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#known-limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Known limitations
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="cw-beta">CW <em>(beta)</em><a class="headerlink" href="#cw-beta" title="Permanent link">&para;</a></h1>
+<p>The CW page is the third screen in the carousel: swipe left from the Panadapter to reach FT8, and left again for CW. The spectrum and waterfall keep running behind it, so you still see the band while you operate. The page ships <strong>on</strong> - it is this release's own beta. Turn it off with <code>cw_page_enabled = no</code> in a config file, or <code>{"action":"cw_enable","on":false}</code> over the API, if you would rather not have it yet.</p>
+<p>!!! warning "There is no abort for a message in progress"
+    <code>KY</code> has no abort in the QMX's CAT manual. Tested on the bench: neither sending <code>RX;</code> nor bouncing the mode away from CW and back stops an in-flight send - both were tried and both simply had no effect, the keyer ran to completion either way. Once you tap a memory, it sends to the end. Keying the radio itself <strong>is</strong> confirmed working, off air, by the operator.</p>
+<p>The page is built for one-handed, gloved, field operation — the kind of CW you do standing at a picnic table with a paddle you have not touched in a month.</p>
+<hr />
+<h2 id="the-screen">The screen<a class="headerlink" href="#the-screen" title="Permanent link">&para;</a></h2>
+<p><strong>Left pane, top to bottom:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MODE: CW</strong></td>
+<td>Header. The page forces the radio into CW mode whenever you enter it.</td>
+</tr>
+<tr>
+<td><strong>WPM</strong> with <code>-</code> / <code>+</code></td>
+<td>Keyer speed, read back from the radio so the number always matches what the QMX itself thinks. <strong>Tap the number itself</strong> <em>(v1.24.2)</em> for a numeric keypad instead of stepping one WPM at a time.</td>
+</tr>
+<tr>
+<td><strong>Park</strong></td>
+<td>Your POTA park reference, used by the <code>{PARK}</code> macro. Tap to edit.</td>
+</tr>
+<tr>
+<td><strong>TX offset</strong> <em>(v1.24.2)</em></td>
+<td>Opens the CW transmit offset popup — see <a href="#tx-offset">TX offset</a> below.</td>
+</tr>
+<tr>
+<td><strong>NEXT</strong></td>
+<td>The one-tap QSO ladder — see <a href="#running-a-qso">Running a QSO</a>.</td>
+</tr>
+<tr>
+<td><strong>Six memory buttons</strong></td>
+<td>Your keyer messages.</td>
+</tr>
+<tr>
+<td><strong>Status line</strong></td>
+<td>What the radio is doing: receiving, keying, or how many characters are left to send.</td>
+</tr>
+<tr>
+<td><strong>General / Contest toggle</strong> (bottom of the panel)</td>
+<td>Switches between two named sets of six macros — see <a href="#macro-sets">Macro sets</a>. Placed at the very bottom, separated from the memory buttons by the status line, so it cannot be mis-hit while working the macros above it.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Right of the pane:</strong> the live spectrum and waterfall, the <strong>decode ticker</strong> along the bottom, the <strong>copilot hint</strong> line just above it, and the <strong>station card</strong> when a callsign has been heard.</p>
+<hr />
+<h2 id="band-discipline">Band discipline<a class="headerlink" href="#band-discipline" title="Permanent link">&para;</a></h2>
+<p>The CW page only lets you operate the CW portion of the band. That is deliberate:</p>
+<ul>
+<li>Entering the page moves you into the band's CW segment if you were somewhere else.</li>
+<li>Changing band lands you in the <strong>middle of that band's CW segment</strong>.</li>
+<li>Tuning — by tap, drag, band-plan strip or keypad — is <strong>clamped</strong> to the CW segment. You cannot accidentally tune into the phone portion while on this page.</li>
+<li>The band-plan strip below the spectrum shows only the CW segment, and the filter is set to <strong>300 Hz</strong> on entry.</li>
+</ul>
+<p>The segment boundaries come from the band plan for your region, which you can set in <strong>Settings → Band-plan region</strong>.</p>
+<hr />
+<h2 id="tx-offset">TX offset<a class="headerlink" href="#tx-offset" title="Permanent link">&para;</a></h2>
+<p><em>(v1.24.2)</em> Tap the <strong>TX offset</strong> button, beside Park, to open a popup with four nudge buttons (<code>-50</code>, <code>-10</code>, <code>+10</code>, <code>+50</code> Hz) and the current value.</p>
+<p>This shifts where you <strong>transmit</strong> relative to where you are <strong>listening</strong> — without moving your dial. It exists so you can avoid zero-beating the exact frequency of the station you are calling: many operators prefer to be heard a little off to the side of a pileup rather than dead on top of it. The radio achieves this with its own split (VFO A/B) mechanism under the hood; you do not need to think about VFOs, only about the offset in Hz.</p>
+<ul>
+<li><strong>Clear</strong> resets the offset to zero (transmit where you listen — "zero-beat"). This is a different thing from the <strong>long-press on the top bar's BW indicator</strong>, which retunes your <em>receive</em> dial onto a signal's peak — the two happen to share the word "zero-beat" in amateur radio but do opposite jobs: one moves your RX frequency onto a signal, the other clears a TX/RX offset back to none.</li>
+<li>Range is ±300 Hz, in 10 Hz steps from the nudge buttons.</li>
+<li>The setting is stored on the Tab5 and survives a reboot; it has no effect outside CW/CW-R.</li>
+<li>This same control also exists in the settings drawer (<strong>Settings → Radio → CW TX offset</strong>) if you prefer a slider.</li>
+</ul>
+<h2 id="filter-bandwidth">Filter bandwidth<a class="headerlink" href="#filter-bandwidth" title="Permanent link">&para;</a></h2>
+<p>The top bar's <strong>BW: ---</strong> indicator is live in CW mode as well as FT8/SSB/AM: tap it for the same filter-width popup you use everywhere else, showing only the widths your radio's own <strong>CW → Choose filters</strong> menu has enabled. There is no separate bandwidth control on the CW page itself — the top bar one already works here, and reaches the radio's real hardware filter.</p>
+<h2 id="break-in-delay-semi-qsk">Break-in delay (Semi QSK)<a class="headerlink" href="#break-in-delay-semi-qsk" title="Permanent link">&para;</a></h2>
+<p><em>(v1.24.2)</em> How long the receiver stays muted after you stop keying — useful if you run an amplifier or relay that needs the receiver quiet for the whole transmission rather than switching between every dit and dah. This lives in the settings drawer, not on the CW page itself: see <a href="../settings/#radio">Semi QSK</a> under Settings → Radio for the full set of modes and the delay control.</p>
+<hr />
+<h2 id="memory-messages">Memory messages<a class="headerlink" href="#memory-messages" title="Permanent link">&para;</a></h2>
+<p>Six slots, each with macros expanded when you send:</p>
+<table>
+<thead>
+<tr>
+<th>Macro</th>
+<th>Becomes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>{MYCALL}</code></td>
+<td>Your callsign from Settings</td>
+</tr>
+<tr>
+<td><code>{PARK}</code></td>
+<td>The park reference from the Park button</td>
+</tr>
+<tr>
+<td><code>{CALL}</code></td>
+<td>The station you are working</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Sending and editing:</strong></p>
+<ul>
+<li><strong>Tap</strong> a memory to send it. The button lights <strong>light grey</strong> while your finger is down so you can see which one will fire.</li>
+<li><strong>Drag up or down</strong> without lifting to move to a different button — useful because the buttons are narrow and a fingertip covers more than one. Lift on the one you want.</li>
+<li><strong>Hold for 800 ms</strong> and the editor opens immediately, with your finger still down. The hold timer restarts whenever you slide to a different button, so taking your time to aim never opens the editor by accident.</li>
+<li>An <strong>empty slot</strong> opens the editor when tapped.</li>
+</ul>
+<p>The editor shows all six messages at once, so you can set up a whole activation in one visit.</p>
+<hr />
+<h2 id="macro-sets">Macro sets<a class="headerlink" href="#macro-sets" title="Permanent link">&para;</a></h2>
+<p>The toggle at the bottom of the panel switches between two independent sets of
+six macros, each with its own editor:</p>
+<ul>
+<li><strong>General</strong> — everyday CQ/exchange messages. The default macros use <code>599</code>
+  for the signal report.</li>
+<li><strong>Contest</strong> — the same six slots, with <code>5NN</code> in place of <code>599</code>. Whichever
+  signal report you actually sent is scanned from the text at send time, so
+  the log always records what went out, not a hard-coded assumption.</li>
+</ul>
+<p>Edit either set by holding a memory button as above — the editor's title
+names which set you are editing, and a toggle tap elsewhere mid-edit cannot
+redirect where Save writes to.</p>
+<hr />
+<h2 id="reading-the-band">Reading the band<a class="headerlink" href="#reading-the-band" title="Permanent link">&para;</a></h2>
+<p><strong>The decode ticker</strong> shows what the QMX's own CW decoder hears, letter by letter as it arrives.</p>
+<p>With no signal, a CW decoder produces a steady dribble of single characters — <code>T T T T T</code>. The ticker <strong>squelches</strong> these: when the same lone letter repeats, it is shown twice and then suppressed until something else arrives. A lone <code>R</code>, <code>K</code> or <code>N</code>, and <code>EE</code>, are never filtered, because those are real. The filter only affects what is displayed — callsign capture and the hints always see the raw stream, so nothing can be lost to it.</p>
+<p><strong>The copilot hint line</strong> sits just above the ticker and says what the copy <em>meant</em>, in plain language:</p>
+<table>
+<thead>
+<tr>
+<th>You see</th>
+<th>It means</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>W1AW is calling CQ — tap the card to answer</strong></td>
+<td>Someone is calling and you may answer</td>
+</tr>
+<tr>
+<td><strong>W1AW is activating a park — tap the card to work them</strong></td>
+<td>A POTA activation (<code>CQ POTA</code>)</td>
+</tr>
+<tr>
+<td><strong>W1AW is answering YOU — tap the card to work them</strong></td>
+<td>They came back to your call</td>
+</tr>
+<tr>
+<td><strong>That was YOUR callsign</strong></td>
+<td>Your call went by</td>
+</tr>
+<tr>
+<td><strong>That was a signal report: 599</strong></td>
+<td>A report was sent</td>
+</tr>
+<tr>
+<td><strong>That was their park reference: US-1211</strong></td>
+<td>A POTA reference was sent</td>
+</tr>
+<tr>
+<td><strong>They are signing off (73 / TU)</strong></td>
+<td>The contact is ending</td>
+</tr>
+<tr>
+<td><strong>They want a repeat — send it again</strong></td>
+<td><code>AGN</code> / <code>PSE</code></td>
+</tr>
+<tr>
+<td><strong>QRZ — they are asking who called</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Hints are <strong>green when there is something to act on</strong> and amber otherwise, and they clear after about 25 seconds so a stale reading never sits beside newer copy.</p>
+<p>This is what makes the page usable if you cannot yet copy CW by ear: the ticker gives you the letters, the hint tells you what just happened, and NEXT tells you what to send back.</p>
+<p><strong>The station card</strong> appears when a callsign is heard, showing the country, whether you have worked them before (and on this band), the report they sent you, and their <strong>park reference</strong> if they gave one. Tap the card to start working them; tap again to drop them.</p>
+<hr />
+<h2 id="listening-the-two-audio-paths-and-what-each-one-can-do">Listening: the two audio paths, and what each one can do<a class="headerlink" href="#listening-the-two-audio-paths-and-what-each-one-can-do" title="Permanent link">&para;</a></h2>
+<p>The Tab5 and the QMX produce <strong>separate</strong> audio from the same receiver, and
+knowing which is which is the difference between a setup that works first time
+and an evening of fighting it.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>QMX headphone output</th>
+<th>Tab5 output (speaker or headphones)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Source</td>
+<td>the QMX's own demodulator</td>
+<td>the raw I/Q stream over USB</td>
+</tr>
+<tr>
+<td>Carries your keying sidetone</td>
+<td><strong>yes</strong></td>
+<td><strong>no, and it never will</strong></td>
+</tr>
+<tr>
+<td>Stereo separation of two stations</td>
+<td>no</td>
+<td><strong>yes</strong> — Binaural CW</td>
+</tr>
+<tr>
+<td>Set its level with</td>
+<td>the radio's volume (or <strong>QMX volume</strong> in the drawer)</td>
+<td><strong>RX Volume</strong> in Resource Management</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The two volumes are completely independent.</strong> Measured on the bench
+2026-11-02: moving the QMX's AF gain across its whole useful range — 0 dB, then
+40 dB, a factor of 100 in amplitude, each confirmed by the radio's own
+read-back — changed the level arriving over USB by nothing at all. I/Q mode
+carries the samples from <em>before</em> the QMX's audio chain, so the radio's volume
+and its RF gain both stay on the radio's side of the glass. Turn the QMX right
+down and the Tab5 keeps playing at exactly the same level.</p>
+<p>The <a href="../audio/">Audio</a> chapter covers the rest of the audio path — the AGC, the
+pan controls, and listening in a browser. What follows here is only what a CW
+operator has to decide.</p>
+<h3 id="why-the-tab5-cannot-give-you-a-sidetone">Why the Tab5 cannot give you a sidetone<a class="headerlink" href="#why-the-tab5-cannot-give-you-a-sidetone" title="Permanent link">&para;</a></h3>
+<p>Its playback path is about <strong>100 ms</strong> deep — ~80 ms of I2S buffering, up to
+48.5 ms inside the codec write, plus a ~21 ms processing frame. A dot at
+20 WPM lasts 60 ms, so the tone would begin after the element that produced it
+had already ended, and under QSK you would hear the previous character while
+sending the next. This is measured, it is the Tab5's own latency rather than
+the radio's, and no setting changes it. FlexRadio reach the same conclusion
+about their own hardware: the sidetone is delivered by whatever device is doing
+the keying.</p>
+<p>So <strong>your keying monitor always comes from the QMX.</strong></p>
+<h3 id="binaural-cw-needs-both-ears">Binaural CW needs both ears<a class="headerlink" href="#binaural-cw-needs-both-ears" title="Permanent link">&para;</a></h3>
+<p><strong>Binaural CW (stereo separation)</strong> in Resource Management splits the CW
+passband the radio has already chosen into its lower and upper halves and pans
+them left and right, with a little cross-feed so a dead-centre station still
+sits in the middle. Two stations either side of your pitch then separate
+spatially instead of blurring into one note.</p>
+<p>Three things to know:</p>
+<ul>
+<li>It needs <strong>RX Audio</strong> switched on first — the effect is produced on the Tab5.</li>
+<li>It applies in <strong>CW and CW-R only</strong>. Every other mode is plain mono whatever
+  this is set to.</li>
+<li>⛔ <strong>Do not split your headphones between the two radios while it is on.</strong>
+  One ear then gives you one half of the passband and only a trace of the
+  other, so you would lose stations on the far side of your own pitch. If you
+  want the QMX in one ear and the Tab5 in the other, turn Binaural CW <strong>off</strong>
+  and accept mono on the Tab5 side.</li>
+</ul>
+<h3 id="the-recommended-setup-for-working-stations-by-paddle">The recommended setup for working stations by paddle<a class="headerlink" href="#the-recommended-setup-for-working-stations-by-paddle" title="Permanent link">&para;</a></h3>
+<p>Both ears on the Tab5 with Binaural CW on, and the QMX's sidetone switched into
+those same headphones on key-down — an analog audio switch driven from PTT.
+That is the only arrangement that gives you spatial separation while receiving
+<em>and</em> a monitor with correct QSK timing, because the switch moves the audio in
+hardware with no buffer in the way. The design is Michael KZ4LY's.</p>
+<p>Without a switch you have to choose one:</p>
+<ul>
+<li><strong>Both ears on the Tab5</strong> — best receiving, no keying monitor.</li>
+<li><strong>QMX in one ear, Tab5 in the other, Binaural CW off</strong> — a monitor in one
+  ear and mono receive in the other.</li>
+</ul>
+<p>On the radio's side, whichever you pick, set the monitor so it stops moving
+when you change receive volume:</p>
+<ol>
+<li>In the QMX's <strong>CW</strong> menu set <strong>Sidetone abs/rel</strong> to <strong>Absolute</strong>.</li>
+<li>Set <strong>Sidetone volume</strong> to taste.</li>
+</ol>
+<p>Left at the factory setting of <em>Relative</em>, the main volume control moves the
+received audio and your sidetone together by the same amount, so you cannot
+bring the receive level down without taking your own monitor with it. The
+<strong>CW monitor level</strong> row in the settings drawer sets both of these from the
+Tab5, and reads them back from the radio rather than keeping its own copy.</p>
+<hr />
+<h2 id="running-a-qso">Running a QSO<a class="headerlink" href="#running-a-qso" title="Permanent link">&para;</a></h2>
+<p>The <strong>NEXT</strong> button always shows exactly what it will send. One tap sends it and advances:</p>
+<ol>
+<li><strong>CQ</strong> — sends your CQ memory. Stays here, listening.</li>
+<li><strong>Report</strong> — once a station is adopted, sends <code>&lt;their call&gt;</code> plus your report memory.</li>
+<li><strong>TU + log</strong> — sends your closing memory <strong>and writes the QSO to the ADIF log</strong>.</li>
+</ol>
+<p>A station is adopted automatically when the decoder hears your call followed by <code>DE &lt;their call&gt;</code> shortly after your CQ. You can also adopt anyone by tapping the station card, which is how you answer someone else's CQ. <strong>Long-press NEXT</strong> to drop the contact and go back to CQ.</p>
+<p>The logged contact records mode CW, the report you sent, and the report you received <strong>only if it was actually decoded</strong> — a report that was never exchanged is left out of the log rather than invented.</p>
+<hr />
+<h2 id="practice-mode-no-radio-needed">Practice mode (no radio needed)<a class="headerlink" href="#practice-mode-no-radio-needed" title="Permanent link">&para;</a></h2>
+<p><strong>Settings → CW Simulation Mode</strong> (or a three-finger hold on this page) turns it into a practice bench. A red border around the screen shows it is active, and <strong>the radio is never keyed</strong> while it is on — the status line says "Simulated:" rather than "Keying:" so a glance always tells you which is happening.</p>
+<p>The simulated band behaves like a real one:</p>
+<ul>
+<li><strong>Stations call CQ on their own</strong> every half-minute or so, some of them park activations, so you can practise <em>answering</em> rather than only being answered.</li>
+<li><strong>The copy is imperfect.</strong> Characters are dropped and mis-timed into neighbouring letters — <code>E</code> becomes <code>I</code>, <code>T</code> becomes <code>M</code> — exactly the way a real decoder fails. Callsigns are usually still readable because real CW repeats them, which is the skill the page is teaching.</li>
+<li><strong>The band has noise</strong> between transmissions.</li>
+<li>Whoever you are working answers you through the whole exchange, and the QSO logs to ADIF like any other.</li>
+</ul>
+<p>Practice contacts are logged with no frequency, which marks them as test records — the ADIF viewer's <strong>"Del N test"</strong> button removes them in two taps when you are done.</p>
+<p>Turning simulation off clears the ticker, the hint, the station card and the ladder, so no phantom contact is left looking like real copy.</p>
+<hr />
+<h2 id="gestures">Gestures<a class="headerlink" href="#gestures" title="Permanent link">&para;</a></h2>
+<p>The spectrum and waterfall behind the pane take the same touch gestures as the
+Panadapter page: pinch with two fingers to zoom and pan together (pan comes
+from how far the midpoint between your fingers moves, so a drag with roughly
+steady finger spacing pans without zooming much), and a one-finger swipe to
+pan without retuning. A three-finger hold toggles <strong>CW Simulation Mode</strong> on
+or off, the same gesture FT8 uses for its own simulator.</p>
+<hr />
+<h2 id="known-limitations">Known limitations<a class="headerlink" href="#known-limitations" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>No abort for a message in progress</strong> (see the warning at the top) — both
+  tested candidates (<code>RX;</code>, a mode bounce) were tried and neither works.</li>
+<li><strong>Zero-beat tuning aid</strong> and <strong>speed matching</strong> are designed but not yet built; both need real signals to develop against.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.sections", "toc.follow", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

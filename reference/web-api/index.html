@@ -1,0 +1,3206 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://tab5.lav.dk/reference/web-api/">
+      
+      
+        <link rel="prev" href="../hardware/">
+      
+      
+        <link rel="next" href="../rigctld/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Web API - QMX Panadapter</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="light" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#web-api-reference" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="QMX Panadapter" class="md-header__button md-logo" aria-label="QMX Panadapter" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            QMX Panadapter
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Web API
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="light" data-md-color-primary="blue" data-md-color-accent="orange"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    <!-- Buy me a coffee (OZ1LAV) — just left of the search field -->
+    <style>
+      /* The official BMC widget renders ~51px tall (nearly the whole top bar).
+         zoom scales it (and its layout box, so no leftover gap) down to about
+         the search-field height. Tweak the factor to taste. */
+      .bmc-header-btn { display:flex; align-items:center; margin:0 .2rem; zoom:0.72; }
+    </style>
+    <div class="bmc-header-btn">
+      <script type="text/javascript"
+              src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js"
+              data-name="bmc-button"
+              data-slug="OZ1LAV"
+              data-color="#FFDD00"
+              data-emoji="☕"
+              data-font="Lato"
+              data-text="Buy me a coffee"
+              data-outline-color="#000000"
+              data-font-color="#000000"
+              data-coffee-color="#ffffff"></script>
+    </div>
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/SteffenLav/qmx-panadapter" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    qmx-panadapter
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../quick-start/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Quick Start
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../getting-help/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Getting Help
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../guide/panadapter/" class="md-tabs__link">
+          
+  
+  
+  User Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../gestures/" class="md-tabs__link">
+          
+  
+  
+  Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../build/build/" class="md-tabs__link">
+          
+  
+  
+  For Builders
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../releases/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Releases
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="QMX Panadapter" class="md-nav__button md-logo" aria-label="QMX Panadapter" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    QMX Panadapter
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/SteffenLav/qmx-panadapter" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    qmx-panadapter
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quick-start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-help/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Help
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Guide
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    User Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/panadapter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Panadapter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/audio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/spots/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Live Spots
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/spot-map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spot Map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/web-ui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web UI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/ft8-rx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FT8 RX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/ft8-tx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FT8 TX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/cw/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CW (beta)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/webradio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web Radio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/js8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JS8 (beta)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/time-sync/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Time Sync
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/wspr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WSPR
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/radio-menus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Radio Menus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gestures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gestures & Controls
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hardware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hardware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web API
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#base-url" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Base URL
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#status-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Status Endpoints
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Status Endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-apistatus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /api/status
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#control-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Control Endpoints
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Control Endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#post-apicmd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /api/cmd
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-apitone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /api/tone
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apitone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /api/tone
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-apimemory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /api/memory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apimemory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /api/memory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-apisettings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /api/settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apisettings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /api/settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-apidecodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /api/decodes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-apihelp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /api/help
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-apimanualpageguideft8-txmd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /api/manual?page=guide/ft8-tx.md
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cat-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CAT Endpoints
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ft8-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FT8 Endpoints
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adif-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ADIF Endpoints
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ADIF Endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-apiadif" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /api/adif
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apiadifimport" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /api/adif/import
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apiadifedit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /api/adif/edit
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apiadifclear" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /api/adif/clear
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration Endpoints
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration Endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-apiconfig" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /api/config
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apiconfig" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /api/config
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logging-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logging Endpoints
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Logging Endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-apilog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /api/log
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-apilogsaved" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /api/log/saved
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-apisignal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /api/signal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-apisched" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /api/sched
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-apipsk_rx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /api/psk_rx
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apiadifdeleteidxcall" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /api/adif/delete?idx=&amp;call=
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-apiupload_status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /api/upload_status
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#upload-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Upload Endpoints
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Upload Endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#post-apiqrz_key" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /api/qrz_key
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apiqrz_upload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /api/qrz_upload
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apieqsl_creds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /api/eqsl_creds
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apieqsl_upload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /api/eqsl_upload
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apilotw_cert" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /api/lotw_cert
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apilotw_upload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /api/lotw_upload
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-apilotw_tq8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /api/lotw_tq8
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#websocket-streaming" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WebSocket (Streaming)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#screenshot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Screenshot">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-ssbmp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /ss.bmp
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-responses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Error Responses
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-tune-to-7074-mhz-in-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Tune to 7.074 MHz in Python
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rigctld/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hamlib rigctld
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    For Builders
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    For Builders
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build/build/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Build from Source
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build/architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build/contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing & Feedback
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Releases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#base-url" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Base URL
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#status-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Status Endpoints
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Status Endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-apistatus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /api/status
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#control-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Control Endpoints
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Control Endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#post-apicmd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /api/cmd
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-apitone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /api/tone
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apitone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /api/tone
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-apimemory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /api/memory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apimemory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /api/memory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-apisettings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /api/settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apisettings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /api/settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-apidecodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /api/decodes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-apihelp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /api/help
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-apimanualpageguideft8-txmd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /api/manual?page=guide/ft8-tx.md
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cat-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CAT Endpoints
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ft8-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FT8 Endpoints
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adif-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ADIF Endpoints
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ADIF Endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-apiadif" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /api/adif
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apiadifimport" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /api/adif/import
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apiadifedit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /api/adif/edit
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apiadifclear" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /api/adif/clear
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration Endpoints
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration Endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-apiconfig" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /api/config
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apiconfig" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /api/config
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logging-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logging Endpoints
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Logging Endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-apilog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /api/log
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-apilogsaved" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /api/log/saved
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-apisignal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /api/signal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-apisched" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /api/sched
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-apipsk_rx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /api/psk_rx
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apiadifdeleteidxcall" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /api/adif/delete?idx=&amp;call=
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-apiupload_status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /api/upload_status
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#upload-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Upload Endpoints
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Upload Endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#post-apiqrz_key" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /api/qrz_key
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apiqrz_upload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /api/qrz_upload
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apieqsl_creds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /api/eqsl_creds
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apieqsl_upload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /api/eqsl_upload
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apilotw_cert" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /api/lotw_cert
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apilotw_upload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /api/lotw_upload
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-apilotw_tq8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /api/lotw_tq8
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#websocket-streaming" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WebSocket (Streaming)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#screenshot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Screenshot">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-ssbmp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /ss.bmp
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-responses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Error Responses
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-tune-to-7074-mhz-in-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Tune to 7.074 MHz in Python
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="web-api-reference">Web API Reference<a class="headerlink" href="#web-api-reference" title="Permanent link">&para;</a></h1>
+<p>The Tab5 runs an HTTP server that exposes a REST API for remote control and diagnostics. All endpoints are on port 80.</p>
+<h2 id="base-url">Base URL<a class="headerlink" href="#base-url" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>http://&lt;tab5-ip-address&gt;/api/
+</code></pre></div>
+<p>Example: <code>http://192.168.1.50/api/status</code></p>
+<h2 id="status-endpoints">Status Endpoints<a class="headerlink" href="#status-endpoints" title="Permanent link">&para;</a></h2>
+<h3 id="get-apistatus">GET /api/status<a class="headerlink" href="#get-apistatus" title="Permanent link">&para;</a></h3>
+<p>Returns the current state of the panadapter.</p>
+<p><strong>Response</strong> (JSON):</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"battery"</span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">"level"</span><span class="p">:</span><span class="w"> </span><span class="mi">85</span><span class="p">,</span><span class="w"> </span><span class="nt">"mv"</span><span class="p">:</span><span class="w"> </span><span class="mi">8000</span><span class="p">,</span><span class="w"> </span><span class="nt">"charging"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">"wifi"</span><span class="p">:</span><span class="w">     </span><span class="p">{</span><span class="w"> </span><span class="nt">"ssid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MyNet"</span><span class="p">,</span><span class="w"> </span><span class="nt">"rssi"</span><span class="p">:</span><span class="w"> </span><span class="mi">-65</span><span class="p">,</span><span class="w"> </span><span class="nt">"ip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"192.168.1.50"</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">"freq_hz"</span><span class="p">:</span><span class="w"> </span><span class="mi">14074000</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"qmx_fw"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1_03_002"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DIGI"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"band"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20m"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"screen"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ft8"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"ft8"</span><span class="p">:</span><span class="w">      </span><span class="p">{</span><span class="w"> </span><span class="nt">"st"</span><span class="p">:</span><span class="w"> </span><span class="s2">"armed"</span><span class="p">,</span><span class="w"> </span><span class="nt">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TX armed: CQ OZ1LAV JO65 - call 2 of 4 (~7s)"</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">"passband_hz"</span><span class="p">:</span><span class="w"> </span><span class="mi">2700</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"signal_dbm"</span><span class="p">:</span><span class="w"> </span><span class="mf">-83.5</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"zoom"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"pan_bins"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"cw_pitch_hz"</span><span class="p">:</span><span class="w"> </span><span class="mi">700</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"if_cal_hz"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"flat_mode"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"utc_epoch"</span><span class="p">:</span><span class="w"> </span><span class="mi">1785340050</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"qso_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"qrz_key_set"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"eqsl_creds_set"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"lotw_ready"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"bandplan"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"lo"</span><span class="p">:</span><span class="w"> </span><span class="mi">14000000</span><span class="p">,</span><span class="w"> </span><span class="nt">"hi"</span><span class="p">:</span><span class="w"> </span><span class="mi">14350000</span><span class="p">,</span><span class="w"> </span><span class="nt">"segs"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"lo"</span><span class="p">:</span><span class="w"> </span><span class="mi">14000000</span><span class="p">,</span><span class="w"> </span><span class="nt">"hi"</span><span class="p">:</span><span class="w"> </span><span class="mi">14070000</span><span class="p">,</span><span class="w"> </span><span class="nt">"c"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20B0FF"</span><span class="p">,</span><span class="w"> </span><span class="nt">"l"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CW"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">"bt"</span><span class="p">:</span><span class="w">       </span><span class="p">{</span><span class="w"> </span><span class="nt">"en"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="nt">"conn"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">"tab5_fw"</span><span class="p">:</span><span class="w"> </span><span class="s2">"v1.7.2"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"bands"</span><span class="p">:</span><span class="w">    </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20"</span><span class="p">,</span><span class="w"> </span><span class="nt">"center_hz"</span><span class="p">:</span><span class="w"> </span><span class="mi">14100000</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Notes:</p>
+<ul>
+<li><code>screen</code> is <code>"panadapter"</code> or <code>"ft8"</code>.</li>
+<li><strong><code>ft8</code> is present only while the FT8/FT4 screen is live</strong> — the engine does not run otherwise, so its text would be stale. <code>st</code> is one of <code>active</code> / <code>armed</code> / <code>done</code> / <code>timeout</code> / <code>wait</code> / <code>idle</code>, and <code>text</code> is the same line the Tab5 shows on its own TX status label. This is what drives the browser's TX banner and the red dot in the tab title.</li>
+<li><code>bt</code> is the Bluetooth mouse: <code>en</code> is whether it is switched on, <code>conn</code> whether a mouse is connected right now. <code>en: true, conn: false</code> means it is scanning or waiting for a paired mouse to come back.</li>
+<li><code>signal_dbm</code> and <code>bandplan</code> are <code>null</code> when unavailable (no spectrum yet; VFO outside a known band).</li>
+<li><code>passband_hz</code> falls back to a per-mode default until CAT reports a real width.</li>
+</ul>
+<h2 id="control-endpoints">Control Endpoints<a class="headerlink" href="#control-endpoints" title="Permanent link">&para;</a></h2>
+<h3 id="post-apicmd">POST /api/cmd<a class="headerlink" href="#post-apicmd" title="Permanent link">&para;</a></h3>
+<p>Send a command to the panadapter. The command name is the <strong><code>action</code></strong> key; each
+action names its own parameter key (there is no generic <code>value</code>).</p>
+<p><strong>Request</strong> (JSON):</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"set_freq"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"hz"</span><span class="p">:</span><span class="w"> </span><span class="mi">14074000</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Supported actions</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Parameter</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>set_freq</code></td>
+<td><code>hz</code></td>
+<td>Set VFO frequency</td>
+</tr>
+<tr>
+<td><code>set_band</code></td>
+<td><code>hz</code> (band centre)</td>
+<td>Switch band — recalls the frequency last used on it</td>
+</tr>
+<tr>
+<td><code>set_mode</code></td>
+<td><code>mode: "USB"/"LSB"/"CW"/"DIGI"/"AM"</code></td>
+<td>Change mode (AM needs QMX firmware 1.04+)</td>
+</tr>
+<tr>
+<td><code>set_bw</code></td>
+<td><code>hz</code></td>
+<td>Filter width — SSB at 1000 Hz and above, CW passband below</td>
+</tr>
+<tr>
+<td><code>set_zoom</code></td>
+<td><code>zoom: 1.0/2.0/4.0/8.0</code></td>
+<td>Zoom level</td>
+</tr>
+<tr>
+<td><code>set_rit</code></td>
+<td><code>hz</code></td>
+<td>RIT offset. Retuning clears it</td>
+</tr>
+<tr>
+<td><code>cw_tune</code></td>
+<td><em>(none)</em></td>
+<td><strong>Put the dial on the signal.</strong> In CW/CW-R it zero-beats the nearest carrier, searching the <strong>last 4 seconds</strong> of spectrum rather than the current frame, because a keyed carrier is absent as often as it is present. In USB/LSB it runs the SSB estimator instead (a 4 s vote on the far station’s filter edge, then a snap to the grid) — the device dispatches on mode, the caller does not choose. Answers <code>{"ok":true,"mode":"cw"|"ssb","moved_hz":N}</code>, or <code>"listening":true</code> while a window is still open (8 s for CW, 4 s for SSB), or <code>{"ok":false,"error":...}</code>. One press, one move — nothing keeps correcting afterwards. Receive only</td>
+</tr>
+<tr>
+<td><code>rit_park</code></td>
+<td><em>(none)</em></td>
+<td>Stand an engaged RIT offset down <strong>without losing it</strong>, or put the parked one back. Answers <code>{"ok":true,"parked":true,"hz":N}</code> or <code>{"ok":true,"restored":true,"hz":N}</code>, and <code>{"ok":false,...}</code> when there is neither. The same parked value the Tab5’s RIT long-press uses</td>
+</tr>
+<tr>
+<td><code>out_power</code></td>
+<td><code>watts_x100</code> <em>(optional)</em></td>
+<td>Transmit power on the <strong>current</strong> band. With no argument it reports the calibrated ladder: <code>band</code>, <code>calibrated</code>, the <code>watts_x100</code> levels, the current <code>target_x100</code>, and whether the PA is <code>busy</code> or held by WSPR. With <code>watts_x100</code> it sets that level — it must be <strong>on</strong> the ladder, because the levels are what Calibrate Power actually measured; anything else is refused by name rather than rounded. If the PA is busy the target is stored and the reply carries <code>"deferred":true</code></td>
+</tr>
+<tr>
+<td><code>set_screen</code></td>
+<td><code>screen: "pan"/"panadapter"/"ft8"/"ft4"/"js8"/"wspr"</code></td>
+<td>Switch the Tab5's own view. Applied within about a second (handed to the display task). <code>ft4</code> and <code>js8</code> open the FT8 page <strong>and</strong> select that sub-mode, so one call is enough to put the device into FT4. An unknown name is refused with HTTP 400, not treated as <code>panadapter</code></td>
+</tr>
+<tr>
+<td><code>set_ft8_mode</code></td>
+<td><code>mode: "ft8"/"ft4"</code>, optional <code>freq_hz</code></td>
+<td><strong>Switch between FT8 and FT4</strong>, optionally retuning. Omit <code>freq_hz</code> to keep the current frequency. This is an action rather than a setting because it also retunes the radio and clears stale decodes — read <code>ft8_op_mode</code> back from <code>/api/settings</code> to confirm</td>
+</tr>
+<tr>
+<td><code>set_activation</code></td>
+<td><code>ref</code></td>
+<td>Set the POTA/SOTA activation reference</td>
+</tr>
+<tr>
+<td><code>log_qso</code></td>
+<td><code>call</code>, optional <code>rst_sent</code>, <code>rst_rcvd</code></td>
+<td><strong>Log a CW or SSB contact worked by hand</strong>, as the Tab5's own Log window does. Those are the only fields accepted: the frequency, mode, band, date, time, your callsign, your grid and the running activation are read from the device, so a page holding a stale frequency cannot write a record on the wrong band. An empty report logs no report rather than a wrong one. Refused with HTTP 400 and a reason when the callsign is empty or there is no CAT. Answers <code>{"ok":true,"call":"...","act_qsos":N,"act_need":N,"total":N}</code>, so the count needs no second request</td>
+</tr>
+<tr>
+<td><code>cq_start</code></td>
+<td><em>(none)</em></td>
+<td>Start a CQ run, as the Tab5's own <strong>Call CQ</strong> button does. <strong>Keys the radio.</strong> Only acted on while the Tab5 is in FT8/FT4 mode; otherwise discarded, not queued</td>
+</tr>
+<tr>
+<td><code>reply</code></td>
+<td><code>call</code></td>
+<td>Work a decoded station — the same intelligent Transmit a Tab5 row-tap runs. <strong>Keys the radio.</strong> Outcome in <code>/api/status</code> <code>ft8.web_r</code></td>
+</tr>
+<tr>
+<td><code>qso_override</code></td>
+<td><code>what: "resend"/"rr73"/"73"/"cancel"</code></td>
+<td>Mid-QSO override, as the Tab5's own three buttons do. <strong>Keys the radio</strong> except for <code>cancel</code></td>
+</tr>
+<tr>
+<td><code>clear_swr</code></td>
+<td><em>(none)</em></td>
+<td>Clear a latched SWR-protection trip, same as tapping the Tab5's own fault prompt. TX stays refused until this is called</td>
+</tr>
+<tr>
+<td><code>tune_start</code> / <code>tune_stop</code></td>
+<td><em>(none)</em></td>
+<td>Antenna Tune (QMX 1.04+ only). <strong>Keys the radio continuously</strong>; 60 s safety stop on the device. While running, <code>/api/status</code> carries a <code>tune</code> object with <code>watts</code>, <code>swr</code> and <code>secs</code> (seconds left before the safety stop); the object is absent when no tune is running</td>
+</tr>
+<tr>
+<td><code>pause</code> / <code>resume</code></td>
+<td><em>(none)</em></td>
+<td>Release the radio so its own menus can be used, and take it back. While paused the CAT poll, the dead-stream watchdog and the stuck-decode watchdog all stand down</td>
+</tr>
+<tr>
+<td><code>greylist_clear</code></td>
+<td><em>(none)</em></td>
+<td>Un-skip every grey-listed station</td>
+</tr>
+<tr>
+<td><code>ota_install</code></td>
+<td><code>url</code></td>
+<td>Download and install firmware. Refused while transmitting or mid-QSO, with the reason in the reply body. Does <strong>not</strong> restart on its own</td>
+</tr>
+<tr>
+<td><code>ota_reboot</code></td>
+<td><em>(none)</em></td>
+<td>Restart into firmware already installed</td>
+</tr>
+<tr>
+<td><code>usb_shutdown</code></td>
+<td><em>(none)</em></td>
+<td>Orderly USB teardown before a reflash: radio to RX, CAT and audio closed, VBUS dropped</td>
+</tr>
+<tr>
+<td><code>usb_replug</code></td>
+<td><em>(none)</em></td>
+<td>Power-cycle the USB port to recover a wedged device</td>
+</tr>
+<tr>
+<td><code>power_off</code></td>
+<td><em>(none)</em></td>
+<td>Power the Tab5 down</td>
+</tr>
+<tr>
+<td><code>reset_settings</code></td>
+<td><em>(none)</em></td>
+<td>Clear stored settings back to defaults</td>
+</tr>
+<tr>
+<td><code>reset_network</code></td>
+<td><em>(none)</em></td>
+<td>Clear the stored WiFi/network state</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Radio menus</strong> (the QMX's own terminal, on its second serial port):
+<code>open</code>, <code>close</code>, <code>key</code>, <code>text</code>, <code>term_view</code>, <code>qmx_ports</code>, <code>qmx_term_probe</code> —
+see <a href="#">Radio menus</a> and <code>GET /api/term</code>.</p>
+<p><strong>Developer actions.</strong> Not referenced by any web-UI element, and easy to regret:</p>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>cat_raw</code></td>
+<td>Send one raw CAT string to the radio</td>
+</tr>
+<tr>
+<td><code>drawer</code></td>
+<td>Open the settings drawer, optionally at <code>scroll_y</code>, so a section below the fold can be screenshotted</td>
+</tr>
+<tr>
+<td><code>resmon</code></td>
+<td>Toggle the resource-monitor overlay</td>
+</tr>
+<tr>
+<td><code>time_redetect</code></td>
+<td>Re-arm the once-per-boot QMX GPS detection without rebooting</td>
+</tr>
+<tr>
+<td><code>help</code></td>
+<td>Open the on-device manual at a topic</td>
+</tr>
+<tr>
+<td><code>panic_test</code></td>
+<td><strong>Crash the device deliberately</strong>, to prove the crash recorder works. ⚠ Radio <strong>off</strong> only — a panic reboot is a warm reset, which leaves the QMX needing a power cycle</td>
+</tr>
+</tbody>
+</table>
+<p><strong>⚠ Check the response BODY, not the status code.</strong> The reply is <code>{"ok":true}</code>
+on success — but an unrecognised action returns <strong>HTTP 200</strong> with the body
+<code>unknown action</code>, and a refused one (for example <code>ota_install</code> while
+transmitting) returns <code>{"ok":false,"error":"..."}</code>, also with HTTP 200. A caller
+that only tests the status code cannot tell success from a typo, and a mistyped
+action is then a silent no-op.</p>
+<p><code>display.peak_hold_s</code> is the spectrum peak-hold window in <strong>seconds</strong>, 0 = off,
+maximum 60. The Tab5 drawer offers 1, 2, 3 and 5; the API accepts any value in range. It is also in <code>/api/status</code> as <code>peak_hold_s</code>, so a browser can follow a
+change made on the Tab5 without re-reading the settings.</p>
+<p><strong>Spectrum smoothing has two names for one stored value.</strong>
+<code>display.smooth_pct</code> is the operator-facing one: 0 is off, higher is smoother,
+and it is what the settings form shows. <code>display.ema_pct</code> is the raw EMA
+coefficient × 100, where <strong>100 means no smoothing</strong> — the inverse. Both are
+reported by <code>GET /api/settings</code> and both are accepted by the POST; if a payload
+carries both, <code>smooth_pct</code> wins. <code>ema_pct</code> is kept because config files and
+scripts written before 2026-10-24 use it, and <code>/api/status</code> reports it under
+<code>wf.ema_pct</code> for a browser drawing its own trace.</p>
+<p><strong>A missing required parameter is refused with HTTP 400.</strong> <code>set_freq</code>,
+<code>set_band</code>, <code>set_bw</code>, <code>set_zoom</code>, <code>set_rit</code> and <code>view_center</code> answer
+<code>&lt;key&gt; required (number)</code> when the key is absent or is sent as a string. Until
+2026-10-23 they answered <code>{"ok":true}</code> and did nothing, so
+<code>{"action":"set_freq","freq":10000000}</code> looked like a successful tune.
+<code>set_screen</code> likewise refuses a name it does not know instead of falling back
+to the panadapter.</p>
+<p>Effects are applied asynchronously — mode and filter writes are queued onto the
+CAT poll task, and <code>cq_start</code>, <code>reply</code>, <code>qso_override</code> and <code>set_ft8_mode</code> onto
+the display task — so read <code>/api/status</code> or <code>/api/settings</code> to see the result
+rather than assuming it from the response.</p>
+<h3 id="get-apitone">GET /api/tone<a class="headerlink" href="#get-apitone" title="Permanent link">&para;</a></h3>
+<p>The TX audio tone and the live occupancy of the 200-2800 Hz window.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"> </span><span class="nt">"hz"</span><span class="p">:</span><span class="w"> </span><span class="mi">1650</span><span class="p">,</span><span class="w"> </span><span class="nt">"hold"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="nt">"min"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="nt">"max"</span><span class="p">:</span><span class="w"> </span><span class="mi">2800</span><span class="p">,</span><span class="w"> </span><span class="nt">"step"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"stations"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w"> </span><span class="nt">"busy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0000000000111110..."</span><span class="p">,</span><span class="w"> </span><span class="nt">"partner_hz"</span><span class="p">:</span><span class="w"> </span><span class="mi">1750</span><span class="p">,</span><span class="w"> </span><span class="nt">"busy_tx"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
+<p><code>busy</code> is one character per 50 Hz slot (<code>1</code> = a station or its guard band), sent
+as a <strong>string</strong> because 52 bits do not survive JavaScript's number type.
+<code>busy_e</code> and <code>busy_o</code> carry the <strong>EVEN and ODD windows separately</strong> — two
+stations only collide in the same window, and only the operator knows which one
+they are about to transmit into; <code>busy</code> remains the our-window/union view the
+automatic verdict uses.
+<code>stations</code> is how many decoded stations fed the mask - <strong>zero means the band
+picture is unknown, not empty</strong>, and a caller must say so rather than showing the
+all-clear.</p>
+<h3 id="post-apitone">POST /api/tone<a class="headerlink" href="#post-apitone" title="Permanent link">&para;</a></h3>
+<p><code>{"hz":1650}</code> and/or <code>{"hold":true}</code>. Out-of-range frequencies are clamped.</p>
+<p>A tone change while a QSO is running is applied to the running exchange first
+(your partner tracks your slot, not your tone). Mid-burst it is <strong>refused with
+409</strong> and the body carries the device's own reason - the preference is not stored
+either, so the two can never end up half-committed.</p>
+<h3 id="get-apimemory">GET /api/memory<a class="headerlink" href="#get-apimemory" title="Permanent link">&para;</a></h3>
+<p>All 32 memory channels: <code>{"slots":[{"idx":0,"occupied":true,"freq_hz":14074000,"mode":"DIGI","label":"FT8"}, ...]}</code>.
+Empty slots carry only <code>idx</code> and <code>occupied:false</code>.</p>
+<h3 id="post-apimemory">POST /api/memory<a class="headerlink" href="#post-apimemory" title="Permanent link">&para;</a></h3>
+<p>Write one channel - <code>{"idx":3,"freq_hz":14074000,"mode":"DIGI","label":"FT8"}</code> -
+or clear one with <code>{"idx":3,"clear":true}</code>. Fields you omit keep their stored
+value, so renaming a channel needs only <code>idx</code> and <code>label</code>.</p>
+<p>A frequency outside a recognised amateur band returns <strong>400</strong> - the same refusal
+the Tab5 makes, so the browser cannot be a way around it.</p>
+<p>There is no recall endpoint: recalling a channel is <code>set_freq</code> plus <code>set_mode</code>,
+which <code>/api/cmd</code> already does.</p>
+<h3 id="get-apisettings">GET /api/settings<a class="headerlink" href="#get-apisettings" title="Permanent link">&para;</a></h3>
+<p>The settings a browser can usefully edit: callsign, grid, the CQ presets, the FT8
+filters, the everyday toggles, QMX volume, band-plan region and the WiFi SSID.
+The spot sources (<code>spots_en</code> overall, then <code>rbn_en</code> and <code>cluster_en</code>),
+propagation feedback (<code>psk_rx_en</code>) and the Bluetooth mouse (<code>bt_mouse_en</code>) are
+here too — <code>bt_mouse_en</code> is stored immediately but only takes effect after a
+restart. <code>swr_limit_x10</code> (the SWR limit × 10, so <code>30</code> is 3.0:1) is <strong>reported
+but not writable</strong> — a transmit safety limit is set at the device.</p>
+<p><strong>The WiFi password is never returned</strong> - only <code>wifi_pass_set</code> says whether one is
+stored.</p>
+<h3 id="post-apisettings">POST /api/settings<a class="headerlink" href="#post-apisettings" title="Permanent link">&para;</a></h3>
+<p>Applies a <strong>partial</strong> update: only the keys present are touched, everything else
+is left alone. So a single toggle is a one-key body, and a stale browser form can
+never reset fields it did not show.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"> </span><span class="nt">"my_grid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JO65ab"</span><span class="p">,</span><span class="w"> </span><span class="nt">"rbn_en"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="nt">"cq"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"max_calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
+<p><code>wifi_ssid</code> and <code>wifi_pass</code> take effect only when both are supplied - an empty
+password means "keep the stored one", never "erase it". <code>qmx_vol_db</code> is in dB
+(0-50) and is sent to the radio as well as stored.</p>
+<p><strong>Everything the settings drawer can change is reachable here.</strong> Besides the keys
+above that includes <code>flat_mode</code>, <code>distance_in_miles</code>, <code>greylist_en</code>,
+<code>ft8_early_decode</code>, <code>field_day_en</code> (with <code>fd_class</code> / <code>fd_section</code>), <code>spots_en</code>,
+<code>sota_en</code>, <code>rbn_en</code>, <code>pskreporter_en</code>, <code>resmon_en</code>, <code>tx_tone_hold</code>, <code>tx_tone_hz</code>,
+<code>cw_pitch_hz</code> and <code>cw_cal_hz</code> — all readable back from <code>GET</code>.</p>
+<p><strong><code>sim_mode_en</code> is the one to know about if you are automating tests.</strong> With it
+on, the firmware runs complete FT8 exchanges against phantom stations and
+<code>ft8_tx.c</code> hard-refuses to key the radio, so a QSO can be driven end to end with
+no antenna and no QMX attached. ⚠ Simulated contacts land in the <strong>real</strong> ADIF
+log, so turn it off afterwards and delete them — they have <code>FREQ=0</code>, and the
+ADIF viewer's "Del N test" button finds exactly those.</p>
+<p><strong>Read-only reporters.</strong> <code>ft8_op_mode</code> (<code>"ft8"</code> / <code>"ft4"</code>) and <code>ft8_freq_hz</code> are
+returned but not writable here — change them with the <code>set_ft8_mode</code> action,
+which also retunes the radio and clears stale decodes, then read these back to
+confirm. <code>swr_limit_x10</code> is likewise reported only.</p>
+<h3 id="get-apidecodes">GET /api/decodes<a class="headerlink" href="#get-apidecodes" title="Permanent link">&para;</a></h3>
+<p>The FT8/FT4 decode list as the Tab5 shows it - same ordering (the station being
+worked, then messages addressed to you, then CQ calls, then strongest signal) and
+the same Filter-window hides applied. Read-only.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FT8"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"miles"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"working"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DK7CVD"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">"call"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DK7CVD"</span><span class="p">,</span><span class="w"> </span><span class="nt">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OZ1LAV DK7CVD -07"</span><span class="p">,</span><span class="w"> </span><span class="nt">"grid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JO31"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"snr"</span><span class="p">:</span><span class="w"> </span><span class="mi">-7</span><span class="p">,</span><span class="w"> </span><span class="nt">"hz"</span><span class="p">:</span><span class="w"> </span><span class="mi">1503</span><span class="p">,</span><span class="w"> </span><span class="nt">"dt"</span><span class="p">:</span><span class="w"> </span><span class="mi">210</span><span class="p">,</span><span class="w"> </span><span class="nt">"age"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="nt">"heard"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"km"</span><span class="p">:</span><span class="w"> </span><span class="mi">612</span><span class="p">,</span><span class="w"> </span><span class="nt">"brg"</span><span class="p">:</span><span class="w"> </span><span class="mi">173</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"sl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"E"</span><span class="p">,</span><span class="w"> </span><span class="nt">"me"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="nt">"cq"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="nt">"pin"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><code>dt</code> is milliseconds, <code>hz</code> the station's audio tone, <code>age</code> seconds since it was
+last decoded, <code>sl</code> the transmit window it was heard in. <code>me</code> marks a message
+containing your callsign, <code>pin</code> the station you are working.</p>
+<p><code>km</code> and <code>brg</code> (v1.8.3) are distance and bearing from your grid to theirs, worked
+out on the device with the same maths the Tab5's own list uses. <strong>Both are omitted
+entirely when either grid is missing</strong> — there is no null and no zero, so a client
+should render an absent field as "unknown" rather than as a distance. <code>km</code> is in
+miles when the top-level <code>miles</code> flag is true, which mirrors the <em>Distance in
+miles</em> setting.</p>
+<h3 id="get-apihelp">GET /api/help<a class="headerlink" href="#get-apihelp" title="Permanent link">&para;</a></h3>
+<p>The guidance rows, ranked by the device from its own live state. <code>flagged</code> marks a
+row the firmware can see is happening right now.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"page"</span><span class="p">:</span><span class="w"> </span><span class="s2">"guide/panadapter.md"</span><span class="p">,</span><span class="w"> </span><span class="nt">"anchor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Layout"</span><span class="p">,</span><span class="w"> </span><span class="nt">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Panadapter"</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">"symptom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My radio is not showing up"</span><span class="p">,</span><span class="w"> </span><span class="nt">"flagged"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"page"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reference/troubleshooting.md"</span><span class="p">,</span><span class="w"> </span><span class="nt">"anchor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"won't reconnect"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Radio not connecting"</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><code>context</code> is the chapter the Tab5's own <strong>User Manual</strong> button would open right
+now. <code>anchor</code> is a case-insensitive heading substring, not a URL fragment.</p>
+<h3 id="get-apimanualpageguideft8-txmd">GET /api/manual?page=guide/ft8-tx.md<a class="headerlink" href="#get-apimanualpageguideft8-txmd" title="Permanent link">&para;</a></h3>
+<p>One page of the built-in manual, as the raw markdown that built the documentation
+site. <code>page=toc.json</code> returns the contents list. Served from the firmware, so it
+needs no internet and always matches the running version. 404 if the page is not
+in this firmware's manual.</p>
+<h2 id="cat-endpoints">CAT Endpoints<a class="headerlink" href="#cat-endpoints" title="Permanent link">&para;</a></h2>
+<p>There is no raw-CAT HTTP endpoint. Send CAT-level changes through
+<code>POST /api/cmd</code> (<code>set_freq</code>, <code>set_mode</code>, <code>set_bw</code>, <code>set_band</code>), which routes them
+through the CAT poll task - the only writer to the radio's serial port. The web
+UI's own <strong>CAT</strong> box uses those actions.</p>
+<h2 id="ft8-endpoints">FT8 Endpoints<a class="headerlink" href="#ft8-endpoints" title="Permanent link">&para;</a></h2>
+<p>The decode list is <code>GET /api/decodes</code> (above). Transmit from the browser is
+limited to <code>POST /api/cmd {"action":"cq_start"}</code>; there is no endpoint that sends
+an arbitrary FT8 message, deliberately - replies are chosen from the decode list
+in front of you, at the Tab5.</p>
+<h2 id="adif-endpoints">ADIF Endpoints<a class="headerlink" href="#adif-endpoints" title="Permanent link">&para;</a></h2>
+<h3 id="get-apiadif">GET /api/adif<a class="headerlink" href="#get-apiadif" title="Permanent link">&para;</a></h3>
+<p>Download ADIF log.</p>
+<p><strong>Response</strong>: ADIF file (text/plain)</p>
+<p><code>?activation=&lt;REF&gt;</code> limits the download to contacts made during an activation of
+that reference (matched on <code>MY_SIG_INFO</code>), so a park's log can be uploaded on its
+own rather than the whole file. An unknown reference returns a valid ADIF file
+with no records, not an error.</p>
+<p><code>?date=today</code> or <code>?date=YYYYMMDD</code> limits it to one UTC day, and names the download
+<code>qso-YYYY-MM-DD.adi</code> so a daily file is self-identifying once it is saved. A day
+with no contacts returns a valid empty ADIF, not an error.</p>
+<h3 id="post-apiadifimport">POST /api/adif/import<a class="headerlink" href="#post-apiadifimport" title="Permanent link">&para;</a></h3>
+<p>Restore records from a raw ADIF file — the browser's own "ADIF download", or any
+other logger's export. Body is the ADIF text itself (<code>Content-Type: text/plain</code>).</p>
+<p><code>?mark_uploaded=0</code> imports the contacts as <strong>not yet uploaded</strong>, so the next QRZ/
+eQSL/LoTW upload pass sends them. Default (<code>1</code>, or the parameter omitted) marks
+them as already uploaded instead — advancing all three upload cursors to the new
+record count — since the ordinary reason to restore a log is that these contacts
+were already sent before whatever wiped the device.</p>
+<p>A pretty-printed, multi-line record (as some loggers export) is normalised to
+this device's own one-line-per-record form before being written. A record whose
+<code>CALL</code>+<code>QSO_DATE</code>+<code>TIME_ON</code> already matches one in the log is skipped, so
+re-importing the same file twice — or a file that overlaps an earlier partial
+restore — adds nothing extra.</p>
+<p><strong>Response</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"> </span><span class="nt">"ok"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="nt">"added"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="nt">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">47</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
+<p><code>added: 0</code> with <code>ok: true</code> means every record in the file was already logged.
+<code>ok: false</code> means the log could not be written at all (storage full).</p>
+<h3 id="post-apiadifedit">POST /api/adif/edit<a class="headerlink" href="#post-apiadifedit" title="Permanent link">&para;</a></h3>
+<p>Correct <strong>one field of one record</strong>: <code>?idx=&lt;n&gt;&amp;call=&lt;CALL&gt;&amp;field=&lt;F&gt;&amp;value=&lt;V&gt;</code>.</p>
+<p><code>idx</code> is the record's position in the file and <code>call</code> must match the callsign
+already stored there — both, or the device answers <code>409</code> and changes nothing, so
+a browser showing a stale list cannot edit the wrong QSO.</p>
+<p>Only three fields are accepted: <code>RST_SENT</code>, <code>RST_RCVD</code> and <code>SIG_INFO</code>. An empty
+<code>value</code> removes the field, which for a report is the honest record of one that
+was never exchanged. <code>SIG_INFO</code> is the reference the <em>other</em> station was
+activating (<code>US-1241</code>, <code>G/LD-049</code>, <code>DLFF-0123</code>); the device derives <code>SIG</code> from
+its shape and writes it alongside, and clears it again when the reference is
+cleared. Everything else is refused with <code>400</code>: callsign, band, mode, date and
+time are what QRZ, eQSL and LoTW match a contact on, and a LoTW record is signed
+over exactly those.</p>
+<p><strong>Response</strong>: <code>{"ok":true}</code>, or <code>{"ok":false,"error":"…"}</code></p>
+<h3 id="post-apiadifclear">POST /api/adif/clear<a class="headerlink" href="#post-apiadifclear" title="Permanent link">&para;</a></h3>
+<p>Clear all QSOs from ADIF log.</p>
+<p><strong>Response</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cleared"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="configuration-endpoints">Configuration Endpoints<a class="headerlink" href="#configuration-endpoints" title="Permanent link">&para;</a></h2>
+<h3 id="get-apiconfig">GET /api/config<a class="headerlink" href="#get-apiconfig" title="Permanent link">&para;</a></h3>
+<p>Download current configuration (all settings + memory channels).</p>
+<p><strong>Response</strong>: INI text file</p>
+<h3 id="post-apiconfig">POST /api/config<a class="headerlink" href="#post-apiconfig" title="Permanent link">&para;</a></h3>
+<p>Upload a configuration file to restore settings.</p>
+<p><strong>Request</strong>: the config file as the raw request body (not multipart)</p>
+<p><strong>Response</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"imported"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"merged"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="logging-endpoints">Logging Endpoints<a class="headerlink" href="#logging-endpoints" title="Permanent link">&para;</a></h2>
+<h3 id="get-apilog">GET /api/log<a class="headerlink" href="#get-apilog" title="Permanent link">&para;</a></h3>
+<p>Download diagnostic log.</p>
+<p><strong>Response</strong>: Text file (qmx-log.txt)</p>
+<h3 id="get-apilogsaved">GET /api/log/saved<a class="headerlink" href="#get-apilogsaved" title="Permanent link">&para;</a></h3>
+<p>The flash-persisted copy of the diagnostic log from before the last reboot or
+power-off - the one that survives a crash in the field.</p>
+<p><strong>Response</strong>: Text file</p>
+<h3 id="get-apisignal">GET /api/signal<a class="headerlink" href="#get-apisignal" title="Permanent link">&para;</a></h3>
+<p>The signal level alone, for a faster S-meter than the 1 Hz <code>/api/status</code> poll can
+give. Same DSP call and parameters as <code>/api/status</code> and the Tab5's own S-meter -
+only the cadence differs.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"> </span><span class="nt">"dbm"</span><span class="p">:</span><span class="w"> </span><span class="mf">-83.5</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
+<h3 id="get-apisched">GET /api/sched<a class="headerlink" href="#get-apisched" title="Permanent link">&para;</a></h3>
+<p>The contest calendar and announced ?OTA activations on <strong>one timeline</strong>, soonest
+first — the same list, sort and source names the Tab5's Scheduled events pane
+draws, because both read <code>sched_events_get()</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"> </span><span class="nt">"age_s"</span><span class="p">:</span><span class="w"> </span><span class="mi">240</span><span class="p">,</span><span class="w"> </span><span class="nt">"busy"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="nt">"version"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="nt">"wifi"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="nt">"now"</span><span class="p">:</span><span class="w"> </span><span class="mi">1785340050</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"events"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">"what"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CQ WW DX SSB"</span><span class="p">,</span><span class="w"> </span><span class="nt">"src"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WA7BNM Contest Calendar"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"srcs"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WA7BNM"</span><span class="p">,</span><span class="w"> </span><span class="nt">"start"</span><span class="p">:</span><span class="w"> </span><span class="mi">1785344400</span><span class="p">,</span><span class="w"> </span><span class="nt">"end"</span><span class="p">:</span><span class="w"> </span><span class="mi">1785517200</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"contest"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">"what"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OZ1LAV"</span><span class="p">,</span><span class="w"> </span><span class="nt">"ref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DL-0123"</span><span class="p">,</span><span class="w"> </span><span class="nt">"src"</span><span class="p">:</span><span class="w"> </span><span class="s2">"POTA"</span><span class="p">,</span><span class="w"> </span><span class="nt">"srcs"</span><span class="p">:</span><span class="w"> </span><span class="s2">"POTA"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"start"</span><span class="p">:</span><span class="w"> </span><span class="mi">1785341000</span><span class="p">,</span><span class="w"> </span><span class="nt">"end"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nt">"contest"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
+<p><code>srcs</code> is the shortened form for a column ("WA7BNM Contest Calendar" →
+"WA7BNM"); <code>src</code> is the full name the record carries. <code>ref</code> is omitted for a
+contest. <code>start</code> or <code>end</code> of <code>0</code> means the feed gave no usable time.</p>
+<p>Events already finished are dropped; one with no usable end time is kept.
+<strong>No filtering here</strong> — <code>contest</code> is the flag, and the All / Contests / ?OTA
+choice belongs to whichever surface is drawing.</p>
+<p>Requesting this asks for a refresh, but the <strong>15-minute floor</strong> is enforced on
+the device, so polling cannot reach the upstream feed faster than that. Add
+<code>?force=1</code> for the pane's own Refresh button. The fetch runs on the spots task,
+so the call returns at once with whatever is already held.</p>
+<p><code>now</code> is the <strong>device's</strong> clock, and a countdown should be computed against it:
+a browser clock minutes out would show rows as running that the Tab5 still shows
+as upcoming.</p>
+<p>The upstream feed being down is an ordinary state, not an error. There is no
+error field: <code>busy</code>, <code>age_s</code> (<code>-1</code> = never fetched) and <code>version</code> (<code>0</code> = never
+fetched) are what tell "slow" apart from "nothing scheduled".</p>
+<h3 id="get-apipsk_rx">GET /api/psk_rx<a class="headerlink" href="#get-apipsk_rx" title="Permanent link">&para;</a></h3>
+<p>Propagation feedback — which receivers have copied <strong>your</strong> call, from PSK
+Reporter.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"> </span><span class="nt">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="nt">"age_s"</span><span class="p">:</span><span class="w"> </span><span class="mi">96</span><span class="p">,</span><span class="w"> </span><span class="nt">"receivers"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w"> </span><span class="nt">"max_km"</span><span class="p">:</span><span class="w"> </span><span class="mi">7412</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"reports"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">"call"</span><span class="p">:</span><span class="w"> </span><span class="s2">"W1ABC"</span><span class="p">,</span><span class="w"> </span><span class="nt">"grid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FN42"</span><span class="p">,</span><span class="w"> </span><span class="nt">"dxcc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"United States"</span><span class="p">,</span><span class="w"> </span><span class="nt">"mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FT8"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"f"</span><span class="p">:</span><span class="w"> </span><span class="mi">14074812</span><span class="p">,</span><span class="w"> </span><span class="nt">"t"</span><span class="p">:</span><span class="w"> </span><span class="mi">1785340050</span><span class="p">,</span><span class="w"> </span><span class="nt">"snr"</span><span class="p">:</span><span class="w"> </span><span class="mi">-14</span><span class="p">,</span><span class="w"> </span><span class="nt">"km"</span><span class="p">:</span><span class="w"> </span><span class="mi">6031</span><span class="p">,</span><span class="w"> </span><span class="nt">"brg"</span><span class="p">:</span><span class="w"> </span><span class="mi">291</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
+<p>Requesting this asks for a refresh, but the collector's own <strong>five-minute floor</strong>
+is enforced on the device, so polling faster than that returns the same data with
+a larger <code>age_s</code> rather than fetching again. <code>age_s</code> is <code>-1</code> before the first
+successful query.</p>
+<p><code>snr</code> is omitted when the receiver gave none — 0 dB is a real report, so it
+cannot double as "unknown". <code>km</code> and <code>brg</code> are omitted together when the
+receiver's grid is unknown.</p>
+<p>Off by default. The endpoint always answers: with the feature disabled nothing is
+fetched, so <code>enabled</code> is <code>false</code> and <code>reports</code> holds whatever the last query
+returned before it was switched off — read <code>age_s</code> rather than assuming the list
+is current. It is also empty while offline or before a callsign is set.</p>
+<h3 id="post-apiadifdeleteidxcall">POST /api/adif/delete?idx=<n>&amp;call=<CALL><a class="headerlink" href="#post-apiadifdeleteidxcall" title="Permanent link">&para;</a></h3>
+<p>Delete one QSO. <strong>Both</strong> the index and the callsign must match the record, or the
+request is refused with <code>409</code> - so a stale browser view can never delete the wrong
+contact.</p>
+<h3 id="get-apiupload_status">GET /api/upload_status<a class="headerlink" href="#get-apiupload_status" title="Permanent link">&para;</a></h3>
+<p>Progress of a running QRZ/eQSL/LoTW upload (<code>busy</code>, <code>kind</code>, <code>uploaded</code>, <code>failed</code>,
+<code>error</code>).</p>
+<h2 id="upload-endpoints">Upload Endpoints<a class="headerlink" href="#upload-endpoints" title="Permanent link">&para;</a></h2>
+<h3 id="post-apiqrz_key">POST /api/qrz_key<a class="headerlink" href="#post-apiqrz_key" title="Permanent link">&para;</a></h3>
+<p>Set QRZ API key (stored server-side).</p>
+<p><strong>Request</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"api_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1a2b3c4d5e6f..."</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="post-apiqrz_upload">POST /api/qrz_upload<a class="headerlink" href="#post-apiqrz_upload" title="Permanent link">&para;</a></h3>
+<p>Upload ADIF to QRZ Logbook.</p>
+<p><strong>Response</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"uploaded"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"failed"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="post-apieqsl_creds">POST /api/eqsl_creds<a class="headerlink" href="#post-apieqsl_creds" title="Permanent link">&para;</a></h3>
+<p>Set eQSL username and password.</p>
+<p><strong>Request</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"oz1lav"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"secretpass"</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="post-apieqsl_upload">POST /api/eqsl_upload<a class="headerlink" href="#post-apieqsl_upload" title="Permanent link">&para;</a></h3>
+<p>Upload ADIF to eQSL.</p>
+<p><strong>Response</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"uploaded"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"failed"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="post-apilotw_cert">POST /api/lotw_cert<a class="headerlink" href="#post-apilotw_cert" title="Permanent link">&para;</a></h3>
+<p>Store the LoTW callsign certificate and key (extracted from the TQSL <code>.p12</code> in the browser during LoTW setup).</p>
+<h3 id="post-apilotw_upload">POST /api/lotw_upload<a class="headerlink" href="#post-apilotw_upload" title="Permanent link">&para;</a></h3>
+<p>Sign all pending QSOs with the stored certificate and upload them to lotw.arrl.org.</p>
+<p><strong>Response</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"uploaded"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"failed"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="get-apilotw_tq8">GET /api/lotw_tq8<a class="headerlink" href="#get-apilotw_tq8" title="Permanent link">&para;</a></h3>
+<p>Download the whole log as a signed <code>.tq8</code> file, for manual upload to LoTW or offline verification.</p>
+<p><strong>Response</strong>: <code>.tq8</code> file (gzipped, signed)</p>
+<h2 id="websocket-streaming">WebSocket (Streaming)<a class="headerlink" href="#websocket-streaming" title="Permanent link">&para;</a></h2>
+<p><strong>Single-client</strong> endpoint for live spectrum:</p>
+<div class="highlight"><pre><span></span><code>ws://&lt;tab5-ip&gt;:80/ws
+</code></pre></div>
+<p>Each binary frame is <strong>1026 bytes</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Bytes</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>0</code></td>
+<td>Frame type: <code>0x01</code> = spectrum</td>
+</tr>
+<tr>
+<td><code>1</code></td>
+<td>Zoom decimation factor (1 = base 1024-bin spectrum, &gt;1 = zoom-FFT with that decimation)</td>
+</tr>
+<tr>
+<td><code>2–1025</code></td>
+<td>1024 unsigned bytes, one per bin, quantised −130 dBm (0) to −30 dBm (255)</td>
+</tr>
+</tbody>
+</table>
+<p>Bins are <strong>pre-shifted server-side</strong>, so byte 2 is the leftmost screen pixel and
+a client does not have to know where the VFO sits in the FFT. Push rate is about
+<strong>10 fps</strong>.</p>
+<p>!!! warning "One client at a time"
+    A second connection takes the stream over from the first. Opening the web UI
+    in two tabs is enough to do it.</p>
+<h2 id="screenshot">Screenshot<a class="headerlink" href="#screenshot" title="Permanent link">&para;</a></h2>
+<h3 id="get-ssbmp">GET /ss.bmp<a class="headerlink" href="#get-ssbmp" title="Permanent link">&para;</a></h3>
+<p>Returns what is on the Tab5's screen right now, as a BMP.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">Invoke-WebRequest</span> <span class="n">-Uri</span> <span class="s2">"http://192.168.1.213/ss.bmp"</span> <span class="n">-OutFile</span> <span class="n">screenshot</span><span class="p">.</span><span class="n">bmp</span>
+</code></pre></div>
+<p>!!! note "It freezes animations while it reads"
+    The screen is captured from the live framebuffer, so a waterfall or a
+    blinking indicator stops for the duration of the read.</p>
+<h2 id="error-responses">Error Responses<a class="headerlink" href="#error-responses" title="Permanent link">&para;</a></h2>
+<p>All endpoints return errors in a standard format:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CAT timeout"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Common HTTP status codes:</p>
+<ul>
+<li><strong>200</strong> — Success</li>
+<li><strong>400</strong> — Bad request (invalid command)</li>
+<li><strong>500</strong> — Server error (QMX not responding, etc.)</li>
+<li><strong>503</strong> — Service unavailable (WiFi off, etc.)</li>
+</ul>
+<h2 id="example-tune-to-7074-mhz-in-python">Example: Tune to 7.074 MHz in Python<a class="headerlink" href="#example-tune-to-7074-mhz-in-python" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+
+<span class="n">ip</span> <span class="o">=</span> <span class="s2">"192.168.1.50"</span>
+<span class="n">api</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"http://</span><span class="si">{</span><span class="n">ip</span><span class="si">}</span><span class="s2">/api"</span>
+
+<span class="c1"># Set frequency</span>
+<span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">api</span><span class="si">}</span><span class="s2">/cmd"</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="p">{</span><span class="s2">"cmd"</span><span class="p">:</span> <span class="s2">"set_frequency"</span><span class="p">,</span> <span class="s2">"value"</span><span class="p">:</span> <span class="mi">7074000</span><span class="p">})</span>
+
+<span class="c1"># Set mode</span>
+<span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">api</span><span class="si">}</span><span class="s2">/cmd"</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="p">{</span><span class="s2">"cmd"</span><span class="p">:</span> <span class="s2">"set_mode"</span><span class="p">,</span> <span class="s2">"value"</span><span class="p">:</span> <span class="s2">"USB"</span><span class="p">})</span>
+
+<span class="c1"># Check status</span>
+<span class="n">status</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">api</span><span class="si">}</span><span class="s2">/status"</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Now on </span><span class="si">{</span><span class="n">status</span><span class="p">[</span><span class="s1">'frequency_hz'</span><span class="p">]</span><span class="si">}</span><span class="s2"> Hz, </span><span class="si">{</span><span class="n">status</span><span class="p">[</span><span class="s1">'mode'</span><span class="p">]</span><span class="si">}</span><span class="s2"> mode"</span><span class="p">)</span>
+</code></pre></div>
+<hr />
+<p><strong>Next:</strong> See <a href="../troubleshooting/">Troubleshooting</a> for API debugging.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.sections", "toc.follow", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

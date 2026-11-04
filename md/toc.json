@@ -1,0 +1,154 @@
+{
+  "pages": [
+    {
+      "title": "Home",
+      "path": "index.md",
+      "level": 0
+    },
+    {
+      "title": "Quick Start",
+      "path": "quick-start.md",
+      "level": 0
+    },
+    {
+      "title": "Getting Help",
+      "path": "getting-help.md",
+      "level": 0
+    },
+    {
+      "title": "User Guide",
+      "path": null,
+      "level": 0
+    },
+    {
+      "title": "Panadapter",
+      "path": "guide/panadapter.md",
+      "level": 1
+    },
+    {
+      "title": "Audio",
+      "path": "guide/audio.md",
+      "level": 1
+    },
+    {
+      "title": "Live Spots",
+      "path": "guide/spots.md",
+      "level": 1
+    },
+    {
+      "title": "Spot Map",
+      "path": "guide/spot-map.md",
+      "level": 1
+    },
+    {
+      "title": "Web UI",
+      "path": "guide/web-ui.md",
+      "level": 1
+    },
+    {
+      "title": "FT8 RX",
+      "path": "guide/ft8-rx.md",
+      "level": 1
+    },
+    {
+      "title": "FT8 TX",
+      "path": "guide/ft8-tx.md",
+      "level": 1
+    },
+    {
+      "title": "CW (beta)",
+      "path": "guide/cw.md",
+      "level": 1
+    },
+    {
+      "title": "Web Radio",
+      "path": "guide/webradio.md",
+      "level": 1
+    },
+    {
+      "title": "JS8 (beta)",
+      "path": "guide/js8.md",
+      "level": 1
+    },
+    {
+      "title": "Time Sync",
+      "path": "guide/time-sync.md",
+      "level": 1
+    },
+    {
+      "title": "WSPR",
+      "path": "guide/wspr.md",
+      "level": 1
+    },
+    {
+      "title": "Radio Menus",
+      "path": "guide/radio-menus.md",
+      "level": 1
+    },
+    {
+      "title": "Settings",
+      "path": "guide/settings.md",
+      "level": 1
+    },
+    {
+      "title": "Reference",
+      "path": null,
+      "level": 0
+    },
+    {
+      "title": "Gestures & Controls",
+      "path": "reference/gestures.md",
+      "level": 1
+    },
+    {
+      "title": "Hardware",
+      "path": "reference/hardware.md",
+      "level": 1
+    },
+    {
+      "title": "Web API",
+      "path": "reference/web-api.md",
+      "level": 1
+    },
+    {
+      "title": "Hamlib rigctld",
+      "path": "reference/rigctld.md",
+      "level": 1
+    },
+    {
+      "title": "Troubleshooting",
+      "path": "reference/troubleshooting.md",
+      "level": 1
+    },
+    {
+      "title": "Glossary",
+      "path": "reference/glossary.md",
+      "level": 1
+    },
+    {
+      "title": "For Builders",
+      "path": null,
+      "level": 0
+    },
+    {
+      "title": "Build from Source",
+      "path": "build/build.md",
+      "level": 1
+    },
+    {
+      "title": "Architecture",
+      "path": "build/architecture.md",
+      "level": 1
+    },
+    {
+      "title": "Contributing & Feedback",
+      "path": "build/contributing.md",
+      "level": 1
+    },
+    {
+      "title": "Releases",
+      "path": "releases.md",
+      "level": 0
+    }
+  ]
+}
