@@ -954,6 +954,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#contest-logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contest logging
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#practice-mode-no-radio-needed" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1743,6 +1754,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#contest-logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contest logging
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#practice-mode-no-radio-needed" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1800,6 +1822,10 @@
 <p>!!! warning "There is no abort for a message in progress"
     <code>KY</code> has no abort in the QMX's CAT manual. Tested on the bench: neither sending <code>RX;</code> nor bouncing the mode away from CW and back stops an in-flight send - both were tried and both simply had no effect, the keyer ran to completion either way. Once you tap a memory, it sends to the end. Keying the radio itself <strong>is</strong> confirmed working, off air, by the operator.</p>
 <p>The page is built for one-handed, gloved, field operation — the kind of CW you do standing at a picnic table with a paddle you have not touched in a month.</p>
+<p><em>(v1.25.0)</em> <strong>The CW page is now also on the web</strong> — see
+<a href="../web-ui/#cw-control">Web UI → CW Control</a> for sending macros, editing them,
+switching macro sets, entering a callsign by hand, and setting a contest name,
+all from a browser.</p>
 <hr />
 <h2 id="the-screen">The screen<a class="headerlink" href="#the-screen" title="Permanent link">&para;</a></h2>
 <p><strong>Left pane, top to bottom:</strong></p>
@@ -1848,12 +1874,24 @@
 <p><strong>Right of the pane:</strong> the live spectrum and waterfall, the <strong>decode ticker</strong> along the bottom, the <strong>copilot hint</strong> line just above it, and the <strong>station card</strong> when a callsign has been heard.</p>
 <hr />
 <h2 id="band-discipline">Band discipline<a class="headerlink" href="#band-discipline" title="Permanent link">&para;</a></h2>
-<p>The CW page only lets you operate the CW portion of the band. That is deliberate:</p>
+<p>The CW page lets you operate the CW <strong>and Digi</strong> portions of the band — not the
+phone portion. That is deliberate: CW is legal inside the digital sub-band, but
+digital modes are not legal inside the CW one, so clamping to CW alone would
+deny you spectrum you are actually allowed to use.</p>
 <ul>
 <li>Entering the page moves you into the band's CW segment if you were somewhere else.</li>
 <li>Changing band lands you in the <strong>middle of that band's CW segment</strong>.</li>
-<li>Tuning — by tap, drag, band-plan strip or keypad — is <strong>clamped</strong> to the CW segment. You cannot accidentally tune into the phone portion while on this page.</li>
-<li>The band-plan strip below the spectrum shows only the CW segment, and the filter is set to <strong>300 Hz</strong> on entry.</li>
+<li>Tuning — by tap, drag, band-plan strip or keypad, <strong>on the Tab5 or from the
+  web</strong> <em>(v1.25.0 — the web's own tuning paths now honour this too)</em> — is
+  <strong>clamped</strong> to CW + Digi. You cannot tune into the phone portion while on
+  this page.</li>
+<li>The band-plan strip below the spectrum draws the CW and Digi segments only,
+  each in its own colour, stretched to fill the whole strip — never Phone —
+  and the filter is set to <strong>300 Hz</strong> on entry.</li>
+<li><em>(v1.25.0)</em> <strong>Spots on this page are CW only</strong>, even though Digi is in
+  reach — see <a href="../spots/#2-tapping-a-spot">Live Spots</a>. Tapping an FT8/FT4
+  activity spot would switch the radio's mode away from CW, which this page
+  has no business offering.</li>
 </ul>
 <p>The segment boundaries come from the band plan for your region, which you can set in <strong>Settings → Band-plan region</strong>.</p>
 <hr />
@@ -1892,6 +1930,14 @@
 <tr>
 <td><code>{CALL}</code></td>
 <td>The station you are working</td>
+</tr>
+<tr>
+<td><code>{RST}</code></td>
+<td>A pro-forma signal report: <code>599</code>, or <code>5NN</code> if you long-press the <code>{RST}</code> button when inserting it (toggles a saved cut-numbers preference)</td>
+</tr>
+<tr>
+<td><code>{SERIAL}</code></td>
+<td>Your contest serial, incrementing with each exchange sent, with cut numbers (0 sent as T) — see <a href="#contest-logging">Contest logging</a></td>
 </tr>
 </tbody>
 </table>
@@ -1971,6 +2017,13 @@ redirect where Save writes to.</p>
 <p>Hints are <strong>green when there is something to act on</strong> and amber otherwise, and they clear after about 25 seconds so a stale reading never sits beside newer copy.</p>
 <p>This is what makes the page usable if you cannot yet copy CW by ear: the ticker gives you the letters, the hint tells you what just happened, and NEXT tells you what to send back.</p>
 <p><strong>The station card</strong> appears when a callsign is heard, showing the country, whether you have worked them before (and on this band), the report they sent you, and their <strong>park reference</strong> if they gave one. Tap the card to start working them; tap again to drop them.</p>
+<p><strong>With nothing heard, the card shows "tap to enter a callsign"</strong> <em>(v1.24.2)</em> — tap
+it to type one on a popup keyboard instead of waiting for it to be decoded.
+That is how you adopt a station you can copy by ear but the decoder has not
+caught, or one you already know from another source.</p>
+<p><strong>The pencil icon beside the card</strong> <em>(v1.24.2)</em> always opens the same
+manual-entry keyboard, whether or not a callsign is already showing — so a
+wrongly auto-adopted call can be corrected without first dropping the contact.</p>
 <hr />
 <h2 id="listening-the-two-audio-paths-and-what-each-one-can-do">Listening: the two audio paths, and what each one can do<a class="headerlink" href="#listening-the-two-audio-paths-and-what-each-one-can-do" title="Permanent link">&para;</a></h2>
 <p>The Tab5 and the QMX produce <strong>separate</strong> audio from the same receiver, and
@@ -2056,17 +2109,21 @@ hardware with no buffer in the way. The design is Michael KZ4LY's.</p>
 <li><strong>QMX in one ear, Tab5 in the other, Binaural CW off</strong> — a monitor in one
   ear and mono receive in the other.</li>
 </ul>
-<p>On the radio's side, whichever you pick, set the monitor so it stops moving
-when you change receive volume:</p>
-<ol>
-<li>In the QMX's <strong>CW</strong> menu set <strong>Sidetone abs/rel</strong> to <strong>Absolute</strong>.</li>
-<li>Set <strong>Sidetone volume</strong> to taste.</li>
-</ol>
-<p>Left at the factory setting of <em>Relative</em>, the main volume control moves the
-received audio and your sidetone together by the same amount, so you cannot
-bring the receive level down without taking your own monitor with it. The
-<strong>CW monitor level</strong> row in the settings drawer sets both of these from the
-Tab5, and reads them back from the radio rather than keeping its own copy.</p>
+<p><em>(v1.25.0)</em> <strong>The Tab5 now does this for you.</strong> Left at the factory setting of
+<em>Relative</em>, the QMX's main volume control moves the received audio and your
+sidetone together by the same amount, so you cannot bring the receive level
+down without taking your own monitor with it. Entering the CW page now checks
+the radio's reported <code>Sidetone abs/rel</code> setting, and if it reads <strong>Relative</strong>,
+switches it to <strong>Absolute</strong> and starts mirroring the <strong>QMX volume</strong> slider into
+<strong>Sidetone volume</strong> itself (with a 15% floor, so it can never go fully silent).
+Leaving the page restores <strong>Relative</strong>, so a standalone QMX is never left
+needing to be repaired by hand. If the radio is already <strong>Absolute</strong> — Michael
+KZ4LY's own deliberate binaural setup, described above — this does nothing at
+all.</p>
+<p>The <strong>CW monitor level</strong> row in the settings drawer still exists for setting
+the level and the abs/rel mode directly, and reads them back from the radio
+rather than keeping its own copy — useful outside the CW page, or if you want
+a level other than what the automatic mirror would pick.</p>
 <hr />
 <h2 id="running-a-qso">Running a QSO<a class="headerlink" href="#running-a-qso" title="Permanent link">&para;</a></h2>
 <p>The <strong>NEXT</strong> button always shows exactly what it will send. One tap sends it and advances:</p>
@@ -2077,6 +2134,23 @@ Tab5, and reads them back from the radio rather than keeping its own copy.</p>
 </ol>
 <p>A station is adopted automatically when the decoder hears your call followed by <code>DE &lt;their call&gt;</code> shortly after your CQ. You can also adopt anyone by tapping the station card, which is how you answer someone else's CQ. <strong>Long-press NEXT</strong> to drop the contact and go back to CQ.</p>
 <p>The logged contact records mode CW, the report you sent, and the report you received <strong>only if it was actually decoded</strong> — a report that was never exchanged is left out of the log rather than invented.</p>
+<hr />
+<h2 id="contest-logging">Contest logging<a class="headerlink" href="#contest-logging" title="Permanent link">&para;</a></h2>
+<p><em>(v1.25.0)</em> <strong>Set contest…</strong>, from the web CW panel (see
+<a href="../web-ui/#cw-control">Web UI → CW Control</a>) or <code>[cw] contest =</code> in a config
+file, names the contest you are currently running. While it is set, every CW
+QSO logged here carries that name as ADIF <code>CONTEST_ID</code>, alongside a genuine
+contest exchange:</p>
+<ul>
+<li><strong>The serial you actually sent</strong> — read back from the expanded <code>{SERIAL}</code>
+  macro text, never a number assumed from a counter — as ADIF <code>STX_STRING</code>.</li>
+<li><strong>The serial the other station sent back</strong> — captured from the decoder right
+  after their report, the same way the report itself is captured — as ADIF
+  <code>SRX_STRING</code>.</li>
+</ul>
+<p>The station card shows the received serial next to the report once it has been
+decoded. This is mutually exclusive with ARRL Field Day logging, which keeps
+writing its own <code>CONTEST_ID</code> the way it always has.</p>
 <hr />
 <h2 id="practice-mode-no-radio-needed">Practice mode (no radio needed)<a class="headerlink" href="#practice-mode-no-radio-needed" title="Permanent link">&para;</a></h2>
 <p><strong>Settings → CW Simulation Mode</strong> (or a three-finger hold on this page) turns it into a practice bench. A red border around the screen shows it is active, and <strong>the radio is never keyed</strong> while it is on — the status line says "Simulated:" rather than "Keying:" so a glance always tells you which is happening.</p>

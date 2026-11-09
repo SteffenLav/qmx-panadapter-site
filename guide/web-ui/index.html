@@ -876,6 +876,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#cw-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CW Control
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#memory-channels" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1938,6 +1949,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#cw-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CW Control
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#memory-channels" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2469,6 +2491,39 @@ collide if they transmit in the <em>same</em> window, and only you know which wi
 are about to pounce into. The verdict says where your pick stands: <em>"Clear in
 EVEN - busy in ODD"</em>, or judges just your own window once a transmission has
 fixed it. The Tab5's own mini strip and picker show the same two rows.</p>
+<h2 id="cw-control">CW Control<a class="headerlink" href="#cw-control" title="Permanent link">&para;</a></h2>
+<p><em>(v1.25.0)</em> When the Tab5 is on the <a href="../cw/">CW page</a>, the browser shows a CW
+panel instead of the FT8 one, at parity with the rest of this page:</p>
+<ul>
+<li><strong>"MODE: CW"</strong> replaces the Mode pill in the top bar, matching the Tab5's
+  own CW-blue page header, and the Mode pill itself is hidden — same as it
+  already was on FT8/JS8 — since the mode is pinned to CW here and cannot be
+  changed from this page.</li>
+<li><strong>The band-plan strip</strong> draws the CW and Digi segments only, stretched to
+  fill the whole strip, exactly as the Tab5's own strip does on this page —
+  see <a href="../cw/#band-discipline">Band discipline</a>. Dragging it, tapping it, or
+  typing a frequency on the keypad all stay inside that range; they cannot
+  land you in the phone portion of the band.</li>
+<li><strong>Spots are CW only</strong> — see the note in <a href="../spots/#2-tapping-a-spot">Live Spots</a>.</li>
+<li><strong>Six macro buttons</strong> send your keyer messages, the same six slots as the
+  Tab5's own memory buttons, plus a <strong>free-text box</strong> — <code>{MYCALL}</code>, <code>{PARK}</code>,
+  <code>{CALL}</code>, <code>{RST}</code> and <code>{SERIAL}</code> all expand here too — to send anything
+  else. Sending is reflected on the Tab5 and keys the radio exactly as a Tab5
+  tap would.</li>
+<li><strong>A pencil icon on each macro button</strong> edits that slot's text (a browser
+  prompt, not a full editor yet) and saves straight to the radio's settings —
+  the Tab5's own memory editor shows the change next time you look.</li>
+<li><strong>General ⇄ Contest</strong> toggles the active macro set, the same switch as the
+  one at the bottom of the Tab5's own CW panel, and both screens stay in sync
+  with whichever one last changed it.</li>
+<li><strong>Set contest…</strong> names the contest you are running — see
+  <a href="../cw/#contest-logging">Contest logging</a>. Once set, the button reads
+  <strong>Contest: \&lt;name&gt;</strong> instead.</li>
+<li><strong>A WPM readout and keyer speed control</strong>, and the <strong>decode ticker</strong>, were
+  already on the web before this release — this section only covers what is
+  new. See <a href="../cw/">CW</a> for the keyer, macros, band discipline and QSO-ladder
+  concepts this panel is built on; everything there applies here too.</li>
+</ul>
 <h2 id="memory-channels">Memory channels<a class="headerlink" href="#memory-channels" title="Permanent link">&para;</a></h2>
 <p>The <strong>Memory</strong> button opens your 32 channels as a grid.
 <strong>Tune</strong> recalls one - frequency and mode together - and <strong>Edit</strong> changes or
@@ -2652,7 +2707,7 @@ The browser asks you to confirm before the download for this reason.
 <p><strong>Miscellaneous ▲</strong> also carries <strong>Prepare for flashing</strong> — closes the USB host cleanly before you unplug the radio or reflash the Tab5, so the QMX is not left half-open.</p>
 <p><strong>Radio ▲</strong> — the things that reach the radio itself:</p>
 <ul>
-<li><strong>Switch to Panadapter / FT8 / FT4 / JS8 / WSPR</strong> — changes the Tab5’s own screen from the browser. The <strong>Radio</strong> menu lists all five pages, so each one is a single click; it no longer steps through them in sequence. Choosing a page is what enables it, and the menu follows the Tab5 if you switch there instead</li>
+<li><strong>Switch to Panadapter / CW / FT8 / FT4 / JS8 / WSPR</strong> — changes the Tab5’s own screen from the browser. <em>(v1.25.0: CW added to the list.)</em> The <strong>Radio</strong> menu lists all six pages, so each one is a single click; it no longer steps through them in sequence. Choosing a page is what enables it, and the menu follows the Tab5 if you switch there instead</li>
 <li><strong>Memory channels</strong> — your 32 channels: click one to tune to it, drag one onto another slot to move it, or onto the bin to clear it</li>
 <li><strong>Let me use the QMX menus</strong> — stops the Tab5 talking to the QMX so you can use the radio's own menus or its Band Configuration terminal. A bar appears until you hand it back. See <a href="../settings/#radio">Settings</a></li>
 <li><strong>Antenna Tune</strong> — QMX 1.04+ only; keys a steady carrier with live power and SWR, and stops itself after 60 seconds</li>
