@@ -363,11 +363,38 @@ panel instead of the FT8 one, at parity with the rest of this page:
   typing a frequency on the keypad all stay inside that range; they cannot
   land you in the phone portion of the band.
 - **Spots are CW only** — see the note in [Live Spots](spots.md#2-tapping-a-spot).
+- **A Station box** holds the callsign of the station you are working - the
+  callsign `{CALL}` sends in a macro. Type it and press Enter or **Set**. No decode is
+  needed, so it works on a signal too weak for the decoder. When the decoder
+  does catch a callsign, a **Use ...** button appears beside the box and one
+  click takes it. **Clear** forgets the station. It is the same station the
+  Tab5 shows on its station card: set it on either, and both show it.
+  *(Gyula HA3HZ)*
+- **Log this contact** sits in the same row. It opens the log window with the
+  callsign already filled in, and with the report copied from the station if
+  the decoder caught one. Logging the station also clears it, so `{CALL}`
+  cannot send the last station's callsign into the next contact.
 - **Six macro buttons** send your keyer messages, the same six slots as the
   Tab5's own memory buttons, plus a **free-text box** — `{MYCALL}`, `{PARK}`,
   `{CALL}`, `{RST}` and `{SERIAL}` all expand here too — to send anything
   else. Sending is reflected on the Tab5 and keys the radio exactly as a Tab5
   tap would.
+- **A type-ahead box** *(v1.26.0, Ralph DL1HR)* sits under the free-text box.
+  Each word is sent when you press **Space**, and **Enter** sends the rest, so
+  you can continue to type while the radio keys. A paste sends every complete
+  word. The Tab5 holds the text in a queue of 256 characters and gives the
+  radio the next part only when the radio's own buffer is empty. The line
+  below the box shows what was sent, how many characters the radio still has
+  to key, and how many are queued.
+- **Stop** drops the text that the radio has not been given yet, and says how
+  many characters it dropped. Text the radio already holds, 80 characters at
+  most, is sent to the end: the QMX has no command to stop it.
+- **CW is not sent outside your band** *(v1.26.0)*. Each send passes the band
+  guard at the moment it is keyed. If the frequency is outside your region's
+  band plan, or no region is set, the text and the queue are dropped. ⚠ The
+  Tab5 shows the reason (`CW not sent: ...`); the web page does not, and
+  shows the word as sent. See
+  [Transmitting outside the band plan](settings.md#transmitting-outside-the-band-plan).
 - **A pencil icon on each macro button** edits that slot's text (a browser
   prompt, not a full editor yet) and saves straight to the radio's settings —
   the Tab5's own memory editor shows the change next time you look.
@@ -447,7 +474,7 @@ things you *type* - which is exactly what the Tab5's touchscreen is worst at:
     ⛔ Two switches are deliberately **not** on this page. The test-tone
     controls key the radio, and a transmit control belongs nowhere a stray
     click can reach it; the resource-monitor overlay is a diagnostic, not an
-    operator switch.
+    operator switch, and has no control on the page (Ctrl+Alt+R toggles it).
 
 Saved straight to the Tab5 - its own settings drawer shows the same values next
 time you open it.
@@ -530,18 +557,21 @@ all, and the text always matches the firmware you are running.
 See [Getting Help](../getting-help.md) for what the device can detect and why it
 never navigates for you.
 
-## CAT Control (Advanced)
+## After a firmware update
 
-The **CAT** section lets you send raw Kenwood-style commands directly to the QMX:
+*(v1.26.0)* A browser can show its own stored copy of the page after the Tab5
+has been updated, with the controls of the old firmware. The page now checks
+this by itself and shows a banner when it is out of date:
 
-```
-FA;        -> reads current frequency
-FA14074000;  -> sets frequency to 14.074 MHz
-MD;        -> reads current mode
-MD2;       -> sets USB mode
-```
+- *"This page was loaded from firmware X and the Tab5 is now running Y -
+  reload to get the current controls."* The Tab5 was updated while the page
+  was open.
+- *"Your browser showed its own old copy of this page - the Tab5 has newer
+  firmware. Reload to get the current controls."* The page was already old
+  when it opened. This check runs a few seconds after the page loads.
 
-This is for advanced troubleshooting — most users don't need it.
+Reload the page (F5) when you see either. ⚠ The second check is proven in
+Chromium browsers only; it is not yet confirmed in Firefox *(Gyula HA3HZ)*.
 
 ## Bottom Bar Menus
 
@@ -591,12 +621,18 @@ The bottom bar groups its actions into four popup menus, plus a battery indicato
 **Radio ▲** — the things that reach the radio itself:
 
 - **Switch to Panadapter / CW / FT8 / FT4 / JS8 / WSPR** — changes the Tab5’s own screen from the browser. *(v1.25.0: CW added to the list.)* The **Radio** menu lists all six pages, so each one is a single click; it no longer steps through them in sequence. Choosing a page is what enables it, and the menu follows the Tab5 if you switch there instead
+- **Noise reduction** and **Auto-notch** *(v1.26.0)* — for the audio that the **Listen** button plays: an on/off box, Low / Med / High, Speech model or Spectral, and the Auto-notch box. They run in the browser and cost the Tab5 nothing. See [Web DSP](web-dsp.md).
 - **Memory channels** — your 32 channels: click one to tune to it, drag one onto another slot to move it, or onto the bin to clear it
 - **Let me use the QMX menus** — stops the Tab5 talking to the QMX so you can use the radio's own menus or its Band Configuration terminal. A bar appears until you hand it back. See [Settings](settings.md#radio)
 - **Antenna Tune** — QMX 1.04+ only; keys a steady carrier with live power and SWR, and stops itself after 60 seconds
 - **Activation** — start or stop a POTA/SOTA session from the browser. While one is running a badge appears in the top bar with the reference and the contact count, so it cannot be forgotten on the drive home
-- **Log a contact** — log a CW or SSB contact you worked by hand. You type the callsign and the two reports; the frequency, mode, band, date, time, your own callsign and grid and the running activation all come from the radio. The report you send arrives filled in from the mode — 599 for CW, 59 for phone — and from v1.23.0 the S digit of the report you received is measured off the S-meter instead of being a 9 every time *(Gyula HA3HZ)*. Clearing one logs the contact without a report rather than with a wrong one. It **stays open** after Log, with the callsign cleared and the reports kept, because a run of contacts is not one dialog at a time. It is refused if the radio is not connected, since the record would have no frequency *(Gyula HA3HZ, Brian KB9WFS)*
+- **Log a contact** — log a CW or SSB contact you worked by hand. **Name**,
+  **QTH** and **Remarks** are optional and are for what the other operator
+  told you; they are written to the ADIF log as `NAME`, `QTH` and `COMMENT`
+  (24, 24 and 60 bytes - an accented letter counts as two; longer text is cut). On the CW page the window
+  opens with the station you are working already filled in. You type the callsign and the two reports; the frequency, mode, band, date, time, your own callsign and grid and the running activation all come from the radio. The report you send arrives filled in from the mode — 599 for CW, 59 for phone — and from v1.23.0 the S digit of the report you received is measured off the S-meter instead of being a 9 every time *(Gyula HA3HZ)*. Clearing one logs the contact without a report rather than with a wrong one. It **stays open** after Log, with the callsign cleared and the reports kept, because a run of contacts is not one dialog at a time. It is refused if the radio is not connected, since the record would have no frequency *(Gyula HA3HZ, Brian KB9WFS)*
 - **Scheduled events** — the contest calendar and announced POTA/SOTA activations on one timeline, soonest first, with what is on the air now below what is coming. Filter to Contests or ?OTA when you have already decided which kind of evening it is. The list is fetched at most every 15 minutes; Refresh asks for it now. The source being down is normal — the last list stays up and the age line says how old it is
+- **GPS status** — the fix, position, grid, satellites and the sky plot; the same page the Tab5 shows when you tap the UTC clock.
 - **Radio menus** — the QMX's own 80×24 menu system, in the browser. Arrow keys, Enter and Back on screen, and your real keyboard works too. Needs the radio's second USB serial port switched on first. See [Radio Menus](radio-menus.md)
 
 **Miscellaneous ▲**:
@@ -743,8 +779,8 @@ on the very keyboard you are configuring.
 
 ## Tab5Shot - what the screen looks like right now
 
-**Tab5Shot** in the bottom bar opens a live `/ss.bmp` capture of the Tab5's
-screen in a new tab. It is the quickest way to put what you are seeing into a
+**Tab5 screenshot** in the **Miscellaneous** menu opens a live `/ss.bmp` capture of the Tab5's
+screen in a new tab, and **(save PNG)** beside it saves one as a file. It is the quickest way to put what you are seeing into a
 bug report or a message to the group, without a camera and without reaching for
 the device.
 
@@ -754,7 +790,7 @@ the device.
 
 ## Config backup, restore and edit
 
-The **Config down / Config up** buttons in the bottom bar save every setting to
+**Config download ↓** and **Config upload ↑** in the **Files** menu save every setting to
 a plain text file, so you can edit it on a PC, put it back, or share part of it.
 
 **Config down** downloads `qmx-config.txt`, an INI-style file grouped into

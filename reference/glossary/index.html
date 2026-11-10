@@ -684,6 +684,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../guide/web-dsp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web DSP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../guide/ft8-rx/" class="md-nav__link">
         
   
@@ -1409,6 +1437,18 @@
 <td>American Radio Relay League — the US national amateur radio society, which runs Logbook of The World</td>
 </tr>
 <tr>
+<td><strong>Auto-notch</strong></td>
+<td>A filter that finds a steady carrier in the audio by itself and removes it. In the browser from v1.26.0</td>
+</tr>
+<tr>
+<td><strong>Band guard</strong></td>
+<td>The check the Tab5 makes before it keys the radio: the frequency that will go out must be inside your IARU region's band plan</td>
+</tr>
+<tr>
+<td><strong>Carrier</strong></td>
+<td>A steady, unmodulated signal on one frequency. Heard as a constant tone in SSB</td>
+</tr>
+<tr>
 <td><strong>CAT</strong></td>
 <td>Computer-Aided Transceiver — radio control protocol (Kenwood-style commands via serial/USB)</td>
 </tr>
@@ -1477,12 +1517,20 @@
 <td>General-Purpose Input/Output — microcontroller pins for digital signals</td>
 </tr>
 <tr>
+<td><strong>Hamlib / rigctld</strong></td>
+<td>A common radio-control library and its network server. The Tab5 runs a rigctld-compatible server on port 4532, so a logger can read and set the radio</td>
+</tr>
+<tr>
 <td><strong>Heartbeat</strong></td>
 <td>The periodic <code>HB &lt;call&gt; &lt;grid&gt;</code> a JS8 station sends to say it is listening</td>
 </tr>
 <tr>
 <td><strong>I2C / SPI</strong></td>
 <td>Serial communication protocols for connecting peripherals (sensors, displays, etc.)</td>
+</tr>
+<tr>
+<td><strong>IARU region</strong></td>
+<td>One of three world regions (1: Europe, Africa; 2: the Americas; 3: Asia-Pacific) with different band limits. The band plan and the band guard use it</td>
 </tr>
 <tr>
 <td><strong>IF</strong></td>
@@ -1521,6 +1569,10 @@
 <td>The sentence format a GNSS receiver speaks - what the Tab5 reads for time, date and position</td>
 </tr>
 <tr>
+<td><strong>NR</strong></td>
+<td>Noise reduction. In the browser from v1.26.0, in two kinds: Speech model and Spectral</td>
+</tr>
+<tr>
 <td><strong>NVS</strong></td>
 <td>Non-Volatile Storage — persistent memory on the ESP32 (survives power cycles)</td>
 </tr>
@@ -1531,6 +1583,10 @@
 <tr>
 <td><strong>OTA</strong></td>
 <td>Over-The-Air update - the Tab5 fetching and installing new firmware over WiFi, with no cable</td>
+</tr>
+<tr>
+<td><strong>Page picker</strong></td>
+<td>The list of pages (Panadapter, CW, FT8, FT4, JS8, WSPR) that opens with a swipe from the left edge or a tap on the left grip</td>
 </tr>
 <tr>
 <td><strong>Pileup</strong></td>
@@ -1565,6 +1621,10 @@
 <td>Radio contact / conversation between two stations</td>
 </tr>
 <tr>
+<td><strong>QTH</strong></td>
+<td>The location of a station</td>
+</tr>
+<tr>
 <td><strong>RBN</strong></td>
 <td>Reverse Beacon Network — automated receivers ("skimmers") that continuously report the CW and digital signals they hear. One of SelfSpotter's three sources</td>
 </tr>
@@ -1573,8 +1633,16 @@
 <td>Receiver Incremental Tuning — shifts what you <em>hear</em> without moving what you would <em>transmit</em> on. The QMX has RIT but no XIT</td>
 </tr>
 <tr>
+<td><strong>RNNoise</strong></td>
+<td>A small neural network that separates speech from noise, by Xiph.Org. The browser's Speech model noise reduction</td>
+</tr>
+<tr>
 <td><strong>RTC</strong></td>
 <td>Real-Time Clock — battery-backed timer on the Tab5 (keeps time during power-off)</td>
+</tr>
+<tr>
+<td><strong>Sidetone</strong></td>
+<td>The tone the radio plays in your own headphones while you key CW</td>
 </tr>
 <tr>
 <td><strong>Slot</strong></td>
@@ -1591,6 +1659,10 @@
 <tr>
 <td><strong>SOTA</strong></td>
 <td>Summits on the Air — portable operating activity from mountain summits</td>
+</tr>
+<tr>
+<td><strong>Spectral noise reduction</strong></td>
+<td>Noise reduction that measures the noise floor in each narrow slice of the audio and turns down the slices that hold only noise. Works on any signal, CW included</td>
 </tr>
 <tr>
 <td><strong>SSB</strong></td>
@@ -1613,6 +1685,10 @@
 <td>Transmit / Receive — keying the radio and listening</td>
 </tr>
 <tr>
+<td><strong>Type-ahead</strong></td>
+<td>Typing CW text while the radio is still keying earlier text. The Tab5 queues it and hands it to the radio in order</td>
+</tr>
+<tr>
 <td><strong>UAC</strong></td>
 <td>USB Audio Class — standard for streaming audio over USB</td>
 </tr>
@@ -1627,6 +1703,10 @@
 <tr>
 <td><strong>VFO</strong></td>
 <td>Variable Frequency Oscillator — the radio's tuning dial / frequency setting</td>
+</tr>
+<tr>
+<td><strong>WPM</strong></td>
+<td>Words per minute, the speed of CW</td>
 </tr>
 <tr>
 <td><strong>WSJT-X</strong></td>

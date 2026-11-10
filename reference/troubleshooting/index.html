@@ -684,6 +684,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../guide/web-dsp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web DSP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../guide/ft8-rx/" class="md-nav__link">
         
   
@@ -1491,6 +1519,56 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#web-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Web page
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Web page">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-web-page-shows-old-controls-after-an-update" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The web page shows old controls after an update
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#noise-reduction-or-auto-notch-does-nothing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Noise reduction or Auto-notch does nothing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cw-text-typed-in-the-browser-is-not-sent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CW text typed in the browser is not sent
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2051,6 +2129,56 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#web-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Web page
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Web page">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-web-page-shows-old-controls-after-an-update" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The web page shows old controls after an update
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#noise-reduction-or-auto-notch-does-nothing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Noise reduction or Auto-notch does nothing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cw-text-typed-in-the-browser-is-not-sent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CW text typed in the browser is not sent
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2240,8 +2368,8 @@ else on this page will help.</p>
 <p><strong>Fix:</strong></p>
 <ol>
 <li>Check QMX firmware version (see Quick Start)</li>
-<li>Try a manual CAT command via web API: <code>curl "http://&lt;ip&gt;/api/cat" -d '{"cmd": "TX;"}' -H "Content-Type: application/json"</code></li>
-<li>If that fails, you have a CAT issue (see above)</li>
+<li>Check that CAT is alive: open <code>http://&lt;ip&gt;/api/status</code> and confirm that <code>freq_hz</code> follows the dial and <code>qmx_fw</code> shows the radio's firmware</li>
+<li>If it does not, you have a CAT issue (see above)</li>
 <li>Check settings -&gt; FT8 -&gt; Simulation Mode is <strong>off</strong></li>
 <li>Restart both devices</li>
 </ol>
@@ -2446,7 +2574,7 @@ serial monitor still holding the port.</p>
 <p><strong>Symptoms:</strong> the panadapter behaves as if a setting is wedged — e.g. WiFi won't come up no matter what, or a stored value seems stuck — and re-entering settings doesn't help.</p>
 <p>You can now reset from the web page, with no computer or flashing tool needed. In the web UI, open the <strong>Miscellaneous</strong> menu in the bottom bar and pick the scope:</p>
 <ul>
-<li><strong>Reset settings</strong> — clears the app's stored settings (callsign, grid, filters, preferences) back to defaults. Your memory channels and logs are separate.</li>
+<li><strong>Reset settings</strong> — clears the app's stored settings (callsign, grid, filters, preferences) back to defaults, <strong>and the memory channels with them</strong>. The QSO log and the WiFi settings are kept.</li>
 <li><strong>Reset WiFi</strong> — clears just the Wi-Fi / network state, for when the connection is stuck.</li>
 </ul>
 <p>Each choice asks for confirmation first, then the device reboots and clears the selected storage on the way back up. Export your config first (<strong>Files</strong> menu -&gt; <strong>Config download ↓</strong>) if you want to restore it afterward.</p>
@@ -2483,6 +2611,31 @@ serial monitor still holding the port.</p>
 <p>The maintainer (OZ1LAV) and other users are very responsive to well-documented issues.</p>
 <hr />
 <p><strong>Next:</strong> Explore <a href="../../build/build/">Build from Source</a> if you want to modify the firmware.</p>
+<h2 id="web-page">Web page<a class="headerlink" href="#web-page" title="Permanent link">&para;</a></h2>
+<h3 id="the-web-page-shows-old-controls-after-an-update">The web page shows old controls after an update<a class="headerlink" href="#the-web-page-shows-old-controls-after-an-update" title="Permanent link">&para;</a></h3>
+<p>The browser is showing its own stored copy of the page. From v1.26.0 the page
+checks this and shows a banner that tells you to reload. Press F5. If there is
+no banner and a control described in this manual is missing, reload anyway.
+See <a href="../../guide/web-ui/#after-a-firmware-update">After a firmware update</a>.</p>
+<h3 id="noise-reduction-or-auto-notch-does-nothing">Noise reduction or Auto-notch does nothing<a class="headerlink" href="#noise-reduction-or-auto-notch-does-nothing" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Listen</strong> must be on (the <strong>▶</strong> button). The tools work on that audio only.</li>
+<li>Read the grey text under the row in the <strong>Radio</strong> menu. <code>NR is not active in
+   DIGI</code> or <code>notch is not active in CW</code> means the tool does not work in the
+   present mode.</li>
+<li><code>speech model could not load</code> means the browser could not fetch it from the
+   Tab5. Reload the page.</li>
+<li>The Tab5's own speaker is never affected. These tools are in the browser.</li>
+</ol>
+<p>See <a href="../../guide/web-dsp/">Web DSP</a>.</p>
+<h3 id="cw-text-typed-in-the-browser-is-not-sent">CW text typed in the browser is not sent<a class="headerlink" href="#cw-text-typed-in-the-browser-is-not-sent" title="Permanent link">&para;</a></h3>
+<ol>
+<li>The Tab5 must be on the CW page. Text sent while it is on another page is
+   not acted on.</li>
+<li>The band guard refused it. The Tab5 shows <code>CW not sent:</code> with the reason:
+   the frequency is outside your region's band plan, or no IARU region is set.</li>
+<li>The queue is full (256 characters). Wait, or press <strong>Stop</strong>.</li>
+</ol>
 
 
 

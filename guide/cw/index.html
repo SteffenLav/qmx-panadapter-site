@@ -689,6 +689,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../web-dsp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web DSP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../ft8-rx/" class="md-nav__link">
         
   
@@ -867,6 +895,23 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Memory messages">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stop-and-the-send-queue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STOP and the send queue
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1668,6 +1713,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Memory messages">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stop-and-the-send-queue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STOP and the send queue
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1818,9 +1880,9 @@
 
 
 <h1 id="cw-beta">CW <em>(beta)</em><a class="headerlink" href="#cw-beta" title="Permanent link">&para;</a></h1>
-<p>The CW page is the third screen in the carousel: swipe left from the Panadapter to reach FT8, and left again for CW. The spectrum and waterfall keep running behind it, so you still see the band while you operate. The page ships <strong>on</strong> - it is this release's own beta. Turn it off with <code>cw_page_enabled = no</code> in a config file, or <code>{"action":"cw_enable","on":false}</code> over the API, if you would rather not have it yet.</p>
+<p>To open the CW page, open the <strong>page picker</strong> (swipe right from the left edge, or tap the left grip) and tap <strong>MODE: CW</strong>. The spectrum and waterfall keep running behind it, so you still see the band while you operate. The page ships <strong>on</strong> and is a beta. Turn it off with <code>cw_page_enabled = no</code> in a config file, or <code>{"action":"cw_enable","on":false}</code> over the API, if you would rather not have it yet.</p>
 <p>!!! warning "There is no abort for a message in progress"
-    <code>KY</code> has no abort in the QMX's CAT manual. Tested on the bench: neither sending <code>RX;</code> nor bouncing the mode away from CW and back stops an in-flight send - both were tried and both simply had no effect, the keyer ran to completion either way. Once you tap a memory, it sends to the end. Keying the radio itself <strong>is</strong> confirmed working, off air, by the operator.</p>
+    <code>KY</code> has no abort in the QMX's CAT manual. Tested on the bench: neither sending <code>RX;</code> nor bouncing the mode away from CW and back stops an in-flight send - both were tried and both simply had no effect, the keyer ran to completion either way. Once the radio holds a message, it sends to the end. What you <em>can</em> stop is text that is still queued on the Tab5 - see <a href="#stop-and-the-send-queue">STOP</a>. Keying the radio itself <strong>is</strong> confirmed working, off air, by the operator.</p>
 <p>The page is built for one-handed, gloved, field operation — the kind of CW you do standing at a picnic table with a paddle you have not touched in a month.</p>
 <p><em>(v1.25.0)</em> <strong>The CW page is now also on the web</strong> — see
 <a href="../web-ui/#cw-control">Web UI → CW Control</a> for sending macros, editing them,
@@ -1863,7 +1925,7 @@ all from a browser.</p>
 </tr>
 <tr>
 <td><strong>Status line</strong></td>
-<td>What the radio is doing: receiving, keying, or how many characters are left to send.</td>
+<td>What the radio is doing: receiving, keying, or how many characters are left to send. While text is queued it is replaced by a red <strong>STOP</strong> button <em>(v1.26.0)</em>.</td>
 </tr>
 <tr>
 <td><strong>General / Contest toggle</strong> (bottom of the panel)</td>
@@ -1946,8 +2008,13 @@ deny you spectrum you are actually allowed to use.</p>
 <li><strong>Tap</strong> a memory to send it. The button lights <strong>light grey</strong> while your finger is down so you can see which one will fire.</li>
 <li><strong>Drag up or down</strong> without lifting to move to a different button — useful because the buttons are narrow and a fingertip covers more than one. Lift on the one you want.</li>
 <li><strong>Hold for 800 ms</strong> and the editor opens immediately, with your finger still down. The hold timer restarts whenever you slide to a different button, so taking your time to aim never opens the editor by accident.</li>
+<li><strong>Slide sideways</strong> about 40 px and the touch is abandoned: nothing is sent <em>(v1.26.0)</em>. The left-edge grip lies in front of the first three buttons, so a swipe that started there used to send a macro. A slide to the right from near the left edge now opens the page picker instead.</li>
 <li>An <strong>empty slot</strong> opens the editor when tapped.</li>
 </ul>
+<h3 id="stop-and-the-send-queue">STOP and the send queue<a class="headerlink" href="#stop-and-the-send-queue" title="Permanent link">&para;</a></h3>
+<p><em>(v1.26.0)</em> A message tapped while another is keying is <strong>queued</strong> behind it, up to 256 characters. The Tab5 hands the radio the next part, 80 characters at most, only when the radio's own buffer is empty.</p>
+<p>While text is queued, the status line becomes a red button: <strong>STOP - drop N queued</strong>. It drops the text the radio has not been given yet. The part the radio already holds still runs to the end, because the QMX has no command to stop it.</p>
+<p>Each send is also checked against the band plan at the moment it is keyed. Outside the band, or with no IARU region set, the send is refused with a <code>CW not sent:</code> message and the queue is dropped. See <a href="../settings/#transmitting-outside-the-band-plan">Transmitting outside the band plan</a>.</p>
 <p>The editor shows all six messages at once, so you can set up a whole activation in one visit.</p>
 <hr />
 <h2 id="macro-sets">Macro sets<a class="headerlink" href="#macro-sets" title="Permanent link">&para;</a></h2>
@@ -2024,6 +2091,17 @@ caught, or one you already know from another source.</p>
 <p><strong>The pencil icon beside the card</strong> <em>(v1.24.2)</em> always opens the same
 manual-entry keyboard, whether or not a callsign is already showing — so a
 wrongly auto-adopted call can be corrected without first dropping the contact.</p>
+<p><strong>The Log button above the card</strong> <em>(v1.26.0)</em> opens the <strong>Log a contact</strong> window
+with the current station's callsign filled in - one tap, where it used to be a
+trip through the settings drawer. With no station it opens the same window
+empty. The pencil icon sits one row above it.</p>
+<p><strong>Listening in a browser?</strong> From v1.26.0 the web page has noise reduction for
+CW. It uses the spectral kind, which keeps a CW note. See <a href="../web-dsp/">Web DSP</a>.</p>
+<p><strong>While you transmit, the waterfall adds no rows</strong> <em>(v1.26.0)</em> - including when
+you key by hand - so your own signal is not painted over the band. It resumes
+about 0.7 seconds after the last element. The spectrum trace keeps drawing. The
+browser's waterfall does not do this yet. This is implemented and not yet
+measured against a hand key <em>(Bryan N0LUF)</em>.</p>
 <hr />
 <h2 id="listening-the-two-audio-paths-and-what-each-one-can-do">Listening: the two audio paths, and what each one can do<a class="headerlink" href="#listening-the-two-audio-paths-and-what-each-one-can-do" title="Permanent link">&para;</a></h2>
 <p>The Tab5 and the QMX produce <strong>separate</strong> audio from the same receiver, and
@@ -2174,8 +2252,9 @@ or off, the same gesture FT8 uses for its own simulator.</p>
 <hr />
 <h2 id="known-limitations">Known limitations<a class="headerlink" href="#known-limitations" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>No abort for a message in progress</strong> (see the warning at the top) — both
-  tested candidates (<code>RX;</code>, a mode bounce) were tried and neither works.</li>
+<li><strong>No abort for a message the radio already holds</strong> (see the warning at the top) — both
+  tested candidates (<code>RX;</code>, a mode bounce) were tried and neither works. Text
+  still queued on the Tab5 can be dropped with <strong>STOP</strong>.</li>
 <li><strong>Zero-beat tuning aid</strong> and <strong>speed matching</strong> are designed but not yet built; both need real signals to develop against.</li>
 </ul>
 

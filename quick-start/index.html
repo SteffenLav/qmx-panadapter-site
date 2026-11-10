@@ -891,6 +891,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../guide/web-dsp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web DSP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../guide/ft8-rx/" class="md-nav__link">
         
   
@@ -1856,7 +1884,7 @@ firmware rather than something you are doing wrong, and it is on the list to fix
 <li><strong>Grid</strong> — your Maidenhead grid square (e.g., JO45)</li>
 <li><strong>WiFi</strong> — SSID and password (optional, skip if you're portable)</li>
 </ul>
-<p>You can change these anytime by swiping right from the screen edge to open the settings drawer.</p>
+<p>You can change these anytime by swiping left from the right edge, or tapping the right grip, to open the settings drawer.</p>
 <h2 id="step-5b-optional-microsd-card-station-backup">Step 5b: Optional — microSD Card (station backup)<a class="headerlink" href="#step-5b-optional-microsd-card-station-backup" title="Permanent link">&para;</a></h2>
 <p>Insert a microSD card (a plain <strong>FAT32 32 GB</strong> card is ideal) into the Tab5's slot and it automatically mirrors your whole station to <code>/qmx-panadapter/</code> on the card — a <strong>grab-and-go backup</strong> you can pull into a PC or another Tab5, no computer needed in the field:</p>
 <ul>
@@ -1889,7 +1917,7 @@ firmware rather than something you are doing wrong, and it is on the list to fix
 <tbody>
 <tr>
 <td>Swipe → from <strong>left edge</strong></td>
-<td>Open the <strong>page picker</strong> - tap Panadapter, FT8, FT4, JS8 or WSPR</td>
+<td>Open the <strong>page picker</strong> - tap Panadapter, CW, FT8, FT4, JS8 or WSPR</td>
 </tr>
 <tr>
 <td>Swipe ← from <strong>right edge</strong></td>
@@ -1905,7 +1933,7 @@ firmware rather than something you are doing wrong, and it is on the list to fix
 </tr>
 </tbody>
 </table>
-<p>You'll see faint "breathing" grip handles on the edges — they show you where to swipe.</p>
+<p>You'll see faint "breathing" grip handles on the edges — they show you where to swipe. A tap on the left or right grip opens the same thing as the swipe.</p>
 <p>!!! note "This is the short version"
     <a href="../reference/gestures/">Gestures &amp; Controls</a> is the authoritative list and
     covers the top-bar selectors, the drawer and the spectrum gestures as well.
@@ -1916,15 +1944,15 @@ firmware rather than something you are doing wrong, and it is on the list to fix
 <p>You're now receiving. The <strong>spectrum</strong> shows signal strength across the band, and the <strong>waterfall</strong> scrolls down showing signal activity over time.</p>
 <ul>
 <li><strong>Tap the spectrum or waterfall</strong> to tune to that frequency</li>
-<li><strong>Pinch</strong> to zoom in/out; <strong>one-finger horizontal drag</strong> to pan and retune</li>
+<li><strong>Pinch</strong> to zoom in/out; <strong>one-finger horizontal swipe</strong> to pan (from ×2 the dial stays where it is; at ×1 it retunes)</li>
 <li><strong>Tap the coloured band-plan strip</strong> (along the bottom, just above the status bar) to jump to a frequency, or <strong>drag along it</strong> to scrub through the band — you can also grab it from <em>anywhere on the bottom bar</em> and drag sideways (a vertical up-swipe there still opens memory channels)</li>
 <li><strong>Tap the Freq label</strong> on the top bar to open the frequency keypad — drag the "Enter freq" title bar to reposition it, pinch or swipe up/down to resize it</li>
 <li><strong>Swipe ↑ from the bottom edge</strong> to open memory channels — tap an empty slot to create one, long-press a filled slot to edit it, long-press and drag to move a channel (or drag it onto the <strong>wastebin</strong> cell to delete it). A new device comes with a few example channels and plays a one-time tour of these gestures the first time you open the picker</li>
 <li><strong>Tap Band</strong> to switch between your configured bands</li>
-<li><strong>Tap Mode</strong> to switch USB/LSB/CW/DiGi</li>
+<li><strong>Tap Mode</strong> to switch USB/LSB/CW/DiGi (plus AM on QMX firmware 1.04 or later)</li>
 </ul>
 <h2 id="step-8-ft8-ft4-and-js8-optional">Step 8: FT8, FT4 and JS8 (Optional)<a class="headerlink" href="#step-8-ft8-ft4-and-js8-optional" title="Permanent link">&para;</a></h2>
-<p>Swipe → from the left edge to switch to the <strong>decode view</strong>. You'll see:</p>
+<p>Swipe → from the left edge and tap <strong>MODE: FT8</strong> in the page picker to open the <strong>decode view</strong>. You'll see:</p>
 <ul>
 <li><strong>Live decode list</strong> — every station heard on frequency</li>
 <li><strong>Waterfall</strong> — same real-time spectrum waterfall</li>
@@ -1935,10 +1963,9 @@ firmware rather than something you are doing wrong, and it is on the list to fix
 column to pick <strong>FT8</strong>, <strong>FT4</strong> or <strong>JS8</strong>; the Tab5 retunes to that mode's calling
 frequency on the band you are on.</p>
 <p><strong>JS8</strong> <em>(beta)</em> is the keyboard mode: it carries free text instead of FT8's fixed
-exchange, so you hold a short conversation. In JS8 the page gains a <strong>Conversation</strong>
-tab beside <strong>Stations</strong>, and a <strong>Free text</strong> button under Call CQ opens a box to type
-a message — it tells you how many seconds the message will hold the frequency before
-anything is transmitted. See <a href="../guide/js8/">JS8</a>.</p>
+exchange, so you hold a short conversation. In JS8 the page shows <strong>Stations</strong>, <strong>Conversation</strong> and a type box together. Type
+a message in the box — it tells you how many seconds the message will hold the
+frequency before anything is transmitted. See <a href="../guide/js8/">JS8</a>.</p>
 <h2 id="step-9-wifi-web-ui-optional">Step 9: WiFi &amp; Web UI (Optional)<a class="headerlink" href="#step-9-wifi-web-ui-optional" title="Permanent link">&para;</a></h2>
 <p>If you set up WiFi:</p>
 <ol>

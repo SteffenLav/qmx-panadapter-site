@@ -684,6 +684,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../guide/web-dsp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web DSP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../guide/ft8-rx/" class="md-nav__link">
         
   
@@ -1603,6 +1631,34 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#noise-reduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Noise reduction
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Noise reduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-rnnoisewasm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /rnnoise.wasm
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#screenshot" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2436,6 +2492,34 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#noise-reduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Noise reduction
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Noise reduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-rnnoisewasm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /rnnoise.wasm
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#screenshot" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2544,7 +2628,9 @@
 </code></pre></div>
 <p>Notes:</p>
 <ul>
-<li><code>screen</code> is <code>"panadapter"</code> or <code>"ft8"</code>.</li>
+<li><code>screen</code> is <code>"panadapter"</code>, <code>"cw"</code>, <code>"ft8"</code> or <code>"wspr"</code>. FT4 and JS8 report <code>"ft8"</code>.</li>
+<li><strong><code>cw_tx</code> is present only while the Tab5 is on the CW page.</strong> It holds <code>macros</code> (the six of the active set), <code>set_b</code> (true = the Contest set), <code>last_sent</code>, <code>contest_name</code>, <code>queued</code> (characters not yet handed to the radio), <code>keying</code> (the radio's own count of characters left, 0-9, where 9 means 9 or more and -1 means unknown), <code>target</code> (the station being worked), <code>heard</code> (the last callsign decoded), <code>heard_age_s</code> (-1 when nothing was decoded) and <code>rst_rcvd</code>.</li>
+<li><strong><code>tune_out</code></strong> <code>{seq, msg}</code> is the result of a <code>cw_tune</code> that answered <code>listening</code>. It is absent until the first result. <code>seq</code> goes up by one with each result and <code>msg</code> is the text the Tab5 shows.</li>
 <li><strong><code>ft8</code> is present only while the FT8/FT4 screen is live</strong> — the engine does not run otherwise, so its text would be stale. <code>st</code> is one of <code>active</code> / <code>armed</code> / <code>done</code> / <code>timeout</code> / <code>wait</code> / <code>idle</code>, and <code>text</code> is the same line the Tab5 shows on its own TX status label. This is what drives the browser's TX banner and the red dot in the tab title.</li>
 <li><code>bt</code> is the Bluetooth mouse: <code>en</code> is whether it is switched on, <code>conn</code> whether a mouse is connected right now. <code>en: true, conn: false</code> means it is scanning or waiting for a paired mouse to come back.</li>
 <li><code>signal_dbm</code> and <code>bandplan</code> are <code>null</code> when unavailable (no spectrum yet; VFO outside a known band).</li>
@@ -2603,7 +2689,7 @@ action names its own parameter key (there is no generic <code>value</code>).</p>
 <tr>
 <td><code>cw_tune</code></td>
 <td><em>(none)</em></td>
-<td><strong>Put the dial on the signal.</strong> In CW/CW-R it zero-beats the nearest carrier, searching the <strong>last 4 seconds</strong> of spectrum rather than the current frame, because a keyed carrier is absent as often as it is present. In USB/LSB it runs the SSB estimator instead (a 4 s vote on the far station’s filter edge, then a snap to the grid) — the device dispatches on mode, the caller does not choose. Answers <code>{"ok":true,"mode":"cw"|"ssb","moved_hz":N}</code>, or <code>"listening":true</code> while a window is still open (8 s for CW, 4 s for SSB), or <code>{"ok":false,"error":...}</code>. One press, one move — nothing keeps correcting afterwards. Receive only</td>
+<td><strong>Put the dial on the signal.</strong> In CW/CW-R it zero-beats the nearest carrier, searching the <strong>last 4 seconds</strong> of spectrum rather than the current frame, because a keyed carrier is absent as often as it is present. In USB/LSB it runs the SSB estimator instead (a 4 s vote on the far station’s filter edge, then a snap to the grid) — the device dispatches on mode, the caller does not choose. Answers <code>{"ok":true,"mode":"cw"|"ssb","moved_hz":N}</code>, or <code>"listening":true</code> while a window is still open (8 s for CW, 4 s for SSB) - the result then arrives in <code>/api/status</code> as <code>tune_out</code> <em>(v1.26.0)</em> - or <code>{"ok":false,"error":...}</code>. One press, one move — nothing keeps correcting afterwards. Receive only</td>
 </tr>
 <tr>
 <td><code>rit_park</code></td>
@@ -2617,8 +2703,8 @@ action names its own parameter key (there is no generic <code>value</code>).</p>
 </tr>
 <tr>
 <td><code>set_screen</code></td>
-<td><code>screen: "pan"/"panadapter"/"ft8"/"ft4"/"js8"/"wspr"</code></td>
-<td>Switch the Tab5's own view. Applied within about a second (handed to the display task). <code>ft4</code> and <code>js8</code> open the FT8 page <strong>and</strong> select that sub-mode, so one call is enough to put the device into FT4. An unknown name is refused with HTTP 400, not treated as <code>panadapter</code></td>
+<td><code>screen: "pan"/"panadapter"/"cw"/"ft8"/"ft4"/"js8"/"wspr"</code></td>
+<td>Switch the Tab5's own view. Applied within about a second (handed to the display task). <code>ft4</code> and <code>js8</code> open the FT8 page <strong>and</strong> select that sub-mode, so one call is enough to put the device into FT4. An unknown name is refused with HTTP 400, not treated as <code>panadapter</code>. <code>"cw"</code> is refused with HTTP 403 while the CW page is switched off</td>
 </tr>
 <tr>
 <td><code>set_ft8_mode</code></td>
@@ -2631,9 +2717,29 @@ action names its own parameter key (there is no generic <code>value</code>).</p>
 <td>Set the POTA/SOTA activation reference</td>
 </tr>
 <tr>
+<td><code>cw_adopt</code></td>
+<td><code>call</code></td>
+<td><strong>Set the station the CW page is working</strong> - the callsign <code>{CALL}</code> sends in a macro. The web equivalent of typing it on the Tab5's station card, for when the signal is too weak to decode. An empty <code>call</code> clears it. Letters, digits and <code>/</code> only, 15 at most; anything else is refused with HTTP 400. Answers <code>{"ok":true,"target":"..."}</code>. The current station, the last decoded callsign and the report copied from the station are in <code>/api/status</code> under <code>cw_tx</code> (<code>target</code>, <code>heard</code>, <code>heard_age_s</code>, <code>rst_rcvd</code>)</td>
+</tr>
+<tr>
+<td><code>cw_send</code></td>
+<td><code>text</code></td>
+<td><strong>Send CW.</strong> A macro with its fields still in it, or free text. The text is <strong>added to a queue</strong> (256 characters), so a second call while the radio keys is sent after the first. <strong>Keys the radio</strong>, and passes the band guard at that moment. Acted on only while the Tab5 is on the CW page. HTTP 400 with no text, HTTP 409 <code>{"ok":false,"err":"CW queue full"}</code> when the queue is full <em>(queue from v1.26.0)</em></td>
+</tr>
+<tr>
+<td><code>cw_cancel</code></td>
+<td><em>(none)</em></td>
+<td>Drop the CW text that the radio has not been given yet. Answers <code>{"ok":true,"dropped":N}</code>. It cannot stop what the radio already holds (80 characters at most) <em>(v1.26.0)</em></td>
+</tr>
+<tr>
+<td><code>cw_macro_edit</code></td>
+<td><code>idx</code> (0-5), <code>text</code></td>
+<td>Write one of the six macros of the active set</td>
+</tr>
+<tr>
 <td><code>log_qso</code></td>
-<td><code>call</code>, optional <code>rst_sent</code>, <code>rst_rcvd</code></td>
-<td><strong>Log a CW or SSB contact worked by hand</strong>, as the Tab5's own Log window does. Those are the only fields accepted: the frequency, mode, band, date, time, your callsign, your grid and the running activation are read from the device, so a page holding a stale frequency cannot write a record on the wrong band. An empty report logs no report rather than a wrong one. Refused with HTTP 400 and a reason when the callsign is empty or there is no CAT. Answers <code>{"ok":true,"call":"...","act_qsos":N,"act_need":N,"total":N}</code>, so the count needs no second request</td>
+<td><code>call</code>, optional <code>rst_sent</code>, <code>rst_rcvd</code>, <code>name</code>, <code>qth</code>, <code>comment</code></td>
+<td><strong>Log a CW or SSB contact worked by hand</strong>, as the Tab5's own Log window does. <code>name</code>, <code>qth</code> and <code>comment</code> are what the other operator told you (ADIF <code>NAME</code>, <code>QTH</code>, <code>COMMENT</code>; 24, 24 and 60 bytes, longer text is cut). Nothing else is accepted: the frequency, mode, band, date, time, your callsign, your grid and the running activation are read from the device, so a page holding a stale frequency cannot write a record on the wrong band. An empty report logs no report rather than a wrong one. Refused with HTTP 400 and a reason when the callsign is empty or there is no CAT. Answers <code>{"ok":true,"call":"...","act_qsos":N,"act_need":N,"total":N}</code>, so the count needs no second request</td>
 </tr>
 <tr>
 <td><code>cq_start</code></td>
@@ -2647,8 +2753,8 @@ action names its own parameter key (there is no generic <code>value</code>).</p>
 </tr>
 <tr>
 <td><code>qso_override</code></td>
-<td><code>what: "resend"/"rr73"/"73"/"cancel"</code></td>
-<td>Mid-QSO override, as the Tab5's own three buttons do. <strong>Keys the radio</strong> except for <code>cancel</code></td>
+<td><code>what: "resend"/"rr73"/"73"/"cancel"/"pause"/"skip"</code></td>
+<td>Mid-QSO override, as the Tab5's own buttons do. <code>pause</code> skips one transmission; <code>skip</code> gives up on this caller and keeps answering others. <strong>Keys the radio</strong> except for <code>cancel</code>, <code>pause</code> and <code>skip</code></td>
 </tr>
 <tr>
 <td><code>clear_swr</code></td>
@@ -2708,9 +2814,10 @@ action names its own parameter key (there is no generic <code>value</code>).</p>
 </tbody>
 </table>
 <p><strong>Radio menus</strong> (the QMX's own terminal, on its second serial port):
-<code>open</code>, <code>close</code>, <code>key</code>, <code>text</code>, <code>term_view</code>, <code>qmx_ports</code>, <code>qmx_term_probe</code> —
-see <a href="#">Radio menus</a> and <code>GET /api/term</code>.</p>
-<p><strong>Developer actions.</strong> Not referenced by any web-UI element, and easy to regret:</p>
+<code>term_view</code>, <code>qmx_ports</code> and <code>qmx_term_probe</code> are <code>/api/cmd</code> actions. <code>open</code>,
+<code>close</code>, <code>key</code> and <code>text</code> are actions of <strong><code>POST /api/term</code></strong>, not of
+<code>/api/cmd</code>. See <a href="../../guide/radio-menus/">Radio menus</a> and <code>GET /api/term</code>.</p>
+<p><strong>Developer actions.</strong> No button on the web page sends these (the page sends <code>resmon</code> on Ctrl+Alt+R), and they are easy to regret:</p>
 <table>
 <thead>
 <tr>
@@ -2745,12 +2852,16 @@ see <a href="#">Radio menus</a> and <code>GET /api/term</code>.</p>
 </tr>
 </tbody>
 </table>
-<p><strong>⚠ Check the response BODY, not the status code.</strong> The reply is <code>{"ok":true}</code>
-on success — but an unrecognised action returns <strong>HTTP 200</strong> with the body
-<code>unknown action</code>, and a refused one (for example <code>ota_install</code> while
-transmitting) returns <code>{"ok":false,"error":"..."}</code>, also with HTTP 200. A caller
-that only tests the status code cannot tell success from a typo, and a mistyped
-action is then a silent no-op.</p>
+<p><strong>⚠ Check the response BODY as well as the status code.</strong> The reply is
+<code>{"ok":true}</code> on success. An unrecognised action is refused with <strong>HTTP 400</strong>
+and the text <code>unknown action</code>. A refused action (for example <code>ota_install</code>
+while transmitting) can still answer <strong>HTTP 200</strong> with
+<code>{"ok":false,"error":"..."}</code>, so a caller that only tests the status code
+cannot tell success from a refusal. A few CW and JS8 actions name the reason
+<code>err</code> instead of <code>error</code>.</p>
+<p><strong>The request body can be 1024 bytes at most</strong> <em>(v1.26.0; it was cut at 255
+before, without an error)</em>. A longer body is refused with <strong>HTTP 413</strong>. An empty
+body is HTTP 400 <code>no body</code>, and invalid JSON is HTTP 400 <code>bad json</code>.</p>
 <p><code>display.peak_hold_s</code> is the spectrum peak-hold window in <strong>seconds</strong>, 0 = off,
 maximum 60. The Tab5 drawer offers 1, 2, 3 and 5; the API accepts any value in range. It is also in <code>/api/status</code> as <code>peak_hold_s</code>, so a browser can follow a
 change made on the Tab5 without re-reading the settings.</p>
@@ -2810,8 +2921,9 @@ filters, the everyday toggles, QMX volume, band-plan region and the WiFi SSID.
 The spot sources (<code>spots_en</code> overall, then <code>rbn_en</code> and <code>cluster_en</code>),
 propagation feedback (<code>psk_rx_en</code>) and the Bluetooth mouse (<code>bt_mouse_en</code>) are
 here too — <code>bt_mouse_en</code> is stored immediately but only takes effect after a
-restart. <code>swr_limit_x10</code> (the SWR limit × 10, so <code>30</code> is 3.0:1) is <strong>reported
-but not writable</strong> — a transmit safety limit is set at the device.</p>
+restart. <code>swr_limit_x10</code> is the SWR limit × 10, so <code>30</code> is 3.0:1. It is
+writable: <code>0</code> switches SWR protection off, and any other value is held between
+<code>20</code> and <code>40</code>.</p>
 <p><strong>The WiFi password is never returned</strong> - only <code>wifi_pass_set</code> says whether one is
 stored.</p>
 <h3 id="post-apisettings">POST /api/settings<a class="headerlink" href="#post-apisettings" title="Permanent link">&para;</a></h3>
@@ -2837,7 +2949,7 @@ ADIF viewer's "Del N test" button finds exactly those.</p>
 <p><strong>Read-only reporters.</strong> <code>ft8_op_mode</code> (<code>"ft8"</code> / <code>"ft4"</code>) and <code>ft8_freq_hz</code> are
 returned but not writable here — change them with the <code>set_ft8_mode</code> action,
 which also retunes the radio and clears stale decodes, then read these back to
-confirm. <code>swr_limit_x10</code> is likewise reported only.</p>
+confirm.</p>
 <h3 id="get-apidecodes">GET /api/decodes<a class="headerlink" href="#get-apidecodes" title="Permanent link">&para;</a></h3>
 <p>The FT8/FT4 decode list as the Tab5 shows it - same ordering (the station being
 worked, then messages addressed to you, then CQ calls, then strongest signal) and
@@ -2883,10 +2995,11 @@ site. <code>page=toc.json</code> returns the contents list. Served from the firm
 needs no internet and always matches the running version. 404 if the page is not
 in this firmware's manual.</p>
 <h2 id="cat-endpoints">CAT Endpoints<a class="headerlink" href="#cat-endpoints" title="Permanent link">&para;</a></h2>
-<p>There is no raw-CAT HTTP endpoint. Send CAT-level changes through
-<code>POST /api/cmd</code> (<code>set_freq</code>, <code>set_mode</code>, <code>set_bw</code>, <code>set_band</code>), which routes them
-through the CAT poll task - the only writer to the radio's serial port. The web
-UI's own <strong>CAT</strong> box uses those actions.</p>
+<p>Send CAT-level changes through <code>POST /api/cmd</code> (<code>set_freq</code>, <code>set_mode</code>,
+<code>set_bw</code>, <code>set_band</code>), which routes them through the CAT poll task - the only
+writer to the radio's serial port. For one raw CAT string there is the developer
+action <code>cat_raw</code> with a <code>cmd</code> field; its reply appears in the diagnostic log,
+and a command that would transmit passes the band guard first.</p>
 <h2 id="ft8-endpoints">FT8 Endpoints<a class="headerlink" href="#ft8-endpoints" title="Permanent link">&para;</a></h2>
 <p>The decode list is <code>GET /api/decodes</code> (above). Transmit from the browser is
 limited to <code>POST /api/cmd {"action":"cq_start"}</code>; there is no endpoint that sends
@@ -2926,22 +3039,21 @@ restore — adds nothing extra.</p>
 <p><code>idx</code> is the record's position in the file and <code>call</code> must match the callsign
 already stored there — both, or the device answers <code>409</code> and changes nothing, so
 a browser showing a stale list cannot edit the wrong QSO.</p>
-<p>Only three fields are accepted: <code>RST_SENT</code>, <code>RST_RCVD</code> and <code>SIG_INFO</code>. An empty
-<code>value</code> removes the field, which for a report is the honest record of one that
-was never exchanged. <code>SIG_INFO</code> is the reference the <em>other</em> station was
+<p><strong>Any ADIF field can be edited.</strong> The field name can hold letters, digits and
+underscore only. <code>RST_SENT</code>, <code>RST_RCVD</code>, <code>GRIDSQUARE</code>, <code>QSO_DATE</code> and <code>TIME_ON</code>
+are format-checked, and a value that does not fit is refused with <code>400</code>. An
+empty <code>value</code> removes the field, which for a report is the honest record of one
+that was never exchanged. <code>SIG_INFO</code> is the reference the <em>other</em> station was
 activating (<code>US-1241</code>, <code>G/LD-049</code>, <code>DLFF-0123</code>); the device derives <code>SIG</code> from
 its shape and writes it alongside, and clears it again when the reference is
-cleared. Everything else is refused with <code>400</code>: callsign, band, mode, date and
-time are what QRZ, eQSL and LoTW match a contact on, and a LoTW record is signed
-over exactly those.</p>
+cleared. Callsign, band, mode, date and time are what QRZ, eQSL and LoTW match
+a contact on, so a change to one of them here does not change the copy a
+logbook already holds.</p>
 <p><strong>Response</strong>: <code>{"ok":true}</code>, or <code>{"ok":false,"error":"…"}</code></p>
 <h3 id="post-apiadifclear">POST /api/adif/clear<a class="headerlink" href="#post-apiadifclear" title="Permanent link">&para;</a></h3>
 <p>Clear all QSOs from ADIF log.</p>
 <p><strong>Response</strong>:</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cleared"</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">"ok"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">}</span>
 </code></pre></div>
 <h2 id="configuration-endpoints">Configuration Endpoints<a class="headerlink" href="#configuration-endpoints" title="Permanent link">&para;</a></h2>
 <h3 id="get-apiconfig">GET /api/config<a class="headerlink" href="#get-apiconfig" title="Permanent link">&para;</a></h3>
@@ -2951,11 +3063,9 @@ over exactly those.</p>
 <p>Upload a configuration file to restore settings.</p>
 <p><strong>Request</strong>: the config file as the raw request body (not multipart)</p>
 <p><strong>Response</strong>:</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"imported"</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">"merged"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">"applied"</span><span class="p">:</span><span class="w"> </span><span class="mi">57</span><span class="p">}</span>
 </code></pre></div>
+<p><code>applied</code> is the number of settings the file changed.</p>
 <h2 id="logging-endpoints">Logging Endpoints<a class="headerlink" href="#logging-endpoints" title="Permanent link">&para;</a></h2>
 <h3 id="get-apilog">GET /api/log<a class="headerlink" href="#get-apilog" title="Permanent link">&para;</a></h3>
 <p>Download diagnostic log.</p>
@@ -3029,48 +3139,36 @@ contact.</p>
 <h2 id="upload-endpoints">Upload Endpoints<a class="headerlink" href="#upload-endpoints" title="Permanent link">&para;</a></h2>
 <h3 id="post-apiqrz_key">POST /api/qrz_key<a class="headerlink" href="#post-apiqrz_key" title="Permanent link">&para;</a></h3>
 <p>Set QRZ API key (stored server-side).</p>
-<p><strong>Request</strong>:</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">"api_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1a2b3c4d5e6f..."</span>
-<span class="p">}</span>
-</code></pre></div>
+<p><strong>Request</strong>: the key itself as the raw request body - plain text, not JSON,
+47 characters at most.</p>
 <h3 id="post-apiqrz_upload">POST /api/qrz_upload<a class="headerlink" href="#post-apiqrz_upload" title="Permanent link">&para;</a></h3>
 <p>Upload ADIF to QRZ Logbook.</p>
-<p><strong>Response</strong>:</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">"uploaded"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">"failed"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
-<span class="p">}</span>
-</code></pre></div>
+<p><strong>Response</strong>: HTTP <strong>202</strong> with <code>{"status":"uploading"}</code>. The upload runs in
+the background; read the result from <code>GET /api/upload_status</code>, which reports
+<code>busy</code>, <code>kind</code>, <code>uploaded</code>, <code>failed</code>, <code>error</code> and sometimes a <code>note</code>. While
+another upload is running the answer is HTTP <strong>423</strong> <code>upload in progress</code>.</p>
 <h3 id="post-apieqsl_creds">POST /api/eqsl_creds<a class="headerlink" href="#post-apieqsl_creds" title="Permanent link">&para;</a></h3>
 <p>Set eQSL username and password.</p>
 <p><strong>Request</strong>:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"oz1lav"</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"secretpass"</span>
+<span class="w">  </span><span class="nt">"user"</span><span class="p">:</span><span class="w"> </span><span class="s2">"oz1lav"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"pswd"</span><span class="p">:</span><span class="w"> </span><span class="s2">"secretpass"</span>
 <span class="p">}</span>
 </code></pre></div>
 <h3 id="post-apieqsl_upload">POST /api/eqsl_upload<a class="headerlink" href="#post-apieqsl_upload" title="Permanent link">&para;</a></h3>
 <p>Upload ADIF to eQSL.</p>
-<p><strong>Response</strong>:</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">"uploaded"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">"failed"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
-<span class="p">}</span>
-</code></pre></div>
+<p><strong>Response</strong>: HTTP <strong>202</strong> with <code>{"status":"uploading"}</code>. The upload runs in
+the background; read the result from <code>GET /api/upload_status</code>, which reports
+<code>busy</code>, <code>kind</code>, <code>uploaded</code>, <code>failed</code>, <code>error</code> and sometimes a <code>note</code>. While
+another upload is running the answer is HTTP <strong>423</strong> <code>upload in progress</code>.</p>
 <h3 id="post-apilotw_cert">POST /api/lotw_cert<a class="headerlink" href="#post-apilotw_cert" title="Permanent link">&para;</a></h3>
 <p>Store the LoTW callsign certificate and key (extracted from the TQSL <code>.p12</code> in the browser during LoTW setup).</p>
 <h3 id="post-apilotw_upload">POST /api/lotw_upload<a class="headerlink" href="#post-apilotw_upload" title="Permanent link">&para;</a></h3>
 <p>Sign all pending QSOs with the stored certificate and upload them to lotw.arrl.org.</p>
-<p><strong>Response</strong>:</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">"uploaded"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">"failed"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
-<span class="p">}</span>
-</code></pre></div>
+<p><strong>Response</strong>: HTTP <strong>202</strong> with <code>{"status":"uploading"}</code>. The upload runs in
+the background; read the result from <code>GET /api/upload_status</code>, which reports
+<code>busy</code>, <code>kind</code>, <code>uploaded</code>, <code>failed</code>, <code>error</code> and sometimes a <code>note</code>. While
+another upload is running the answer is HTTP <strong>423</strong> <code>upload in progress</code>.</p>
 <h3 id="get-apilotw_tq8">GET /api/lotw_tq8<a class="headerlink" href="#get-apilotw_tq8" title="Permanent link">&para;</a></h3>
 <p>Download the whole log as a signed <code>.tq8</code> file, for manual upload to LoTW or offline verification.</p>
 <p><strong>Response</strong>: <code>.tq8</code> file (gzipped, signed)</p>
@@ -3078,7 +3176,30 @@ contact.</p>
 <p><strong>Single-client</strong> endpoint for live spectrum:</p>
 <div class="highlight"><pre><span></span><code>ws://&lt;tab5-ip&gt;:80/ws
 </code></pre></div>
-<p>Each binary frame is <strong>1026 bytes</strong>:</p>
+<p>There are three kinds of binary frame. The first byte says which.</p>
+<table>
+<thead>
+<tr>
+<th>First byte</th>
+<th>Frame</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>0x01</code></td>
+<td>Spectrum</td>
+</tr>
+<tr>
+<td><code>0x02</code></td>
+<td>Takeover notice: another client has taken the stream, and this one must stop reconnecting</td>
+</tr>
+<tr>
+<td><code>0x03</code></td>
+<td>Receiver audio</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Spectrum frame, 1063 bytes:</strong></p>
 <table>
 <thead>
 <tr>
@@ -3089,24 +3210,60 @@ contact.</p>
 <tbody>
 <tr>
 <td><code>0</code></td>
-<td>Frame type: <code>0x01</code> = spectrum</td>
+<td><code>0x01</code></td>
 </tr>
 <tr>
 <td><code>1</code></td>
 <td>Zoom decimation factor (1 = base 1024-bin spectrum, &gt;1 = zoom-FFT with that decimation)</td>
 </tr>
 <tr>
-<td><code>2–1025</code></td>
+<td><code>2–5</code></td>
+<td>Dial frequency, Hz, for this capture</td>
+</tr>
+<tr>
+<td><code>6–9</code></td>
+<td>Left edge of the view, Hz</td>
+</tr>
+<tr>
+<td><code>10–13</code></td>
+<td>Span, Hz</td>
+</tr>
+<tr>
+<td><code>14–17</code>, <code>18–21</code></td>
+<td>Lowest and highest frequency the radio can hear, Hz</td>
+</tr>
+<tr>
+<td><code>22–23</code></td>
+<td>IF offset, Hz, signed</td>
+</tr>
+<tr>
+<td><code>24–1047</code></td>
 <td>1024 unsigned bytes, one per bin, quantised −130 dBm (0) to −30 dBm (255)</td>
+</tr>
+<tr>
+<td><code>1048–1062</code></td>
+<td>Trailer. Its first two bytes are the S-meter: signal in dBm × 10, signed 16-bit, little-endian, <code>0x8000</code> = no reading. The rest is view state for the page</td>
 </tr>
 </tbody>
 </table>
-<p>Bins are <strong>pre-shifted server-side</strong>, so byte 2 is the leftmost screen pixel and
-a client does not have to know where the VFO sits in the FFT. Push rate is about
-<strong>10 fps</strong>.</p>
+<p>Bins are <strong>pre-shifted server-side</strong>, so byte 24 is the leftmost screen pixel
+and a client does not have to know where the VFO sits in the FFT. Push rate is
+about <strong>10 fps</strong>.</p>
+<p><strong>Audio frame</strong> (sent only while a client has asked to listen): byte <code>0</code> is
+<code>0x03</code>, bytes <code>2–3</code> a sequence number, bytes <code>4–5</code> the sample rate (12000), and
+from byte <code>6</code> the samples, µ-law, mono.</p>
 <p>!!! warning "One client at a time"
-    A second connection takes the stream over from the first. Opening the web UI
-    in two tabs is enough to do it.</p>
+    A second connection takes the stream over from the first, which receives
+    one frame of type <code>0x02</code>. Opening the web UI in two tabs is enough to do it.
+    A connect can also be refused when the Tab5 is short of memory; try again
+    after 2 seconds.</p>
+<h2 id="noise-reduction">Noise reduction<a class="headerlink" href="#noise-reduction" title="Permanent link">&para;</a></h2>
+<h3 id="get-rnnoisewasm">GET /rnnoise.wasm<a class="headerlink" href="#get-rnnoisewasm" title="Permanent link">&para;</a></h3>
+<p>The speech model for the browser's noise reduction, as WebAssembly. The page
+fetches it once, the first time the speech model is switched on.</p>
+<p>Noise reduction and the auto-notch have <strong>no setting on the Tab5 and no API</strong>.
+They run in the browser and their settings are stored in the browser. See
+<a href="../../guide/web-dsp/">Web DSP</a>.</p>
 <h2 id="screenshot">Screenshot<a class="headerlink" href="#screenshot" title="Permanent link">&para;</a></h2>
 <h3 id="get-ssbmp">GET /ss.bmp<a class="headerlink" href="#get-ssbmp" title="Permanent link">&para;</a></h3>
 <p>Returns what is on the Tab5's screen right now, as a BMP.</p>
@@ -3116,18 +3273,23 @@ a client does not have to know where the VFO sits in the FFT. Push rate is about
     The screen is captured from the live framebuffer, so a waterfall or a
     blinking indicator stops for the duration of the read.</p>
 <h2 id="error-responses">Error Responses<a class="headerlink" href="#error-responses" title="Permanent link">&para;</a></h2>
-<p>All endpoints return errors in a standard format:</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CAT timeout"</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span>
-<span class="p">}</span>
-</code></pre></div>
+<p>There is no single error format. An error is one of two things:</p>
+<ul>
+<li>a plain-text body with an HTTP error status, for example <code>400</code> with
+  <code>unknown action</code>;</li>
+<li>a JSON body <code>{"ok":false,"error":"..."}</code>, sometimes with HTTP 200. A few CW
+  and JS8 actions use the key <code>err</code>.</li>
+</ul>
 <p>Common HTTP status codes:</p>
 <ul>
-<li><strong>200</strong> — Success</li>
-<li><strong>400</strong> — Bad request (invalid command)</li>
-<li><strong>500</strong> — Server error (QMX not responding, etc.)</li>
-<li><strong>503</strong> — Service unavailable (WiFi off, etc.)</li>
+<li><strong>200</strong> — Success, or a refusal that says so in the body</li>
+<li><strong>202</strong> — An upload was started</li>
+<li><strong>400</strong> — Bad request (unknown action, missing or invalid argument)</li>
+<li><strong>403</strong> — The feature is switched off</li>
+<li><strong>409</strong> — The request does not match the device's state (wrong record, queue full)</li>
+<li><strong>413</strong> — The request body is too long</li>
+<li><strong>423</strong> — An upload is already running</li>
+<li><strong>500</strong> — Server error</li>
 </ul>
 <h2 id="example-tune-to-7074-mhz-in-python">Example: Tune to 7.074 MHz in Python<a class="headerlink" href="#example-tune-to-7074-mhz-in-python" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
@@ -3136,14 +3298,14 @@ a client does not have to know where the VFO sits in the FFT. Push rate is about
 <span class="n">api</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"http://</span><span class="si">{</span><span class="n">ip</span><span class="si">}</span><span class="s2">/api"</span>
 
 <span class="c1"># Set frequency</span>
-<span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">api</span><span class="si">}</span><span class="s2">/cmd"</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="p">{</span><span class="s2">"cmd"</span><span class="p">:</span> <span class="s2">"set_frequency"</span><span class="p">,</span> <span class="s2">"value"</span><span class="p">:</span> <span class="mi">7074000</span><span class="p">})</span>
+<span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">api</span><span class="si">}</span><span class="s2">/cmd"</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="p">{</span><span class="s2">"action"</span><span class="p">:</span> <span class="s2">"set_freq"</span><span class="p">,</span> <span class="s2">"hz"</span><span class="p">:</span> <span class="mi">7074000</span><span class="p">})</span>
 
 <span class="c1"># Set mode</span>
-<span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">api</span><span class="si">}</span><span class="s2">/cmd"</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="p">{</span><span class="s2">"cmd"</span><span class="p">:</span> <span class="s2">"set_mode"</span><span class="p">,</span> <span class="s2">"value"</span><span class="p">:</span> <span class="s2">"USB"</span><span class="p">})</span>
+<span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">api</span><span class="si">}</span><span class="s2">/cmd"</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="p">{</span><span class="s2">"action"</span><span class="p">:</span> <span class="s2">"set_mode"</span><span class="p">,</span> <span class="s2">"mode"</span><span class="p">:</span> <span class="s2">"USB"</span><span class="p">})</span>
 
 <span class="c1"># Check status</span>
 <span class="n">status</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">api</span><span class="si">}</span><span class="s2">/status"</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Now on </span><span class="si">{</span><span class="n">status</span><span class="p">[</span><span class="s1">'frequency_hz'</span><span class="p">]</span><span class="si">}</span><span class="s2"> Hz, </span><span class="si">{</span><span class="n">status</span><span class="p">[</span><span class="s1">'mode'</span><span class="p">]</span><span class="si">}</span><span class="s2"> mode"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Now on </span><span class="si">{</span><span class="n">status</span><span class="p">[</span><span class="s1">'freq_hz'</span><span class="p">]</span><span class="si">}</span><span class="s2"> Hz, </span><span class="si">{</span><span class="n">status</span><span class="p">[</span><span class="s1">'mode'</span><span class="p">]</span><span class="si">}</span><span class="s2"> mode"</span><span class="p">)</span>
 </code></pre></div>
 <hr />
 <p><strong>Next:</strong> See <a href="../troubleshooting/">Troubleshooting</a> for API debugging.</p>

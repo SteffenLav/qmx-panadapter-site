@@ -684,6 +684,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../guide/web-dsp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web DSP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../guide/ft8-rx/" class="md-nav__link">
         
   
@@ -1862,7 +1890,9 @@
 </tr>
 </tbody>
 </table>
-<p>Slim <strong>breathing grip handles</strong> on these three edges show where to swipe.</p>
+<p>Slim <strong>breathing grip handles</strong> on these three edges show where to swipe.
+From <strong>v1.26.0</strong> a <strong>tap on the left or right grip</strong> opens the same thing as the
+swipe, as a Bluetooth mouse click always did. The bottom grip is swipe only.</p>
 <p>!!! note "There is no top-edge swipe any more"
     Earlier versions opened the <a href="../../guide/spot-map/">spot map</a> with a swipe
     down from the top edge. Removed — it collided with the top bar's own
@@ -1907,7 +1937,7 @@ hearing. Mute is instant and is not remembered across a reboot.</p>
 </tr>
 <tr>
 <td><strong>Mode</strong></td>
-<td>USB / LSB / CW / DiGi buttons</td>
+<td>USB / LSB / CW / DiGi buttons, plus AM on QMX firmware 1.04 or later</td>
 </tr>
 <tr>
 <td><strong>Bandwidth</strong></td>
@@ -1971,7 +2001,7 @@ spectrum gesture.</p>
 </tr>
 <tr>
 <td><strong>Wheel</strong> (BLE mouse)</td>
-<td>Tune in steps, using your <strong>Tune snap</strong> setting — as in the browser</td>
+<td>Tune in fixed steps: 10 Hz a click in CW and the digital modes, 100 Hz in SSB</td>
 </tr>
 <tr>
 <td><strong>Tap a spot callsign</strong></td>
@@ -1983,7 +2013,7 @@ spectrum gesture.</p>
 </tr>
 </tbody>
 </table>
-<p>Taps snap to a grid set by the <strong>mode</strong>, not the zoom level: 10 Hz in CW, 250 Hz in USB/LSB, 500 Hz in the digital modes, 1 kHz in AM.</p>
+<p>Taps snap to a grid set by the <strong>mode</strong>, not the zoom level: 10 Hz in CW, the <strong>Tune snap</strong> setting (500 Hz unless you change it) in USB/LSB and the digital modes, 1 kHz in AM.</p>
 <p>!!! note "Two-finger pan is live, not buttery"
     Unlike the one-finger drag (a local preview, settled on release), the
     pinch gesture recomputes the real spectrum on every tick because zoom
@@ -2042,6 +2072,10 @@ spectrum gesture.</p>
 <tr>
 <td><strong>Hold 800 ms</strong></td>
 <td>Open the editor for all six macros in the current set</td>
+</tr>
+<tr>
+<td><strong>Slide sideways</strong> (about 40 px)</td>
+<td>Abandon the touch - nothing is sent. A slide to the right from near the left edge opens the page picker <em>(v1.26.0)</em></td>
 </tr>
 <tr>
 <td><strong>Tap the General/Contest toggle</strong></td>
@@ -2155,11 +2189,15 @@ spectrum gesture.</p>
 <tbody>
 <tr>
 <td><strong>Tap row</strong></td>
-<td>Reply to that CQ</td>
+<td>Open the confirmation window for that station</td>
 </tr>
 <tr>
-<td><strong>Long-press row</strong></td>
-<td>(reserved for future use)</td>
+<td><strong>Hold 250 ms</strong></td>
+<td>Enter selection: the list stops scrolling and a drag moves the highlight; lift to confirm</td>
+</tr>
+<tr>
+<td><strong>Hold 700 ms on a CQ row</strong></td>
+<td>Pounce with no confirmation</td>
 </tr>
 <tr>
 <td><strong>Scroll</strong></td>

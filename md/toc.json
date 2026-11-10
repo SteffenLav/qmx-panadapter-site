@@ -46,6 +46,11 @@
       "level": 1
     },
     {
+      "title": "Web DSP",
+      "path": "guide/web-dsp.md",
+      "level": 1
+    },
+    {
       "title": "FT8 RX",
       "path": "guide/ft8-rx.md",
       "level": 1

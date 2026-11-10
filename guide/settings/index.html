@@ -689,6 +689,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../web-dsp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web DSP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../ft8-rx/" class="md-nav__link">
         
   
@@ -2588,11 +2616,14 @@ Region 1.
 The power limits are **not** enforced by the Tab5 — it checks frequencies.
 A QMX at 5 W is inside the 9.15 W figure anyway.
 </code></pre></div>
-<p>!!! warning "What it does not cover"
-    CW keying and SWR Tune are not checked. They are things you start yourself,
-    where the dial is the transmitted frequency and what you see is what goes
-    out; the guard is aimed at the digital modes, which transmit on a schedule
-    and can do so with nobody watching.</p>
+<p>!!! info "What it covers, and the one thing it does not"
+    FT8, FT4, JS8 and WSPR are checked, and so are <strong>Antenna Tune</strong> and
+    <strong>Calibrate Power</strong>. From <strong>v1.26.0</strong> a <strong>CW message</strong> sent from the Tab5 or
+    the web page is checked too: outside the band, or with no IARU region set,
+    it is refused with a <code>CW not sent:</code> message and any queued text is dropped.</p>
+<div class="highlight"><pre><span></span><code>A **paddle or key connected to the QMX is not checked**. The radio keys
+itself there, and the Tab5 is not in that path.
+</code></pre></div>
 <h2 id="battery-care">Battery Care<a class="headerlink" href="#battery-care" title="Permanent link">&para;</a></h2>
 <p><strong>Charge Limit</strong> — Optionally stop charging once the battery reaches a set percentage (default <strong>80%</strong>), to reduce long-term wear on the pack. Enable it and choose the target in the settings drawer; charging restarts automatically if the level later falls well below the target (5% hysteresis). Leave it off to always charge to 100%.</p>
 <p><strong>Accurate charge reading while charging</strong> — the displayed battery percentage (and the charge-limit trigger) now compensate for the voltage rise that occurs while charging current is flowing. Previously this made the reading jump around while plugged in, and made the charge limit either stick just short of the target or oscillate; both are fixed.</p>
