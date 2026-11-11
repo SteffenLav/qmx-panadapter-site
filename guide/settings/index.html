@@ -2586,7 +2586,7 @@ TX line: in v1.20.1 entering Relay mode pulled that line from <strong>3 V p-p do
 1.5 V p-p</strong> — the GPS's own driver and the Tab5's output fighting over the same
 pad — and held it there for as long as Relay mode was selected. With this
 setting ticked in v1.20.2 the line is untouched in either mode.</p>
-<p>The same control is in the web UI's <strong>Miscellaneous</strong> menu, above the remote relay row — the relay row greys out and says why whenever Unit GPS owns PORT.A. See <a href="../web-ui/">Web UI</a>.</p>
+<p>The same control is in the web UI's <strong>Misc</strong> menu, above the remote relay row — the relay row greys out and says why whenever Unit GPS owns PORT.A. See <a href="../web-ui/">Web UI</a>.</p>
 <h2 id="transmitting-outside-the-band-plan">Transmitting outside the band plan<a class="headerlink" href="#transmitting-outside-the-band-plan" title="Permanent link">&para;</a></h2>
 <p>The Tab5 <strong>refuses to key the radio</strong> if the transmission would fall outside
 your IARU region's allocation, and tells you which frequency and which region
@@ -3016,7 +3016,7 @@ setup, your callsign and grid, CQ messages, FT8 filters, memory channels.
 </tbody>
 </table>
 <p>Any key wakes the display again afterwards.</p>
-<p><strong>Changing them.</strong> The web page has a shortcuts editor — <strong>Miscellaneous ▸
+<p><strong>Changing them.</strong> The web page has a shortcuts editor — <strong>Misc ▸
 Keyboard shortcuts</strong>. There are 25 actions to choose from, including zoom,
 brightness, releasing the radio to its own front panel, and every setup window.
 <strong>Alt</strong> is left completely unused so you can put your own bindings there without
@@ -3162,7 +3162,7 @@ who had already lost a set of 18650s to undervoltage)</em>.</p>
 <p><strong>The radio is put back into receive first.</strong> The robot is stood down,
 transmit is disarmed, <code>TA0;</code> then <code>RX;</code> go to the radio, and settings are
 flushed - so a transmission in progress cannot be left keyed by shutting the
-Tab5 down. The same control is in the browser, under Miscellaneous.</p>
+Tab5 down. The same control is in the browser, under Misc.</p>
 <p>⚠ The <strong>power button</strong> on the case cuts power in hardware. No firmware runs,
 so none of the above happens. Use the screen button if the radio might be
 transmitting.</p>
@@ -3343,7 +3343,7 @@ receiving side alone it looks exactly like a dead band.</p>
 for it — the answer is a list of stations with distances and bearings, which
 wants a screen you are already sitting in front of. In the web UI open
 <strong>Settings -&gt; Spots &amp; reporting</strong> and tick <strong>Who has heard me (last 24 h)</strong>,
-then <strong>Miscellaneous -&gt; Who has heard me (24 h)</strong> for the list: receiver,
+then <strong>Misc -&gt; Who has heard me (24 h)</strong> for the list: receiver,
 country, distance, bearing and the signal report they gave you, sorted by
 distance.</p>
 <p>It is read-only and asks at most once every five minutes, which is the rate PSK
@@ -3472,7 +3472,7 @@ did.</p>
 <h2 id="resets-in-the-browser-not-the-drawer">Resets — in the browser, not the drawer<a class="headerlink" href="#resets-in-the-browser-not-the-drawer" title="Permanent link">&para;</a></h2>
 <p><strong>These two live in the browser, not in the drawer</strong> — a reset you can trigger by
 mistake on a touchscreen in the field is a worse idea than one that needs a
-computer. Both are in the web UI's <strong>Miscellaneous ▲</strong> menu.</p>
+computer. Both are in the web UI's <strong>Misc ▲</strong> menu.</p>
 <p><strong>Reset settings</strong> — Erases the stored settings and memory channels, returning
 everything to defaults, and reboots. Use if something is stuck in a state you
 cannot get out of. Take a <strong>Config ↓</strong> backup first and you can restore it in

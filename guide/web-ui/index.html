@@ -2275,11 +2275,6 @@ lose the top and bottom bar controls entirely with no way to reach them.</p>
   real setting: it selects Straight Key mode, which is the quick way to key down for a
   tune-up. This is what <em>you</em> send — the decoded-CW line shows the speed of the station
   you are <em>hearing</em>, which is a different number</li>
-<li><strong>PWR</strong> — transmit power on this band, shown only where that band has been through
-  Calibrate Power. The levels offered are the ones your own sweep measured, so a figure
-  the PA never produced is refused rather than rounded to a neighbour. While a
-  transmission is in progress, or while WSPR owns the PA, the target is stored and the
-  page says so</li>
 </ul>
 <p>Everything mirrors the Tab5 display with sub-second latency.</p>
 <h2 id="spectrum-waterfall">Spectrum Waterfall<a class="headerlink" href="#spectrum-waterfall" title="Permanent link">&para;</a></h2>
@@ -2765,10 +2760,17 @@ The browser asks you to confirm before the download for this reason.
 <p><strong>Diagnostic download ↓</strong> — downloads <strong>both</strong> diagnostic logs: the live session log (always on, nothing to enable) and the flash-persisted copy from before the last reboot/power-off</p>
 </li>
 </ul>
-<p><strong>Miscellaneous ▲</strong> also carries <strong>Prepare for flashing</strong> — closes the USB host cleanly before you unplug the radio or reflash the Tab5, so the QMX is not left half-open.</p>
+<p><strong>Misc ▲</strong> also carries <strong>Prepare for flashing</strong> — closes the USB host cleanly before you unplug the radio or reflash the Tab5, so the QMX is not left half-open.</p>
 <p><strong>Radio ▲</strong> — the things that reach the radio itself:</p>
 <ul>
 <li><strong>Switch to Panadapter / CW / FT8 / FT4 / JS8 / WSPR</strong> — changes the Tab5’s own screen from the browser. <em>(v1.25.0: CW added to the list.)</em> The <strong>Radio</strong> menu lists all six pages, so each one is a single click; it no longer steps through them in sequence. Choosing a page is what enables it, and the menu follows the Tab5 if you switch there instead</li>
+<li><strong>TX power</strong> — transmit power on this band: a slider over the levels, with the
+  wattage beside it. Drag it and let go to set. <em>(After v1.26.0: moved here from the
+  top bar.)</em> The levels are the ones your own Calibrate Power sweep
+  measured, so a figure the PA never produced is refused rather than rounded to a
+  neighbour. A band with no calibration shows no slider and says so. While a
+  transmission is in progress, or while WSPR owns the PA, the target is stored and the
+  row says so</li>
 <li><strong>Noise reduction</strong> and <strong>Auto-notch</strong> <em>(v1.26.0)</em> — for the audio that the <strong>Listen</strong> button plays: an on/off box, Low / Med / High, Speech model or Spectral, and the Auto-notch box. They run in the browser and cost the Tab5 nothing. See <a href="../web-dsp/">Web DSP</a>.</li>
 <li><strong>Memory channels</strong> — your 32 channels: click one to tune to it, drag one onto another slot to move it, or onto the bin to clear it</li>
 <li><strong>Let me use the QMX menus</strong> — stops the Tab5 talking to the QMX so you can use the radio's own menus or its Band Configuration terminal. A bar appears until you hand it back. See <a href="../settings/#radio">Settings</a></li>
@@ -2783,7 +2785,7 @@ The browser asks you to confirm before the download for this reason.
 <li><strong>GPS status</strong> — the fix, position, grid, satellites and the sky plot; the same page the Tab5 shows when you tap the UTC clock.</li>
 <li><strong>Radio menus</strong> — the QMX's own 80×24 menu system, in the browser. Arrow keys, Enter and Back on screen, and your real keyboard works too. Needs the radio's second USB serial port switched on first. See <a href="../radio-menus/">Radio Menus</a></li>
 </ul>
-<p><strong>Miscellaneous ▲</strong>:</p>
+<p><strong>Misc ▲</strong>:</p>
 <ul>
 <li><strong>Tab5 screenshot</strong> — current display as PNG, including any open pop-up (band/mode dropdown), not just the base screen</li>
 <li><strong>Reboot the Tab5</strong> — restarts it there and then; receiving stops for about ten seconds. Until now a restart was only offered after a firmware update, which is no use when you are in another room and something is stuck <em>(Randy N4OPI)</em></li>
@@ -2907,7 +2909,7 @@ his current version, which will carry the change in the artwork itself.
    create a short."</em></li>
 </ol>
 <h4 id="settings-that-work">Settings that work<a class="headerlink" href="#settings-that-work" title="Permanent link">&para;</a></h4>
-<p>In <strong>Miscellaneous ▸ Power-cycle relay</strong>: the pin you actually wired (<strong>G53</strong>),
+<p>In <strong>Misc ▸ Power-cycle relay</strong>: the pin you actually wired (<strong>G53</strong>),
 active level <strong>High</strong>, and <strong>2000 ms</strong> — <em>"I've found 2000ms to be
 sufficient"</em>. The firmware's own default is 1000 ms, so this is one to set and
 save; it is remembered from v1.10.9 on.</p>
@@ -2927,7 +2929,7 @@ and are held as driven outputs from boot, which is what makes them safe to
 hand to people — so those two are the only pins the firmware will pulse.
 </code></pre></div>
 <h3 id="keyboard-shortcuts">Keyboard shortcuts<a class="headerlink" href="#keyboard-shortcuts" title="Permanent link">&para;</a></h3>
-<p><strong>Miscellaneous ▸ Keyboard shortcuts</strong> assigns what the Tab5's snap-on keyboard
+<p><strong>Misc ▸ Keyboard shortcuts</strong> assigns what the Tab5's snap-on keyboard
 does. Each row is a modifier, a key and an action; <strong>Add shortcut</strong> makes a new
 one, <strong>Remove</strong> deletes it, and <strong>Restore defaults</strong> puts back the nine the
 firmware ships with.</p>
@@ -2942,7 +2944,7 @@ on the very keyboard you are configuring.</p>
     A button you deliberately press is one thing; a two-key combination that a
     slipped finger can produce is another.</p>
 <h2 id="tab5shot-what-the-screen-looks-like-right-now">Tab5Shot - what the screen looks like right now<a class="headerlink" href="#tab5shot-what-the-screen-looks-like-right-now" title="Permanent link">&para;</a></h2>
-<p><strong>Tab5 screenshot</strong> in the <strong>Miscellaneous</strong> menu opens a live <code>/ss.bmp</code> capture of the Tab5's
+<p><strong>Tab5 screenshot</strong> in the <strong>Misc</strong> menu opens a live <code>/ss.bmp</code> capture of the Tab5's
 screen in a new tab, and <strong>(save PNG)</strong> beside it saves one as a file. It is the quickest way to put what you are seeing into a
 bug report or a message to the group, without a camera and without reaching for
 the device.</p>

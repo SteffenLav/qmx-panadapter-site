@@ -56,11 +56,6 @@ The web UI provides full remote control:
   real setting: it selects Straight Key mode, which is the quick way to key down for a
   tune-up. This is what *you* send — the decoded-CW line shows the speed of the station
   you are *hearing*, which is a different number
-- **PWR** — transmit power on this band, shown only where that band has been through
-  Calibrate Power. The levels offered are the ones your own sweep measured, so a figure
-  the PA never produced is refused rather than rounded to a neighbour. While a
-  transmission is in progress, or while WSPR owns the PA, the target is stored and the
-  page says so
 
 Everything mirrors the Tab5 display with sub-second latency.
 
@@ -616,11 +611,18 @@ The bottom bar groups its actions into four popup menus, plus a battery indicato
 
 - **Diagnostic download ↓** — downloads **both** diagnostic logs: the live session log (always on, nothing to enable) and the flash-persisted copy from before the last reboot/power-off
 
-**Miscellaneous ▲** also carries **Prepare for flashing** — closes the USB host cleanly before you unplug the radio or reflash the Tab5, so the QMX is not left half-open.
+**Misc ▲** also carries **Prepare for flashing** — closes the USB host cleanly before you unplug the radio or reflash the Tab5, so the QMX is not left half-open.
 
 **Radio ▲** — the things that reach the radio itself:
 
 - **Switch to Panadapter / CW / FT8 / FT4 / JS8 / WSPR** — changes the Tab5’s own screen from the browser. *(v1.25.0: CW added to the list.)* The **Radio** menu lists all six pages, so each one is a single click; it no longer steps through them in sequence. Choosing a page is what enables it, and the menu follows the Tab5 if you switch there instead
+- **TX power** — transmit power on this band: a slider over the levels, with the
+  wattage beside it. Drag it and let go to set. *(After v1.26.0: moved here from the
+  top bar.)* The levels are the ones your own Calibrate Power sweep
+  measured, so a figure the PA never produced is refused rather than rounded to a
+  neighbour. A band with no calibration shows no slider and says so. While a
+  transmission is in progress, or while WSPR owns the PA, the target is stored and the
+  row says so
 - **Noise reduction** and **Auto-notch** *(v1.26.0)* — for the audio that the **Listen** button plays: an on/off box, Low / Med / High, Speech model or Spectral, and the Auto-notch box. They run in the browser and cost the Tab5 nothing. See [Web DSP](web-dsp.md).
 - **Memory channels** — your 32 channels: click one to tune to it, drag one onto another slot to move it, or onto the bin to clear it
 - **Let me use the QMX menus** — stops the Tab5 talking to the QMX so you can use the radio's own menus or its Band Configuration terminal. A bar appears until you hand it back. See [Settings](settings.md#radio)
@@ -635,7 +637,7 @@ The bottom bar groups its actions into four popup menus, plus a battery indicato
 - **GPS status** — the fix, position, grid, satellites and the sky plot; the same page the Tab5 shows when you tap the UTC clock.
 - **Radio menus** — the QMX's own 80×24 menu system, in the browser. Arrow keys, Enter and Back on screen, and your real keyboard works too. Needs the radio's second USB serial port switched on first. See [Radio Menus](radio-menus.md)
 
-**Miscellaneous ▲**:
+**Misc ▲**:
 
 - **Tab5 screenshot** — current display as PNG, including any open pop-up (band/mode dropdown), not just the base screen
 - **Reboot the Tab5** — restarts it there and then; receiving stops for about ten seconds. Until now a restart was only offered after a firmware update, which is no use when you are in another room and something is stuck *(Randy N4OPI)*
@@ -735,7 +737,7 @@ another room — or another country.
 
 #### Settings that work
 
-In **Miscellaneous ▸ Power-cycle relay**: the pin you actually wired (**G53**),
+In **Misc ▸ Power-cycle relay**: the pin you actually wired (**G53**),
 active level **High**, and **2000 ms** — *"I've found 2000ms to be
 sufficient"*. The firmware's own default is 1000 ms, so this is one to set and
 save; it is remembered from v1.10.9 on.
@@ -759,7 +761,7 @@ the GPS's transmitter.
 
 ### Keyboard shortcuts
 
-**Miscellaneous ▸ Keyboard shortcuts** assigns what the Tab5's snap-on keyboard
+**Misc ▸ Keyboard shortcuts** assigns what the Tab5's snap-on keyboard
 does. Each row is a modifier, a key and an action; **Add shortcut** makes a new
 one, **Remove** deletes it, and **Restore defaults** puts back the nine the
 firmware ships with.
@@ -779,7 +781,7 @@ on the very keyboard you are configuring.
 
 ## Tab5Shot - what the screen looks like right now
 
-**Tab5 screenshot** in the **Miscellaneous** menu opens a live `/ss.bmp` capture of the Tab5's
+**Tab5 screenshot** in the **Misc** menu opens a live `/ss.bmp` capture of the Tab5's
 screen in a new tab, and **(save PNG)** beside it saves one as a file. It is the quickest way to put what you are seeing into a
 bug report or a message to the group, without a camera and without reaching for
 the device.
