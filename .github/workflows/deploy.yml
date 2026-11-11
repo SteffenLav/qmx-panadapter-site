@@ -1,0 +1,100 @@
+# Deploys this repo (the built mkdocs site) to tab5.lav.dk on Simply.com over SSH.
+#
+# Why: Simply's "Importer fra Git" is a manual one-shot clone. v1.25.0 and v1.26.0
+# were pushed here and never imported, so new pages 404'd (2026-11-11). FTP is not
+# used (operator's rule). This runs on GitHub's servers on every push to main.
+#
+# Setup (once, by the operator):
+#   secret   SIMPLY_SSH_KEY   private key whose public half is on Simply ("Birkevang 50")
+#   variable SIMPLY_SSH_USER  the SSH username Simply shows
+#   variable SIMPLY_SSH_HOST  optional, default ssh.simply.com
+#   variable SIMPLY_REMOTE_DIR  the site's directory on the server. LEAVE UNSET for
+#            the first run: without it the job only connects and lists the home
+#            directory, so the right path can be read off the log. Nothing is written.
+#
+# With SIMPLY_REMOTE_DIR set, a run started by hand with dry_run=true shows what
+# rsync would change, including deletions, without changing anything.
+
+name: Deploy site to tab5.lav.dk
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Show what would change, write nothing"
+        type: boolean
+        default: true
+
+concurrency:
+  group: deploy-site
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      SSH_HOST: ${{ vars.SIMPLY_SSH_HOST || 'ssh.simply.com' }}
+      SSH_USER: ${{ vars.SIMPLY_SSH_USER }}
+      REMOTE_DIR: ${{ vars.SIMPLY_REMOTE_DIR }}
+      DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run || false }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check configuration
+        env:
+          HAS_KEY: ${{ secrets.SIMPLY_SSH_KEY != '' }}
+        run: |
+          [ "$HAS_KEY" = "true" ] || { echo "::error::secret SIMPLY_SSH_KEY is not set"; exit 1; }
+          [ -n "$SSH_USER" ]      || { echo "::error::variable SIMPLY_SSH_USER is not set"; exit 1; }
+          echo "host=$SSH_HOST user=$SSH_USER remote_dir=${REMOTE_DIR:-<unset: discovery run>} dry_run=$DRY_RUN"
+
+      - name: Set up SSH
+        env:
+          KEY: ${{ secrets.SIMPLY_SSH_KEY }}
+        run: |
+          mkdir -p ~/.ssh && chmod 700 ~/.ssh
+          printf '%s\n' "$KEY" > ~/.ssh/deploy_key && chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -T 20 "$SSH_HOST" > ~/.ssh/known_hosts 2>/dev/null
+          [ -s ~/.ssh/known_hosts ] || { echo "::error::ssh-keyscan got no host key from $SSH_HOST"; exit 1; }
+          echo "Host key fingerprints of $SSH_HOST:"; ssh-keygen -lf ~/.ssh/known_hosts
+          printf 'Host target\n  HostName %s\n  User %s\n  IdentityFile ~/.ssh/deploy_key\n  IdentitiesOnly yes\n  BatchMode yes\n  ConnectTimeout 20\n' \
+            "$SSH_HOST" "$SSH_USER" > ~/.ssh/config
+
+      - name: Connect and look (always; read-only)
+        run: |
+          ssh target 'echo "pwd: $(pwd)"; echo "rsync: $(command -v rsync || echo MISSING)"; ls -la; for d in tab5 public_html public_html/tab5 www www/tab5; do [ -d "$d" ] && echo "dir exists: $d"; done; true'
+
+      - name: Sanity check the site before upload
+        if: env.REMOTE_DIR != ''
+        run: |
+          # Refuse to mirror a tree that is not a built site - rsync --delete would
+          # otherwise empty the live directory.
+          for f in index.html latest.json md/releases.md; do
+            [ -s "$f" ] || { echo "::error::$f missing - this is not a built site"; exit 1; }
+          done
+          echo "latest.json: $(cat latest.json | tr -d '\n')"
+
+      - name: Upload (rsync)
+        if: env.REMOTE_DIR != ''
+        run: |
+          case "$REMOTE_DIR" in ""|"/"|"~"|"."|"./") echo "::error::refusing REMOTE_DIR='$REMOTE_DIR'"; exit 1;; esac
+          ssh target "test -d '$REMOTE_DIR'" || { echo "::error::$REMOTE_DIR does not exist on the server"; exit 1; }
+          FLAGS="-rlvz --checksum --delete --exclude=.git/ --exclude=.github/"
+          [ "$DRY_RUN" = "true" ] && FLAGS="$FLAGS --dry-run"
+          rsync $FLAGS -e ssh ./ "target:$REMOTE_DIR/"
+
+      - name: Verify on the live site
+        if: env.REMOTE_DIR != '' && env.DRY_RUN != 'true'
+        run: |
+          # latest.json alone proved nothing on 2026-11-11 - check a page in a
+          # subdirectory and compare bytes, not status codes.
+          sleep 5
+          for f in md/releases.md latest.json; do
+            want=$(sha256sum "$f" | cut -d' ' -f1)
+            got=$(curl -fsS "https://tab5.lav.dk/$f?nocache=$GITHUB_RUN_ID" | sha256sum | cut -d' ' -f1)
+            echo "$f local=$want live=$got"
+            [ "$want" = "$got" ] || { echo "::error::$f on tab5.lav.dk does not match this commit"; exit 1; }
+          done
