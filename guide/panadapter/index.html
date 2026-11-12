@@ -2153,6 +2153,10 @@ earns nothing when <code>Band: ---</code> in the top-left already tells you that
 finer step for a narrow range. Before this they were fixed at −40 to −120 regardless,
 so any range other than the default was described by labels that did not belong to it
 (found by Samuel W7STF running −118/−13). At the default range the labels are unchanged.</p>
+<p><strong>Each band keeps its own dB range</strong> (from the next release; Samuel W7STF asked). When
+you leave a band, the Min and Max on screen are stored for it; when you come back, they
+are restored, on the Tab5 and in the browser. A band you have not visited yet keeps the
+range you arrive with. Outside the amateur bands the range does not change.</p>
 <p>The <strong>frequency axis</strong> shows absolute MHz labels across whatever span is on screen, refreshed on every CAT frequency update. At high zoom the labels resolve to kHz or Hz precision. With <strong>Still Spectrum</strong> on — the default above ×1 — the axis stays put as you tune and the VFO marker moves along it; with it off, the axis is centred on the QMX VFO.</p>
 <p>The <strong>waterfall</strong> runs newest row at the top, in a thermal SDR palette (black -&gt; dark blue -&gt; teal -&gt; green -&gt; yellow -&gt; red). Four colour maps are available in the drawer: <strong>Thermal, Viridis, Turbo</strong> and <strong>Grayscale</strong>.</p>
 <p><strong>The waterfall floor tracks the band automatically.</strong> Its black level follows a running median sampled only from bins <em>inside the passband</em>, EMA-smoothed, so the background colour follows conditions instead of sitting at a fixed anchor. Bins outside the passband are drawn darker and excluded from that calculation, so they cannot wash out dim in-band signals.</p>
