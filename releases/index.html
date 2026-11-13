@@ -1422,6 +1422,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#v1262-2026-11-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v1.26.2 - 2026-11-12
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#v1261-2026-11-11" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2497,6 +2508,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#v1262-2026-11-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v1.26.2 - 2026-11-12
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#v1261-2026-11-11" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3537,27 +3559,34 @@
 <h1 id="version-history">Version History<a class="headerlink" href="#version-history" title="Permanent link">&para;</a></h1>
 <p>All releases are available on <a href="https://github.com/SteffenLav/qmx-panadapter/releases">GitHub Releases</a>.</p>
 <h2 id="latest-release">Latest Release<a class="headerlink" href="#latest-release" title="Permanent link">&para;</a></h2>
-<p><strong>v1.26.2</strong> - 2026-11-12</p>
-<p><strong>Each band keeps its own dB range. Web noise reduction keeps the voice at its level. The bottom-bar clock no longer freezes, the whole S-meter opens the audio panel, and CW text stays clear of the watermark.</strong></p>
-<p><strong>Tab5 and web</strong></p>
+<p><strong>v1.26.3</strong> - 2026-11-13</p>
+<p><strong>A full QSO log no longer loses QSOs, and with an SD card in it no longer fills up: older QSOs move to the card. The SD file browser works with the web radio running.</strong></p>
+<p><strong>QSO log</strong> <em>(Randy N4OPI, Gyula HA3HZ)</em></p>
 <ul>
-<li><strong>Each band keeps its own dB range</strong> <em>(Samuel W7STF)</em>. Min/Max was one setting for all bands. When you leave a band, the range on screen is stored for it, and you get it back when you return - on the Tab5 and in the browser. A band you have not visited yet starts with the range you arrive with.</li>
-<li><strong>Web noise reduction keeps the voice at its level</strong> <em>(Samuel W7STF)</em>. On real SSB, the voice itself lost about 1 dB with Spectral and 1.5 / 2.7 / 3.4 dB with the speech model at Low / Med / High. That gain is now added back after NR, so only the background goes down. CW is not changed. See <a href="../guide/web-dsp/">Web DSP</a>.</li>
+<li><strong>A QSO is reported as logged only when it is saved.</strong> When the Tab5's storage was full, QSOs were shown as logged and then lost (v1.26.2 and earlier). Now a QSO that cannot be saved is refused and the screen says so, and a full log can no longer be damaged.</li>
+<li><strong>"QSO log nearly full" is shown from 300 KB</strong>, long before the limit, with what to do.</li>
+<li><strong>With an SD card in, older QSOs move to the card.</strong> At start-up the Tab5 keeps about the newest 500 to 700 QSOs and moves older ones to <code>qso-archive.adi</code> on the card. <code>qso.adi</code> on the card is still your complete log, for your PC logger and for <strong>Restore from SD</strong>. A QSO that QRZ, eQSL, LoTW or Cloudlog has not sent yet stays on the Tab5. Without a card nothing changes, and the warning still applies.</li>
+<li><strong>A log that is already full</strong> moves at the first or second start-up with the card in. To make room, the Tab5's own diagnostic log files are first copied to the card (<code>history/</code>) and then removed from its internal storage.</li>
+<li><strong>A lost log comes back from the card.</strong> If the Tab5 starts and finds its QSO log missing (internal storage damaged by a power cut during a write), it restores the log from the card.</li>
 </ul>
-<p><strong>Fixes</strong></p>
+<p><strong>SD card</strong></p>
 <ul>
-<li><strong>The bottom-bar UTC clock no longer stops for up to 11 seconds and then jumps.</strong> It was worst on the CW page.</li>
-<li><strong>A tap anywhere on the S-meter opens the audio panel.</strong> Before, only the space to the right of the bar did.</li>
-<li><strong>The CW page redraws less.</strong> The CW pane and the decode box are no longer redrawn on every waterfall step. The decode box is now solid instead of 90 % see-through.</li>
-<li><strong>CW decode text, and the CW page's decode box, end before the watermark</strong> at the right edge of the screen.</li>
-<li>A small memory leak on some web commands is fixed.</li>
+<li><strong>The SD file browser and downloads work with the web radio running</strong> <em>(Randy N4OPI)</em>. The web radio had taken memory the card needs.</li>
 </ul>
 <p><strong>Known, not fixed</strong></p>
 <ul>
-<li>One capture showed the first CW message after a QMX power cycle held by the radio for 33 seconds and then sent ahead of the next one. It has not been reproduced and the cause is not known.</li>
-<li>The web audio stream carries 1 to 3 short holes a second (11 ms each) when the Tab5's WiFi is busy. With noise reduction on, the browser patches them.</li>
+<li>QSOs moved to the card cannot be edited or deleted on the Tab5. Edit <code>qso.adi</code> on the card with a PC.</li>
+<li>The log window counts only the QSOs on the Tab5.</li>
+<li>Moved QSOs are meant to keep a station marked as worked before. That is implemented, not yet proven on air.</li>
 </ul>
 <h2 id="previous-releases">Previous Releases<a class="headerlink" href="#previous-releases" title="Permanent link">&para;</a></h2>
+<h3 id="v1262-2026-11-12">v1.26.2 - 2026-11-12<a class="headerlink" href="#v1262-2026-11-12" title="Permanent link">&para;</a></h3>
+<p><strong>Each band keeps its own dB range; web noise reduction keeps the voice at its level.</strong></p>
+<ul>
+<li>Per-band dB range on the Tab5 and the web <em>(Samuel W7STF)</em>; web NR make-up gain <em>(Samuel W7STF)</em>.</li>
+<li>The bottom-bar clock no longer stops for up to 11 s; the whole S-meter opens the audio panel.</li>
+<li>The CW page redraws less; CW text ends before the watermark; a small web-command memory leak fixed.</li>
+</ul>
 <h3 id="v1261-2026-11-11">v1.26.1 - 2026-11-11<a class="headerlink" href="#v1261-2026-11-11" title="Permanent link">&para;</a></h3>
 <p><strong>WSPR decodes every cycle again, and the WSPR search is a third faster.</strong></p>
 <ul>
@@ -4719,7 +4748,7 @@ install already uses the flasher.
 <ul>
 <li><strong>Source code:</strong> <a href="https://github.com/SteffenLav/qmx-panadapter">GitHub Repository</a></li>
 <li><strong>Releases:</strong> <a href="https://github.com/SteffenLav/qmx-panadapter/releases">GitHub Releases</a></li>
-<li><strong>User Guide:</strong> <a href="../QMX-Panadapter-UserGuide-v1.26.2.pdf">PDF</a> or <a href="../quick-start/">Web</a></li>
+<li><strong>User Guide:</strong> <a href="../QMX-Panadapter-UserGuide-v1.26.3.pdf">PDF</a> or <a href="../quick-start/">Web</a></li>
 <li><strong>Build Guide:</strong> <a href="../build/build/">Build from Source</a></li>
 <li><strong>Technical Details:</strong> <a href="https://github.com/SteffenLav/qmx-panadapter/blob/main/CLAUDE.md">CLAUDE.md</a></li>
 </ul>

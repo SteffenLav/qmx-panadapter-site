@@ -1261,6 +1261,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#the-qso-log-and-the-card" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The QSO log and the card
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#when-the-mirror-runs" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2113,6 +2124,17 @@
     <span class="md-ellipsis">
       
         Benefits of a microSD card
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-qso-log-and-the-card" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The QSO log and the card
       
     </span>
   </a>
@@ -3049,7 +3071,15 @@ the keyboard itself, so <strong>Ctrl</strong> and <strong>Alt</strong> are what 
 <tbody>
 <tr>
 <td><code>qso.adi</code></td>
-<td>ADIF QSO log — after each new entry with WiFi off, otherwise at the next start-up</td>
+<td>ADIF QSO log, complete: the archive below plus the QSOs on the Tab5 — after each new entry with WiFi off, otherwise at the next start-up</td>
+</tr>
+<tr>
+<td><code>qso-archive.adi</code></td>
+<td>Older QSOs moved off the Tab5 — see <strong>The QSO log and the card</strong> below</td>
+</tr>
+<tr>
+<td><code>qso-worked.idx</code></td>
+<td>Which stations the archive has worked, on which band, for the worked-before marking</td>
 </tr>
 <tr>
 <td><code>qso.prev.adi</code></td>
@@ -3080,9 +3110,27 @@ the keyboard itself, so <strong>Ctrl</strong> and <strong>Alt</strong> are what 
 <li><strong>A full diagnostic history instead of the last few minutes.</strong> Without a card, the log that survives a restart is held in a small area of internal flash and is overwritten roughly every 11 minutes of busy operating. On the card it is kept whole — so if something goes wrong overnight, or an hour ago, the evidence is still there when you come to report it.</li>
 <li><strong>A grab-and-go station backup.</strong> Your QSO log, every setting, your WiFi details and your LoTW certificate and key, mirrored automatically. Move the card to another Tab5 and your station comes with it, with no computer involved.</li>
 <li><strong>A safety net for the QSO log.</strong> The copy from just before the log last got <em>smaller</em> is kept beside it as <code>qso.prev.adi</code>, so a deletion you only notice two restarts later is still recoverable.</li>
+<li><strong>A QSO log that does not fill up.</strong> See below.</li>
 <li><strong>Somewhere to put things.</strong> Browse, download, upload and delete everything on the card from any computer at <code>http://qmx.local/files</code> — without pulling it out.</li>
 </ul>
 <p>A plain 32 GB FAT32 card is ideal. There is no benefit to a fast or expensive one: the Tab5 writes a few kilobytes a minute.</p>
+<h3 id="the-qso-log-and-the-card">The QSO log and the card<a class="headerlink" href="#the-qso-log-and-the-card" title="Permanent link">&para;</a></h3>
+<p>The Tab5's internal storage holds about 2,000 QSOs. With a card in, it never has to:
+at start-up the Tab5 keeps about the newest 500 to 700 QSOs and moves older ones to
+<code>qso-archive.adi</code> on the card. <code>qso.adi</code> on the card is still the complete log - use that
+one in your PC logger and for <strong>Restore from SD</strong>.</p>
+<ul>
+<li>A QSO that QRZ, eQSL, LoTW or Cloudlog has not sent yet is not moved. If an upload falls
+  behind, the log on the Tab5 grows until it has caught up.</li>
+<li>QSOs on the card cannot be edited or deleted on the Tab5. Edit <code>qso.adi</code> with a PC.</li>
+<li>A log that is already full moves at the first or second start-up with the card in. To
+  make room, the Tab5's own diagnostic log files are copied to <code>history/</code> on the card and
+  removed from internal storage.</li>
+<li>If the Tab5 starts and its QSO log is missing - internal storage can be damaged by a power
+  cut during a write - it restores the log from the card.</li>
+<li>Without a card nothing moves. From 300 KB the Tab5 shows <strong>QSO log nearly full</strong>: download
+  the log, then clear it.</li>
+</ul>
 <p><strong>After inserting the SD card your Tab5 needs a restart.</strong></p>
 <h3 id="when-the-mirror-runs">When the mirror runs<a class="headerlink" href="#when-the-mirror-runs" title="Permanent link">&para;</a></h3>
 <p>The microSD card and the WiFi co-processor share a bus on this hardware and cannot both use it reliably. Rather than fail at an unpredictable moment, the Tab5 picks the behaviour that works:</p>
