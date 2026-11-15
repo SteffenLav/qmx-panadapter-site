@@ -61,8 +61,13 @@
       "level": 1
     },
     {
-      "title": "CW (beta)",
+      "title": "CW",
       "path": "guide/cw.md",
+      "level": 1
+    },
+    {
+      "title": "RTTY",
+      "path": "guide/rtty.md",
       "level": 1
     },
     {
@@ -71,7 +76,7 @@
       "level": 1
     },
     {
-      "title": "JS8 (beta)",
+      "title": "JS8",
       "path": "guide/js8.md",
       "level": 1
     },

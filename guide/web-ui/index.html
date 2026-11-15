@@ -887,6 +887,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#rtty-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RTTY Control
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#memory-channels" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1209,7 +1220,35 @@
   <span class="md-ellipsis">
     
   
-    CW (beta)
+    CW
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rtty/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RTTY
   
 
     
@@ -1265,7 +1304,7 @@
   <span class="md-ellipsis">
     
   
-    JS8 (beta)
+    JS8
   
 
     
@@ -1988,6 +2027,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#rtty-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RTTY Control
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#memory-channels" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2574,6 +2624,14 @@ panel instead of the FT8 one, at parity with the rest of this page:</p>
   new. See <a href="../cw/">CW</a> for the keyer, macros, band discipline and QSO-ladder
   concepts this panel is built on; everything there applies here too.</li>
 </ul>
+<h2 id="rtty-control">RTTY Control<a class="headerlink" href="#rtty-control" title="Permanent link">&para;</a></h2>
+<p><strong>Switch to RTTY</strong> in the menu opens the RTTY page on the Tab5 and shows its controls under the waterfall: the decoded text over the waterfall (your own sent text in red), speed and shift, <strong>Auto</strong>, <strong>Reverse</strong>, <strong>AFC</strong>, <strong>Squelch</strong>, and a <strong>RTTY send</strong> block with <strong>To:</strong>, <strong>CQ</strong>, <strong>Answer</strong>, <strong>Exch</strong>, <strong>73</strong>, <strong>STOP</strong> and a <strong>Type</strong> line.</p>
+<ul>
+<li>Click the waterfall to tune: the dial moves and the decoder starts on the click, as a tap on the Tab5.</li>
+<li>Click a callsign in the text, or type it in <strong>To:</strong> and press Enter. The Tab5 and the browser share this station.</li>
+<li>The <strong>Type</strong> line sends each key as you type it; <strong>Enter</strong> ends the over.</li>
+</ul>
+<p>Everything else - what each control does, and what the Tab5 checks before it keys - is in <a href="../rtty/">RTTY</a>.</p>
 <h2 id="memory-channels">Memory channels<a class="headerlink" href="#memory-channels" title="Permanent link">&para;</a></h2>
 <p>The <strong>Memory</strong> button opens your 32 channels as a grid.
 <strong>Tune</strong> recalls one - frequency and mode together - and <strong>Edit</strong> changes or
@@ -2763,7 +2821,7 @@ The browser asks you to confirm before the download for this reason.
 <p><strong>Misc ▲</strong> also carries <strong>Prepare for flashing</strong> — closes the USB host cleanly before you unplug the radio or reflash the Tab5, so the QMX is not left half-open.</p>
 <p><strong>Radio ▲</strong> — the things that reach the radio itself:</p>
 <ul>
-<li><strong>Switch to Panadapter / CW / FT8 / FT4 / JS8 / WSPR</strong> — changes the Tab5’s own screen from the browser. <em>(v1.25.0: CW added to the list.)</em> The <strong>Radio</strong> menu lists all six pages, so each one is a single click; it no longer steps through them in sequence. Choosing a page is what enables it, and the menu follows the Tab5 if you switch there instead</li>
+<li><strong>Switch to Panadapter / CW / RTTY / FT8 / FT4 / JS8 / WSPR</strong> — changes the Tab5’s own screen from the browser. <em>(v1.25.0: CW added; v2.0.0: RTTY.)</em> The <strong>Radio</strong> menu lists all seven pages, in the order of the Tab5's left drawer, so each one is a single click; it no longer steps through them in sequence. Choosing a page is what enables it, and the menu follows the Tab5 if you switch there instead</li>
 <li><strong>TX power</strong> — transmit power on this band: a slider over the levels, with the
   wattage beside it. Drag it and let go to set. <em>(After v1.26.0: moved here from the
   top bar.)</em> The levels are the ones your own Calibrate Power sweep

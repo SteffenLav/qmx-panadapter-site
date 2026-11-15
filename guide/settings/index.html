@@ -780,7 +780,35 @@
   <span class="md-ellipsis">
     
   
-    CW (beta)
+    CW
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rtty/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RTTY
   
 
     
@@ -836,7 +864,7 @@
   <span class="md-ellipsis">
     
   
-    JS8 (beta)
+    JS8
   
 
     
@@ -2639,7 +2667,7 @@ The power limits are **not** enforced by the Tab5 — it checks frequencies.
 A QMX at 5 W is inside the 9.15 W figure anyway.
 </code></pre></div>
 <p>!!! info "What it covers, and the one thing it does not"
-    FT8, FT4, JS8 and WSPR are checked, and so are <strong>Antenna Tune</strong> and
+    FT8, FT4, JS8, RTTY and WSPR are checked, and so are <strong>Antenna Tune</strong> and
     <strong>Calibrate Power</strong>. From <strong>v1.26.0</strong> a <strong>CW message</strong> sent from the Tab5 or
     the web page is checked too: outside the band, or with no IARU region set,
     it is refused with a <code>CW not sent:</code> message and any queued text is dropped.</p>
@@ -3130,6 +3158,13 @@ one in your PC logger and for <strong>Restore from SD</strong>.</p>
   cut during a write - it restores the log from the card.</li>
 <li>Without a card nothing moves. From 300 KB the Tab5 shows <strong>QSO log nearly full</strong>: download
   the log, then clear it.</li>
+<li><strong>A large old log can live on the card</strong> <em>(v2.0.0, Randy N4OPI)</em>. A log too large to
+  restore into the Tab5 can be copied onto the card by hand as <code>qso-archive.adi</code>. At the next
+  start-up the Tab5 asks <strong>N contacts on the card - use them as your log history?</strong> With
+  <strong>Use them</strong>, the records stay on the card, count as worked before, and new QSOs are added
+  as usual. <strong>Leave it</strong> is remembered. The Tab5 never takes a file over without asking,
+  because the same file could be another station's card. Proven on the real log code in a
+  host test; not yet run on a Tab5.</li>
 </ul>
 <p><strong>After inserting the SD card your Tab5 needs a restart.</strong></p>
 <h3 id="when-the-mirror-runs">When the mirror runs<a class="headerlink" href="#when-the-mirror-runs" title="Permanent link">&para;</a></h3>

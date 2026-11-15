@@ -14,7 +14,7 @@
         <link rel="prev" href="../ft8-tx/">
       
       
-        <link rel="next" href="../webradio/">
+        <link rel="next" href="../rtty/">
       
       
         
@@ -25,7 +25,7 @@
     
     
       
-        <title>CW (beta) - QMX Panadapter</title>
+        <title>CW - QMX Panadapter</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#cw-beta" class="md-skip">
+        <a href="#cw" class="md-skip">
           Skip to content
         </a>
       
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              CW (beta)
+              CW
             
           </span>
         </div>
@@ -789,7 +789,7 @@
   <span class="md-ellipsis">
     
   
-    CW (beta)
+    CW
   
 
     
@@ -807,7 +807,7 @@
   <span class="md-ellipsis">
     
   
-    CW (beta)
+    CW
   
 
     
@@ -1058,6 +1058,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../rtty/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RTTY
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../webradio/" class="md-nav__link">
         
   
@@ -1093,7 +1121,7 @@
   <span class="md-ellipsis">
     
   
-    JS8 (beta)
+    JS8
   
 
     
@@ -1879,8 +1907,8 @@
   
 
 
-<h1 id="cw-beta">CW <em>(beta)</em><a class="headerlink" href="#cw-beta" title="Permanent link">&para;</a></h1>
-<p>To open the CW page, open the <strong>page picker</strong> (swipe right from the left edge, or tap the left grip) and tap <strong>MODE: CW</strong>. The spectrum and waterfall keep running behind it, so you still see the band while you operate. The page ships <strong>on</strong> and is a beta. Turn it off with <code>cw_page_enabled = no</code> in a config file, or <code>{"action":"cw_enable","on":false}</code> over the API, if you would rather not have it yet.</p>
+<h1 id="cw">CW<a class="headerlink" href="#cw" title="Permanent link">&para;</a></h1>
+<p>To open the CW page, open the <strong>page picker</strong> (swipe right from the left edge, or tap the left grip) and tap <strong>MODE: CW</strong>. The spectrum and waterfall keep running behind it, so you still see the band while you operate. The page ships <strong>on</strong>. Turn it off with <code>cw_page_enabled = no</code> in a config file, or <code>{"action":"cw_enable","on":false}</code> over the API, if you would rather not have it yet.</p>
 <p>!!! warning "There is no abort for a message in progress"
     <code>KY</code> has no abort in the QMX's CAT manual. Tested on the bench: neither sending <code>RX;</code> nor bouncing the mode away from CW and back stops an in-flight send - both were tried and both simply had no effect, the keyer ran to completion either way. Once the radio holds a message, it sends to the end. What you <em>can</em> stop is text that is still queued on the Tab5 - see <a href="#stop-and-the-send-queue">STOP</a>. Keying the radio itself <strong>is</strong> confirmed working, off air, by the operator.</p>
 <p>The page is built for one-handed, gloved, field operation — the kind of CW you do standing at a picnic table with a paddle you have not touched in a month.</p>

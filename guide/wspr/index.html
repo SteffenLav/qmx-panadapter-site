@@ -780,7 +780,35 @@
   <span class="md-ellipsis">
     
   
-    CW (beta)
+    CW
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rtty/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RTTY
   
 
     
@@ -836,7 +864,7 @@
   <span class="md-ellipsis">
     
   
-    JS8 (beta)
+    JS8
   
 
     
@@ -1896,7 +1924,7 @@ recorded before the dial was kept.</p>
 <p>Below the list:</p>
 <ul>
 <li><strong>DX</strong> — the furthest station of the session, which is usually the number you actually want.</li>
-<li><strong>WSPRNET</strong> — whether spots are being published, and how many can be. <strong>"N of M publishable"</strong> is the publication gate: a station is only sent to wsprnet once it has been heard <strong>more than once</strong>, so N is how many of the M calls heard so far are eligible. This is also why a site like wspr.rocks can show fewer unique calls than this page reports hearing — it only ever received the publishable ones.</li>
+<li><strong>WSPRNET</strong> — whether spots are being published, and how many can be. <strong>"N of M publishable"</strong> is the publication gate: a station is only sent to wsprnet once it has been heard <strong>more than once</strong>, so N is how many of the M calls heard so far are eligible. This is also why a site like wspr.rocks can show fewer unique calls than this page reports hearing — it only ever received the publishable ones. The <strong>sent</strong> count beside it is the total accepted by wsprnet since the Tab5 started <em>(v2.0.0)</em>, so after a night it shows the whole night, not the last two-minute pass. It starts again from zero after a restart. In <code>/api/wspr</code> it is <code>net.sent_total</code>.</li>
 <li><strong>Flush</strong> — empties the decode list. It asks first, because the list is also the upload queue: anything not yet sent to wsprnet goes with it, and the publishable count resets.</li>
 </ul>
 <p>!!! tip "With a mouse, point at a trace to see whose it is"</p>

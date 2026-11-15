@@ -1171,7 +1171,35 @@
   <span class="md-ellipsis">
     
   
-    CW (beta)
+    CW
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rtty/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RTTY
   
 
     
@@ -1227,7 +1255,7 @@
   <span class="md-ellipsis">
     
   
-    JS8 (beta)
+    JS8
   
 
     
@@ -2148,7 +2176,7 @@
 
 
 <h1 id="audio-features-tab5-real-time-decoding">Audio Features — Tab5 Real-Time Decoding<a class="headerlink" href="#audio-features-tab5-real-time-decoding" title="Permanent link">&para;</a></h1>
-<p>Turns the radio's own I/Q into sound on the Tab5 itself, with no extra hardware: binaural CW, panoramic CW split, and AM demodulation. The line-in (3.5 mm jack) path is still beta - see the warning below.</p>
+<p>Turns the radio's own I/Q into sound on the Tab5 itself, with no extra hardware: binaural CW, panoramic CW split, and AM demodulation. Nothing has been decoded through the line-in (3.5 mm jack) path yet - see below.</p>
 <h2 id="getting-audio-start-here-if-you-hear-nothing">Getting audio — start here if you hear nothing<a class="headerlink" href="#getting-audio-start-here-if-you-hear-nothing" title="Permanent link">&para;</a></h2>
 <p>Silence is usually one of five things, and they are listed here in the order they
 actually catch people out. Work down the list; each step says where the control is.</p>
@@ -2302,8 +2330,8 @@ tick it. Your QMX will need a power cycle after that restart, as it does
 after any Tab5 restart.
 </code></pre></div>
 <p>!!! note "Which modes produce audio"</p>
-<div class="highlight"><pre><span></span><code>**CW, CW-R, USB, LSB and AM.** **FM is still silent** — there is no FM
-demodulator, so an FM signal has to be listened to in USB or not at all.
+<div class="highlight"><pre><span></span><code>**CW, CW-R, USB, LSB and AM.** There is no FM demodulator and none is planned,
+so an FM signal has to be listened to in USB or not at all.
 
 AM is demodulated on the Tab5 itself, from the I/Q the radio sends, so the
 bandwidth is set by the Tab5 and not by the filter in the radio. Tap **BW**
@@ -2581,7 +2609,7 @@ clip indicator beside it.</p>
 </tr>
 <tr>
 <td><strong>Line in (3.5 mm jack)</strong></td>
-<td><strong>Declared beta</strong> - see the warning below.</td>
+<td>Implemented. Nothing decoded through it yet - see below.</td>
 </tr>
 <tr>
 <td>Generic I/Q</td>
@@ -2601,7 +2629,7 @@ channel is synthesised: a 255-tap filter builds the quadrature pair the decoders
 The jack wiring is drawn on screen so you can see which contact carries what.</p>
 <p>⚠ <strong>No signal has been decoded through line in yet.</strong> The path runs, samples flow and
 the levels read correctly with nothing plugged in - that is the whole of what has been
-verified. Treat it as unfinished. Changing the source needs a restart, and the Tab5
+verified. Changing the source needs a restart, and the Tab5
 does the restart itself when you press <strong>Save</strong>.</p>
 <p>⛔ <strong>In line-in mode the USB radio connection is off by design.</strong> One or the other, not
 both - so CAT and the S-meter go quiet while line in is selected. The Tab5 stops

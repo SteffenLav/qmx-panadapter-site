@@ -903,7 +903,35 @@
   <span class="md-ellipsis">
     
   
-    CW (beta)
+    CW
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="guide/rtty/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RTTY
   
 
     
@@ -959,7 +987,7 @@
   <span class="md-ellipsis">
     
   
-    JS8 (beta)
+    JS8
   
 
     
@@ -1620,14 +1648,15 @@
 
 <h1 id="qmx-panadapter">QMX Panadapter<a class="headerlink" href="#qmx-panadapter" title="Permanent link">&para;</a></h1>
 <p>A standalone real-time panadapter — spectrum analyser and waterfall — for the <a href="https://www.qrp-labs.com/qmxp.html">QRP Labs QMX/QMX+</a> HF transceiver.</p>
-<p>Running on the <a href="https://docs.m5stack.com/en/core/tab5">M5Stack Tab5</a> (ESP32-P4 with a 5" 720×1280 touch display), the panadapter connects to the QMX as a USB host, decodes the I/Q in real time, and renders a touch-driven interface with tap-to-tune, pinch-zoom, onboard FT8/FT4/JS8 decoding and transmit, ADIF logging, and a matching browser web UI.</p>
+<p>Running on the <a href="https://docs.m5stack.com/en/core/tab5">M5Stack Tab5</a> (ESP32-P4 with a 5" 720×1280 touch display), the panadapter connects to the QMX as a USB host, decodes the I/Q in real time, and renders a touch-driven interface with tap-to-tune, pinch-zoom, onboard FT8, FT4, JS8, RTTY and WSPR decoding and transmit, a CW page, ADIF logging, and a matching browser web UI.</p>
 <p><strong>By Steffen Lav (OZ1LAV)</strong></p>
 <h2 id="what-it-does">What it does<a class="headerlink" href="#what-it-does" title="Permanent link">&para;</a></h2>
 <p>Everything below is in the firmware <strong>today</strong>. Nothing needs a PC; only the items marked
 <em>(needs WiFi)</em> need a network.</p>
 <h3 id="the-short-version">The short version<a class="headerlink" href="#the-short-version" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>A complete station with no PC.</strong> A panadapter, FT8, FT4, JS8, WSPR and a CW page on a
+<li><strong>A complete station with no PC.</strong> A panadapter, the digital modes <strong>FT8, FT4, JS8, RTTY
+  and WSPR</strong>, and a CW page - each one a page of its own in the left drawer - on a
   5-inch tablet that connects to the QMX with one USB cable. Decoding, transmitting,
   logging and uploading all run on the device.</li>
 <li><strong>A real panadapter.</strong> 48 kHz of spectrum and waterfall at 30 frames a second, a true
@@ -1637,15 +1666,18 @@
   writes the ADIF record and uploads it to QRZ, eQSL, ARRL LoTW and Cloudlog or Wavelog.
   LoTW records are signed on the device with your own certificate.</li>
 <li><strong>A second operating position in any browser</strong> <em>(needs WiFi)</em>. The spectrum, the
-  controls, the CW page, the log and the radio's audio. <strong>From v1.26.0 the browser has
+  controls, the CW and RTTY pages, the log and the radio's audio. <strong>From v1.26.0 the browser has
   noise reduction and an auto-notch</strong>, and they cost the Tab5 nothing. See
   <a href="guide/web-ui/">Web UI</a> and <a href="guide/web-dsp/">Web DSP</a>.</li>
 <li><strong>Audio made on the device.</strong> CW, SSB and AM demodulated from the I/Q, <strong>binaural CW</strong>
   that separates two stations by direction, and a CW peak filter ahead of the AGC. See
   <a href="guide/audio/">Audio</a>.</li>
-<li><strong>A CW page</strong> <em>(beta)</em>. The radio's decoded text with a noise squelch, a hint line, a
+<li><strong>A CW page</strong>. The radio's decoded text with a noise squelch, a hint line, a
   station card, two macro sets, one-tap logging, and type-ahead sending from the browser.
   See <a href="guide/cw/">CW</a>.</li>
+<li><strong>RTTY, receive and send, on the device.</strong> Tap a signal to decode it; speed, shift and
+  polarity follow the station by themselves. CQ, Answer, Exch and 73 in one press, or
+  type live - on the Tab5 or in the browser. See <a href="guide/rtty/">RTTY</a>.</li>
 <li><strong>You see who is there, and who hears you</strong> <em>(needs WiFi)</em>. POTA, RBN and DX cluster
   spots drawn on the trace, and a world map of the stations that reported your signal.
   See <a href="guide/spots/">Live Spots</a> and <a href="guide/spot-map/">Spot Map</a>.</li>
@@ -1695,14 +1727,14 @@
   second and removes up to four at once. It all runs in the browser, so it costs the Tab5
   no CPU and no memory. ⚠ Spectral on SSB and the auto-notch are measured and not yet
   judged by ear on a live band <em>(Samuel W7STF)</em>. See <a href="guide/web-dsp/">Web DSP</a>.</li>
-<li><strong>Receive from the 3.5 mm jack</strong> <em>(beta — Tony, @tony1tf, #17)</em> — the panadapter can take
+<li><strong>Receive from the 3.5 mm jack</strong> <em>(Tony, @tony1tf, #17)</em> — the panadapter can take
   its signal from the Tab5's own headphone jack instead of the radio's USB audio. The jack
   is one real audio channel, not I/Q, so the second is synthesised by a 255-tap filter.
   Level meter, clip indicator, and the jack wiring drawn on screen.
   ⚠ <strong>Nothing has been decoded through it yet</strong> — the path runs and the levels read
   correctly, and that is all that is proven. ⛔ The USB radio connection is off in this
   mode by design. See <a href="guide/audio/">Audio</a>.</li>
-<li><strong>MODE: CW page</strong> <em>(beta)</em> — on the Tab5 and in the browser. The radio's own decode
+<li><strong>MODE: CW page</strong> — on the Tab5 and in the browser. The radio's own decode
   ticker with noise squelch, a copilot hint line, a station card, and two named macro
   sets (<strong>General</strong>/<strong>Contest</strong>). A <strong>Log</strong> button opens the log window with the station
   filled in, and a red <strong>STOP</strong> drops text that is still queued. In the browser you can
@@ -1718,7 +1750,7 @@
   want to hear.</li>
 <li><strong>A band guard on every transmission</strong> — before the Tab5 keys the radio it checks the
   frequency that will actually go out against your IARU region's band plan, and refuses
-  if it is outside. FT8, FT4, JS8, WSPR, Antenna Tune, power calibration and, from
+  if it is outside. FT8, FT4, JS8, RTTY, WSPR, Antenna Tune, power calibration and, from
   v1.26.0, CW sent from a macro or the keyboard. See
   <a href="guide/settings/#transmitting-outside-the-band-plan">Settings</a>.</li>
 <li><strong>Radio menus</strong> — the QMX's own 80×24 menu system on the Tab5 and in the browser, over
@@ -1735,7 +1767,7 @@
   polite hold for a station already working someone else; grey-listing; an optional
   unattended auto-answer robot; a drag-to-pick TX tone with a live occupancy strip, TX
   Hold and an ANY/EVEN/ODD time-window choice; and ARRL Field Day mode.</li>
-<li><strong>JS8 — a keyboard mode, on the device</strong> <em>(beta)</em>. JS8 carries <strong>free text</strong> on FT8's
+<li><strong>JS8 — a keyboard mode, on the device</strong>. JS8 carries <strong>free text</strong> on FT8's
   modulation, so stations hold short conversations instead of trading a fixed exchange.
   The whole of it runs on the Tab5: sync, LDPC error correction and the CRC check on the
   way in, and the encoder and transmitter on the way out. It is a sub-mode of the same
@@ -1745,6 +1777,14 @@
   both tell you how many frames the message takes and how many seconds it holds the
   frequency <em>before</em> the radio is keyed. Directed messages and heartbeats are read and
   shown with the sender's callsign and grid. See <a href="guide/js8/">JS8</a>.</li>
+<li><strong>RTTY</strong> — a page of its own, opened from the page picker: tap <strong>MODE: RTTY</strong>. RTTY
+  decoded and sent by the Tab5 itself, on the radio's I/Q, with no PC and no sound card.
+  Tap a signal and the decoder locks on it; <strong>Auto</strong> finds the speed, shift and polarity
+  and keeps a change only when the copy gets better. Tap a callsign to work it, then
+  <strong>CQ</strong>, <strong>Answer</strong>, <strong>Exch</strong> and <strong>73</strong>, or type live from the on-screen, Bluetooth or
+  snap-on keyboard. The browser has the same page, including sending, and shares the
+  station you are working with the Tab5. The radio is switched to DiGi and every over
+  passes the band guard. See <a href="guide/rtty/">RTTY</a>.</li>
 <li><strong>WSPR</strong> — a page of its own, opened from the page picker. A propagation beacon rather than a
   contact mode: a very slow, very weak signal carrying your callsign, grid and power,
   which stations worldwide report hearing. What was heard each two-minute cycle with band,
@@ -1839,12 +1879,17 @@
   settings reset that needs no reflash.</li>
 </ul>
 <h2 id="status">Status<a class="headerlink" href="#status" title="Permanent link">&para;</a></h2>
-<p><strong>v1.26.3 — a complete, self-contained FT8/FT4/JS8 station with no PC in the loop, a second
-operating position in any browser, a WSPR propagation beacon, a MODE: CW page, an internet
-radio player, and the radio's own menus on the screen.</strong> The panadapter, FT8/FT4 receive and
-transmit, WSPR, ADIF logging and all four logbook uploads — QRZ, eQSL, ARRL LoTW and your own
-Cloudlog or Wavelog — are stable and in daily use. <strong>JS8 Normal</strong> and the <strong>CW page</strong> are
-betas.</p>
+<p><strong>v2.0.0 — every goal on the original roadmap is met.</strong> A complete, self-contained station
+with no PC in the loop: the digital modes <strong>FT8, FT4, JS8, RTTY and WSPR</strong> and a <strong>CW page</strong>,
+each one a page of its own in the left drawer, plus a second operating position in any
+browser, an internet radio player, and the radio's own menus on the screen. The panadapter,
+every mode page, ADIF logging and all four logbook uploads — QRZ, eQSL, ARRL LoTW and your own
+Cloudlog or Wavelog — are in daily use. No page is a beta: where a limit remains, its guide
+page states it.</p>
+<p><strong>v2.0.0 adds MODE: RTTY.</strong> RTTY decoded and sent by the Tab5 itself, on the Tab5 and in the
+browser: tap a signal, and <strong>Auto</strong> follows its speed, shift and polarity; <strong>CQ</strong>, <strong>Answer</strong>,
+<strong>Exch</strong> and <strong>73</strong> in one press, or type live. <strong>Receive audio no longer breaks up or drifts
+in pitch on a busy band.</strong> See <a href="guide/rtty/">RTTY</a> and <a href="releases/">Releases</a>.</p>
 <p><strong>v1.26.3 makes the QSO log safe when it fills up</strong>: a QSO is reported as logged only when it is saved, and with an SD card in, older QSOs move to the card. See <a href="releases/">Releases</a>.</p>
 <p><strong>v1.26.2 kept a dB range for each band</strong>, kept the voice at its level with web noise reduction on, and fixed a bottom-bar clock that could stop for up to 11 seconds. See <a href="releases/">Releases</a>.</p>
 <p><strong>v1.26.1 made WSPR decode every cycle again</strong> - from v1.24.2 it decoded only the first cycle after the page opened - made the WSPR search a third faster, and had the web spectrum follow your dB range. See <a href="releases/">Releases</a>.</p>
@@ -1999,7 +2044,7 @@ given a static IP address.</p>
 <h2 id="get-started">Get Started<a class="headerlink" href="#get-started" title="Permanent link">&para;</a></h2>
 <p><strong>New user?</strong> Start with the <a href="quick-start/">Quick Start</a> guide — 10 minutes to on-air.</p>
 <p><strong>Stuck, or not sure what something is called?</strong> The Tab5 can help you itself — see <a href="getting-help/">Getting Help</a>.</p>
-<p><strong>Want the whole guide at once?</strong> Download the <a href="QMX-Panadapter-UserGuide-v1.26.3.pdf">User Guide PDF</a> — the whole user guide as one printable document.</p>
+<p><strong>Want the whole guide at once?</strong> Download the <a href="QMX-Panadapter-UserGuide-v2.0.0.pdf">User Guide PDF</a> — the whole user guide as one printable document.</p>
 <p><strong>Builder?</strong> Head to <a href="build/build/">Build from Source</a> for ESP-IDF setup and the complete module map.</p>
 <h2 id="the-qmx-connection">The QMX Connection<a class="headerlink" href="#the-qmx-connection" title="Permanent link">&para;</a></h2>
 <p>The QMX exposes two USB interfaces:</p>

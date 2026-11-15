@@ -775,7 +775,35 @@
   <span class="md-ellipsis">
     
   
-    CW (beta)
+    CW
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/rtty/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RTTY
   
 
     
@@ -831,7 +859,7 @@
   <span class="md-ellipsis">
     
   
-    JS8 (beta)
+    JS8
   
 
     
@@ -2628,7 +2656,7 @@
 </code></pre></div>
 <p>Notes:</p>
 <ul>
-<li><code>screen</code> is <code>"panadapter"</code>, <code>"cw"</code>, <code>"ft8"</code> or <code>"wspr"</code>. FT4 and JS8 report <code>"ft8"</code>.</li>
+<li><code>screen</code> is <code>"panadapter"</code>, <code>"cw"</code>, <code>"rtty"</code>, <code>"ft8"</code> or <code>"wspr"</code>. FT4 and JS8 report <code>"ft8"</code>.</li>
 <li><strong><code>cw_tx</code> is present only while the Tab5 is on the CW page.</strong> It holds <code>macros</code> (the six of the active set), <code>set_b</code> (true = the Contest set), <code>last_sent</code>, <code>contest_name</code>, <code>queued</code> (characters not yet handed to the radio), <code>keying</code> (the radio's own count of characters left, 0-9, where 9 means 9 or more and -1 means unknown), <code>target</code> (the station being worked), <code>heard</code> (the last callsign decoded), <code>heard_age_s</code> (-1 when nothing was decoded) and <code>rst_rcvd</code>.</li>
 <li><strong><code>tune_out</code></strong> <code>{seq, msg}</code> is the result of a <code>cw_tune</code> that answered <code>listening</code>. It is absent until the first result. <code>seq</code> goes up by one with each result and <code>msg</code> is the text the Tab5 shows.</li>
 <li><strong><code>ft8</code> is present only while the FT8/FT4 screen is live</strong> — the engine does not run otherwise, so its text would be stale. <code>st</code> is one of <code>active</code> / <code>armed</code> / <code>done</code> / <code>timeout</code> / <code>wait</code> / <code>idle</code>, and <code>text</code> is the same line the Tab5 shows on its own TX status label. This is what drives the browser's TX banner and the red dot in the tab title.</li>
@@ -2703,7 +2731,7 @@ action names its own parameter key (there is no generic <code>value</code>).</p>
 </tr>
 <tr>
 <td><code>set_screen</code></td>
-<td><code>screen: "pan"/"panadapter"/"cw"/"ft8"/"ft4"/"js8"/"wspr"</code></td>
+<td><code>screen: "pan"/"panadapter"/"cw"/"rtty"/"ft8"/"ft4"/"js8"/"wspr"</code></td>
 <td>Switch the Tab5's own view. Applied within about a second (handed to the display task). <code>ft4</code> and <code>js8</code> open the FT8 page <strong>and</strong> select that sub-mode, so one call is enough to put the device into FT4. An unknown name is refused with HTTP 400, not treated as <code>panadapter</code>. <code>"cw"</code> is refused with HTTP 403 while the CW page is switched off</td>
 </tr>
 <tr>
@@ -2725,6 +2753,21 @@ action names its own parameter key (there is no generic <code>value</code>).</p>
 <td><code>cw_send</code></td>
 <td><code>text</code></td>
 <td><strong>Send CW.</strong> A macro with its fields still in it, or free text. The text is <strong>added to a queue</strong> (256 characters), so a second call while the radio keys is sent after the first. <strong>Keys the radio</strong>, and passes the band guard at that moment. Acted on only while the Tab5 is on the CW page. HTTP 400 with no text, HTTP 409 <code>{"ok":false,"err":"CW queue full"}</code> when the queue is full <em>(queue from v1.26.0)</em></td>
+</tr>
+<tr>
+<td><code>rtty</code></td>
+<td>any of <code>baud</code>, <code>shift</code>, <code>reverse</code>, <code>afc</code>, <code>squelch</code>, <code>auto</code>, <code>offset_hz</code>, <code>tune_hz</code>, <code>mark_hz</code>, <code>clear</code>, <code>call</code>; <code>rx_cur</code>/<code>tx_cur</code></td>
+<td><strong>RTTY page.</strong> Changes the given settings and returns the decoder status, the last 512 decoded characters (<code>text</code>), the station being worked (<code>call</code>, shared with the Tab5) and the send state (<code>tx</code>: <code>keyed</code>, <code>seconds</code>, <code>echo</code>, <code>error</code>). With <code>rx_cur</code>/<code>tx_cur</code> (the counts from the previous reply) it also returns what was received (<code>rx_new</code>) and sent (<code>tx_new</code>) since. A fixed <code>baud</code> or <code>shift</code> turns Auto off. Receive only</td>
+</tr>
+<tr>
+<td><code>rtty_send</code></td>
+<td><code>text</code> and <code>end</code> (default true), or <code>macro: "cq"/"answer"/"exch"/"73"</code></td>
+<td><strong>Send RTTY. Keys the radio</strong> when idle; adds to the over that runs otherwise. Switches the radio to DiGi if needed and passes the band guard right before key-down. <code>{"ok":false,"error":...}</code> says why it refused (no callsign, page not open, WSPR running, band guard, ...). The over ends 3 s after the queue empties with <code>end</code>, or at 180 s</td>
+</tr>
+<tr>
+<td><code>rtty_stop</code></td>
+<td><em>(none)</em></td>
+<td>Tone off and back to receive at once; the queue is dropped</td>
 </tr>
 <tr>
 <td><code>cw_cancel</code></td>
