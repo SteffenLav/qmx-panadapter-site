@@ -3158,13 +3158,15 @@ one in your PC logger and for <strong>Restore from SD</strong>.</p>
   cut during a write - it restores the log from the card.</li>
 <li>Without a card nothing moves. From 300 KB the Tab5 shows <strong>QSO log nearly full</strong>: download
   the log, then clear it.</li>
-<li><strong>A large old log can live on the card</strong> <em>(v2.0.0, Randy N4OPI)</em>. A log too large to
-  restore into the Tab5 can be copied onto the card by hand as <code>qso-archive.adi</code>. At the next
-  start-up the Tab5 asks <strong>N contacts on the card - use them as your log history?</strong> With
-  <strong>Use them</strong>, the records stay on the card, count as worked before, and new QSOs are added
-  as usual. <strong>Leave it</strong> is remembered. The Tab5 never takes a file over without asking,
-  because the same file could be another station's card. Proven on the real log code in a
-  host test; not yet run on a Tab5.</li>
+<li><strong>A large old log can live on the card</strong> <em>(v2.0.0, Randy N4OPI; fixed in v2.0.1)</em>. A log
+  too large to restore into the Tab5 can be copied onto the card by hand as <code>qso-archive.adi</code>.
+  At the next start-up the Tab5 asks <strong>N contacts on the card - use them as your log
+  history?</strong> With <strong>Use them</strong>, the records stay on the card and new QSOs are added as usual.
+  They count as worked before from the next start, which is slower (about 2.5 s for 2,900
+  contacts). <strong>Leave it</strong> is remembered. The Tab5 never takes a file over without asking,
+  because the same file could be another station's card. Leave out the contacts that are
+  already on the Tab5, or the card's <code>qso.adi</code> lists them twice. Tested on a Tab5 with 2,903
+  contacts and WiFi on.</li>
 </ul>
 <p><strong>After inserting the SD card your Tab5 needs a restart.</strong></p>
 <h3 id="when-the-mirror-runs">When the mirror runs<a class="headerlink" href="#when-the-mirror-runs" title="Permanent link">&para;</a></h3>

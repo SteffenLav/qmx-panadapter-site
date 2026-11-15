@@ -1450,6 +1450,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#v200-2026-11-15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v2.0.0 - 2026-11-15
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#v1263-2026-11-13" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2547,6 +2558,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#v200-2026-11-15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v2.0.0 - 2026-11-15
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#v1263-2026-11-13" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3609,7 +3631,16 @@
 <h1 id="version-history">Version History<a class="headerlink" href="#version-history" title="Permanent link">&para;</a></h1>
 <p>All releases are available on <a href="https://github.com/SteffenLav/qmx-panadapter/releases">GitHub Releases</a>.</p>
 <h2 id="latest-release">Latest Release<a class="headerlink" href="#latest-release" title="Permanent link">&para;</a></h2>
-<p><strong>v2.0.0</strong> - 2026-11-15</p>
+<p><strong>v2.0.1</strong> - 2026-11-15</p>
+<p><strong>A fix for the card-archive offer from v2.0.0.</strong></p>
+<ul>
+<li><strong>"Use them" and "Leave it" now work with WiFi on</strong> <em>(Randy N4OPI)</em>. In v2.0.0 the answer was never applied while WiFi was on, and the question came back after every tap. If that happened to you, nothing was changed on your Tab5 or card: after the update, answer the question once.</li>
+<li>The archive's contacts count as worked before from the next start. That start is slower, about 2.5 s for 2,900 contacts.</li>
+<li>The worked-before list on the card is now tied to the archive it was built from, so a replaced archive gets a new list. If your Tab5 has already moved QSOs to the card, the list is rebuilt once, at the first start after the update.</li>
+</ul>
+<p>Tested on a Tab5 with 2,903 contacts (550 KB) and WiFi on. See <a href="../guide/settings/#the-qso-log-and-the-card">Settings</a>.</p>
+<h2 id="previous-releases">Previous Releases<a class="headerlink" href="#previous-releases" title="Permanent link">&para;</a></h2>
+<h3 id="v200-2026-11-15">v2.0.0 - 2026-11-15<a class="headerlink" href="#v200-2026-11-15" title="Permanent link">&para;</a></h3>
 <p><strong>Every goal on the original roadmap is met. v2.0.0 adds MODE: RTTY, so the left drawer now holds the digital modes FT8, FT4, JS8, RTTY and WSPR, plus the CW page. Receive audio no longer breaks up on a busy band. No page is a beta any more.</strong></p>
 <p><strong>MODE: RTTY</strong> - a page of its own in the left drawer, under MODE: CW. See <a href="../guide/rtty/">RTTY</a>.</p>
 <ul>
@@ -3643,7 +3674,6 @@
 <li>The card-archive offer is proven in a host test on the real log code; it has not yet run on a Tab5.</li>
 <li>CW: the QMX has no command to stop text it already holds, so CW <strong>STOP</strong> drops only what the Tab5 still holds. RTTY STOP turns the tone off at once.</li>
 </ul>
-<h2 id="previous-releases">Previous Releases<a class="headerlink" href="#previous-releases" title="Permanent link">&para;</a></h2>
 <h3 id="v1263-2026-11-13">v1.26.3 - 2026-11-13<a class="headerlink" href="#v1263-2026-11-13" title="Permanent link">&para;</a></h3>
 <p><strong>A full QSO log no longer loses QSOs, and with an SD card in it no longer fills up: older QSOs move to the card.</strong></p>
 <ul>
@@ -4821,7 +4851,7 @@ install already uses the flasher.
 <ul>
 <li><strong>Source code:</strong> <a href="https://github.com/SteffenLav/qmx-panadapter">GitHub Repository</a></li>
 <li><strong>Releases:</strong> <a href="https://github.com/SteffenLav/qmx-panadapter/releases">GitHub Releases</a></li>
-<li><strong>User Guide:</strong> <a href="../QMX-Panadapter-UserGuide-v2.0.0.pdf">PDF</a> or <a href="../quick-start/">Web</a></li>
+<li><strong>User Guide:</strong> <a href="../QMX-Panadapter-UserGuide-v2.0.1.pdf">PDF</a> or <a href="../quick-start/">Web</a></li>
 <li><strong>Build Guide:</strong> <a href="../build/build/">Build from Source</a></li>
 <li><strong>Technical Details:</strong> <a href="https://github.com/SteffenLav/qmx-panadapter/blob/main/CLAUDE.md">CLAUDE.md</a></li>
 </ul>
