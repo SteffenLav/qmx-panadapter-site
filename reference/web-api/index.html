@@ -1349,6 +1349,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#transmitting-from-off-your-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transmitting from off your network
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#ft8-endpoints" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2210,6 +2221,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#transmitting-from-off-your-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transmitting from off your network
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#ft8-endpoints" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2770,6 +2792,21 @@ action names its own parameter key (there is no generic <code>value</code>).</p>
 <td>Tone off and back to receive at once; the queue is dropped</td>
 </tr>
 <tr>
+<td><code>rtty_log</code></td>
+<td><code>call</code>, <code>rst_sent</code>, <code>rst_rcvd</code>, <code>stx</code>, <code>srx</code></td>
+<td>Log an RTTY QSO: mode RTTY, the dial frequency and the time from the device; <code>stx</code>/<code>srx</code> and <code>CONTEST_ID</code> only in contest mode. Clears the station. <code>{"ok":false,"error":...}</code> when not logged (no CAT, log full)</td>
+</tr>
+<tr>
+<td><code>rtty_contest</code></td>
+<td>any of <code>on</code>, <code>name</code>, <code>next</code> (1-9999), <code>exch</code></td>
+<td>RTTY contest mode: on/off, contest name (<code>CONTEST_ID</code>), next serial, fixed sent exchange (<code>""</code> = the serial)</td>
+</tr>
+<tr>
+<td><code>rtty_word</code></td>
+<td><code>word</code></td>
+<td>Which RTTY log field a word belongs in: <code>{"kind":"rst"\|"call"\|"exch"\|"none","value":...}</code> - letter-shift forms read as digits</td>
+</tr>
+<tr>
 <td><code>cw_cancel</code></td>
 <td><em>(none)</em></td>
 <td>Drop the CW text that the radio has not been given yet. Answers <code>{"ok":true,"dropped":N}</code>. It cannot stop what the radio already holds (80 characters at most) <em>(v1.26.0)</em></td>
@@ -3043,6 +3080,28 @@ in this firmware's manual.</p>
 writer to the radio's serial port. For one raw CAT string there is the developer
 action <code>cat_raw</code> with a <code>cmd</code> field; its reply appears in the diagnostic log,
 and a command that would transmit passes the band guard first.</p>
+<h2 id="transmitting-from-off-your-network">Transmitting from off your network<a class="headerlink" href="#transmitting-from-off-your-network" title="Permanent link">&para;</a></h2>
+<p>This API has <strong>no password</strong>, and it can key the radio. The <strong>TX interlock</strong>
+(Settings &gt; Station &gt; <em>Refuse transmit from outside this network</em>) refuses any
+request that transmits unless it arrived from the Tab5's own subnet. The refusal
+is <strong>HTTP 403</strong> with <code>{"ok":false,"tx_interlock":true,"error":"..."}</code>, so a
+client can tell it apart from a band-guard refusal. Receive, the display and
+every read-only call are untouched.</p>
+<p>It is <strong>off by default</strong>, because driving this radio across a network is a
+legitimate thing to do - a shared-radio front end, or your own station behind a
+tunnel.</p>
+<p>The actions that <strong>stop</strong> something are never interlocked: <code>tune_stop</code>,
+<code>rtty_stop</code>, <code>cw_cancel</code>, <code>js8_text_cancel</code>, and <code>qso_override</code> with <code>cancel</code>,
+<code>pause</code> or <code>skip</code>. Refusing a stop would leave a transmitter on the air.</p>
+<p>!!! warning "It is not a login"
+    It stops the internet. It does not stop anyone else on your WiFi - they are
+    on the same subnet and they pass. The peer address is read from the TCP
+    connection, so <code>X-Forwarded-For</code> and friends cannot fake it, and that also
+    means a reverse proxy on your LAN passes as a local caller. For real remote
+    access put the Tab5 behind a VPN, a tunnel or a proxy that does the
+    authentication, and leave this on as the second lock. Over plain HTTP a
+    password would cross in clear and the token could be replayed to key your
+    transmitter.</p>
 <h2 id="ft8-endpoints">FT8 Endpoints<a class="headerlink" href="#ft8-endpoints" title="Permanent link">&para;</a></h2>
 <p>The decode list is <code>GET /api/decodes</code> (above). Transmit from the browser is
 limited to <code>POST /api/cmd {"action":"cq_start"}</code>; there is no endpoint that sends

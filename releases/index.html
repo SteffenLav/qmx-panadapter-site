@@ -1450,6 +1450,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#v201-2026-11-15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v2.0.1 - 2026-11-15
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#v200-2026-11-15" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2558,6 +2569,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#v201-2026-11-15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v2.0.1 - 2026-11-15
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#v200-2026-11-15" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3631,7 +3653,29 @@
 <h1 id="version-history">Version History<a class="headerlink" href="#version-history" title="Permanent link">&para;</a></h1>
 <p>All releases are available on <a href="https://github.com/SteffenLav/qmx-panadapter/releases">GitHub Releases</a>.</p>
 <h2 id="latest-release">Latest Release<a class="headerlink" href="#latest-release" title="Permanent link">&para;</a></h2>
-<p><strong>v2.0.1</strong> - 2026-11-15</p>
+<p><strong>v2.0.2</strong> - 2026-11-18</p>
+<p><strong>RTTY contacts go into the log, the log window no longer blocks the screen, and the web radio has a new MP3 decoder.</strong></p>
+<ul>
+<li><strong>Log RTTY contacts</strong>, on the Tab5 and in the browser. <strong>73</strong> (or <strong>TU</strong> in contest mode) and <strong>Log</strong> open <strong>Log this QSO?</strong> with the callsign, reports and exchange filled in from the decoded text. Nothing is logged until you press <strong>Log</strong>. To correct a field, tap the word in the text. <strong>Contest mode</strong> sends <code>CQ TEST</code>, <code>599</code> and a serial number, and marks dupes. See <a href="../guide/rtty/#logging">RTTY</a>.</li>
+<li><strong>The log window moves</strong> <em>(Pete WK8S)</em>. Drag it by its body to anywhere on the screen. It keeps its place, and taps outside it reach the page, so you can tune with it open. It is also smaller. See <a href="../guide/settings/#log-a-contact-by-hand-cw-and-ssb">Settings</a>.</li>
+<li><strong>A Log button on the Panadapter page</strong>, at the top right of the waterfall. It logs in the radio's current mode.</li>
+<li><strong>A tap on the bottom grip opens Memory Channels.</strong> On the SelfSpotter map, a tap on the right grip now opens its drawer, as a swipe does.</li>
+<li><strong>Opening the RTTY page puts the radio in DiGi mode.</strong> With the radio left in CW, the signal sat about 1.5 kHz away from the decoder's lines. The radio's previous mode comes back when you leave the page.</li>
+<li><strong>New setting: Refuse TX from off-network</strong> <em>(off by default)</em>. The web API can key the radio and has no password. With this setting on, a transmit request that does not come from the Tab5's own network is refused. It is not a login: anyone on your WiFi still passes. See <a href="../guide/settings/#panadapter-zoom">Settings</a>.</li>
+<li><strong>The web radio's MP3 decoder is now minimp3.</strong> The previous decoder (Helix) is under a licence that is not compatible with this project's GPL-3 licence. Six stations were played on a Tab5 with no gaps.</li>
+<li><strong>Linux and macOS flasher</strong> <em>(Mark N5OBC)</em>: if esptool stops at "Running stub...", the flasher now uses esptool's slower mode, which does not need the stub. A clean flash (erase) is not possible in that mode, and the flasher says so.</li>
+<li>Fixed: stray characters in the CW page's text at start-up.</li>
+<li>Fixed: the browser's RTTY band-plan strip now matches the Tab5's.</li>
+<li>Fixed: the radio's Semi QSK setting always read back as unknown.</li>
+</ul>
+<p><strong>Known, not fixed</strong></p>
+<ul>
+<li>Refuse TX from off-network is tested on a Tab5 only for requests from the Tab5's own network, which pass. A refusal was tested only in a host test, because no second network was available.</li>
+<li>Tapping a decoded word on the Tab5 to fill a log field was not tried on a live signal. It works in the browser and in a host test.</li>
+</ul>
+<p><strong>What can key the radio</strong> - no new entry in the <a href="https://github.com/SteffenLav/qmx-panadapter/blob/main/docs/unattended-tx-inventory.md">unattended-TX inventory</a>. Its web row now says that, with <strong>Refuse TX from off-network</strong> on, a request that would transmit must come from the Tab5's own network. The RTTY Log and Contest controls do not transmit.</p>
+<h2 id="previous-releases">Previous Releases<a class="headerlink" href="#previous-releases" title="Permanent link">&para;</a></h2>
+<h3 id="v201-2026-11-15">v2.0.1 - 2026-11-15<a class="headerlink" href="#v201-2026-11-15" title="Permanent link">&para;</a></h3>
 <p><strong>A fix for the card-archive offer from v2.0.0.</strong></p>
 <ul>
 <li><strong>"Use them" and "Leave it" now work with WiFi on</strong> <em>(Randy N4OPI)</em>. In v2.0.0 the answer was never applied while WiFi was on, and the question came back after every tap. If that happened to you, nothing was changed on your Tab5 or card: after the update, answer the question once.</li>
@@ -3639,7 +3683,6 @@
 <li>The worked-before list on the card is now tied to the archive it was built from, so a replaced archive gets a new list. If your Tab5 has already moved QSOs to the card, the list is rebuilt once, at the first start after the update.</li>
 </ul>
 <p>Tested on a Tab5 with 2,903 contacts (550 KB) and WiFi on. See <a href="../guide/settings/#the-qso-log-and-the-card">Settings</a>.</p>
-<h2 id="previous-releases">Previous Releases<a class="headerlink" href="#previous-releases" title="Permanent link">&para;</a></h2>
 <h3 id="v200-2026-11-15">v2.0.0 - 2026-11-15<a class="headerlink" href="#v200-2026-11-15" title="Permanent link">&para;</a></h3>
 <p><strong>Every goal on the original roadmap is met. v2.0.0 adds MODE: RTTY, so the left drawer now holds the digital modes FT8, FT4, JS8, RTTY and WSPR, plus the CW page. Receive audio no longer breaks up on a busy band. No page is a beta any more.</strong></p>
 <p><strong>MODE: RTTY</strong> - a page of its own in the left drawer, under MODE: CW. See <a href="../guide/rtty/">RTTY</a>.</p>
@@ -4851,7 +4894,7 @@ install already uses the flasher.
 <ul>
 <li><strong>Source code:</strong> <a href="https://github.com/SteffenLav/qmx-panadapter">GitHub Repository</a></li>
 <li><strong>Releases:</strong> <a href="https://github.com/SteffenLav/qmx-panadapter/releases">GitHub Releases</a></li>
-<li><strong>User Guide:</strong> <a href="../QMX-Panadapter-UserGuide-v2.0.1.pdf">PDF</a> or <a href="../quick-start/">Web</a></li>
+<li><strong>User Guide:</strong> <a href="../QMX-Panadapter-UserGuide-v2.0.2.pdf">PDF</a> or <a href="../quick-start/">Web</a></li>
 <li><strong>Build Guide:</strong> <a href="../build/build/">Build from Source</a></li>
 <li><strong>Technical Details:</strong> <a href="https://github.com/SteffenLav/qmx-panadapter/blob/main/CLAUDE.md">CLAUDE.md</a></li>
 </ul>

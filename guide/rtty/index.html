@@ -905,6 +905,34 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logging
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Logging">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#contest-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contest mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#in-the-browser" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1589,6 +1617,34 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logging
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Logging">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#contest-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contest mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#in-the-browser" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1652,7 +1708,8 @@
 <li>After a station is decoded, the decoder holds on it. It does not jump to a neighbour in the gaps between overs. A new tap releases the hold.</li>
 <li><strong>Frequency readout:</strong> on this page the top bar shows the <strong>mark</strong> frequency, not the dial. The keypad works the same way: the number you type is the mark.</li>
 <li>The page keeps one RTTY dial per band. A band change on this page goes back to the last RTTY dial you used on that band, or to the middle of the band's digital segment the first time.</li>
-<li>The band-plan strip shows the digital segment only, and the spot labels show RTTY spots only.</li>
+<li>The band-plan strip shows the digital segment with a margin on each side, and always includes the part of the band on screen, so you can drag to stations just outside the band plan's digital segment. The spot labels show RTTY spots only.</li>
+<li><strong>Opening the page puts the radio in DiGi mode</strong> <em>(v2.0.2)</em>. In another mode the radio's audio sits away from the decoder's lines. The radio's previous mode comes back when you leave the page.</li>
 <li>The Tab5 speaker plays the signal under the orange lines (±250 Hz around them), not the radio's whole passband. The QMX headphone jack still plays the radio's own passband.</li>
 </ul>
 <h2 id="the-screen">The screen<a class="headerlink" href="#the-screen" title="Permanent link">&para;</a></h2>
@@ -1759,6 +1816,55 @@
 <li>It refuses while WSPR runs, while another transmission holds the radio, or in simulation mode. The status line says which.</li>
 </ul>
 <p><strong>When an over ends:</strong> 3 s after the queue is empty, on <strong>STOP</strong>, or after <strong>180 s</strong> at most, whatever is still queued. Every over starts with a press or a key: nothing on the RTTY page transmits by itself.</p>
+<h2 id="logging">Logging<a class="headerlink" href="#logging" title="Permanent link">&para;</a></h2>
+<p>When you pick a station, a card shows above the text box, at the right:</p>
+<ul>
+<li>the callsign</li>
+<li><strong>New</strong>, <strong>Worked on band</strong> (in your log on this band before), or <strong>DUPE</strong> (contest mode: already logged on this band in this contest)</li>
+<li><strong>Rcvd</strong>: the report (and, in contest mode, the exchange) the decoder found in their text</li>
+<li>a <strong>Log</strong> button</li>
+</ul>
+<p><strong>73</strong> (or <strong>TU</strong> in contest mode) and <strong>Log</strong> open <strong>Log this QSO?</strong>. Nothing is logged until you press <strong>Log</strong> in it. The fields come filled in: RST sent 599, RST rcvd and the received exchange only when the decoder found them. Check them: RTTY errors damage numbers. A lost figures shift prints <code>599 001</code> as <code>TOO QPP</code>; the Tab5 reads letters on the number keys back as digits, but cannot know every error.</p>
+<p><strong>To correct a field, tap the word in the text.</strong> While the dialog is open, a tapped word goes where it belongs: a report to <strong>RST rcvd</strong>, a callsign to <strong>Callsign</strong>, a number to <strong>Exch rcvd</strong>. The line under the fields says what went where. Tap a field to type instead.</p>
+<p>The record gets mode <strong>RTTY</strong>, the dial frequency and the time from the device. <strong>Log</strong> clears the station, ready for the next one. <strong>STOP</strong> stays in reach while the dialog is open.</p>
+<p>The drawer's <strong>Manual log</strong> on this page also logs mode RTTY with RST 599.</p>
+<h3 id="contest-mode">Contest mode<a class="headerlink" href="#contest-mode" title="Permanent link">&para;</a></h3>
+<p>Tap <strong>TX</strong> above the send buttons (or <strong>Contest...</strong> in the speed picker) to set it:</p>
+<ul>
+<li><strong>Contest mode</strong> on or off</li>
+<li><strong>Contest name</strong> - written to every QSO as <code>CONTEST_ID</code>, for example <code>WAE-DX-RTTY</code></li>
+<li><strong>Next serial</strong></li>
+<li><strong>Sent exch</strong> - leave empty to send the serial, or enter a fixed exchange (a zone, a state)</li>
+</ul>
+<p>While it is on, <strong>TX #013</strong> above the buttons shows what you send next, and the messages are the short contest forms:</p>
+<table>
+<thead>
+<tr>
+<th>Button</th>
+<th>Sends</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>CQ</strong></td>
+<td><code>CQ TEST MYCALL MYCALL CQ</code></td>
+</tr>
+<tr>
+<td><strong>Answer</strong></td>
+<td><code>MYCALL MYCALL</code></td>
+</tr>
+<tr>
+<td><strong>Exch</strong></td>
+<td><code>CALL 599 013 013</code></td>
+</tr>
+<tr>
+<td><strong>73</strong></td>
+<td><code>TU MYCALL</code>, then asks to log</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The serial moves on when a QSO is logged</strong>, not when it is sent, so a repeated <strong>Exch</strong> sends the same number. Logged contest QSOs also carry <code>STX_STRING</code> and <code>SRX_STRING</code>.</p>
+<p><strong>Dupes</strong> are this contest's RTTY QSOs on the band - contacts from other days and other contests do not count. The list comes from the log on the Tab5 and, at each start, from the archive on the microSD card (older records move there). Without a card at start, QSOs moved at an earlier start are not seen.</p>
 <h2 id="in-the-browser">In the browser<a class="headerlink" href="#in-the-browser" title="Permanent link">&para;</a></h2>
 <p>The browser's RTTY page has the same controls as the Tab5 pane, and the same text box over the waterfall: received text green and cyan, your own text red.</p>
 <ul>
@@ -1767,6 +1873,7 @@
 <li><strong>Send:</strong> <strong>CQ</strong>, <strong>Answer</strong>, <strong>Exch</strong>, <strong>73</strong> and <strong>STOP</strong> under the controls. The device builds the messages, so the browser and the Tab5 send exactly the same text.</li>
 <li><strong>Type:</strong> the <strong>Type</strong> line sends each key as you type (in small batches). <strong>Enter</strong> ends the over.</li>
 <li>While sending, the line beside <strong>To:</strong> shows <code>TX n s</code> and the last characters sent, in red. A refusal shows there in orange for 8 s.</li>
+<li><strong>Log:</strong> the line under the buttons shows what the Tab5 card shows (New / Worked on band / DUPE, Rcvd). <strong>73</strong> and <strong>Log...</strong> open the same form as on the Tab5; while it is open, click a word in the text to fill its field. <strong>Contest...</strong> sets contest mode, shared with the Tab5.</li>
 </ul>
 <h2 id="settings-and-api">Settings and API<a class="headerlink" href="#settings-and-api" title="Permanent link">&para;</a></h2>
 <p>Speed, shift, Reverse, AFC, Squelch, Auto and the tap offset survive a reboot. In a config file they are <code>rtty_offset_hz</code>, <code>rtty_baud</code>, <code>rtty_shift_hz</code>, <code>rtty_reverse</code>, <code>rtty_afc</code>, <code>rtty_squelch</code> and <code>rtty_auto</code>.</p>
@@ -1800,8 +1907,24 @@
 <td><em>(none)</em></td>
 <td>Tone off and back to receive, now.</td>
 </tr>
+<tr>
+<td><code>rtty_log</code></td>
+<td><code>call</code>, <code>rst_sent</code>, <code>rst_rcvd</code>, <code>stx</code>, <code>srx</code></td>
+<td>Logs the QSO (mode RTTY, dial frequency, now) and clears the station. <code>stx</code>/<code>srx</code> only in contest mode.</td>
+</tr>
+<tr>
+<td><code>rtty_contest</code></td>
+<td>any of <code>on</code>, <code>name</code>, <code>next</code>, <code>exch</code></td>
+<td>Contest mode settings.</td>
+</tr>
+<tr>
+<td><code>rtty_word</code></td>
+<td><code>word</code></td>
+<td>Which log field a word belongs in: <code>{"kind":"rst"/"call"/"exch"/"none","value":...}</code>.</td>
+</tr>
 </tbody>
 </table>
+<p>The <code>rtty</code> reply also carries <code>qso</code> (what the Tab5 card shows) and <code>contest</code>. In a config file, contest mode is <code>rtty_contest</code>, <code>rtty_contest_name</code>, <code>rtty_contest_next</code> and <code>rtty_contest_exch</code>.</p>
 <h2 id="limits">Limits<a class="headerlink" href="#limits" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Baudot (ITA2) only, with US-TTY figures and unshift-on-space. Speeds 45.45 / 50 / 75 / 100 baud.</li>
